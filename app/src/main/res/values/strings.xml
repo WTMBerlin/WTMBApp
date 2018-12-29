@@ -6,6 +6,9 @@
     <string name="events_upcoming_header">Upcoming</string>
     <string name="events_past_header">Past</string>
 
+    <!-- Meetup Auth -->
+    <string name="meetup_auth_message">Authorizing…</string>
+
     <string name="description_community">Google\'s Women Techmakers program provides visibility, community, and
         resources for women in technology. At Women Techmakers Berlin we are encouraging diversity in tech in Berlin
         since 2015. Get visibility, networking and resources to make the tech community of Berlin diverse and inclusive!

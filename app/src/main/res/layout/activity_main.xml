@@ -8,8 +8,7 @@
 
     <fragment android:name="com.wtmberlin.EventsFragment"
         android:id="@+id/main_fragment"
-        android:layout_weight="1"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
 </FrameLayout>

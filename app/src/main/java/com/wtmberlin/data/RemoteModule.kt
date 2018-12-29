@@ -2,6 +2,7 @@ package com.wtmberlin.data
 
 import com.squareup.moshi.Moshi
 import com.wtmberlin.EventsViewModel
+import com.wtmberlin.MeetupAuthViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
@@ -13,19 +14,21 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 val remoteModule = module {
     viewModel { EventsViewModel(get()) }
+    viewModel { MeetupAuthViewModel(get()) }
 
     single {
-        Repository(get(), get())
+        Repository(get())
     }
 
     single {
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().apply { level = BODY })
+            //.addInterceptor(AuthInterceptor)
             .build()
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.meetup.com")
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(get()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)
             .build()
@@ -40,7 +43,7 @@ val remoteModule = module {
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://secure.meetup.com")
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(get()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)
             .build()

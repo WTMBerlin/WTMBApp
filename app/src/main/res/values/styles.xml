@@ -21,6 +21,7 @@
     </style>
 
     <style name="WtmBerlin.Events.ThreeLineListItem">
+        <item name="android:background">@color/white</item>
         <item name="android:foreground">?selectableItemBackground</item>
         <item name="android:gravity">center</item>
         <item name="android:elevation">@dimen/material_elevation_card</item>
