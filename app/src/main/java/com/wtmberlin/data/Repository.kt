@@ -3,9 +3,10 @@ package com.wtmberlin.data
 import io.reactivex.Flowable
 import org.threeten.bp.LocalDateTime
 
-class Repository(private val apiService: MeetupService) {
+class Repository(private val apiService: MeetupService, private val secureService: SecureMeetupService) {
     fun events(): Flowable<Result<List<WtmEvent>>> {
-        return apiService.events()
+        return secureService.authorize()
+            .map { listOf<MeetupEvent>() }
             .map { it.map(MeetupEvent::toWmtEvent) }
             .map { Result.success(it) }
             .onErrorReturn { Result.error(it) }

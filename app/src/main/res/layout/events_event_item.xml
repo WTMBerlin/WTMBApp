@@ -8,11 +8,11 @@
 
         <variable
             name="callbacks"
-            type="com.wtmberlin.EventsAdapter" />
+            type="com.wtmberlin.EventsAdapter.Callbacks" />
 
         <variable
             name="item"
-            type="com.wtmberlin.EventsAdapterItem.EventItem" />
+            type="com.wtmberlin.EventItem" />
     </data>
 
     <LinearLayout
@@ -20,7 +20,7 @@
         style="@style/WtmBerlin.Events.ThreeLineListItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{v -> callbacks.onEventClicked(item)}">
+        android:onClick="@{v -> callbacks.onEventItemClicked(item)}">
 
         <TextView
             android:id="@+id/event_local_date_time_text"

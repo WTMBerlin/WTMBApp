@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/upcoming_header"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    style="@style/WtmBerlin.Events.ListHeader"
-    android:text="@string/events_past_header"/>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.wtmberlin.util.BindingKt" />
+
+        <variable
+            name="callbacks"
+            type="com.wtmberlin.EventsAdapter" />
+
+        <variable
+            name="item"
+            type="com.wtmberlin.PastHeaderItem" />
+    </data>
+
+    <TextView
+        android:id="@+id/past_header"
+        style="@style/WtmBerlin.Events.ListHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/events_past_header" />
+
+</layout>
