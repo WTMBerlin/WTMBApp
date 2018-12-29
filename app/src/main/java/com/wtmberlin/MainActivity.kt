@@ -1,62 +1,28 @@
 package com.wtmberlin
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
-import kotlinx.android.synthetic.main.activity_main.*
+import com.wtmberlin.data.accessToken
 
-class MainActivity : AppCompatActivity(), ManageFragments {
-
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val mainViewModel = ViewModelProviders.of(this).get(ViewModelMain::class.java)
-        val detailEventViewModel = ViewModelProviders.of(this).get(ViewModelDetailEvent::class.java)
-        val detailStats = ViewModelProviders.of(this).get(ViewModelDetailStats::class.java)
-
-        mainViewModel.events.observe(this, Observer {
-            it?.let {
-                //TODO: update events
-            }
-        })
-
-        detailEventViewModel.event.observe(this, Observer {
-            it?.let {
-                //TODO: update event details
-            }
-        })
-
-        detailStats.stats.observe(this, Observer {
-            it?.let {
-                //TODO: update stats details
-            }
-        })
+        if (accessToken == null) {
+            //authorizeUser()
+        }
     }
 
-    override fun displayEvents() {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentsContainer, main_fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
-    override fun displayStats() {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentsContainer, stats_fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
-    override fun displayEventDetails() {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentsContainer, events_fragment)
-            .addToBackStack(null)
-            .commit()
+    private fun authorizeUser() {
+        val browserIntent = Intent(
+            Intent.ACTION_VIEW, Uri.parse(
+                "https://secure.meetup.com/oauth2/authorize?client_id=8h22npmn9nfg58mco97blumdg9&response_type=code&redirect_uri=http%3A%2F%2Fwtmberlin.com%2Fandroid-app"
+            )
+        )
+        startActivity(browserIntent)
     }
 }
 

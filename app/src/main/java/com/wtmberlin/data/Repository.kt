@@ -11,7 +11,19 @@ class Repository(private val apiService: MeetupService) {
             .onErrorReturn { Result.error(it) }
             .toFlowable()
     }
+
+    fun group(): Flowable<Result<WtmGroup>> {
+        return apiService.group()
+            .map { it.toWmtGroup() }
+            .map { Result.success(it) }
+            .onErrorReturn { Result.error(it) }
+            .toFlowable()
+    }
 }
+
+data class WtmGroup(
+    val pastEventCount: Int,
+    val members: Int)
 
 data class WtmEvent(
     val id: String,
@@ -19,9 +31,15 @@ data class WtmEvent(
     val localDateTime: LocalDateTime,
     val venueName: String?)
 
-fun MeetupEvent.toWmtEvent() = WtmEvent(
+private fun MeetupEvent.toWmtEvent() = WtmEvent(
     id = id,
     name = name,
     localDateTime = LocalDateTime.of(local_date, local_time),
     venueName = venue?.name)
+
+private fun MeetupGroup.toWmtGroup() = WtmGroup(
+    pastEventCount = past_event_count,
+    members = members)
+
+
 
