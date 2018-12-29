@@ -3,10 +3,14 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
     <color name="wtmGreenDark">#00BEA4</color>
     <color name="wtmGreenLight">#1CE9B6</color>
     <color name="wtmBlueDark">#4285F4</color>
     <color name="wtmBlueLight">#49B4E4</color>
     <color name="wtmGreyDark">#4D4D4D</color>
 
+    <color name="black_12">#1F000000</color>
+    <color name="black_87">#DF000000</color>
+    <color name="black_54">#8A000000</color>
 </resources>

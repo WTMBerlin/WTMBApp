@@ -4,12 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.wtmberlin.data.Repository
 import kotlinx.android.synthetic.main.fragment_detail_event.view.*
 import java.util.*
 
 class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventsViewHolder>() {
-    //TODO: List<?>
     private var data: List<EventsDAO> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventsViewHolder {
@@ -29,14 +27,15 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventsViewHolder>() {
     }
 
     class EventsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        //TODO: event: ?
         fun bind(event: EventsDAO) = with(itemView) {
             itemView.eventTitle.text = event.title
             itemView.eventDate.text = event.date
             itemView.eventDescription.text = event.description
-            setOnClickListener {
-                TODO("add callback")
-            }
+            setOnClickListener { callbacks.onEventClicked(event) }
         }
+    }
+
+    interface Callbacks {
+        fun onEventClicked(event: EventsDAO)
     }
 }

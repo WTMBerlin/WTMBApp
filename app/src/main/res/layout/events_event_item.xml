@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="com.wtmberlin.util.BindingKt" />
+
+        <variable
+            name="callbacks"
+            type="com.wtmberlin.EventsAdapter" />
+
+        <variable
+            name="item"
+            type="com.wtmberlin.EventsAdapterItem.EventItem" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/event_item"
+        style="@style/WtmBerlin.Events.ThreeLineListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{v -> callbacks.onEventClicked(item)}">
+
+        <TextView
+            android:id="@+id/event_local_date_time_text"
+            style="@style/WtmBerlin.Events.Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{BindingKt.toMediumFormat(item.localDateTime)}"
+            tools:text="Tue, Dec 11, 6:30 PM" />
+
+        <TextView
+            android:id="@+id/event_name_text"
+            style="@style/WtmBerlin.Events.Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/material_space_half"
+            android:text="@{item.name}"
+            tools:text="Product Development in the Age of Big Data" />
+
+        <TextView
+            android:id="@+id/event_venue_name_text"
+            style="@style/WtmBerlin.Events.Venue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{item.venueName}"
+            android:visibility="@{item.venueName != null ? View.VISIBLE : View.INVISIBLE}"
+            android:textAppearance="@style/WtmBerlin.TextAppearance.EventVenue"
+            tools:text="Dalia Research GmbH" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Women Techmakers Berlin</string>
+
+    <!-- Events -->
+    <string name="events_upcoming_header">Upcoming</string>
+    <string name="events_past_header">Past</string>
 </resources>
