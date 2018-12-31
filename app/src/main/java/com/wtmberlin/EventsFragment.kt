@@ -1,14 +1,17 @@
 package com.wtmberlin
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.wtmberlin.databinding.EventsScreenBinding
 import com.wtmberlin.util.AdapterItem
 import com.wtmberlin.util.BindingViewHolder
@@ -43,7 +46,10 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val itemOffset = resources.getDimensionPixelOffset(R.dimen.material_space_half)
+
         events_recycler.adapter = EventsAdapter(this)
+        events_recycler.addItemDecoration(OffsetItemDecoration(itemOffset))
     }
 
     override fun onEventItemClicked(item: EventItem) {
@@ -98,4 +104,24 @@ data class EventItem(
     val venueName: String?
 ) : EventsAdapterItem() {
     override val viewType = R.layout.events_event_item
+}
+
+class OffsetItemDecoration(val offset: Int) : RecyclerView.ItemDecoration() {
+    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+        super.getItemOffsets(outRect, view, parent, state)
+
+        parent.adapter?.let {
+            val itemCount = it.itemCount
+            val position = parent.getChildAdapterPosition(view)
+
+            if (position < itemCount - 1) {
+                val thisViewType = it.getItemViewType(position)
+                val nextViewType = it.getItemViewType(position + 1)
+
+                if (thisViewType == R.layout.events_event_item && nextViewType == R.layout.events_event_item) {
+                    outRect.set(0, 0, 0, offset)
+                }
+            }
+        }
+    }
 }

@@ -24,36 +24,31 @@
         <item name="android:background">@color/white</item>
         <item name="android:foreground">?selectableItemBackground</item>
         <item name="android:gravity">center</item>
-        <item name="android:elevation">@dimen/material_elevation_card</item>
+        <item name="android:padding">@dimen/material_space</item>
         <item name="android:minHeight">@dimen/material_three_line_list_height</item>
         <item name="android:orientation">vertical</item>
     </style>
 
-    <style name="WtmBerlin.Events.Date">
-        <item name="android:paddingStart">@dimen/material_space</item>
-        <item name="android:paddingEnd">@dimen/material_space</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventDate</item>
-    </style>
-
     <style name="WtmBerlin.Events.Name">
-        <item name="android:paddingStart">@dimen/material_space</item>
-        <item name="android:paddingEnd">@dimen/material_space</item>
-        <item name="android:maxLines">1</item>
+        <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventName</item>
     </style>
 
-    <style name="WtmBerlin.Events.Venue">
-        <item name="android:paddingStart">@dimen/material_space</item>
-        <item name="android:paddingEnd">@dimen/material_space</item>
+    <style name="WtmBerlin.Events.DateVenue">
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:drawableStart">@drawable/ic_location_black_24dp</item>
-        <item name="android:drawablePadding">@dimen/material_space_half</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventVenue</item>
+        <item name="android:drawablePadding">@dimen/material_space_half</item>
+        <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventDateVenue</item>
+    </style>
+
+    <style name="WtmBerlin.Events.Date" parent="WtmBerlin.Events.DateVenue">
+        <item name="android:drawableStart">@drawable/events_icon_date</item>
+    </style>
+
+    <style name="WtmBerlin.Events.Venue" parent="WtmBerlin.Events.DateVenue">
+        <item name="android:drawableStart">@drawable/events_icon_venue</item>
     </style>
 
     <style name="WtmBerlin.TextAppearance" />
@@ -61,23 +56,21 @@
     <style name="WtmBerlin.TextAppearance.ListHeader">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black_54</item>
-    </style>
-
-    <style name="WtmBerlin.TextAppearance.EventName">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/black_87</item>
-    </style>
-
-    <style name="WtmBerlin.TextAppearance.EventDate">
-        <item name="android:textSize">11sp</item>
-        <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/black_54</item>
     </style>
 
-    <style name="WtmBerlin.TextAppearance.EventVenue">
-        <item name="android:textSize">12sp</item>
+    <style name="WtmBerlin.TextAppearance.EventName">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="WtmBerlin.TextAppearance.EventDateVenue">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/black_87</item>
     </style>
 
 </resources>
