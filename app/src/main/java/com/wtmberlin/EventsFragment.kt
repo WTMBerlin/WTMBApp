@@ -106,6 +106,11 @@ data class EventItem(
     override val viewType = R.layout.events_event_item
 }
 
+object NoUpcomingEventsItem : EventsAdapterItem() {
+    override val id = 1L
+    override val viewType = R.layout.events_no_upcoming_events_item
+}
+
 class OffsetItemDecoration(val offset: Int) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
         super.getItemOffsets(outRect, view, parent, state)

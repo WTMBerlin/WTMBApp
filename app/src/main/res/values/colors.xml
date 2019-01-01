@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-
     <color name="wtmGreenDark">#00BEA4</color>
     <color name="wtmGreenLight">#1CE9B6</color>
     <color name="wtmBlueDark">#4285F4</color>

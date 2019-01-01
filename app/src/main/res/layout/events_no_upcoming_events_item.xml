@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/events_no_upcoming_events"
+        android:padding="@dimen/material_space"
+        android:gravity="center"
+        android:drawablePadding="@dimen/material_space"
+        android:textAppearance="@style/WtmBerlin.TextAppearance.NoUpcoming"
+        android:text="@string/events_no_upcoming_events_message"/>
+
+</layout>

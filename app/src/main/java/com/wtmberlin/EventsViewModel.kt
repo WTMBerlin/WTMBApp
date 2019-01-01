@@ -45,6 +45,8 @@ class EventsViewModel(private val repository: Repository): ViewModel() {
         if (upcomingEvents.isNotEmpty()) {
             adapterItems += UpcomingHeaderItem
             adapterItems += upcomingEvents.map { it.toEventItem() }
+        } else {
+            adapterItems += NoUpcomingEventsItem
         }
 
         if (pastEvents.isNotEmpty()) {
