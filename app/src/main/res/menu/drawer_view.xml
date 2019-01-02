@@ -15,5 +15,8 @@
         <item
             android:id="@+id/menu_item_wtm_events"
             android:title="@string/events" />
+        <item
+            android:id="@+id/menu_item_collaborations"
+            android:title="@string/collaboration_partners" />
     </group>
 </menu>

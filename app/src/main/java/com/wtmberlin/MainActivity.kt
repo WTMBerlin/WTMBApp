@@ -52,22 +52,13 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
             when (menuItem.itemId) {
                 R.id.menu_item_social_media -> displaySocialMedia()
                 R.id.menu_item_wtm_berlin -> displayInfo()
-                R.id.menu_item_wtm -> Toast.makeText(this, "will be implemented soon", Toast.LENGTH_LONG).show()
+                R.id.menu_item_wtm -> displayGlobalCommunityInfo()
                 R.id.menu_item_wtm_stats -> displayStats()
                 R.id.menu_item_wtm_events -> displayEvents()
+                R.id.menu_item_collaborations -> displayCollaborationPartners()
             }
             true
         }
-    }
-
-    private fun initEventsFragment() {
-        val eventsFragment: EventsFragment = EventsFragment()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, eventsFragment)
-            .addToBackStack(null)
-            .commit()
-        eventsFragment.setOnEventChosenListener(this)
     }
 
     private fun authorizeUser() {
@@ -79,12 +70,27 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
         startActivity(browserIntent)
     }
 
+    private fun initEventsFragment() {
+        val eventsFragment: EventsFragment = displayEventsFragment()
+        eventsFragment.setOnEventChosenListener(this)
+    }
+
+    private fun displayEventsFragment(): EventsFragment {
+        val eventsFragment: EventsFragment = EventsFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainer, eventsFragment)
+            .addToBackStack(null)
+            .commit()
+        return eventsFragment
+    }
+
     override fun displayEventDetails() {
         Toast.makeText(this,"Event details will be implemented soon", Toast.LENGTH_LONG).show()
     }
 
     override fun displayEvents() {
-        initEventsFragment()
+        displayEventsFragment()
     }
 
     override fun displayStats() {
@@ -107,6 +113,23 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
             .replace(R.id.fragmentContainer, socialMediaFragment)
             .addToBackStack(null)
             .commit()
+    }
+
+    private fun displayGlobalCommunityInfo() {
+        //Toast.makeText(this, "Info about Women Techmakers program will be implemented soon", Toast.LENGTH_LONG).show()
+        val openURL = Intent(android.content.Intent.ACTION_VIEW)
+        openURL.data = Uri.parse("https://womentechmakers.com")
+        startActivity(openURL)
+    }
+
+    private fun displayCollaborationPartners() {
+        val collaborationsFragment = CollaborationsFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainer, collaborationsFragment)
+            .addToBackStack(null)
+            .commit()
+        Toast.makeText(this, "Info about collaboration partners will be implemented soon", Toast.LENGTH_LONG).show()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

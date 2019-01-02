@@ -54,17 +54,18 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     }
 
     override fun onEventItemClicked(item: EventItem) {
-        Toast.makeText(activity, "Test", Toast.LENGTH_LONG).show()
+        Toast.makeText(activity, "Event clicked, display details", Toast.LENGTH_LONG).show()
         eventChosenListener.displayEventDetails()
     }
 
-    fun setOnEventChosenListener(activity: MainActivity){eventChosenListener = activity}
+    fun setOnEventChosenListener(activity: MainActivity) {
+        eventChosenListener = activity
+    }
 
-    interface OnEventChosenListener{
+    interface OnEventChosenListener {
         fun displayEventDetails()
     }
 }
-
 
 class EventsAdapter(private val callbacks: Callbacks) : ListAdapter<AdapterItem, BindingViewHolder>(DIFF_CALLBACK) {
     override fun getItemViewType(position: Int) = getItem(position).viewType
@@ -120,7 +121,12 @@ object NoUpcomingEventsItem : EventsAdapterItem() {
 }
 
 class OffsetItemDecoration(val offset: Int) : RecyclerView.ItemDecoration() {
-    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+    override fun getItemOffsets(
+        outRect: Rect,
+        view: View,
+        parent: RecyclerView,
+        state: RecyclerView.State) {
+
         super.getItemOffsets(outRect, view, parent, state)
 
         parent.adapter?.let {

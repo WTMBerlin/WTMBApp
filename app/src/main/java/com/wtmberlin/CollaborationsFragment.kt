@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-class SocialMediaFragment : Fragment() {
+class CollaborationsFragment:Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_social_media, container, false)
+        return inflater.inflate(
+            R.layout.fragment_collaborations,
+            container,
+            false)
     }
 }
