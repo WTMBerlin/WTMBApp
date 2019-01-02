@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
@@ -22,6 +23,7 @@ import org.threeten.bp.LocalDateTime
 
 class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     private val viewModel: EventsViewModel by viewModel()
+    private lateinit var eventChosenListener: OnEventChosenListener
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,7 +55,14 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     }
 
     override fun onEventItemClicked(item: EventItem) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(activity, "Test", Toast.LENGTH_LONG).show()
+        eventChosenListener.displayFragment()
+    }
+
+    fun setOnEventChosenListner(activity: MainActivity){eventChosenListener = activity}
+
+    interface OnEventChosenListener{
+        fun displayFragment()
     }
 }
 
