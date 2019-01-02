@@ -55,13 +55,13 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
 
     override fun onEventItemClicked(item: EventItem) {
         Toast.makeText(activity, "Test", Toast.LENGTH_LONG).show()
-        eventChosenListener.displaySocialMedia()
+        eventChosenListener.displayEventDetails()
     }
 
-    fun setOnEventChosenListner(activity: MainActivity){eventChosenListener = activity}
+    fun setOnEventChosenListener(activity: MainActivity){eventChosenListener = activity}
 
     interface OnEventChosenListener{
-        fun displaySocialMedia()
+        fun displayEventDetails()
     }
 }
 

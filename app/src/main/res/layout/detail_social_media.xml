@@ -1,105 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TableLayout
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+        <ImageView
+            android:id="@+id/icon_meetup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:src="@drawable/ic_meetup" />
 
-            <ImageView
-                android:id="@+id/icon_meetup"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"
-                android:src="@drawable/ic_meetup" />
+        <TextView
+            android:id="@+id/link_meetup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:autoLink="web"
+            android:clickable="true"
+            android:text="@string/link_meetup"
+            tools:ignore="HardcodedText" />
+    </TableRow>
 
-            <TextView
-                android:id="@+id/link_meetup"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".7"
-                android:autoLink="web"
-                android:clickable="true"
-                android:text="@string/link_meetup"
-                tools:ignore="HardcodedText" />
-        </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+        <ImageView
+            android:id="@+id/icon_slack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:src="@drawable/ic_slack" />
 
-            <ImageView
-                android:id="@+id/icon_slack"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"
-                android:src="@drawable/ic_slack" />
+        <TextView
+            android:id="@+id/link_slack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:autoLink="web"
+            android:clickable="true"
+            android:text="@string/link_slack"
+            tools:ignore="HardcodedText" />
+    </TableRow>
 
-            <TextView
-                android:id="@+id/link_slack"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".7"
-                android:autoLink="web"
-                android:clickable="true"
-                android:text="@string/link_slack"
-                tools:ignore="HardcodedText" />
-        </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+        <ImageView
+            android:id="@+id/icon_twitter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:src="@drawable/ic_twitter" />
 
-            <ImageView
-                android:id="@+id/icon_twitter"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"
-                android:src="@drawable/ic_twitter" />
+        <TextView
+            android:id="@+id/link_twitter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:autoLink="web"
+            android:clickable="true"
+            android:text="@string/link_twitter"
+            tools:ignore="HardcodedText" />
+    </TableRow>
 
-            <TextView
-                android:id="@+id/link_twitter"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".7"
-                android:autoLink="web"
-                android:clickable="true"
-                android:text="@string/link_twitter"
-                tools:ignore="HardcodedText" />
-        </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+        <ImageView
+            android:id="@+id/icon_facebook"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:src="@drawable/ic_facebook" />
 
-            <ImageView
-                android:id="@+id/icon_facebook"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"
-                android:src="@drawable/ic_facebook" />
-
-            <TextView
-                android:id="@+id/link_facebook"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".7"
-                android:autoLink="web"
-                android:clickable="true"
-                android:text="@string/link_facebook"
-                tools:ignore="HardcodedText" />
-        </TableRow>
-    </TableLayout>
-
-</LinearLayout>
+        <TextView
+            android:id="@+id/link_facebook"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:autoLink="web"
+            android:clickable="true"
+            android:text="@string/link_facebook"
+            tools:ignore="HardcodedText" />
+    </TableRow>
+</TableLayout>

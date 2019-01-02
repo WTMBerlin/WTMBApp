@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
         setContentView(R.layout.activity_main)
         initToolbar()
         initNavigationDrawer()
-
         initEventsFragment()
 
         if (accessToken == null) {
@@ -57,7 +56,6 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
                 R.id.menu_item_wtm_stats -> displayStats()
                 R.id.menu_item_wtm_events -> displayEvents()
             }
-
             true
         }
     }
@@ -69,7 +67,7 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
             .replace(R.id.fragmentContainer, eventsFragment)
             .addToBackStack(null)
             .commit()
-        eventsFragment.setOnEventChosenListner(this)
+        eventsFragment.setOnEventChosenListener(this)
     }
 
     private fun authorizeUser() {
@@ -82,7 +80,7 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
     }
 
     override fun displayEventDetails() {
-        Toast.makeText(this,"Eveent details will be implemented soon", Toast.LENGTH_LONG)
+        Toast.makeText(this,"Event details will be implemented soon", Toast.LENGTH_LONG).show()
     }
 
     override fun displayEvents() {
@@ -90,7 +88,7 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
     }
 
     override fun displayStats() {
-        Toast.makeText(this,"Stats will be implemented soon", Toast.LENGTH_LONG)
+        Toast.makeText(this,"Stats will be implemented soon", Toast.LENGTH_LONG).show()
     }
 
     override fun displayInfo() {

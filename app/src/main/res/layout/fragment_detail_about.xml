@@ -9,24 +9,12 @@
         android:layout_height="0dp"
         android:layout_weight=".6">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/description_community"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <include layout="@layout/detail_about_community_header"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <TextView
-                android:id="@+id/description_community"
-                android:layout_width="match_parent"
-                android:layout_weight="5"
-                android:layout_height="0dp"
-                android:padding="8dp"
-                android:text="@string/description_community" />
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:text="@string/description_community" />
     </ScrollView>
 
     <ImageView
