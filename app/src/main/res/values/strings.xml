@@ -24,4 +24,10 @@
     <string name="link_facebook">https://b-m.facebook.com/WomenTechmakersBerlinPage/</string>
     <string name="link_twitter">https://twitter.com/wtm_berlin</string>
     <string name="link_slack">https://slack.wtmberlin.com/</string>
+    <string name="title_social_media">Social Media</string>
+    <string name="title_community_local">Women Techmakers Berlin</string>
+    <string name="title_community_global">Women Techmakers</string>
+    <string name="title_nav_header">More info:</string>
+    <string name="statistics">Statistics</string>
+    <string name="events">Events</string>
 </resources>

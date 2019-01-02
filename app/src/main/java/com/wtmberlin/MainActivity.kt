@@ -3,22 +3,62 @@ package com.wtmberlin
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 import com.wtmberlin.data.accessToken
 
 class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEventChosenListener {
-    override fun displayFragment() {
-        displayLogo()
-    }
+
+    private lateinit var mDrawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initEventsFragment()
+        initToolbar()
+        initNavigationDrawer()
 
+        initEventsFragment()
 
         if (accessToken == null) {
             //authorizeUser()
+        }
+    }
+
+    private fun initToolbar() {
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        initActionBar()
+    }
+
+    private fun initActionBar() {
+        val actionbar: ActionBar? = supportActionBar
+        actionbar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_menu)
+        }
+    }
+
+    private fun initNavigationDrawer() {
+        mDrawerLayout = findViewById(R.id.drawer_layout)
+        val navigationView: NavigationView = findViewById(R.id.nav_view)
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            menuItem.isChecked = true
+            mDrawerLayout.closeDrawers()
+            when (menuItem.itemId) {
+                R.id.menu_item_social_media -> displaySocialMedia()
+                R.id.menu_item_wtm_berlin -> displayInfo()
+                R.id.menu_item_wtm -> Toast.makeText(this, "will be implemented soon", Toast.LENGTH_LONG).show()
+                R.id.menu_item_wtm_stats -> displayStats()
+                R.id.menu_item_wtm_events -> displayEvents()
+            }
+
+            true
         }
     }
 
@@ -41,30 +81,44 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
         startActivity(browserIntent)
     }
 
-    override fun displayLogo() {
+    override fun displayEventDetails() {
+        Toast.makeText(this,"Eveent details will be implemented soon", Toast.LENGTH_LONG)
+    }
 
-        val logoFragment = LogoFragment()
+    override fun displayEvents() {
+        initEventsFragment()
+    }
+
+    override fun displayStats() {
+        Toast.makeText(this,"Stats will be implemented soon", Toast.LENGTH_LONG)
+    }
+
+    override fun displayInfo() {
+        val infoFragment = CommunityInfoFragment()
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragmentContainer, logoFragment)
+            .replace(R.id.fragmentContainer, infoFragment)
             .addToBackStack(null)
             .commit()
     }
 
-    override fun displayEventDetails() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun displaySocialMedia() {
+        val socialMediaFragment = SocialMediaFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainer, socialMediaFragment)
+            .addToBackStack(null)
+            .commit()
     }
 
-    override fun displayEvents() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun displayStats() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun displayInfo() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                mDrawerLayout.openDrawer(GravityCompat.START)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
 

@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_detail_about.*
 
-class LogoFragment: Fragment(){
+class CommunityInfoFragment: Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_detail_about,container,false)
     }

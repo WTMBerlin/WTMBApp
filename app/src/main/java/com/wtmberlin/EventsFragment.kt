@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.LayoutRes
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -56,13 +55,13 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
 
     override fun onEventItemClicked(item: EventItem) {
         Toast.makeText(activity, "Test", Toast.LENGTH_LONG).show()
-        eventChosenListener.displayFragment()
+        eventChosenListener.displaySocialMedia()
     }
 
     fun setOnEventChosenListner(activity: MainActivity){eventChosenListener = activity}
 
     interface OnEventChosenListener{
-        fun displayFragment()
+        fun displaySocialMedia()
     }
 }
 
