@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
+import com.wtmberlin.data.WtmEventDAO
 import com.wtmberlin.util.exhaustive
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

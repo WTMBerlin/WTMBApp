@@ -1,12 +1,15 @@
 package com.wtmberlin.data
 
+import androidx.room.Room
 import com.squareup.moshi.Moshi
+import com.wtmberlin.App
 import com.wtmberlin.EventsViewModel
 import com.wtmberlin.MeetupAuthViewModel
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
+import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 import retrofit2.Retrofit
@@ -18,7 +21,7 @@ val remoteModule = module {
     viewModel { MeetupAuthViewModel(get()) }
 
     single {
-        Repository(get())
+        Repository(get(), get())
     }
 
     single {
@@ -57,5 +60,12 @@ val remoteModule = module {
             .add(LocalDateAdapter())
             .add(LocalTimeAdapter())
             .build()
+    }
+
+    single{
+        Room.databaseBuilder(
+            androidContext(),
+            EventDatabase::class.java, "wtm-events"
+        ).build()
     }
 }
