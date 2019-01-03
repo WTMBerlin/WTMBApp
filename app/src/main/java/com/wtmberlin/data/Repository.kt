@@ -11,21 +11,19 @@ class Repository(private val apiService: MeetupService, private val database: Ev
             .onErrorReturn { Result.error(it) }
     }
 
-    fun eventsFromNetwork():Flowable<List<WtmEvent>>{
-        return apiService.events()
+    private fun eventsFromNetwork() = apiService.events()
             .map { it.map(MeetupEvent::toWmtEvent) }
-            .doOnSuccess {
-                database.runInTransaction {
-                    database.wtmEventDAO().clear()
-                    database.wtmEventDAO().insertAll(it)
-                }
-            }
+            .doOnSuccess { saveToDatabase(it) }
             .toFlowable()
+
+    private fun saveToDatabase(events: List<WtmEvent>) {
+        database.runInTransaction {
+            database.wtmEventDAO().clear()
+            database.wtmEventDAO().insertAll(events)
+        }
     }
 
-    fun eventsFromDatabase():Flowable<List<WtmEvent>>{
-        return database.wtmEventDAO().getAll()
-    }
+    private fun eventsFromDatabase() = database.wtmEventDAO().getAll()
 
     fun group(): Flowable<Result<WtmGroup>> {
         return apiService.group()
