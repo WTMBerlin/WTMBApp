@@ -1,18 +1,37 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/collaborations_header"
-        style="@style/WtmBerlin.Events.ListHeader"
+    <data>
+
+        <import type="com.wtmberlin.util.BindingKt" />
+
+        <variable
+            name="viewModel"
+            type="com.wtmberlin.CollaborationsViewModel" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/collaboration_partners" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <include
-        layout="@layout/detail_collaborations"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/collaborations_header"
+            style="@style/WtmBerlin.Events.ListHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/collaboration_partners" />
 
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/collaborations_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/material_space_half"
+            android:paddingBottom="@dimen/material_space_half"
+            app:data="@{viewModel.adapterItems}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/collaborations_event_item" />
+    </LinearLayout>
+</layout>
