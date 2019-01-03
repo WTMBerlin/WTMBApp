@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.LayoutRes
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -22,6 +22,7 @@ import org.threeten.bp.LocalDateTime
 
 class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     private val viewModel: EventsViewModel by viewModel()
+    private lateinit var eventSelectedListener: OnEventSelectedListener
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,10 +54,18 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     }
 
     override fun onEventItemClicked(item: EventItem) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(activity, "Event clicked, display details", Toast.LENGTH_LONG).show()
+        eventSelectedListener.displayEventDetails()
+    }
+
+    fun setOnEventChosenListener(activity: MainActivity) {
+        eventSelectedListener = activity
+    }
+
+    interface OnEventSelectedListener {
+        fun displayEventDetails()
     }
 }
-
 
 class EventsAdapter(private val callbacks: Callbacks) : ListAdapter<AdapterItem, BindingViewHolder>(DIFF_CALLBACK) {
     override fun getItemViewType(position: Int) = getItem(position).viewType
@@ -112,7 +121,12 @@ object NoUpcomingEventsItem : EventsAdapterItem() {
 }
 
 class OffsetItemDecoration(val offset: Int) : RecyclerView.ItemDecoration() {
-    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+    override fun getItemOffsets(
+        outRect: Rect,
+        view: View,
+        parent: RecyclerView,
+        state: RecyclerView.State) {
+
         super.getItemOffsets(outRect, view, parent, state)
 
         parent.adapter?.let {

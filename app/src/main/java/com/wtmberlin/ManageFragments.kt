@@ -5,5 +5,6 @@ interface ManageFragments {
     fun displayEventDetails()
     fun displayEvents()
     fun displayStats()
-    fun displayInfo()
+    fun displayLocalCommunityInfo()
+    fun displaySocialMedia()
 }

@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_item_social_media"
+            android:title="@string/title_social_media" />
+        <item
+            android:id="@+id/menu_item_wtm_berlin"
+            android:title="@string/title_community_local" />
+        <item
+            android:id="@+id/menu_item_wtm"
+            android:title="@string/title_community_global" />
+        <item
+            android:id="@+id/menu_item_wtm_stats"
+            android:title="@string/statistics" />
+        <item
+            android:id="@+id/menu_item_wtm_events"
+            android:title="@string/events" />
+        <item
+            android:id="@+id/menu_item_collaborations"
+            android:title="@string/collaboration_partners" />
+    </group>
+</menu>

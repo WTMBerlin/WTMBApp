@@ -10,15 +10,25 @@
     <!-- Meetup Auth -->
     <string name="meetup_auth_message">Authorizing…</string>
 
+    <!-- Community Description -->
     <string name="description_community">Women Techmakers Berlin is part of a global Women Techmakers program run by Google.
         At Women Techmakers Berlin we are encouraging diversity in tech in Berlin since 2015. Get visibility, networking and resources to make the tech community of Berlin diverse and inclusive!
         We have different activities: intense study groups, inspirational fireside chats and international events. New
         and existing members are always welcome to all of the events, and all events are always opened for everyone,
         regardless of your gender/age/race/experience, etc. We follow the Berlin code of conduct for communities:
-        http://berlincodeofconduct.org (http://berlincodeofconduct.org/)
+        http://berlincodeofconduct.org
     </string>
+
+    <!-- Social Media Info -->
     <string name="link_meetup">https://www.meetup.com/de-DE/women-techmakers-berlin/</string>
     <string name="link_facebook">https://b-m.facebook.com/WomenTechmakersBerlinPage/</string>
     <string name="link_twitter">https://twitter.com/wtm_berlin</string>
     <string name="link_slack">https://slack.wtmberlin.com/</string>
+    <string name="title_social_media">Social Media</string>
+    <string name="title_community_local">Women Techmakers Berlin</string>
+    <string name="title_community_global">Women Techmakers</string>
+    <string name="title_nav_header">More info:</string>
+    <string name="statistics">Statistics</string>
+    <string name="events">Events</string>
+    <string name="collaboration_partners">Collaboration partners</string>
 </resources>

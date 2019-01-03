@@ -8,9 +8,13 @@ import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 import org.threeten.bp.format.FormatStyle
 
-private val mediumDateFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.SHORT)
+private val mediumDateFormatter =
+    DateTimeFormatter.ofLocalizedDateTime(
+        FormatStyle.MEDIUM,
+        FormatStyle.SHORT)
 
-fun LocalDateTime?.toMediumFormat() = this?.format(mediumDateFormatter)
+fun LocalDateTime?.toMediumFormat() =
+    this?.format(mediumDateFormatter)
 
 @BindingAdapter("data")
 fun setData(recyclerView: RecyclerView, items: List<EventsAdapterItem>?) {
