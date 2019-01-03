@@ -24,8 +24,7 @@
             android:layout_weight=".7"
             android:autoLink="web"
             android:clickable="true"
-            android:text="@string/link_meetup"
-            tools:ignore="HardcodedText" />
+            android:text="@string/link_meetup" />
     </TableRow>
 
     <TableRow
@@ -47,8 +46,7 @@
             android:layout_weight=".7"
             android:autoLink="web"
             android:clickable="true"
-            android:text="@string/link_slack"
-            tools:ignore="HardcodedText" />
+            android:text="@string/link_slack"/>
     </TableRow>
 
     <TableRow
@@ -70,8 +68,7 @@
             android:layout_weight=".7"
             android:autoLink="web"
             android:clickable="true"
-            android:text="@string/link_twitter"
-            tools:ignore="HardcodedText" />
+            android:text="@string/link_twitter"/>
     </TableRow>
 
     <TableRow
@@ -93,7 +90,6 @@
             android:layout_weight=".7"
             android:autoLink="web"
             android:clickable="true"
-            android:text="@string/link_facebook"
-            tools:ignore="HardcodedText" />
+            android:text="@string/link_facebook"/>
     </TableRow>
 </TableLayout>

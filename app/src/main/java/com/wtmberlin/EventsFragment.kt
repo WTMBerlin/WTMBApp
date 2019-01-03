@@ -22,7 +22,7 @@ import org.threeten.bp.LocalDateTime
 
 class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     private val viewModel: EventsViewModel by viewModel()
-    private lateinit var eventChosenListener: OnEventChosenListener
+    private lateinit var eventSelectedListener: OnEventSelectedListener
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,14 +55,14 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
 
     override fun onEventItemClicked(item: EventItem) {
         Toast.makeText(activity, "Event clicked, display details", Toast.LENGTH_LONG).show()
-        eventChosenListener.displayEventDetails()
+        eventSelectedListener.displayEventDetails()
     }
 
     fun setOnEventChosenListener(activity: MainActivity) {
-        eventChosenListener = activity
+        eventSelectedListener = activity
     }
 
-    interface OnEventChosenListener {
+    interface OnEventSelectedListener {
         fun displayEventDetails()
     }
 }

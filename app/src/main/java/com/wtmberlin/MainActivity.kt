@@ -9,13 +9,12 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.transaction
 import com.google.android.material.navigation.NavigationView
 import com.wtmberlin.data.accessToken
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEventChosenListener {
-
-    private lateinit var mDrawerLayout: DrawerLayout
+class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEventSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,14 +43,13 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
     }
 
     private fun initNavigationDrawer() {
-        mDrawerLayout = findViewById(R.id.drawer_layout)
         val navigationView: NavigationView = findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener { menuItem ->
             menuItem.isChecked = true
-            mDrawerLayout.closeDrawers()
+            drawer_layout.closeDrawers()
             when (menuItem.itemId) {
                 R.id.menu_item_social_media -> displaySocialMedia()
-                R.id.menu_item_wtm_berlin -> displayInfo()
+                R.id.menu_item_wtm_berlin -> displayLocalCommunityInfo()
                 R.id.menu_item_wtm -> displayGlobalCommunityInfo()
                 R.id.menu_item_wtm_stats -> displayStats()
                 R.id.menu_item_wtm_events -> displayEvents()
@@ -76,12 +74,10 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
     }
 
     private fun displayEventsFragment(): EventsFragment {
-        val eventsFragment: EventsFragment = EventsFragment()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, eventsFragment)
-            .addToBackStack(null)
-            .commit()
+        val eventsFragment = EventsFragment()
+        supportFragmentManager.transaction(allowStateLoss = false) {
+            replace(R.id.fragment_container, eventsFragment, "display all events")
+        }
         return eventsFragment
     }
 
@@ -97,45 +93,38 @@ class MainActivity : AppCompatActivity(), ManageFragments, EventsFragment.OnEven
         Toast.makeText(this,"Stats will be implemented soon", Toast.LENGTH_LONG).show()
     }
 
-    override fun displayInfo() {
+    override fun displayLocalCommunityInfo() {
         val infoFragment = CommunityInfoFragment()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, infoFragment)
-            .addToBackStack(null)
-            .commit()
+        supportFragmentManager.transaction(allowStateLoss = false) {
+            replace(R.id.fragment_container, infoFragment, "display info about wtmb")
+        }
     }
 
     override fun displaySocialMedia() {
         val socialMediaFragment = SocialMediaFragment()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, socialMediaFragment)
-            .addToBackStack(null)
-            .commit()
+        supportFragmentManager.transaction(allowStateLoss = false) {
+            replace(R.id.fragment_container, socialMediaFragment, "display social media")
+        }
     }
 
     private fun displayGlobalCommunityInfo() {
         //Toast.makeText(this, "Info about Women Techmakers program will be implemented soon", Toast.LENGTH_LONG).show()
         val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("https://womentechmakers.com")
+        openURL.data = Uri.parse("https://www.womentechmakers.com")
         startActivity(openURL)
     }
 
     private fun displayCollaborationPartners() {
         val collaborationsFragment = CollaborationsFragment()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, collaborationsFragment)
-            .addToBackStack(null)
-            .commit()
-        Toast.makeText(this, "Info about collaboration partners will be implemented soon", Toast.LENGTH_LONG).show()
+        supportFragmentManager.transaction(allowStateLoss = false) {
+            replace(R.id.fragment_container, collaborationsFragment, "display collaboration partners")
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                mDrawerLayout.openDrawer(GravityCompat.START)
+                drawer_layout.openDrawer(GravityCompat.START)
                 true
             }
             else -> super.onOptionsItemSelected(item)

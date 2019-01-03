@@ -4,16 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include
-        layout="@layout/social_media_header"
+    <TextView
+        android:id="@+id/social_media_header"
+        style="@style/WtmBerlin.Events.ListHeader"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:text="@string/title_social_media" />
 
     <include
-        layout="@layout/detail_social_media"
+        layout="@layout/detail_social_media_2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3" />
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
