@@ -15,10 +15,23 @@ import timber.log.Timber
 
 class EventsViewModel(private val repository: Repository): ViewModel() {
     val adapterItems = MutableLiveData<List<EventsAdapterItem>>()
+    val refreshing = MutableLiveData<Boolean>()
 
     private val subscriptions = CompositeDisposable()
 
     init {
+        refreshing.value = false
+
+        loadEvents()
+    }
+
+    fun refreshEvents() {
+        refreshing.value = true
+
+        loadEvents()
+    }
+
+    private fun loadEvents() {
         subscriptions.add(repository.events()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -26,6 +39,8 @@ class EventsViewModel(private val repository: Repository): ViewModel() {
     }
 
     private fun onDataLoaded(result: Result<List<WtmEvent>>) {
+        refreshing.value = false
+
         when (result) {
             is Result.Success<List<WtmEvent>> -> processEvents(result.data)
             is Result.Error<*> -> Timber.w(result.exception)

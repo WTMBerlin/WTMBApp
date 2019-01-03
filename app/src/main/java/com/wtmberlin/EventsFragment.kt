@@ -51,6 +51,13 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
 
         events_recycler.adapter = EventsAdapter(this)
         events_recycler.addItemDecoration(OffsetItemDecoration(itemOffset))
+
+        swipe_refresh.setOnRefreshListener { viewModel.refreshEvents() }
+        swipe_refresh.setColorSchemeResources(
+            R.color.wtmBlueDark,
+            R.color.wtmBlueLight,
+            R.color.wtmGreenLight,
+            R.color.wtmGreenLight)
     }
 
     override fun onEventItemClicked(item: EventItem) {
