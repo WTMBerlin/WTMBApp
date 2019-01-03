@@ -5,6 +5,7 @@ import org.threeten.bp.LocalDate
 import org.threeten.bp.LocalTime
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 var accessToken: String? = null
@@ -12,6 +13,10 @@ var accessToken: String? = null
 interface MeetupService {
     @GET("Women-Techmakers-Berlin/events?status=cancelled,past,upcoming&desc=true&only=id,name,local_date,local_time,venue.name")
     fun events(): Single<List<MeetupEvent>>
+
+    @GET("Women-Techmakers-Berlin/events/{eventId}")
+    fun event(@Path("eventId") eventId: String): Single<MeetupEvent>
+
     @GET("Women-Techmakers-Berlin?only=past_event_count,members")
     fun group():Single<MeetupGroup>
 }

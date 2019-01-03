@@ -25,6 +25,14 @@ class Repository(private val apiService: MeetupService, private val database: Ev
 
     private fun eventsFromDatabase() = database.wtmEventDAO().getAll()
 
+    fun event(eventId: String): Flowable<Result<WtmEvent>> {
+        return apiService.event(eventId)
+            .map { it.toWmtEvent() }
+            .map { Result.success(it) }
+            .onErrorReturn { Result.error(it) }
+            .toFlowable()
+    }
+
     fun group(): Flowable<Result<WtmGroup>> {
         return apiService.group()
             .map { it.toWmtGroup() }
