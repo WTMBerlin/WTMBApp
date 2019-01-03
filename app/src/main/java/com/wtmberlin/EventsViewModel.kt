@@ -6,6 +6,7 @@ import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.data.WtmEventDAO
+import com.wtmberlin.util.Event
 import com.wtmberlin.util.exhaustive
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -16,6 +17,7 @@ import timber.log.Timber
 class EventsViewModel(private val repository: Repository): ViewModel() {
     val adapterItems = MutableLiveData<List<EventsAdapterItem>>()
     val refreshing = MutableLiveData<Boolean>()
+    val displayEventDetails = MutableLiveData<DisplayEventDetailsEvent>()
 
     private val subscriptions = CompositeDisposable()
 
@@ -29,6 +31,10 @@ class EventsViewModel(private val repository: Repository): ViewModel() {
         refreshing.value = true
 
         loadEvents()
+    }
+
+    fun onEventItemClicked(item: EventItem) {
+        displayEventDetails.value = DisplayEventDetailsEvent(item.id)
     }
 
     private fun loadEvents() {
@@ -85,3 +91,5 @@ class EventsViewModel(private val repository: Repository): ViewModel() {
         subscriptions.clear()
     }
 }
+
+data class DisplayEventDetailsEvent(val eventId: String): Event()

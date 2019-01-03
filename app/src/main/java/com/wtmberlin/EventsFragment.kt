@@ -5,24 +5,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.wtmberlin.databinding.EventsScreenBinding
 import com.wtmberlin.util.AdapterItem
 import com.wtmberlin.util.BindingViewHolder
 import com.wtmberlin.util.DIFF_CALLBACK
+import com.wtmberlin.util.observeNotHandled
 import kotlinx.android.synthetic.main.events_screen.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.threeten.bp.LocalDateTime
 
 class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     private val viewModel: EventsViewModel by viewModel()
-    private lateinit var eventSelectedListener: OnEventSelectedListener
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -57,15 +57,16 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
             R.color.wtmBlueLight,
             R.color.wtmGreenLight,
             R.color.wtmGreenLight)
+
+        viewModel.displayEventDetails.observeNotHandled(this) { startEventDetailsScreen(it.eventId) }
     }
 
     override fun onEventItemClicked(item: EventItem) {
-        Toast.makeText(activity, "Event clicked, display details", Toast.LENGTH_LONG).show()
-        eventSelectedListener.displayEventDetails()
+        viewModel.onEventItemClicked(item)
     }
 
-    interface OnEventSelectedListener {
-        fun displayEventDetails()
+    private fun startEventDetailsScreen(eventId: String) {
+        findNavController().navigate(EventsFragmentDirections.startEventDetailsScreen(eventId))
     }
 }
 

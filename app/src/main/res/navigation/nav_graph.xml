@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/events_screen">
 
     <fragment
         android:id="@+id/events_screen"
         android:name="com.wtmberlin.EventsFragment"
         android:label="Blank"
-        tools:layout="@layout/events_screen" />
+        tools:layout="@layout/events_screen">
+        <action
+            android:id="@+id/start_event_details_screen"
+            app:destination="@+id/event_details_screen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/event_details_screen"
+        android:name="com.wtmberlin.EventDetailsFragment"
+        android:label="Blank"
+        tools:layout="@layout/event_details_screen">
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/social_media_screen"
