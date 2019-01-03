@@ -11,9 +11,18 @@ class Repository(private val apiService: MeetupService, private val database: Ev
             .onErrorReturn { Result.error(it) }
     }
 
-    fun eventsFromNetwork():Flowable<List<WtmEvent>>{
+    fun venues(): Flowable<Result<List<Venue>>> {
         return apiService.events()
-            .map { it.map(MeetupEvent::toWmtEvent) }
+            .map {
+                it.map(MeetupEvent::toWtmVenue)
+            }.map { Result.success(it) }
+            .onErrorReturn { Result.error(it) }.toFlowable()
+    }
+
+
+    fun eventsFromNetwork(): Flowable<List<WtmEvent>> {
+        return apiService.events()
+            .map { it.map(MeetupEvent::toWtmEvent) }
             .doOnSuccess {
                 database.runInTransaction {
                     database.wtmEventDAO().clear()
@@ -23,13 +32,13 @@ class Repository(private val apiService: MeetupService, private val database: Ev
             .toFlowable()
     }
 
-    fun eventsFromDatabase():Flowable<List<WtmEvent>>{
+    fun eventsFromDatabase(): Flowable<List<WtmEvent>> {
         return database.wtmEventDAO().getAll()
     }
 
     fun group(): Flowable<Result<WtmGroup>> {
         return apiService.group()
-            .map { it.toWmtGroup() }
+            .map { it.toWtmGroup() }
             .map { Result.success(it) }
             .onErrorReturn { Result.error(it) }
             .toFlowable()
@@ -38,17 +47,19 @@ class Repository(private val apiService: MeetupService, private val database: Ev
 
 data class WtmGroup(
     val pastEventCount: Int,
-    val members: Int)
+    val members: Int
+)
 
 @Entity
 data class WtmEvent(
     @PrimaryKey val id: String,
     @ColumnInfo(name = "username") val name: String,
     @ColumnInfo(name = "date") val localDateTime: LocalDateTime,
-    @ColumnInfo(name = "venue") val venueName: String?)
+    @ColumnInfo(name = "venue") val venueName: String?
+)
 
 @Dao
-interface WtmEventDAO{
+interface WtmEventDAO {
     @Query("SELECT * FROM WtmEvent")
     fun getAll(): Flowable<List<WtmEvent>>
 
@@ -62,15 +73,21 @@ interface WtmEventDAO{
     fun insertAll(wtmEvents: List<WtmEvent>)
 }
 
-private fun MeetupEvent.toWmtEvent() = WtmEvent(
+private fun MeetupEvent.toWtmEvent() = WtmEvent(
     id = id,
     name = name,
     localDateTime = LocalDateTime.of(local_date, local_time),
-    venueName = venue?.name)
+    venueName = venue?.name
+)
 
-private fun MeetupGroup.toWmtGroup() = WtmGroup(
+private fun MeetupGroup.toWtmGroup() = WtmGroup(
     pastEventCount = past_event_count,
-    members = members)
+    members = members
+)
 
+private fun MeetupEvent.toWtmVenue() = Venue(
+    id = id,
+    name = name
+)
 
-
+data class Venue(val id: String, val name: String = "Default Company")

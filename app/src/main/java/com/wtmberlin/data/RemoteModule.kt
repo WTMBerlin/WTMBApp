@@ -3,6 +3,7 @@ package com.wtmberlin.data
 import androidx.room.Room
 import com.squareup.moshi.Moshi
 import com.wtmberlin.App
+import com.wtmberlin.CollaborationsViewModel
 import com.wtmberlin.EventsViewModel
 import com.wtmberlin.MeetupAuthViewModel
 
@@ -19,6 +20,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 val remoteModule = module {
     viewModel { EventsViewModel(get()) }
     viewModel { MeetupAuthViewModel(get()) }
+    viewModel { CollaborationsViewModel(get()) }
 
     single {
         Repository(get(), get())

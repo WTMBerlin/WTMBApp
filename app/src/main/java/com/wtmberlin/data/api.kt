@@ -40,6 +40,7 @@ data class MeetupEvent(
 )
 
 data class MeetupVenue(
+    val id: String,
     val name: String)
 
 data class TokenResponse(

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="com.wtmberlin.util.BindingKt" />
+
+        <variable
+            name="item"
+            type="com.wtmberlin.CollaborationsAdapterItem" />
+    </data>
+
+    <TextView
+        android:id="@+id/collaboration_partner"
+        style="@style/WtmBerlin.Events.Venue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{item.venueName}"
+        tools:text="Dalia Research GmbH"/>
+
+</layout>

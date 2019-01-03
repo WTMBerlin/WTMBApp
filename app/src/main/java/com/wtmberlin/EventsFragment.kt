@@ -27,8 +27,7 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         val binding =
             DataBindingUtil
                 .inflate<EventsScreenBinding>(
@@ -63,10 +62,6 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     override fun onEventItemClicked(item: EventItem) {
         Toast.makeText(activity, "Event clicked, display details", Toast.LENGTH_LONG).show()
         eventSelectedListener.displayEventDetails()
-    }
-
-    fun setOnEventChosenListener(activity: MainActivity) {
-        eventSelectedListener = activity
     }
 
     interface OnEventSelectedListener {
