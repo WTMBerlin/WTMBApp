@@ -48,6 +48,10 @@ dependencies {
     // Moshi
     implementation "com.squareup.moshi:moshi:1.8.0"
 
+    // Navigation
+    implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha09"
+    implementation "android.arch.navigation:navigation-ui-ktx:1.0.0-alpha09"
+
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:2.5.0"
     implementation "com.squareup.retrofit2:adapter-rxjava2:2.5.0"
