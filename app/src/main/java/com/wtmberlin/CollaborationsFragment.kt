@@ -43,8 +43,6 @@ class CollaborationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val itemOffset = resources.getDimensionPixelOffset(R.dimen.material_space_half)
-
         collaborations_recycler.adapter = CollaborationsAdapter()
     }
 }
@@ -76,5 +74,5 @@ class CollaborationsAdapterItem(
     override val id: String,
     val venueName: String
 ) : AdapterItem {
-    override val viewType = R.layout.fragment_collaborations
+    override val viewType = R.layout.collaborations_event_item
 }
