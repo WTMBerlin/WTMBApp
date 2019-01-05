@@ -24,29 +24,27 @@ class EventsViewModel(private val repository: Repository): ViewModel() {
     init {
         refreshing.value = false
 
-        loadEvents()
-    }
-
-    fun refreshEvents() {
-        refreshing.value = true
-
-        loadEvents()
-    }
-
-    fun onEventItemClicked(item: EventItem) {
-        displayEventDetails.value = DisplayEventDetailsEvent(item.id)
-    }
-
-    private fun loadEvents() {
         subscriptions.add(repository.events()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(this::onDataLoaded))
     }
 
-    private fun onDataLoaded(result: Result<List<WtmEvent>>) {
-        refreshing.value = false
+    fun refreshEvents() {
+        refreshing.value = true
 
+        subscriptions.add(repository.refreshEvents()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnComplete { refreshing.value = false }
+            .subscribe())
+    }
+
+    fun onEventItemClicked(item: EventItem) {
+        displayEventDetails.value = DisplayEventDetailsEvent(item.id)
+    }
+
+    private fun onDataLoaded(result: Result<List<WtmEvent>>) {
         when (result) {
             is Result.Success<List<WtmEvent>> -> processEvents(result.data)
             is Result.Error<*> -> Timber.w(result.exception)

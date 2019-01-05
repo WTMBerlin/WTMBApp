@@ -1,14 +1,23 @@
 package com.wtmberlin.data
 
 import androidx.room.*
+import io.reactivex.Completable
 import io.reactivex.Flowable
 import org.threeten.bp.LocalDateTime
 
 class Repository(private val apiService: MeetupService, private val database: EventDatabase) {
     fun events(): Flowable<Result<List<WtmEvent>>> {
-        return Flowable.merge(eventsFromDatabase(), eventsFromNetwork())
+        return eventsFromDatabase()
+            .mergeWith(refreshEvents())
             .map { Result.success(it) }
             .onErrorReturn { Result.error(it) }
+    }
+
+    fun refreshEvents(): Completable {
+        return apiService.events()
+            .map { it.map(MeetupEvent::toWtmEvent) }
+            .doOnSuccess { saveToDatabase(it) }
+            .ignoreElement()
     }
 
     fun venues(): Flowable<Result<List<Venue>>> {
@@ -17,11 +26,6 @@ class Repository(private val apiService: MeetupService, private val database: Ev
             .map { Result.success(it) }
             .onErrorReturn { Result.error(it) }.toFlowable()
     }
-
-    private fun eventsFromNetwork() = apiService.events()
-            .map { it.map(MeetupEvent::toWtmEvent) }
-            .doOnSuccess { saveToDatabase(it) }
-            .toFlowable()
 
     private fun saveToDatabase(events: List<WtmEvent>) {
         database.runInTransaction {
