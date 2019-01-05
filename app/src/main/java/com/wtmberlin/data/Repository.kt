@@ -1,40 +1,17 @@
 package com.wtmberlin.data
 
 import androidx.room.*
-import io.reactivex.Completable
 import io.reactivex.Flowable
+import io.reactivex.Single
 import org.threeten.bp.LocalDateTime
 
 class Repository(private val apiService: MeetupService, private val database: EventDatabase) {
-    fun events(): Flowable<Result<List<WtmEvent>>> {
-        return eventsFromDatabase()
-            .mergeWith(refreshEvents())
-            .map { Result.success(it) }
-            .onErrorReturn { Result.error(it) }
-    }
-
-    fun refreshEvents(): Completable {
-        return apiService.events()
-            .map { it.map(MeetupEvent::toWtmEvent) }
-            .doOnSuccess { saveToDatabase(it) }
-            .ignoreElement()
-    }
-
     fun venues(): Flowable<Result<List<Venue>>> {
         return apiService.events()
             .map { it.map(MeetupEvent::toWtmVenue) }
             .map { Result.success(it) }
             .onErrorReturn { Result.error(it) }.toFlowable()
     }
-
-    private fun saveToDatabase(events: List<WtmEvent>) {
-        database.runInTransaction {
-            database.wtmEventDAO().clear()
-            database.wtmEventDAO().insertAll(events)
-        }
-    }
-
-    private fun eventsFromDatabase() = database.wtmEventDAO().getAll()
 
     fun event(eventId: String): Flowable<Result<WtmEvent>> {
         return apiService.event(eventId)
@@ -50,6 +27,31 @@ class Repository(private val apiService: MeetupService, private val database: Ev
             .map { Result.success(it) }
             .onErrorReturn { Result.error(it) }
             .toFlowable()
+    }
+
+    fun events(): Flowable<BetterResult<List<WtmEvent>>> {
+        return eventsResource.values()
+    }
+
+    fun refreshEvents() {
+        eventsResource.refresh()
+    }
+
+    private val eventsResource = object : NetworkBoundResource<List<WtmEvent>>() {
+        override fun loadFromNetwork(): Single<List<WtmEvent>> {
+            return apiService.events().map { it.map(MeetupEvent::toWtmEvent) }
+        }
+
+        override fun loadFromDatabase(): Flowable<List<WtmEvent>> {
+            return database.wtmEventDAO().getAll()
+        }
+
+        override fun saveToDatabase(items: List<WtmEvent>) {
+            database.runInTransaction {
+                database.wtmEventDAO().clear()
+                database.wtmEventDAO().insertAll(items)
+            }
+        }
     }
 }
 

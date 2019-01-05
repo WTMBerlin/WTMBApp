@@ -2,12 +2,10 @@ package com.wtmberlin
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.wtmberlin.data.BetterResult
 import com.wtmberlin.data.Repository
-import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
-import com.wtmberlin.data.WtmEventDAO
 import com.wtmberlin.util.Event
-import com.wtmberlin.util.exhaustive
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -22,8 +20,6 @@ class EventsViewModel(private val repository: Repository): ViewModel() {
     private val subscriptions = CompositeDisposable()
 
     init {
-        refreshing.value = false
-
         subscriptions.add(repository.events()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -31,24 +27,17 @@ class EventsViewModel(private val repository: Repository): ViewModel() {
     }
 
     fun refreshEvents() {
-        refreshing.value = true
-
-        subscriptions.add(repository.refreshEvents()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .doOnComplete { refreshing.value = false }
-            .subscribe())
+        repository.refreshEvents()
     }
 
     fun onEventItemClicked(item: EventItem) {
         displayEventDetails.value = DisplayEventDetailsEvent(item.id)
     }
 
-    private fun onDataLoaded(result: Result<List<WtmEvent>>) {
-        when (result) {
-            is Result.Success<List<WtmEvent>> -> processEvents(result.data)
-            is Result.Error<*> -> Timber.w(result.exception)
-        }.exhaustive
+    private fun onDataLoaded(result: BetterResult<List<WtmEvent>>) {
+        refreshing.value = result.loading
+        result.data?.let { processEvents(it) }
+        result.error?.let { Timber.i(it) }
     }
 
     private fun processEvents(events: List<WtmEvent>) {
