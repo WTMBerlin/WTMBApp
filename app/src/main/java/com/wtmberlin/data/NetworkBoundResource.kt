@@ -47,7 +47,7 @@ abstract class NetworkBoundResource<T> {
 
     protected abstract fun loadFromDatabase(): Flowable<T>
 
-    protected abstract fun saveToDatabase(items: T)
+    protected abstract fun saveToDatabase(value: T)
 
     private fun doRefresh(): Completable {
         return loadFromNetwork()

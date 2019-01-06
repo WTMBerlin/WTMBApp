@@ -4,20 +4,30 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
+import org.threeten.bp.Duration
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 
-@TypeConverters(LocalDateTimeConverter::class)
-@Database(entities = [WtmEvent::class], version = 1)
+@TypeConverters(LocalDateTimeConverter::class, DurationConverter::class)
+@Database(entities = [WtmEvent::class, DetailedWtmEvent::class], version = 2)
 abstract class EventDatabase : RoomDatabase() {
     abstract fun wtmEventDAO(): WtmEventDAO
+
+    abstract fun detailedWtmEventDao(): DetailedWtmEventDAO
 }
 
 class LocalDateTimeConverter {
     @TypeConverter
-    fun saveLocalDateTime(date: LocalDateTime) = date.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-
+    fun save(date: LocalDateTime) = date.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
 
     @TypeConverter
-    fun loadLocalDateTime(date: String) = LocalDateTime.parse(date, DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+    fun load(date: String) = LocalDateTime.parse(date, DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+}
+
+class DurationConverter {
+    @TypeConverter
+    fun save(duration: Duration) = duration.toMillis()
+
+    @TypeConverter
+    fun load(duration: Long) = Duration.ofMillis(duration)
 }

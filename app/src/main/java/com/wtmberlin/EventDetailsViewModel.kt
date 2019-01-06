@@ -2,9 +2,11 @@ package com.wtmberlin
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.wtmberlin.data.*
+import com.wtmberlin.data.BetterResult
+import com.wtmberlin.data.Coordinates
+import com.wtmberlin.data.DetailedWtmEvent
+import com.wtmberlin.data.Repository
 import com.wtmberlin.util.Event
-import com.wtmberlin.util.exhaustive
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -25,11 +27,9 @@ class EventDetailsViewModel(private val eventId: String, private val repository:
             .subscribe(this::onDataLoaded))
     }
 
-    private fun onDataLoaded(result: Result<DetailedWtmEvent>) {
-        when (result) {
-            is Result.Success<DetailedWtmEvent> -> event.value = result.data
-            is Result.Error<*> -> Timber.w(result.exception)
-        }.exhaustive
+    private fun onDataLoaded(result: BetterResult<DetailedWtmEvent>) {
+        result.data?.let { event.value = it }
+        result.error?.let { Timber.i(it) }
     }
 
     fun onDateTimeClicked() {

@@ -71,6 +71,8 @@ val remoteModule = module {
         Room.databaseBuilder(
             androidContext(),
             EventDatabase::class.java, "wtm-events"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 }
