@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.wtmberlin.util.observeNotHandled
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class MeetupAuthActivity: AppCompatActivity() {
+class MeetupAuthActivity : AppCompatActivity() {
     private val viewModel: MeetupAuthViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {

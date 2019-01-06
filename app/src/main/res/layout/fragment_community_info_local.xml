@@ -15,17 +15,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/description_community"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:padding="16dp"
-                android:text="@string/description_community" />
+        <TextView
+            android:id="@+id/description_community"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/description_community"
+            android:textSize="16sp" />
     </ScrollView>
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 </LinearLayout>

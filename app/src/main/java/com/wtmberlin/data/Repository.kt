@@ -11,7 +11,8 @@ class Repository(private val apiService: MeetupService, private val database: Ev
         return apiService.events()
             .map { it.map(MeetupEvent::toWtmVenue) }
             .map { Result.success(it) }
-            .onErrorReturn { Result.error(it) }.toFlowable()
+            .onErrorReturn { Result.error(it) }
+            .toFlowable()
     }
 
     fun event(eventId: String): Flowable<Result<DetailedWtmEvent>> {
@@ -134,4 +135,5 @@ data class Venue(val id: String, val name: String = "Default Company")
 
 data class Coordinates(
     @ColumnInfo(name = "latitude") val latitude: String,
-    @ColumnInfo(name = "longitude") val longitude: String)
+    @ColumnInfo(name = "longitude") val longitude: String
+)

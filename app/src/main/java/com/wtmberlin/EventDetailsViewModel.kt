@@ -2,7 +2,10 @@ package com.wtmberlin
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.wtmberlin.data.*
+import com.wtmberlin.data.Coordinates
+import com.wtmberlin.data.DetailedWtmEvent
+import com.wtmberlin.data.Repository
+import com.wtmberlin.data.Result
 import com.wtmberlin.util.Event
 import com.wtmberlin.util.exhaustive
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -10,7 +13,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 
-class EventDetailsViewModel(private val eventId: String, private val repository: Repository): ViewModel() {
+class EventDetailsViewModel(private val eventId: String, private val repository: Repository) : ViewModel() {
     val event = MutableLiveData<DetailedWtmEvent>()
 
     val addToCalendar = MutableLiveData<AddToCalendarEvent>()
@@ -19,10 +22,12 @@ class EventDetailsViewModel(private val eventId: String, private val repository:
     private val subscriptions = CompositeDisposable()
 
     init {
-        subscriptions.add(repository.event(eventId)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(this::onDataLoaded))
+        subscriptions.add(
+            repository.event(eventId)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(this::onDataLoaded)
+        )
     }
 
     private fun onDataLoaded(result: Result<DetailedWtmEvent>) {
@@ -53,18 +58,20 @@ class EventDetailsViewModel(private val eventId: String, private val repository:
     }
 }
 
-data class OpenMapsEvent(val venueName: String, val coordinates: Coordinates): Event()
+data class OpenMapsEvent(val venueName: String, val coordinates: Coordinates) : Event()
 
-data class AddToCalendarEvent(val calendarEvent: CalendarEvent): Event()
+data class AddToCalendarEvent(val calendarEvent: CalendarEvent) : Event()
 
 data class CalendarEvent(
     val beginTime: Long,
     val endTime: Long,
     val title: String,
-    val location: String?)
+    val location: String?
+)
 
 private fun DetailedWtmEvent.toCalendarEvent() = CalendarEvent(
     beginTime = timeStart,
     endTime = timeStart + duration.toMillis(),
     title = name,
-    location = venueName)
+    location = venueName
+)

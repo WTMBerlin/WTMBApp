@@ -38,7 +38,7 @@ fun fromTimeToTime(start: LocalDateTime?, end: LocalDateTime?): String? {
 fun setData(recyclerView: RecyclerView, items: List<AdapterItem>?) {
     if (recyclerView.adapter is EventsAdapter && items != null) {
         (recyclerView.adapter as EventsAdapter).submitList(items)
-    }else if (recyclerView.adapter is CollaborationsAdapter && items != null){
+    } else if (recyclerView.adapter is CollaborationsAdapter && items != null) {
         (recyclerView.adapter as CollaborationsAdapter).submitList(items)
     }
 }

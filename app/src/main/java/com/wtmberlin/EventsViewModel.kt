@@ -12,7 +12,7 @@ import io.reactivex.schedulers.Schedulers
 import org.threeten.bp.LocalDateTime
 import timber.log.Timber
 
-class EventsViewModel(private val repository: Repository): ViewModel() {
+class EventsViewModel(private val repository: Repository) : ViewModel() {
     val adapterItems = MutableLiveData<List<EventsAdapterItem>>()
     val refreshing = MutableLiveData<Boolean>()
     val displayEventDetails = MutableLiveData<DisplayEventDetailsEvent>()
@@ -20,10 +20,12 @@ class EventsViewModel(private val repository: Repository): ViewModel() {
     private val subscriptions = CompositeDisposable()
 
     init {
-        subscriptions.add(repository.events()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(this::onDataLoaded))
+        subscriptions.add(
+            repository.events()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(this::onDataLoaded)
+        )
     }
 
     fun refreshEvents() {
@@ -70,7 +72,8 @@ class EventsViewModel(private val repository: Repository): ViewModel() {
         id = id,
         name = name,
         localDateTime = localDateTime,
-        venueName = venueName)
+        venueName = venueName
+    )
 
     override fun onCleared() {
         super.onCleared()
@@ -79,4 +82,4 @@ class EventsViewModel(private val repository: Repository): ViewModel() {
     }
 }
 
-data class DisplayEventDetailsEvent(val eventId: String): Event()
+data class DisplayEventDetailsEvent(val eventId: String) : Event()

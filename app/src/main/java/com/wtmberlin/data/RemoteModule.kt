@@ -2,12 +2,10 @@ package com.wtmberlin.data
 
 import androidx.room.Room
 import com.squareup.moshi.Moshi
-import com.wtmberlin.App
 import com.wtmberlin.CollaborationsViewModel
 import com.wtmberlin.EventDetailsViewModel
 import com.wtmberlin.EventsViewModel
 import com.wtmberlin.MeetupAuthViewModel
-
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
@@ -67,7 +65,7 @@ val remoteModule = module {
             .build()
     }
 
-    single{
+    single {
         Room.databaseBuilder(
             androidContext(),
             EventDatabase::class.java, "wtm-events"

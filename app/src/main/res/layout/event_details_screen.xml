@@ -150,8 +150,8 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginTop="@dimen/material_space_half"
                         android:layout_marginStart="@dimen/material_space_half"
+                        android:layout_marginTop="@dimen/material_space_half"
                         android:layout_marginEnd="@dimen/material_space_half"
                         android:background="@color/wtmGreyDark" />
 

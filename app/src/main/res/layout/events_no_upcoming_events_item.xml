@@ -5,10 +5,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableTop="@drawable/events_no_upcoming_events"
-        android:padding="@dimen/material_space"
-        android:gravity="center"
         android:drawablePadding="@dimen/material_space"
-        android:textAppearance="@style/WtmBerlin.TextAppearance.NoUpcoming"
-        android:text="@string/events_no_upcoming_events_message"/>
+        android:gravity="center"
+        android:padding="@dimen/material_space"
+        android:text="@string/events_no_upcoming_events_message"
+        android:textAppearance="@style/WtmBerlin.TextAppearance.NoUpcoming" />
 
 </layout>

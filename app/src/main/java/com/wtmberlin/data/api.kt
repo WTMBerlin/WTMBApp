@@ -19,12 +19,13 @@ interface MeetupService {
     fun event(@Path("eventId") eventId: String): Single<MeetupDetailedEvent>
 
     @GET("Women-Techmakers-Berlin?only=past_event_count,members")
-    fun group():Single<MeetupGroup>
+    fun group(): Single<MeetupGroup>
 }
 
 data class MeetupGroup(
     val past_event_count: Int,
-    val members: Int)
+    val members: Int
+)
 
 interface SecureMeetupService {
     @POST("oauth2/access")
@@ -34,7 +35,8 @@ interface SecureMeetupService {
         @Query("client_secret") clientSecret: String = "u4668dtod20bpujdvmfqqd63sm",
         @Query("grant_type") grantType: String = "authorization_code",
         @Query("response_type") responseType: String = "token",
-        @Query("redirect_uri") redirectUrl: String = "http://wtmberlin.com/android-app"): Single<TokenResponse>
+        @Query("redirect_uri") redirectUrl: String = "http://wtmberlin.com/android-app"
+    ): Single<TokenResponse>
 }
 
 data class MeetupEvent(
@@ -42,7 +44,8 @@ data class MeetupEvent(
     val name: String,
     val local_date: LocalDate,
     val local_time: LocalTime,
-    val venue: MeetupVenue?)
+    val venue: MeetupVenue?
+)
 
 data class MeetupDetailedEvent(
     val id: String,
@@ -53,11 +56,13 @@ data class MeetupDetailedEvent(
     val local_date: LocalDate,
     val local_time: LocalTime,
     val duration: Duration,
-    val venue: MeetupDetailedVenue?)
+    val venue: MeetupDetailedVenue?
+)
 
 data class MeetupVenue(
     val id: String,
-    val name: String)
+    val name: String
+)
 
 data class MeetupDetailedVenue(
     val id: String,
@@ -67,10 +72,13 @@ data class MeetupDetailedVenue(
     val address_3: String,
     val city: String,
     val lat: String,
-    val lon: String)
+    val lon: String
+)
 
 data class MeetupPhoto(
-    val photo_link: String)
+    val photo_link: String
+)
 
 data class TokenResponse(
-    val access_token: String)
+    val access_token: String
+)

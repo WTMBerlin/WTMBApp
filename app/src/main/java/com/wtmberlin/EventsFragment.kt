@@ -27,7 +27,8 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?
+    ): View? {
         val binding =
             DataBindingUtil
                 .inflate<EventsScreenBinding>(
@@ -56,7 +57,8 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
             R.color.wtmBlueDark,
             R.color.wtmBlueLight,
             R.color.wtmGreenLight,
-            R.color.wtmGreenLight)
+            R.color.wtmGreenLight
+        )
 
         viewModel.displayEventDetails.observeNotHandled(this) { startEventDetailsScreen(it.eventId) }
     }
@@ -128,7 +130,8 @@ class OffsetItemDecoration(val offset: Int) : RecyclerView.ItemDecoration() {
         outRect: Rect,
         view: View,
         parent: RecyclerView,
-        state: RecyclerView.State) {
+        state: RecyclerView.State
+    ) {
 
         super.getItemOffsets(outRect, view, parent, state)
 

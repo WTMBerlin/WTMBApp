@@ -49,7 +49,10 @@ class CollaborationsFragment : Fragment() {
 
 class CollaborationsAdapter : ListAdapter<AdapterItem, BindingViewHolder>(DIFF_CALLBACK) {
     override fun getItemViewType(position: Int) = getItem(position).viewType
-    override fun onCreateViewHolder(parent: ViewGroup, @LayoutRes viewType: Int): BindingViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        @LayoutRes viewType: Int
+    ): BindingViewHolder {
         val inflater = LayoutInflater.from(parent.context)
 
         val binding =
@@ -70,9 +73,6 @@ class CollaborationsAdapter : ListAdapter<AdapterItem, BindingViewHolder>(DIFF_C
 }
 
 
-class CollaborationsAdapterItem(
-    override val id: String,
-    val venueName: String
-) : AdapterItem {
+class CollaborationsAdapterItem(override val id: String, val venueName: String) : AdapterItem {
     override val viewType = R.layout.collaborations_event_item
 }

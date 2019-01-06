@@ -10,16 +10,18 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class MeetupAuthViewModel(private val securedMeetupService: SecureMeetupService): ViewModel() {
+class MeetupAuthViewModel(private val securedMeetupService: SecureMeetupService) : ViewModel() {
     val navigateToMainScreen = MutableLiveData<Event>()
-
     private val subscriptions = CompositeDisposable()
 
     fun processAuthResult(result: MeetupAuthResult) {
-        subscriptions.add(securedMeetupService.authorize(code = result.code)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(this::onAuthorized))
+        subscriptions
+            .add(
+                securedMeetupService.authorize(code = result.code)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(this::onAuthorized)
+            )
     }
 
     private fun onAuthorized(tokenResponse: TokenResponse) {
