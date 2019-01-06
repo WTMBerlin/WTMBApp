@@ -10,28 +10,19 @@ class Repository(private val apiService: MeetupService, private val database: Ev
     fun venues(): Flowable<Result<List<Venue>>> {
         return apiService.events()
             .map { it.map(MeetupEvent::toWtmVenue) }
-            .map { Result.success(it) }
-            .onErrorReturn { Result.error(it) }
-            .toFlowable()
-    }
-
-    fun event(eventId: String): Flowable<Result<DetailedWtmEvent>> {
-        return apiService.event(eventId)
-            .map { it.toDetailedWtmEvent() }
-            .map { Result.success(it) }
-            .onErrorReturn { Result.error(it) }
-            .toFlowable()
+            .map { Result(loading = false, data = it, error = null) }
+            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
     }
 
     fun group(): Flowable<Result<WtmGroup>> {
         return apiService.group()
             .map { it.toWtmGroup() }
-            .map { Result.success(it) }
-            .onErrorReturn { Result.error(it) }
+            .map { Result(loading = false, data = it, error = null) }
+            .onErrorReturn { Result(loading = false, data = null, error = it) }
             .toFlowable()
     }
 
-    fun events(): Flowable<BetterResult<List<WtmEvent>>> {
+    fun events(): Flowable<Result<List<WtmEvent>>> {
         return eventsResource.values()
     }
 
@@ -48,11 +39,27 @@ class Repository(private val apiService: MeetupService, private val database: Ev
             return database.wtmEventDAO().getAll()
         }
 
-        override fun saveToDatabase(items: List<WtmEvent>) {
+        override fun saveToDatabase(value: List<WtmEvent>) {
             database.runInTransaction {
                 database.wtmEventDAO().clear()
-                database.wtmEventDAO().insertAll(items)
+                database.wtmEventDAO().insertAll(value)
             }
+        }
+    }
+
+    fun event(eventId: String): Flowable<Result<DetailedWtmEvent>> = DetailedEventResource(eventId).values()
+
+    inner class DetailedEventResource(private val eventId: String): NetworkBoundResource<DetailedWtmEvent>() {
+        override fun loadFromNetwork(): Single<DetailedWtmEvent> {
+            return apiService.event(eventId).map { it.toDetailedWtmEvent() }
+        }
+
+        override fun loadFromDatabase(): Flowable<DetailedWtmEvent> {
+            return database.detailedWtmEventDao().getById(eventId)
+        }
+
+        override fun saveToDatabase(value: DetailedWtmEvent) {
+            database.detailedWtmEventDao().insert(value)
         }
     }
 }
@@ -79,10 +86,11 @@ data class DetailedWtmEvent(
     @ColumnInfo(name = "duration") val duration: Duration,
     @ColumnInfo(name = "venue_name") val venueName: String?,
     @ColumnInfo(name = "venue_address") val venueAddress: String?,
-    @Embedded(prefix = "venue_coordinates") val venueCoordinates: Coordinates?,
+    @Embedded(prefix = "venue_coordinates_") val venueCoordinates: Coordinates?,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "photo_url") val photoUrl: String?
 ) {
+    @Ignore
     val localDateTimeEnd: LocalDateTime = localDateTimeStart.plus(duration)
 }
 
@@ -91,14 +99,20 @@ interface WtmEventDAO {
     @Query("SELECT * FROM WtmEvent")
     fun getAll(): Flowable<List<WtmEvent>>
 
-    @Query("SELECT * FROM WtmEvent WHERE id IN (:wtmEventId)")
-    fun loadById(wtmEventId: Int): Flowable<WtmEvent>
-
     @Query("DELETE FROM WtmEvent")
     fun clear()
 
     @Insert
     fun insertAll(wtmEvents: List<WtmEvent>)
+}
+
+@Dao
+interface DetailedWtmEventDAO {
+    @Query("SELECT * FROM DetailedWtmEvent WHERE id = :eventId")
+    fun getById(eventId: String): Flowable<DetailedWtmEvent>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(detailedWtmEvent: DetailedWtmEvent)
 }
 
 private fun MeetupEvent.toWtmEvent() = WtmEvent(
@@ -135,5 +149,4 @@ data class Venue(val id: String, val name: String = "Default Company")
 
 data class Coordinates(
     @ColumnInfo(name = "latitude") val latitude: String,
-    @ColumnInfo(name = "longitude") val longitude: String
-)
+    @ColumnInfo(name = "longitude") val longitude: String)

@@ -2,7 +2,7 @@ package com.wtmberlin
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.wtmberlin.data.BetterResult
+import com.wtmberlin.data.Result
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.util.Event
@@ -36,7 +36,7 @@ class EventsViewModel(private val repository: Repository) : ViewModel() {
         displayEventDetails.value = DisplayEventDetailsEvent(item.id)
     }
 
-    private fun onDataLoaded(result: BetterResult<List<WtmEvent>>) {
+    private fun onDataLoaded(result: Result<List<WtmEvent>>) {
         refreshing.value = result.loading
         result.data?.let { processEvents(it) }
         result.error?.let { Timber.i(it) }

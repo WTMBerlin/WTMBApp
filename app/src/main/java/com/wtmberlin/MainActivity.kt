@@ -11,7 +11,6 @@ import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
-import com.wtmberlin.data.accessToken
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,10 +22,6 @@ class MainActivity : AppCompatActivity() {
         initNavigationDrawer()
 
         nav_view.setupWithNavController(findNavController(R.id.nav_host_fragment))
-
-        if (accessToken == null) {
-            //authorizeUser()
-        }
     }
 
     private fun initToolbar() {
@@ -53,15 +48,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-    }
-
-    private fun authorizeUser() {
-        val browserIntent = Intent(
-            Intent.ACTION_VIEW, Uri.parse(
-                "https://secure.meetup.com/oauth2/authorize?client_id=8h22npmn9nfg58mco97blumdg9&response_type=code&redirect_uri=http%3A%2F%2Fwtmberlin.com%2Fandroid-app"
-            )
-        )
-        startActivity(browserIntent)
     }
 
     private fun displayGlobalCommunityInfo() {

@@ -5,7 +5,6 @@ import com.squareup.moshi.Moshi
 import com.wtmberlin.CollaborationsViewModel
 import com.wtmberlin.EventDetailsViewModel
 import com.wtmberlin.EventsViewModel
-import com.wtmberlin.MeetupAuthViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
@@ -19,7 +18,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 val remoteModule = module {
     viewModel { EventsViewModel(get()) }
     viewModel { (eventId: String) -> EventDetailsViewModel(eventId, get()) }
-    viewModel { MeetupAuthViewModel(get()) }
     viewModel { CollaborationsViewModel(get()) }
 
     single {
@@ -29,7 +27,6 @@ val remoteModule = module {
     single {
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().apply { level = BODY })
-            //.addInterceptor(AuthInterceptor)
             .build()
 
         val retrofit = Retrofit.Builder()
@@ -43,21 +40,6 @@ val remoteModule = module {
     }
 
     single {
-        val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().apply { level = BODY })
-            .build()
-
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://secure.meetup.com")
-            .addConverterFactory(MoshiConverterFactory.create(get()))
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .client(okHttpClient)
-            .build()
-
-        retrofit.create(SecureMeetupService::class.java)
-    }
-
-    single {
         Moshi.Builder()
             .add(LocalDateAdapter())
             .add(LocalTimeAdapter())
@@ -65,10 +47,12 @@ val remoteModule = module {
             .build()
     }
 
-    single {
+    single{
         Room.databaseBuilder(
             androidContext(),
             EventDatabase::class.java, "wtm-events"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 }
