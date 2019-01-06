@@ -12,7 +12,7 @@ import retrofit2.http.Query
 var accessToken: String? = null
 
 interface MeetupService {
-    @GET("Women-Techmakers-Berlin/events?status=cancelled,past,upcoming&desc=true&only=id,name,local_date,local_time,venue.name")
+    @GET("Women-Techmakers-Berlin/events?status=cancelled,past,upcoming&desc=true&only=id,name,local_date,local_time,venue.name&page=30")
     fun events(): Single<List<MeetupEvent>>
 
     @GET("Women-Techmakers-Berlin/events/{eventId}?only=id,name,local_date,local_time,duration,venue,description,featured_photo.photo_link&fields=featured_photo")
