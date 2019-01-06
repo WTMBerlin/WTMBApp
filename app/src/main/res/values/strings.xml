@@ -10,9 +10,6 @@
     <!-- Event details -->
     <string name="event_details_header_description">Description</string>
 
-    <!-- Meetup Auth -->
-    <string name="meetup_auth_message">Authorizing…</string>
-
     <!-- Community Description -->
     <string name="description_community">Women Techmakers Berlin is part of a global Women Techmakers program run by Google.
         At Women Techmakers Berlin we are encouraging diversity in tech in Berlin since 2015. Get visibility, networking and resources to make the tech community of Berlin diverse and inclusive!
