@@ -51,6 +51,10 @@
         <item name="android:drawableStart">@drawable/events_icon_venue</item>
     </style>
 
+    <style name="WtmBerlin.Events.Description">
+        <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventDateVenue</item>
+    </style>
+
     <style name="WtmBerlin.TextAppearance" />
 
     <style name="WtmBerlin.TextAppearance.ListHeader">

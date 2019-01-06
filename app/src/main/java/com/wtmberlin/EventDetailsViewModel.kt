@@ -2,6 +2,7 @@ package com.wtmberlin
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.wtmberlin.data.DetailedWtmEvent
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
@@ -12,7 +13,7 @@ import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 
 class EventDetailsViewModel(private val eventId: String, private val repository: Repository): ViewModel() {
-    val event = MutableLiveData<WtmEvent>()
+    val event = MutableLiveData<DetailedWtmEvent>()
 
     private val subscriptions = CompositeDisposable()
 
@@ -23,9 +24,9 @@ class EventDetailsViewModel(private val eventId: String, private val repository:
             .subscribe(this::onDataLoaded))
     }
 
-    private fun onDataLoaded(result: Result<WtmEvent>) {
+    private fun onDataLoaded(result: Result<DetailedWtmEvent>) {
         when (result) {
-            is Result.Success<WtmEvent> -> event.value = result.data
+            is Result.Success<DetailedWtmEvent> -> event.value = result.data
             is Result.Error<*> -> Timber.w(result.exception)
         }.exhaustive
     }

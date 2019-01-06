@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <import type="android.view.View" />
+
         <import type="com.wtmberlin.util.BindingKt" />
 
         <variable
@@ -10,39 +14,160 @@
             type="com.wtmberlin.EventDetailsViewModel" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/event_item"
-        style="@style/WtmBerlin.Events.ThreeLineListItem"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/event_name_text"
-            style="@style/WtmBerlin.Events.Name"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/material_space"
-            android:text="@{viewModel.event.name}"
-            tools:text="Product Development in the Age of Big Data" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/event_local_date_time_text"
-            style="@style/WtmBerlin.Events.Date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/material_space_quarter"
-            android:text="@{BindingKt.toMediumFormat(viewModel.event.localDateTime)}"
-            tools:text="Tue, Dec 11, 6:30 PM" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/event_venue_name_text"
-            style="@style/WtmBerlin.Events.Venue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{viewModel.event.venueName}"
-            android:visibility="@{viewModel.event.venueName != null ? View.VISIBLE : View.INVISIBLE}"
-            tools:text="Dalia Research GmbH" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-    </LinearLayout>
+                    <ImageView
+                        android:id="@+id/event_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        app:image_url="@{viewModel.event.photoUrl}"
+                        app:placeholder="@{@drawable/events_event_image_placeholder}"
+                        tools:src="@drawable/tools_event_image" />
+
+                    <TextView
+                        android:id="@+id/event_name_text"
+                        style="@style/WtmBerlin.Events.Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/material_space"
+                        android:text="@{viewModel.event.name}"
+                        tools:text="Product Development in the Age of Big Data" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="@dimen/material_space"
+                            android:src="@drawable/events_icon_date" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/material_space"
+                            android:layout_marginEnd="@dimen/material_space"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/event_date_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@{BindingKt.toLongDate(viewModel.event.localDateTimeStart)}"
+                                android:textAppearance="@style/WtmBerlin.TextAppearance.EventDateVenue"
+                                tools:text="Tuesday, December 11, 2018" />
+
+                            <TextView
+                                android:id="@+id/event_time_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="@{BindingKt.fromTimeToTime(viewModel.event.localDateTimeStart, viewModel.event.localDateTimeEnd)}"
+                                tools:text="6:30 PM to 9:30 PM" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/material_space"
+                        android:visibility="@{viewModel.event.venueName != null ? View.VISIBLE : View.INVISIBLE}">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="@dimen/material_space"
+                            android:src="@drawable/events_icon_venue" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/material_space"
+                            android:layout_marginEnd="@dimen/material_space"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/event_venue_name_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@{viewModel.event.venueName}"
+                                android:textAppearance="@style/WtmBerlin.TextAppearance.EventDateVenue"
+                                tools:text="Dalia Research GmbH" />
+
+                            <TextView
+                                android:id="@+id/event_venue_address_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="@{viewModel.event.venueAddress}"
+                                tools:text="Dalia Research GmbH" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/material_space_half"
+                        android:layout_marginTop="@dimen/material_space"
+                        android:layout_marginEnd="@dimen/material_space_half"
+                        android:background="@color/wtmGreyDark" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/material_space"
+                        android:layout_marginTop="@dimen/material_space"
+                        android:layout_marginEnd="@dimen/material_space"
+                        android:layout_marginBottom="@dimen/material_space_half"
+                        android:text="@string/event_details_header_description"
+                        android:textAppearance="@style/WtmBerlin.TextAppearance.ListHeader" />
+
+                    <TextView
+                        android:id="@+id/event_description_text"
+                        style="@style/WtmBerlin.Events.Description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/material_space"
+                        android:layout_marginEnd="@dimen/material_space"
+                        android:layout_marginBottom="@dimen/material_space"
+                        android:text="@{BindingKt.toHtml(viewModel.event.description)}"
+                        tools:text="Dalia Research GmbH" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </layout>

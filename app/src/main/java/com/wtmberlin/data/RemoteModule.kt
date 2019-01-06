@@ -63,6 +63,7 @@ val remoteModule = module {
         Moshi.Builder()
             .add(LocalDateAdapter())
             .add(LocalTimeAdapter())
+            .add(DurationAdapter())
             .build()
     }
 

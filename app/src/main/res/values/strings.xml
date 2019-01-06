@@ -7,6 +7,9 @@
     <string name="events_past_header">Past</string>
     <string name="events_no_upcoming_events_message">No upcoming events at the moment. Stay tuned!</string>
 
+    <!-- Event details -->
+    <string name="event_details_header_description">Description</string>
+
     <!-- Meetup Auth -->
     <string name="meetup_auth_message">Authorizing…</string>
 

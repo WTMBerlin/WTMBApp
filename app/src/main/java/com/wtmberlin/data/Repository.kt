@@ -13,9 +13,9 @@ class Repository(private val apiService: MeetupService, private val database: Ev
             .onErrorReturn { Result.error(it) }.toFlowable()
     }
 
-    fun event(eventId: String): Flowable<Result<WtmEvent>> {
+    fun event(eventId: String): Flowable<Result<DetailedWtmEvent>> {
         return apiService.event(eventId)
-            .map { it.toWtmEvent() }
+            .map { it.toDetailedWtmEvent() }
             .map { Result.success(it) }
             .onErrorReturn { Result.error(it) }
             .toFlowable()
@@ -68,6 +68,20 @@ data class WtmEvent(
     @ColumnInfo(name = "venue") val venueName: String?
 )
 
+@Entity
+data class DetailedWtmEvent(
+    @PrimaryKey val id: String,
+    @ColumnInfo(name = "username") val name: String,
+    @ColumnInfo(name = "date_start") val localDateTimeStart: LocalDateTime,
+    @ColumnInfo(name = "date_end") val localDateTimeEnd: LocalDateTime,
+    @ColumnInfo(name = "venue_name") val venueName: String?,
+    @ColumnInfo(name = "venue_address") val venueAddress: String?,
+    @ColumnInfo(name = "venue_lat") val venueLat: String?,
+    @ColumnInfo(name = "venue_lon") val venueLon: String?,
+    @ColumnInfo(name = "description") val description: String,
+    @ColumnInfo(name = "photo_url") val photoUrl: String?
+)
+
 @Dao
 interface WtmEventDAO {
     @Query("SELECT * FROM WtmEvent")
@@ -88,6 +102,19 @@ private fun MeetupEvent.toWtmEvent() = WtmEvent(
     name = name,
     localDateTime = LocalDateTime.of(local_date, local_time),
     venueName = venue?.name
+)
+
+private fun MeetupDetailedEvent.toDetailedWtmEvent() = DetailedWtmEvent(
+    id = id,
+    name = name,
+    localDateTimeStart = LocalDateTime.of(local_date, local_time),
+    localDateTimeEnd = LocalDateTime.of(local_date, local_time).plus(duration),
+    venueName = venue?.name,
+    venueAddress = venue?.let { "${it.address_1} ${it.address_2} · ${it.city}" },
+    venueLat = venue?.lat,
+    venueLon = venue?.lon,
+    description = description,
+    photoUrl = featured_photo?.photo_link
 )
 
 private fun MeetupGroup.toWtmGroup() = WtmGroup(

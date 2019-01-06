@@ -4,8 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.squareup.picasso.Picasso
 import com.wtmberlin.databinding.EventDetailsScreenBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
