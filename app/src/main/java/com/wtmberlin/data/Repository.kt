@@ -49,7 +49,7 @@ class Repository(private val apiService: MeetupService, private val database: Ev
 
     fun event(eventId: String): Flowable<Result<DetailedWtmEvent>> = DetailedEventResource(eventId).values()
 
-    inner class DetailedEventResource(private val eventId: String): NetworkBoundResource<DetailedWtmEvent>() {
+    inner class DetailedEventResource(private val eventId: String) : NetworkBoundResource<DetailedWtmEvent>() {
         override fun loadFromNetwork(): Single<DetailedWtmEvent> {
             return apiService.event(eventId).map { it.toDetailedWtmEvent() }
         }
@@ -149,4 +149,5 @@ data class Venue(val id: String, val name: String = "Default Company")
 
 data class Coordinates(
     @ColumnInfo(name = "latitude") val latitude: String,
-    @ColumnInfo(name = "longitude") val longitude: String)
+    @ColumnInfo(name = "longitude") val longitude: String
+)

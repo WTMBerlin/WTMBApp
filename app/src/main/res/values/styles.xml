@@ -77,7 +77,7 @@
         <item name="android:textColor">@color/black_87</item>
     </style>
 
-        <style name="WtmBerlin.TextAppearance.NoUpcoming">
+    <style name="WtmBerlin.TextAppearance.NoUpcoming">
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">false</item>

@@ -2,8 +2,8 @@ package com.wtmberlin
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.wtmberlin.data.Result
 import com.wtmberlin.data.Repository
+import com.wtmberlin.data.Result
 import com.wtmberlin.data.Venue
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

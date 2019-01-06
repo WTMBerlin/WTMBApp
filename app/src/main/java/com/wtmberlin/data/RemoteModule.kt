@@ -47,7 +47,7 @@ val remoteModule = module {
             .build()
     }
 
-    single{
+    single {
         Room.databaseBuilder(
             androidContext(),
             EventDatabase::class.java, "wtm-events"
