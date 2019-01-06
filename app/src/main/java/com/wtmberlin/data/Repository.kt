@@ -10,19 +10,19 @@ class Repository(private val apiService: MeetupService, private val database: Ev
     fun venues(): Flowable<Result<List<Venue>>> {
         return apiService.events()
             .map { it.map(MeetupEvent::toWtmVenue) }
-            .map { Result.success(it) }
-            .onErrorReturn { Result.error(it) }.toFlowable()
+            .map { Result(loading = false, data = it, error = null) }
+            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
     }
 
     fun group(): Flowable<Result<WtmGroup>> {
         return apiService.group()
             .map { it.toWtmGroup() }
-            .map { Result.success(it) }
-            .onErrorReturn { Result.error(it) }
+            .map { Result(loading = false, data = it, error = null) }
+            .onErrorReturn { Result(loading = false, data = null, error = it) }
             .toFlowable()
     }
 
-    fun events(): Flowable<BetterResult<List<WtmEvent>>> {
+    fun events(): Flowable<Result<List<WtmEvent>>> {
         return eventsResource.values()
     }
 
@@ -47,7 +47,7 @@ class Repository(private val apiService: MeetupService, private val database: Ev
         }
     }
 
-    fun event(eventId: String): Flowable<BetterResult<DetailedWtmEvent>> = DetailedEventResource(eventId).values()
+    fun event(eventId: String): Flowable<Result<DetailedWtmEvent>> = DetailedEventResource(eventId).values()
 
     inner class DetailedEventResource(private val eventId: String): NetworkBoundResource<DetailedWtmEvent>() {
         override fun loadFromNetwork(): Single<DetailedWtmEvent> {

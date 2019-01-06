@@ -26,21 +26,21 @@ abstract class NetworkBoundResource<T> {
         refreshEvents.onNext(RefreshEvent)
     }
 
-    fun values(): Flowable<BetterResult<T>> {
+    fun values(): Flowable<Result<T>> {
         return Flowable.combineLatest(
             loadFromDatabase(),
             refreshStatuses,
             BiFunction { data: T, refreshStatus: RefreshStatus -> toResult(data, refreshStatus)}
         )
             .doOnSubscribe { refresh() }
-            .onErrorReturn { BetterResult<T>(loading = false, data = null, error = it) }
+            .onErrorReturn { Result<T>(loading = false, data = null, error = it) }
     }
 
     private fun toResult(data: T, refreshStatus: RefreshStatus) =
         when (refreshStatus) {
-            is Idle -> BetterResult(loading = false, data = data, error = null)
-            is InProgress -> BetterResult(loading = true, data = data, error = null)
-            is Error -> BetterResult(loading = false, data = data, error = refreshStatus.error)
+            is Idle -> Result(loading = false, data = data, error = null)
+            is InProgress -> Result(loading = true, data = data, error = null)
+            is Error -> Result(loading = false, data = data, error = refreshStatus.error)
         }
 
     protected abstract fun loadFromNetwork(): Single<T>
@@ -67,5 +67,3 @@ private sealed class RefreshStatus {
     object InProgress: RefreshStatus()
     data class Error(val error: Throwable): RefreshStatus()
 }
-
-data class BetterResult<out T>(val loading: Boolean, val data: T?, val error: Throwable?)
