@@ -8,7 +8,7 @@ import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 
 @TypeConverters(LocalDateTimeConverter::class)
-@Database(entities = [WtmEvent::class], version = 1)
+@Database(entities = [WtmEvent::class], version = 1, exportSchema = false)
 abstract class EventDatabase : RoomDatabase() {
     abstract fun wtmEventDAO(): WtmEventDAO
 }
