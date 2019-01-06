@@ -3,6 +3,7 @@ package com.wtmberlin.data
 import androidx.room.*
 import io.reactivex.Flowable
 import io.reactivex.Single
+import org.threeten.bp.Duration
 import org.threeten.bp.LocalDateTime
 
 class Repository(private val apiService: MeetupService, private val database: EventDatabase) {
@@ -72,15 +73,17 @@ data class WtmEvent(
 data class DetailedWtmEvent(
     @PrimaryKey val id: String,
     @ColumnInfo(name = "username") val name: String,
-    @ColumnInfo(name = "date_start") val localDateTimeStart: LocalDateTime,
-    @ColumnInfo(name = "date_end") val localDateTimeEnd: LocalDateTime,
+    @ColumnInfo(name = "local_date_time_start") val localDateTimeStart: LocalDateTime,
+    @ColumnInfo(name = "time_start") val timeStart: Long,
+    @ColumnInfo(name = "duration") val duration: Duration,
     @ColumnInfo(name = "venue_name") val venueName: String?,
     @ColumnInfo(name = "venue_address") val venueAddress: String?,
-    @ColumnInfo(name = "venue_lat") val venueLat: String?,
-    @ColumnInfo(name = "venue_lon") val venueLon: String?,
+    @Embedded(prefix = "venue_coordinates") val venueCoordinates: Coordinates?,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "photo_url") val photoUrl: String?
-)
+) {
+    val localDateTimeEnd: LocalDateTime = localDateTimeStart.plus(duration)
+}
 
 @Dao
 interface WtmEventDAO {
@@ -108,11 +111,11 @@ private fun MeetupDetailedEvent.toDetailedWtmEvent() = DetailedWtmEvent(
     id = id,
     name = name,
     localDateTimeStart = LocalDateTime.of(local_date, local_time),
-    localDateTimeEnd = LocalDateTime.of(local_date, local_time).plus(duration),
+    timeStart = time,
+    duration = duration,
     venueName = venue?.name,
     venueAddress = venue?.let { "${it.address_1} ${it.address_2} · ${it.city}" },
-    venueLat = venue?.lat,
-    venueLon = venue?.lon,
+    venueCoordinates = venue?.let { Coordinates(latitude = it.lat, longitude = it.lon) },
     description = description,
     photoUrl = featured_photo?.photo_link
 )
@@ -128,3 +131,7 @@ private fun MeetupEvent.toWtmVenue() = Venue(
 )
 
 data class Venue(val id: String, val name: String = "Default Company")
+
+data class Coordinates(
+    @ColumnInfo(name = "latitude") val latitude: String,
+    @ColumnInfo(name = "longitude") val longitude: String)

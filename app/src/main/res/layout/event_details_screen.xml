@@ -47,14 +47,23 @@
                         style="@style/WtmBerlin.Events.Name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/material_space"
+                        android:layout_marginStart="@dimen/material_space"
+                        android:layout_marginTop="@dimen/material_space"
+                        android:layout_marginEnd="@dimen/material_space"
+                        android:layout_marginBottom="@dimen/material_space_half"
                         android:text="@{viewModel.event.name}"
                         tools:text="Product Development in the Age of Big Data" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:background="?selectableItemBackground"
+                        android:gravity="center"
+                        android:minHeight="@dimen/material_two_line_list_height"
+                        android:onClick="@{v -> viewModel.onDateTimeClicked()}"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/material_space_half"
+                        android:paddingBottom="@dimen/material_space_half">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -94,8 +103,13 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="?selectableItemBackground"
+                        android:gravity="center"
+                        android:minHeight="@dimen/material_two_line_list_height"
+                        android:onClick="@{v -> viewModel.onLocationClicked()}"
                         android:orientation="horizontal"
-                        android:layout_marginTop="@dimen/material_space"
+                        android:paddingTop="@dimen/material_space_half"
+                        android:paddingBottom="@dimen/material_space_half"
                         android:visibility="@{viewModel.event.venueName != null ? View.VISIBLE : View.INVISIBLE}">
 
                         <ImageView
@@ -136,8 +150,8 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/material_space_half"
                         android:layout_marginStart="@dimen/material_space_half"
-                        android:layout_marginTop="@dimen/material_space"
                         android:layout_marginEnd="@dimen/material_space_half"
                         android:background="@color/wtmGreyDark" />
 

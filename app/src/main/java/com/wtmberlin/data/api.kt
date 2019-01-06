@@ -15,7 +15,7 @@ interface MeetupService {
     @GET("Women-Techmakers-Berlin/events?status=cancelled,past,upcoming&desc=true&only=id,name,local_date,local_time,venue.name&page=30")
     fun events(): Single<List<MeetupEvent>>
 
-    @GET("Women-Techmakers-Berlin/events/{eventId}?only=id,name,local_date,local_time,duration,venue,description,featured_photo.photo_link&fields=featured_photo")
+    @GET("Women-Techmakers-Berlin/events/{eventId}?only=id,name,time,local_date,local_time,duration,venue,description,featured_photo.photo_link&fields=featured_photo")
     fun event(@Path("eventId") eventId: String): Single<MeetupDetailedEvent>
 
     @GET("Women-Techmakers-Berlin?only=past_event_count,members")
@@ -49,6 +49,7 @@ data class MeetupDetailedEvent(
     val name: String,
     val description: String,
     val featured_photo: MeetupPhoto?,
+    val time: Long,
     val local_date: LocalDate,
     val local_time: LocalTime,
     val duration: Duration,

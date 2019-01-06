@@ -8,6 +8,7 @@
     <dimen name="touchable_target">48dp</dimen>
 
     <dimen name="material_single_line_list_height">48dp</dimen>
+    <dimen name="material_two_line_list_height">64dp</dimen>
     <dimen name="material_three_line_list_height">88dp</dimen>
 
     <dimen name="material_elevation_toolbar">4dp</dimen>
