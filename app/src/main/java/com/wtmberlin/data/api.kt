@@ -51,10 +51,10 @@ data class MeetupVenue(
 data class MeetupDetailedVenue(
     val id: String,
     val name: String,
-    val address_1: String,
-    val address_2: String,
-    val address_3: String,
-    val city: String,
+    val address_1: String?,
+    val address_2: String?,
+    val address_3: String?,
+    val city: String?,
     val lat: String,
     val lon: String
 )

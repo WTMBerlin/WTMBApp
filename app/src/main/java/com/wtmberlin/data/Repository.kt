@@ -129,11 +129,34 @@ private fun MeetupDetailedEvent.toDetailedWtmEvent() = DetailedWtmEvent(
     timeStart = time,
     duration = duration,
     venueName = venue?.name,
-    venueAddress = venue?.let { "${it.address_1} ${it.address_2} · ${it.city}" },
+    venueAddress = venue?.addressText(),
     venueCoordinates = venue?.let { Coordinates(latitude = it.lat, longitude = it.lon) },
     description = description,
     photoUrl = featured_photo?.photo_link
 )
+
+private fun MeetupDetailedVenue.addressText() =
+    StringBuilder().apply {
+        address_1?.let {
+            append(it)
+            append(" ")
+        }
+
+        address_2?.let {
+            append(it)
+            append(" ")
+        }
+
+        address_3?.let {
+            append(it)
+            append(" ")
+        }
+
+        city?.let {
+            append(it)
+        }
+    }.toString()
+
 
 private fun MeetupGroup.toWtmGroup() = WtmGroup(
     pastEventCount = past_event_count,
