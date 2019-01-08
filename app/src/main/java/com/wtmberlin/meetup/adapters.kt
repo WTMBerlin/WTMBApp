@@ -1,4 +1,4 @@
-package com.wtmberlin.data
+package com.wtmberlin.meetup
 
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson
@@ -7,6 +7,7 @@ import org.threeten.bp.LocalDate
 import org.threeten.bp.LocalTime
 import org.threeten.bp.format.DateTimeFormatter
 
+@Suppress("unused") // Used by Moshi by reflection
 class LocalDateAdapter {
     @ToJson
     fun toJson(localDate: LocalDate): String {
@@ -19,6 +20,7 @@ class LocalDateAdapter {
     }
 }
 
+@Suppress("unused") // Used by Moshi by reflection
 class LocalTimeAdapter {
     @ToJson
     fun toJson(localTime: LocalTime): String {
@@ -31,6 +33,7 @@ class LocalTimeAdapter {
     }
 }
 
+@Suppress("unused") // Used by Moshi by reflection
 class DurationAdapter {
     @ToJson
     fun toJson(duration: Duration): Long {

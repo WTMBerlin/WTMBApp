@@ -1,6 +1,7 @@
 package com.wtmberlin.data
 
 import androidx.room.*
+import com.wtmberlin.meetup.*
 import io.reactivex.Flowable
 import io.reactivex.Single
 import org.threeten.bp.Duration

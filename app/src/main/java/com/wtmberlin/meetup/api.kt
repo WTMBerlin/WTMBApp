@@ -1,4 +1,4 @@
-package com.wtmberlin.data
+package com.wtmberlin.meetup
 
 import io.reactivex.Single
 import org.threeten.bp.Duration

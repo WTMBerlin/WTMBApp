@@ -5,6 +5,10 @@ import com.squareup.moshi.Moshi
 import com.wtmberlin.CollaborationsViewModel
 import com.wtmberlin.EventDetailsViewModel
 import com.wtmberlin.EventsViewModel
+import com.wtmberlin.meetup.DurationAdapter
+import com.wtmberlin.meetup.LocalDateAdapter
+import com.wtmberlin.meetup.LocalTimeAdapter
+import com.wtmberlin.meetup.MeetupService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
@@ -22,29 +26,6 @@ val remoteModule = module {
 
     single {
         Repository(get(), get())
-    }
-
-    single {
-        val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().apply { level = BODY })
-            .build()
-
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.meetup.com")
-            .addConverterFactory(MoshiConverterFactory.create(get()))
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .client(okHttpClient)
-            .build()
-
-        retrofit.create(MeetupService::class.java)
-    }
-
-    single {
-        Moshi.Builder()
-            .add(LocalDateAdapter())
-            .add(LocalTimeAdapter())
-            .add(DurationAdapter())
-            .build()
     }
 
     single {
