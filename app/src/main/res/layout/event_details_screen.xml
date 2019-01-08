@@ -11,7 +11,7 @@
 
         <variable
             name="viewModel"
-            type="com.wtmberlin.EventDetailsViewModel" />
+            type="com.wtmberlin.ui.EventDetailsViewModel" />
     </data>
 
     <ScrollView

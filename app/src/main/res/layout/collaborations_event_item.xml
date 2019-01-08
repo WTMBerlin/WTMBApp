@@ -10,7 +10,7 @@
 
         <variable
             name="item"
-            type="com.wtmberlin.CollaborationsAdapterItem" />
+            type="com.wtmberlin.ui.CollaborationsAdapterItem" />
     </data>
 
     <TextView

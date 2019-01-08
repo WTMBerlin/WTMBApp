@@ -10,11 +10,11 @@
 
         <variable
             name="callbacks"
-            type="com.wtmberlin.EventsAdapter.Callbacks" />
+            type="com.wtmberlin.ui.EventsAdapter.Callbacks" />
 
         <variable
             name="item"
-            type="com.wtmberlin.EventItem" />
+            type="com.wtmberlin.ui.EventItem" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

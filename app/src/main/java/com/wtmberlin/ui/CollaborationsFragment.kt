@@ -1,4 +1,4 @@
-package com.wtmberlin
+package com.wtmberlin.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ListAdapter
+import com.wtmberlin.R
 import com.wtmberlin.databinding.FragmentCollaborationsBinding
 import com.wtmberlin.util.AdapterItem
 import com.wtmberlin.util.BindingViewHolder

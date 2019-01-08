@@ -11,7 +11,7 @@
 
         <variable
             name="viewModel"
-            type="com.wtmberlin.StatsViewModel" />
+            type="com.wtmberlin.ui.StatsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

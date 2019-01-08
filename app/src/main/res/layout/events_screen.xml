@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.wtmberlin.EventsViewModel" />
+            type="com.wtmberlin.ui.EventsViewModel" />
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

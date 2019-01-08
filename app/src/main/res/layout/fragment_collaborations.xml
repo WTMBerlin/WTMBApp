@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.wtmberlin.CollaborationsViewModel" />
+            type="com.wtmberlin.ui.CollaborationsViewModel" />
     </data>
 
     <LinearLayout

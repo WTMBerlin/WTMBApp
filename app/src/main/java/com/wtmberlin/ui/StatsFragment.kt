@@ -1,4 +1,4 @@
-package com.wtmberlin
+package com.wtmberlin.ui
 
 import androidx.fragment.app.Fragment
 import com.wtmberlin.util.AdapterItem

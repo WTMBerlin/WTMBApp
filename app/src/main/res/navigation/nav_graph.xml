@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/events_screen"
-        android:name="com.wtmberlin.EventsFragment"
+        android:name="com.wtmberlin.ui.EventsFragment"
         android:label="Blank"
         tools:layout="@layout/events_screen">
         <action
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/event_details_screen"
-        android:name="com.wtmberlin.EventDetailsFragment"
+        android:name="com.wtmberlin.ui.EventDetailsFragment"
         android:label="Blank"
         tools:layout="@layout/event_details_screen">
         <argument
@@ -26,25 +26,25 @@
 
     <fragment
         android:id="@+id/social_media_screen"
-        android:name="com.wtmberlin.SocialMediaFragment"
+        android:name="com.wtmberlin.ui.SocialMediaFragment"
         android:label="Blank"
         tools:layout="@layout/fragment_social_media" />
 
     <fragment
         android:id="@+id/community_info_screen"
-        android:name="com.wtmberlin.CommunityInfoFragment"
+        android:name="com.wtmberlin.ui.CommunityInfoFragment"
         android:label="Blank"
         tools:layout="@layout/fragment_community_info_local" />
 
     <fragment
         android:id="@+id/collaborations_screen"
-        android:name="com.wtmberlin.CollaborationsFragment"
+        android:name="com.wtmberlin.ui.CollaborationsFragment"
         android:label="Blank"
         tools:layout="@layout/fragment_collaborations" />
 
     <fragment
         android:id="@+id/stats_screen"
-        android:name="com.wtmberlin.DetailStatsFragment"
+        android:name="com.wtmberlin.ui.DetailStatsFragment"
         android:label="Blank"
         tools:layout="@layout/fragment_stats" />
 

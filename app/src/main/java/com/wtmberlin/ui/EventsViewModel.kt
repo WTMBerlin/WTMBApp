@@ -1,4 +1,4 @@
-package com.wtmberlin
+package com.wtmberlin.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

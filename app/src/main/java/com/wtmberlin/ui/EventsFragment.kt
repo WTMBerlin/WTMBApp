@@ -1,4 +1,4 @@
-package com.wtmberlin
+package com.wtmberlin.ui
 
 import android.graphics.Rect
 import android.os.Bundle
@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.wtmberlin.R
 import com.wtmberlin.databinding.EventsScreenBinding
 import com.wtmberlin.util.AdapterItem
 import com.wtmberlin.util.BindingViewHolder

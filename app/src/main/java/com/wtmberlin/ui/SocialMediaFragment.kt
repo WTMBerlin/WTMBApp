@@ -1,10 +1,11 @@
-package com.wtmberlin
+package com.wtmberlin.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.wtmberlin.R
 
 class SocialMediaFragment : Fragment() {
 

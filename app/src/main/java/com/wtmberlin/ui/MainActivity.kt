@@ -1,4 +1,4 @@
-package com.wtmberlin
+package com.wtmberlin.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.wtmberlin.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

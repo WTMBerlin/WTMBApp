@@ -5,8 +5,8 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import com.wtmberlin.CollaborationsAdapter
-import com.wtmberlin.EventsAdapter
+import com.wtmberlin.ui.CollaborationsAdapter
+import com.wtmberlin.ui.EventsAdapter
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 import org.threeten.bp.format.FormatStyle
