@@ -10,6 +10,7 @@ class Repository(private val apiService: MeetupService, private val database: Ev
     fun venues(): Flowable<Result<List<Venue>>> {
         return apiService.events()
             .map { it.map(MeetupEvent::toWtmVenue) }
+            .map { it.distinct() }
             .map { Result(loading = false, data = it, error = null) }
             .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
     }
@@ -164,11 +165,10 @@ private fun MeetupGroup.toWtmGroup() = WtmGroup(
 )
 
 private fun MeetupEvent.toWtmVenue() = Venue(
-    id = id,
     name = venue?.name ?: ""
 )
 
-data class Venue(val id: String, val name: String = "Default Company")
+data class Venue(val name: String = "Default Company")
 
 data class Coordinates(
     @ColumnInfo(name = "latitude") val latitude: String,

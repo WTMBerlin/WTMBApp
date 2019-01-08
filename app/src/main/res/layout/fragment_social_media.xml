@@ -12,7 +12,7 @@
         android:text="@string/title_social_media" />
 
     <include
-        layout="@layout/detail_social_media_2"
+        layout="@layout/detail_social_media"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

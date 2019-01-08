@@ -6,6 +6,7 @@ import com.wtmberlin.data.remoteModule
 import org.koin.android.ext.android.startKoin
 import timber.log.Timber
 
+@Suppress("unused") // Used in AndroidManifest
 class App : Application() {
     override fun onCreate() {
         super.onCreate()

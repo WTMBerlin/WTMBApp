@@ -31,7 +31,7 @@ class CollaborationsViewModel(private val repository: Repository) : ViewModel() 
 
     private fun processVenues(list: List<Venue>) {
         adapterItems.value = list.map {
-            CollaborationsAdapterItem(it.id, it.name)
+            CollaborationsAdapterItem(it.name, it.name)
         }
     }
 

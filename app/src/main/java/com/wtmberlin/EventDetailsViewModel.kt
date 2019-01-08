@@ -12,7 +12,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 
-class EventDetailsViewModel(private val eventId: String, private val repository: Repository) : ViewModel() {
+class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel() {
     val event = MutableLiveData<DetailedWtmEvent>()
 
     val addToCalendar = MutableLiveData<AddToCalendarEvent>()

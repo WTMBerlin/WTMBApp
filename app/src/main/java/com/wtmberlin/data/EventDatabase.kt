@@ -18,16 +18,16 @@ abstract class EventDatabase : RoomDatabase() {
 
 class LocalDateTimeConverter {
     @TypeConverter
-    fun save(date: LocalDateTime) = date.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+    fun save(date: LocalDateTime): String = date.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
 
     @TypeConverter
-    fun load(date: String) = LocalDateTime.parse(date, DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+    fun load(date: String): LocalDateTime = LocalDateTime.parse(date, DateTimeFormatter.ISO_LOCAL_DATE_TIME)
 }
 
 class DurationConverter {
     @TypeConverter
-    fun save(duration: Duration) = duration.toMillis()
+    fun save(duration: Duration): Long = duration.toMillis()
 
     @TypeConverter
-    fun load(duration: Long) = Duration.ofMillis(duration)
+    fun load(duration: Long): Duration = Duration.ofMillis(duration)
 }
