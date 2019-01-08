@@ -1,13 +1,11 @@
 package com.wtmberlin.data
 
-import androidx.room.*
 import com.wtmberlin.meetup.*
 import io.reactivex.Flowable
 import io.reactivex.Single
-import org.threeten.bp.Duration
 import org.threeten.bp.LocalDateTime
 
-class Repository(private val apiService: MeetupService, private val database: EventDatabase) {
+class Repository(private val apiService: MeetupService, private val database: Database) {
     fun venues(): Flowable<Result<List<Venue>>> {
         return apiService.events()
             .map { it.map(MeetupEvent::toWtmVenue) }
@@ -32,7 +30,7 @@ class Repository(private val apiService: MeetupService, private val database: Ev
         eventsResource.refresh()
     }
 
-    private val eventsResource = object : NetworkBoundResource<List<WtmEvent>>() {
+    private val eventsResource = object : NetworkBoundResource<List<WtmEvent>, List<WtmEvent>>() {
         override fun loadFromNetwork(): Single<List<WtmEvent>> {
             return apiService.events().map { it.map(MeetupEvent::toWtmEvent) }
         }
@@ -51,7 +49,7 @@ class Repository(private val apiService: MeetupService, private val database: Ev
 
     fun event(eventId: String): Flowable<Result<DetailedWtmEvent>> = DetailedEventResource(eventId).values()
 
-    inner class DetailedEventResource(private val eventId: String) : NetworkBoundResource<DetailedWtmEvent>() {
+    inner class DetailedEventResource(private val eventId: String) : NetworkBoundResource<DetailedWtmEvent, DetailedWtmEvent>() {
         override fun loadFromNetwork(): Single<DetailedWtmEvent> {
             return apiService.event(eventId).map { it.toDetailedWtmEvent() }
         }
@@ -64,57 +62,6 @@ class Repository(private val apiService: MeetupService, private val database: Ev
             database.detailedWtmEventDao().insert(value)
         }
     }
-}
-
-data class WtmGroup(
-    val pastEventCount: Int,
-    val members: Int
-)
-
-@Entity
-data class WtmEvent(
-    @PrimaryKey val id: String,
-    @ColumnInfo(name = "username") val name: String,
-    @ColumnInfo(name = "date") val localDateTime: LocalDateTime,
-    @ColumnInfo(name = "venue") val venueName: String?
-)
-
-@Entity
-data class DetailedWtmEvent(
-    @PrimaryKey val id: String,
-    @ColumnInfo(name = "username") val name: String,
-    @ColumnInfo(name = "local_date_time_start") val localDateTimeStart: LocalDateTime,
-    @ColumnInfo(name = "time_start") val timeStart: Long,
-    @ColumnInfo(name = "duration") val duration: Duration,
-    @ColumnInfo(name = "venue_name") val venueName: String?,
-    @ColumnInfo(name = "venue_address") val venueAddress: String?,
-    @Embedded(prefix = "venue_coordinates_") val venueCoordinates: Coordinates?,
-    @ColumnInfo(name = "description") val description: String,
-    @ColumnInfo(name = "photo_url") val photoUrl: String?
-) {
-    @Ignore
-    val localDateTimeEnd: LocalDateTime = localDateTimeStart.plus(duration)
-}
-
-@Dao
-interface WtmEventDAO {
-    @Query("SELECT * FROM WtmEvent")
-    fun getAll(): Flowable<List<WtmEvent>>
-
-    @Query("DELETE FROM WtmEvent")
-    fun clear()
-
-    @Insert
-    fun insertAll(wtmEvents: List<WtmEvent>)
-}
-
-@Dao
-interface DetailedWtmEventDAO {
-    @Query("SELECT * FROM DetailedWtmEvent WHERE id = :eventId")
-    fun getById(eventId: String): Flowable<DetailedWtmEvent>
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(detailedWtmEvent: DetailedWtmEvent)
 }
 
 private fun MeetupEvent.toWtmEvent() = WtmEvent(
@@ -167,11 +114,4 @@ private fun MeetupGroup.toWtmGroup() = WtmGroup(
 
 private fun MeetupEvent.toWtmVenue() = Venue(
     name = venue?.name ?: ""
-)
-
-data class Venue(val name: String = "Default Company")
-
-data class Coordinates(
-    @ColumnInfo(name = "latitude") val latitude: String,
-    @ColumnInfo(name = "longitude") val longitude: String
 )

@@ -9,7 +9,7 @@ import io.reactivex.processors.BehaviorProcessor
 import io.reactivex.processors.PublishProcessor
 import io.reactivex.schedulers.Schedulers
 
-abstract class NetworkBoundResource<T> {
+abstract class NetworkBoundResource<NetworkT, DatabaseT> {
     private val refreshEvents = PublishProcessor.create<RefreshEvent>()
 
     private val refreshStatuses = BehaviorProcessor.create<RefreshStatus>()
@@ -26,28 +26,28 @@ abstract class NetworkBoundResource<T> {
         refreshEvents.onNext(RefreshEvent)
     }
 
-    fun values(): Flowable<Result<T>> {
+    fun values(): Flowable<Result<DatabaseT>> {
         return Flowable.combineLatest(
             loadFromDatabase(),
             refreshStatuses,
-            BiFunction { data: T, refreshStatus: RefreshStatus -> toResult(data, refreshStatus) }
+            BiFunction { data: DatabaseT, refreshStatus: RefreshStatus -> toResult(data, refreshStatus) }
         )
             .doOnSubscribe { refresh() }
-            .onErrorReturn { Result<T>(loading = false, data = null, error = it) }
+            .onErrorReturn { Result<DatabaseT>(loading = false, data = null, error = it) }
     }
 
-    private fun toResult(data: T, refreshStatus: RefreshStatus) =
+    private fun toResult(data: DatabaseT, refreshStatus: RefreshStatus) =
         when (refreshStatus) {
             is Idle -> Result(loading = false, data = data, error = null)
             is InProgress -> Result(loading = true, data = data, error = null)
             is Error -> Result(loading = false, data = data, error = refreshStatus.error)
         }
 
-    protected abstract fun loadFromNetwork(): Single<T>
+    protected abstract fun loadFromNetwork(): Single<NetworkT>
 
-    protected abstract fun loadFromDatabase(): Flowable<T>
+    protected abstract fun loadFromDatabase(): Flowable<DatabaseT>
 
-    protected abstract fun saveToDatabase(value: T)
+    protected abstract fun saveToDatabase(value: NetworkT)
 
     private fun doRefresh(): Completable {
         return loadFromNetwork()

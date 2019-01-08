@@ -2,7 +2,7 @@ package com.wtmberlin
 
 import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
-import com.wtmberlin.data.remoteModule
+import com.wtmberlin.data.repositoryModule
 import com.wtmberlin.meetup.meetupModule
 import com.wtmberlin.ui.uiModule
 import org.koin.android.ext.android.startKoin
@@ -15,7 +15,7 @@ class App : Application() {
 
         AndroidThreeTen.init(this)
 
-        startKoin(this, listOf(meetupModule, remoteModule, uiModule))
+        startKoin(this, listOf(meetupModule, repositoryModule, uiModule))
 
         Timber.plant(Timber.DebugTree())
     }
