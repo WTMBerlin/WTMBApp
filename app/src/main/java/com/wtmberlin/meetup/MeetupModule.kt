@@ -15,9 +15,6 @@ val meetupModule = module {
             .build()
 
         val moshi = Moshi.Builder()
-            .add(LocalDateAdapter())
-            .add(LocalTimeAdapter())
-            .add(DurationAdapter())
             .build()
 
         val retrofit = Retrofit.Builder()

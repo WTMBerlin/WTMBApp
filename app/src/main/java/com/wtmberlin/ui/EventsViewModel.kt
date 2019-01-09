@@ -10,6 +10,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import org.threeten.bp.LocalDateTime
+import org.threeten.bp.ZonedDateTime
 import timber.log.Timber
 
 class EventsViewModel(private val repository: Repository) : ViewModel() {
@@ -45,10 +46,10 @@ class EventsViewModel(private val repository: Repository) : ViewModel() {
     private fun processEvents(events: List<WtmEvent>) {
         val upcomingEvents = mutableListOf<WtmEvent>()
         val pastEvents = mutableListOf<WtmEvent>()
-        val now = LocalDateTime.now()
+        val now = ZonedDateTime.now()
 
         for (event in events) {
-            if (event.localDateTime.isAfter(now)) upcomingEvents += event else pastEvents += event
+            if (event.dateTimeStart.isAfter(now)) upcomingEvents += event else pastEvents += event
         }
 
         val adapterItems = mutableListOf<EventsAdapterItem>()
@@ -71,8 +72,8 @@ class EventsViewModel(private val repository: Repository) : ViewModel() {
     private fun WtmEvent.toEventItem() = EventItem(
         id = id,
         name = name,
-        localDateTime = localDateTime,
-        venueName = venueName
+        localDateTime = dateTimeStart.toLocalDateTime(),
+        venueName = venue?.name
     )
 
     override fun onCleared() {

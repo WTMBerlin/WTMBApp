@@ -3,9 +3,9 @@ package com.wtmberlin.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wtmberlin.data.Coordinates
-import com.wtmberlin.data.DetailedWtmEvent
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
+import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.util.Event
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 
 class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel() {
-    val event = MutableLiveData<DetailedWtmEvent>()
+    val event = MutableLiveData<WtmEvent>()
 
     val addToCalendar = MutableLiveData<AddToCalendarEvent>()
     val openMaps = MutableLiveData<OpenMapsEvent>()
@@ -29,7 +29,7 @@ class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel
         )
     }
 
-    private fun onDataLoaded(result: Result<DetailedWtmEvent>) {
+    private fun onDataLoaded(result: Result<WtmEvent>) {
         result.data?.let { event.value = it }
         result.error?.let { Timber.i(it) }
     }
@@ -42,8 +42,8 @@ class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel
 
     fun onLocationClicked() {
         event.value?.let {
-            if (it.venueName != null && it.venueCoordinates != null) {
-                openMaps.value = OpenMapsEvent(it.venueName, it.venueCoordinates)
+            if (it.venue?.coordinates != null) {
+                openMaps.value = OpenMapsEvent(it.venue.name, it.venue.coordinates)
             }
         }
     }
@@ -66,9 +66,9 @@ data class CalendarEvent(
     val location: String?
 )
 
-private fun DetailedWtmEvent.toCalendarEvent() = CalendarEvent(
-    beginTime = timeStart,
-    endTime = timeStart + duration.toMillis(),
+private fun WtmEvent.toCalendarEvent() = CalendarEvent(
+    beginTime = dateTimeStart.toInstant().toEpochMilli(),
+    endTime = dateTimeStart.toInstant().toEpochMilli() + duration.toMillis(),
     title = name,
-    location = venueName
+    location = venue?.name
 )

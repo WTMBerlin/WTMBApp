@@ -8,15 +8,22 @@ import io.reactivex.functions.BiFunction
 import io.reactivex.processors.BehaviorProcessor
 import io.reactivex.processors.PublishProcessor
 import io.reactivex.schedulers.Schedulers
+import org.threeten.bp.ZonedDateTime
+import timber.log.Timber
 
 abstract class NetworkBoundResource<NetworkT, DatabaseT> {
     private val refreshEvents = PublishProcessor.create<RefreshEvent>()
 
     private val refreshStatuses = BehaviorProcessor.create<RefreshStatus>()
+    private var refreshStart = 0L
 
     init {
         refreshEvents
-            .flatMapCompletable { doRefresh() }
+            .doOnNext { refreshStart = System.currentTimeMillis() }
+            .flatMapCompletable {
+                doRefresh()
+                    .doOnComplete { Timber.w("Refresh time: ${System.currentTimeMillis() - refreshStart}") }
+            }
             .subscribe()
 
         refreshStatuses.onNext(Idle)
@@ -32,7 +39,6 @@ abstract class NetworkBoundResource<NetworkT, DatabaseT> {
             refreshStatuses,
             BiFunction { data: DatabaseT, refreshStatus: RefreshStatus -> toResult(data, refreshStatus) }
         )
-            .doOnSubscribe { refresh() }
             .onErrorReturn { Result<DatabaseT>(loading = false, data = null, error = it) }
     }
 

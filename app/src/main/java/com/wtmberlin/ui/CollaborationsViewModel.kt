@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
-import com.wtmberlin.data.Venue
+import com.wtmberlin.data.VenueName
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -24,12 +24,12 @@ class CollaborationsViewModel(private val repository: Repository) : ViewModel() 
     }
 
 
-    private fun onDataLoaded(result: Result<List<Venue>>) {
+    private fun onDataLoaded(result: Result<List<VenueName>>) {
         result.data?.let { processVenues(it) }
         result.error?.let { Timber.i(it) }
     }
 
-    private fun processVenues(list: List<Venue>) {
+    private fun processVenues(list: List<VenueName>) {
         adapterItems.value = list.map {
             CollaborationsAdapterItem(it.name, it.name)
         }

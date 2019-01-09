@@ -94,7 +94,7 @@
                                 android:layout_height="wrap_content"
                                 android:ellipsize="end"
                                 android:maxLines="2"
-                                android:text="@{BindingKt.fromTimeToTime(viewModel.event.localDateTimeStart, viewModel.event.localDateTimeEnd)}"
+                                android:text="@{BindingKt.fromTimeToTime(viewModel.event.localDateTimeStart(), viewModel.event.localDateTimeEnd())}"
                                 tools:text="6:30 PM to 9:30 PM" />
 
                         </LinearLayout>
@@ -110,7 +110,7 @@
                         android:orientation="horizontal"
                         android:paddingTop="@dimen/material_space_half"
                         android:paddingBottom="@dimen/material_space_half"
-                        android:visibility="@{viewModel.event.venueName != null ? View.VISIBLE : View.INVISIBLE}">
+                        android:visibility="@{viewModel.event.venue != null ? View.VISIBLE : View.INVISIBLE}">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -131,7 +131,7 @@
                                 android:layout_height="wrap_content"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="@{viewModel.event.venueName}"
+                                android:text="@{viewModel.event.venue.name}"
                                 android:textAppearance="@style/WtmBerlin.TextAppearance.EventDateVenue"
                                 tools:text="Dalia Research GmbH" />
 
@@ -141,7 +141,7 @@
                                 android:layout_height="wrap_content"
                                 android:ellipsize="end"
                                 android:maxLines="2"
-                                android:text="@{viewModel.event.venueAddress}"
+                                android:text="@{viewModel.event.venue.address}"
                                 tools:text="Dalia Research GmbH" />
 
                         </LinearLayout>

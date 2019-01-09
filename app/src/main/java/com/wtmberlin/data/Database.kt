@@ -5,23 +5,21 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import org.threeten.bp.Duration
-import org.threeten.bp.LocalDateTime
+import org.threeten.bp.ZonedDateTime
 import org.threeten.bp.format.DateTimeFormatter
 
-@TypeConverters(LocalDateTimeConverter::class, DurationConverter::class)
-@Database(entities = [WtmEvent::class, DetailedWtmEvent::class], version = 2)
+@TypeConverters(ZonedDateTimeConverter::class, DurationConverter::class)
+@Database(entities = [WtmEvent::class], version = 4)
 abstract class Database : RoomDatabase() {
     abstract fun wtmEventDAO(): WtmEventDao
-
-    abstract fun detailedWtmEventDao(): DetailedWtmEventDAO
 }
 
-class LocalDateTimeConverter {
+class ZonedDateTimeConverter {
     @TypeConverter
-    fun save(date: LocalDateTime): String = date.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+    fun save(date: ZonedDateTime): String = date.format(DateTimeFormatter.ISO_ZONED_DATE_TIME)
 
     @TypeConverter
-    fun load(date: String): LocalDateTime = LocalDateTime.parse(date, DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+    fun load(date: String): ZonedDateTime = ZonedDateTime.parse(date, DateTimeFormatter.ISO_ZONED_DATE_TIME)
 }
 
 class DurationConverter {
