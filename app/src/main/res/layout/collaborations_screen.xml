@@ -21,14 +21,14 @@
             style="@style/WtmBerlin.Events.ListHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/collaboration_partners" />
+            android:text="@string/collaborations_header" />
 
         <TextView
             android:id="@+id/collaborations_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@string/collaborations_info_content"/>
+            android:text="@string/collaborations_description"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/collaborations_recycler"

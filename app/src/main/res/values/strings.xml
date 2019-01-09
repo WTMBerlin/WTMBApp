@@ -2,35 +2,56 @@
 <resources>
     <string name="app_name">Women Techmakers Berlin</string>
 
+    <!-- Collaborations -->
+    <string name="collaborations_header">Collaboration partners</string>
+    <string name="collaborations_description">
+        Our events are possible thanks to many diversity supporting companies.
+        We also work with external partners, speakers and tutors.
+        If you are interested in a partnership of any kind, for example hosting our event,
+        feel free to reach out via Slack TODO or other communication channels -
+        check the social media tab TODO! We have previously worked with the following companies:</string>
+
+    <!-- Community Local -->
+    <string name="community_local_header">Women Techmakers Berlin</string>
+    <string name="community_local_description">
+        Women Techmakers Berlin is part of a global Women Techmakers program run by Google.
+        At Women Techmakers Berlin we are encouraging diversity in tech in Berlin since 2015. Get visibility,
+        networking and resources to make the tech community of Berlin diverse and inclusive!
+        We have different activities: intense study groups, inspirational fireside chats and international events. New
+        and existing members are always welcome to all of the events, and all events are always opened for everyone,
+        regardless of your gender/age/race/experience, etc. We follow the Berlin code of conduct for communities:
+        http://berlincodeofconduct.org</string>
+
     <!-- Events -->
     <string name="events_upcoming_header">Upcoming</string>
     <string name="events_past_header">Past</string>
     <string name="events_no_upcoming_events_message">No upcoming events at the moment. Stay tuned!</string>
+    <string name="events_header">Events</string>
 
     <!-- Event details -->
     <string name="event_details_header_description">Description</string>
 
-    <!-- Community Description -->
-    <string name="description_community">Women Techmakers Berlin is part of a global Women Techmakers program run by Google.
-        At Women Techmakers Berlin we are encouraging diversity in tech in Berlin since 2015. Get visibility, networking and resources to make the tech community of Berlin diverse and inclusive!
-        We have different activities: intense study groups, inspirational fireside chats and international events. New
-        and existing members are always welcome to all of the events, and all events are always opened for everyone,
-        regardless of your gender/age/race/experience, etc. We follow the Berlin code of conduct for communities:
-        http://berlincodeofconduct.org
-    </string>
+    <!-- Social Media -->
+    <string name="social_media_link_meetup" translatable="false">https://www.meetup.com/de-DE/women-techmakers-berlin/</string>
+    <string name="social_media_link_facebook" translatable="false">https://b-m.facebook.com/WomenTechmakersBerlinPage/</string>
+    <string name="social_media_link_twitter" translatable="false">https://twitter.com/wtm_berlin</string>
+    <string name="social_media_link_slack" translatable="false">https://slack.wtmberlin.com/</string>
+    <string name="social_media_header">Social Media</string>
+    <string name="social_media_description">
+        We are active across social media. You can find all our events on Meetup.
+        Slack is one of the main parts of our Community - it is a good place to connect with other members,
+        offer positions in #job-postings that reach more diverse audience or announce free/discounted diversity tickets.
+        For Twitter you can use #womentechmakers.</string>
 
-    <!-- Social Media Info -->
-    <string name="link_meetup">https://www.meetup.com/de-DE/women-techmakers-berlin/</string>
-    <string name="link_facebook">https://b-m.facebook.com/WomenTechmakersBerlinPage/</string>
-    <string name="link_twitter">https://twitter.com/wtm_berlin</string>
-    <string name="link_slack">https://slack.wtmberlin.com/</string>
-    <string name="title_social_media">Social Media</string>
-    <string name="title_community_local">Women Techmakers Berlin</string>
-    <string name="title_community_global">Women Techmakers</string>
-    <string name="title_nav_header">More info:</string>
-    <string name="statistics">Statistics</string>
-    <string name="events">Events</string>
-    <string name="collaboration_partners">Collaboration partners</string>
-    <string name="collaborations_info_content">Our events are possible thanks to many diversity supporting companies. We also work with external partners, speakers and tutors. If you are interested in a partnership of any kind, for example hosting our event, feel free to reach out via Slack TODO or other communication channels - check the social media tab TODO! We have previously worked with the following companies:</string>
-    <string name="social_media_content">We are active across social media. You can find all our events on Meetup. Slack is one of the main parts of our Community - it is a good place to connect with other members, offer positions in #job-postings that reach more diverse audience or announce free/discounted diversity tickets. For Twitter you can use #womentechmakers.</string>
+    <!-- Statistics -->
+    <string name="statistics_header">Statistics</string>
+
+    <!-- Nav Drawer -->
+    <string name="nav_drawer_header">More info:</string>
+    <string name="nav_drawer_social_media_menu_item">@string/social_media_header</string>
+    <string name="nav_drawer_community_local_menu_item">@string/community_local_header</string>
+    <string name="nav_drawer_community_global_menu_item">Women Techmakers</string>
+    <string name="nav_drawer_statistics_menu_item">@string/statistics_header</string>
+    <string name="nav_drawer_events_menu_item">@string/events_header</string>
+    <string name="nav_drawer_collaborations_menu_item">@string/collaborations_header</string>
 </resources>

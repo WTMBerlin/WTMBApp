@@ -26,7 +26,7 @@
         android:layout_marginBottom="313dp"
         android:autoLink="web"
         android:clickable="true"
-        android:text="@string/link_meetup"
+        android:text="@string/social_media_link_meetup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -57,7 +57,7 @@
         android:layout_marginEnd="44dp"
         android:autoLink="web"
         android:clickable="true"
-        android:text="@string/link_slack"
+        android:text="@string/social_media_link_slack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/link_meetup" />
 
@@ -82,7 +82,7 @@
         android:layout_marginEnd="42dp"
         android:autoLink="web"
         android:clickable="true"
-        android:text="@string/link_twitter"
+        android:text="@string/social_media_link_twitter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/link_slack" />
 
@@ -109,7 +109,7 @@
         android:layout_marginBottom="32dp"
         android:autoLink="web"
         android:clickable="true"
-        android:text="@string/link_facebook"
+        android:text="@string/social_media_link_facebook"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/link_twitter"
@@ -121,7 +121,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="171dp"
-        android:text="@string/title_social_media"
+        android:text="@string/social_media_header"
         app:layout_constraintBottom_toTopOf="@+id/link_meetup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +136,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="60dp"
         android:padding="8dp"
-        android:text="@string/social_media_content"
+        android:text="@string/social_media_description"
         app:layout_constraintBottom_toTopOf="@+id/link_meetup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

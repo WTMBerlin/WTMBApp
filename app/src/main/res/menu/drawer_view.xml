@@ -2,21 +2,21 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/social_media_screen"
-            android:title="@string/title_social_media" />
+            android:title="@string/nav_drawer_social_media_menu_item" />
         <item
             android:id="@+id/community_info_screen"
-            android:title="@string/title_community_local" />
+            android:title="@string/nav_drawer_community_local_menu_item" />
         <item
             android:id="@+id/wtm_website"
-            android:title="@string/title_community_global" />
+            android:title="@string/nav_drawer_community_global_menu_item" />
         <item
             android:id="@+id/stats_screen"
-            android:title="@string/statistics" />
+            android:title="@string/nav_drawer_statistics_menu_item" />
         <item
             android:id="@+id/events_screen"
-            android:title="@string/events" />
+            android:title="@string/nav_drawer_events_menu_item" />
         <item
             android:id="@+id/collaborations_screen"
-            android:title="@string/collaboration_partners" />
+            android:title="@string/nav_drawer_collaborations_menu_item" />
     </group>
 </menu>

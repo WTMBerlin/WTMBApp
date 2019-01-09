@@ -32,9 +32,9 @@
 
     <fragment
         android:id="@+id/community_info_screen"
-        android:name="com.wtmberlin.ui.CommunityInfoFragment"
+        android:name="com.wtmberlin.ui.CommunityLocalFragment"
         android:label="Blank"
-        tools:layout="@layout/community_info_local_screen" />
+        tools:layout="@layout/community_local_screen" />
 
     <fragment
         android:id="@+id/collaborations_screen"
