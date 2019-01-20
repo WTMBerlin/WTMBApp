@@ -3,7 +3,7 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:${Deps.gradleVersion}")
@@ -18,7 +18,13 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+
+        jcenter {
+            content {
+                includeGroup("org.koin")
+            }
+        }
     }
 }
 

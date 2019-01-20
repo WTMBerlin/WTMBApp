@@ -7,7 +7,7 @@ object Deps {
     val constraintLayoutVersion = "1.1.3"
     val coreVersion = "1.0.1"
     val fragmentVersion = "1.0.0"
-    val gradleVersion = "3.2.1"
+    val gradleVersion = "3.3.0"
     val junitVersion = "4.12"
     val koinVersion = "1.0.2"
     val kotlinVersion = "1.3.11"
