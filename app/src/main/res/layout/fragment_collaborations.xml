@@ -23,6 +23,12 @@
             android:layout_height="wrap_content"
             android:text="@string/collaboration_partners" />
 
+        <TextView
+            android:id="@+id/collaborations_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/collaborations_info_content"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/collaborations_recycler"
             android:layout_width="match_parent"
