@@ -15,7 +15,7 @@ object Deps {
     val loggingInterceptorVersion = "3.12.0"
     val materialVersion = "1.0.0"
     val moshiVersion = "1.8.0"
-    val navigationVersion = "1.0.0-alpha09"
+    val navigationVersion = "1.0.0-alpha11"
     val picassoVersion = "2.71828"
     val recyclerViewVersion = "1.0.0"
     val retrofitVersion = "2.5.0"
