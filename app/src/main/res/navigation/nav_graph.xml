@@ -28,24 +28,24 @@
         android:id="@+id/social_media_screen"
         android:name="com.wtmberlin.ui.SocialMediaFragment"
         android:label="Blank"
-        tools:layout="@layout/fragment_social_media" />
+        tools:layout="@layout/social_media_screen" />
 
     <fragment
         android:id="@+id/community_info_screen"
         android:name="com.wtmberlin.ui.CommunityInfoFragment"
         android:label="Blank"
-        tools:layout="@layout/fragment_community_info_local" />
+        tools:layout="@layout/community_info_local_screen" />
 
     <fragment
         android:id="@+id/collaborations_screen"
         android:name="com.wtmberlin.ui.CollaborationsFragment"
         android:label="Blank"
-        tools:layout="@layout/fragment_collaborations" />
+        tools:layout="@layout/collaborations_screen" />
 
     <fragment
         android:id="@+id/stats_screen"
         android:name="com.wtmberlin.ui.DetailStatsFragment"
         android:label="Blank"
-        tools:layout="@layout/fragment_stats" />
+        tools:layout="@layout/stats_screen" />
 
 </navigation>

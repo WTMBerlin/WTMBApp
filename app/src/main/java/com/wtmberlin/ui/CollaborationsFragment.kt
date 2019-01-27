@@ -10,11 +10,11 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ListAdapter
 import com.wtmberlin.R
-import com.wtmberlin.databinding.FragmentCollaborationsBinding
+import com.wtmberlin.databinding.CollaborationsScreenBinding
 import com.wtmberlin.util.AdapterItem
 import com.wtmberlin.util.BindingViewHolder
 import com.wtmberlin.util.DIFF_CALLBACK
-import kotlinx.android.synthetic.main.fragment_collaborations.*
+import kotlinx.android.synthetic.main.collaborations_screen.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class CollaborationsFragment : Fragment() {
@@ -28,9 +28,9 @@ class CollaborationsFragment : Fragment() {
     ): View? {
         val binding =
             DataBindingUtil
-                .inflate<FragmentCollaborationsBinding>(
+                .inflate<CollaborationsScreenBinding>(
                     inflater,
-                    R.layout.fragment_collaborations,
+                    R.layout.collaborations_screen,
                     container,
                     false
                 )

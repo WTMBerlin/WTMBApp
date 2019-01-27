@@ -18,7 +18,7 @@ override fun onCreateView(
 
             .inflate<>(
                 inflater,
-                R.layout.fragment_stats,
+                R.layout.stats_screen,
                 container,
                 false
             )

@@ -12,13 +12,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.wtmberlin.R
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.main_screen.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.main_screen)
         initToolbar()
         initNavigationDrawer()
 
