@@ -61,6 +61,7 @@ abstract class NetworkBoundResource<NetworkT, DatabaseT> {
             .doOnSubscribe { refreshStatuses.onNext(InProgress) }
             .doOnComplete { refreshStatuses.onNext(Idle) }
             .doOnError { refreshStatuses.onNext(Error(it)) }
+            .onErrorComplete()
             .subscribeOn(Schedulers.io())
             .observeOn(Schedulers.computation())
     }
