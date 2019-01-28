@@ -14,6 +14,7 @@ object Deps {
     val lifecycleVersion = "2.0.0"
     val loggingInterceptorVersion = "3.12.0"
     val materialVersion = "1.0.0"
+    val mockitoVersion = "2.23.4"
     val moshiVersion = "1.8.0"
     val navigationVersion = "1.0.0-alpha11"
     val picassoVersion = "2.71828"
@@ -25,4 +26,5 @@ object Deps {
     val timberVersion = "4.7.1"
     val threetenbpVersion = "1.3.7"
     val threetenbpAndroidVersion = "1.1.1"
+    val truthVersion = "0.42"
 }

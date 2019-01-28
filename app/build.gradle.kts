@@ -37,15 +37,22 @@ dependencies {
     implementation("androidx.core:core-ktx:${Deps.coreVersion}")
     implementation("androidx.fragment:fragment-ktx:${Deps.fragmentVersion}")
     implementation("androidx.constraintlayout:constraintlayout:${Deps.constraintLayoutVersion}")
+    testImplementation("androidx.arch.core:core-testing:${Deps.lifecycleVersion}")
 
     // Support Library
     implementation("androidx.appcompat:appcompat:${Deps.appcompatVersion}")
     implementation("com.google.android.material:material:${Deps.materialVersion}")
     implementation("androidx.recyclerview:recyclerview:${Deps.recyclerViewVersion}")
 
+    // JUnit
+    testImplementation("junit:junit:${Deps.junitVersion}")
+
     // Koin
     implementation("org.koin:koin-android:${Deps.koinVersion}")
     implementation("org.koin:koin-android-viewmodel:${Deps.koinVersion}")
+
+    // Mockito
+    testImplementation("org.mockito:mockito-core:${Deps.mockitoVersion}")
 
     // Moshi
     implementation("com.squareup.moshi:moshi:${Deps.moshiVersion}")
@@ -64,10 +71,10 @@ dependencies {
     implementation("io.reactivex.rxjava2:rxjava:${Deps.rxjavaVersion}")
     implementation("io.reactivex.rxjava2:rxandroid:${Deps.rxandroidVersion}")
 
-    //Room
+    // Room
     implementation("androidx.room:room-runtime:${Deps.roomVersion}")
     implementation("androidx.room:room-rxjava2:${Deps.roomVersion}")
-    kapt("androidx.room:room-compiler:${Deps.roomVersion}") // use kapt for Kotlin
+    kapt("androidx.room:room-compiler:${Deps.roomVersion}")
 
     // ThreeTenBp
     testImplementation("org.threeten:threetenbp:${Deps.threetenbpVersion}")
@@ -76,8 +83,9 @@ dependencies {
     // Timber
     implementation("com.jakewharton.timber:timber:${Deps.timberVersion}")
 
-    //Picasso
-    implementation("com.squareup.picasso:picasso:${Deps.picassoVersion}")
+    // Truth
+    testImplementation("com.google.truth:truth:${Deps.truthVersion}")
 
-    testImplementation("junit:junit:${Deps.junitVersion}")
+    // Picasso
+    implementation("com.squareup.picasso:picasso:${Deps.picassoVersion}")
 }

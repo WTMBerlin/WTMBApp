@@ -2,18 +2,16 @@ package com.wtmberlin.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.wtmberlin.SchedulerProvider
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.util.Event
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
-import org.threeten.bp.LocalDateTime
 import org.threeten.bp.ZonedDateTime
 import timber.log.Timber
 
-class EventsViewModel(private val repository: Repository) : ViewModel() {
+class EventsViewModel(private val repository: Repository, private val schedulerProvider: SchedulerProvider) : ViewModel() {
     val adapterItems = MutableLiveData<List<EventsAdapterItem>>()
     val refreshing = MutableLiveData<Boolean>()
     val displayEventDetails = MutableLiveData<DisplayEventDetailsEvent>()
@@ -23,8 +21,8 @@ class EventsViewModel(private val repository: Repository) : ViewModel() {
     init {
         subscriptions.add(
             repository.events()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io)
+                .observeOn(schedulerProvider.ui)
                 .subscribe(this::onDataLoaded)
         )
     }
