@@ -49,27 +49,24 @@ class EventsViewModelTest {
 
     @Test
     fun `on WtmEvents parsed to EventItems`() {
-        val exampleDate = LocalDateTime.of(2018, 12, 18, 18, 30)
-        val exampleZonedDate = ZonedDateTime.of(exampleDate, ZoneId.of("Europe/Paris"))
-        val exampleDuration = Duration.of(120, ChronoUnit.MINUTES)
-        val exampleVenue = Venue("Example Company", "Example Address", Coordinates(22.0,33.2))
 
         //EventsFragment
         val noUpcomingEventsHeaderItem = NoUpcomingEventsItem
         val pastHeaderItem = PastHeaderItem
-        val result = mutableListOf<Any>()
 
-        val events: MutableList<WtmEvent> = mutableListOf<WtmEvent>()
+        val events: List<WtmEvent> = listOf<WtmEvent>(
+            createWtmEvent("2", "Android Co-Learning Testing part 2"),
+            createWtmEvent("3", "Android Co-Learning Testing part 3"),
+            createWtmEvent("4", "Android Co-Learning Testing part 4")
+        )
 
-        events.add(0,element = WtmEvent("2","Android Co-Learning Testing part 2", exampleZonedDate,exampleDuration,"amazing event","fake url",exampleVenue))
-        events.add(1,element = WtmEvent("3","Android Co-Learning Testing part 3", exampleZonedDate,exampleDuration,"amazing event","fake url",exampleVenue))
-        events.add(2,element = WtmEvent("4","Android Co-Learning Testing part 4", exampleZonedDate,exampleDuration,"amazing event","fake url",exampleVenue))
-
-        result.add(0,noUpcomingEventsHeaderItem)
-        result.add(1,pastHeaderItem)
-        result.add(2,EventItem("2","Android Co-Learning Testing part 2", exampleZonedDate.toLocalDateTime(),exampleVenue.name))
-        result.add(3,EventItem("3","Android Co-Learning Testing part 3", exampleZonedDate.toLocalDateTime(),exampleVenue.name))
-        result.add(4,EventItem("4","Android Co-Learning Testing part 4", exampleZonedDate.toLocalDateTime(),exampleVenue.name))
+        val result = listOf<Any>(
+            noUpcomingEventsHeaderItem,
+            pastHeaderItem,
+            createEventItem("2", "Android Co-Learning Testing part 2"),
+            createEventItem("3", "Android Co-Learning Testing part 3"),
+            createEventItem("4", "Android Co-Learning Testing part 4")
+        )
 
         mockEvents.onNext(Result(loading = false, data = events, error = null))
 
@@ -77,5 +74,24 @@ class EventsViewModelTest {
 
         assertThat(dataObserver.observedValues[0])
             .isEqualTo(result)
+    }
+
+    private fun convertWtmEventToEventItem(event: WtmEvent): EventItem {
+        return EventItem(event.id, event.name, event.dateTimeStart.toLocalDateTime(), event.venue!!.name)
+    }
+
+    private fun createEventItem(id: String, eventName: String): EventItem {
+        val wtmEvent = createWtmEvent(id, eventName)
+        return convertWtmEventToEventItem(wtmEvent)
+    }
+
+    private fun createWtmEvent(id: String, eventName: String): WtmEvent {
+        val exampleDate = LocalDateTime.of(2018, 12, 18, 18, 30)
+        val exampleZonedDate = ZonedDateTime.of(exampleDate, ZoneId.of("Europe/Paris"))
+        val exampleDuration = Duration.of(120, ChronoUnit.MINUTES)
+        val description = "amazing event"
+        val url = "fake url"
+        val exampleVenue = Venue("Example Company", "Example Address", Coordinates(22.0, 33.2))
+        return WtmEvent(id, eventName, exampleZonedDate, exampleDuration, url, description, exampleVenue)
     }
 }
