@@ -49,49 +49,42 @@ class EventsViewModelTest {
 
     @Test
     fun `on WtmEvents parsed to EventItems`() {
-
         //EventsFragment
         val noUpcomingEventsHeaderItem = NoUpcomingEventsItem
         val pastHeaderItem = PastHeaderItem
 
-        val events: List<WtmEvent> = listOf<WtmEvent>(
-            createWtmEvent("2", "Android Co-Learning Testing part 2"),
-            createWtmEvent("3", "Android Co-Learning Testing part 3"),
-            createWtmEvent("4", "Android Co-Learning Testing part 4")
-        )
+        val events = listOf<WtmEvent>(wtmEvent("2", "Android Co-Learning Testing part 2"),
+                                      wtmEvent("3", "Android Co-Learning Testing part 3"),
+                                      wtmEvent("4", "Android Co-Learning Testing part 4"))
 
-        val result = listOf<Any>(
-            noUpcomingEventsHeaderItem,
-            pastHeaderItem,
-            createEventItem("2", "Android Co-Learning Testing part 2"),
-            createEventItem("3", "Android Co-Learning Testing part 3"),
-            createEventItem("4", "Android Co-Learning Testing part 4")
-        )
+        val expected = listOf<Any>(noUpcomingEventsHeaderItem,
+                                   pastHeaderItem,
+                                   eventItem("2", "Android Co-Learning Testing part 2"),
+                                   eventItem("3", "Android Co-Learning Testing part 3"),
+                                   eventItem("4", "Android Co-Learning Testing part 4"))
 
         mockEvents.onNext(Result(loading = false, data = events, error = null))
 
         val dataObserver = viewModel.adapterItems.testObserver()
 
         assertThat(dataObserver.observedValues[0])
-            .isEqualTo(result)
+            .isEqualTo(expected)
     }
 
-    private fun convertWtmEventToEventItem(event: WtmEvent): EventItem {
-        return EventItem(event.id, event.name, event.dateTimeStart.toLocalDateTime(), event.venue!!.name)
+    private fun wtmEvent(id: String, eventName: String): WtmEvent {
+        return WtmEvent(id,
+                        eventName,
+                        ZonedDateTime.of(LocalDateTime.of(2018, 12, 18, 18, 30),
+                        ZoneId.of("Europe/Paris")),
+                        Duration.of(120, ChronoUnit.MINUTES),
+               "amazing event", "fake url",
+                        Venue("Example Company", "Example Address", Coordinates(22.0, 33.2)))
     }
 
-    private fun createEventItem(id: String, eventName: String): EventItem {
-        val wtmEvent = createWtmEvent(id, eventName)
-        return convertWtmEventToEventItem(wtmEvent)
-    }
-
-    private fun createWtmEvent(id: String, eventName: String): WtmEvent {
-        val exampleDate = LocalDateTime.of(2018, 12, 18, 18, 30)
-        val exampleZonedDate = ZonedDateTime.of(exampleDate, ZoneId.of("Europe/Paris"))
-        val exampleDuration = Duration.of(120, ChronoUnit.MINUTES)
-        val description = "amazing event"
-        val url = "fake url"
-        val exampleVenue = Venue("Example Company", "Example Address", Coordinates(22.0, 33.2))
-        return WtmEvent(id, eventName, exampleZonedDate, exampleDuration, url, description, exampleVenue)
+    private fun eventItem(id: String, eventName: String): EventItem {
+        return EventItem(id,
+                         eventName,
+                         LocalDateTime.of(2018, 12, 18, 18, 30),
+               "Example Company")
     }
 }
