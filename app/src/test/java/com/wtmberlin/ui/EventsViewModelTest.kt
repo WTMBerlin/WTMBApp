@@ -11,10 +11,7 @@ import io.reactivex.processors.PublishProcessor
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.`when`
-import org.threeten.bp.Duration
-import org.threeten.bp.LocalDateTime
-import org.threeten.bp.ZoneId
-import org.threeten.bp.ZonedDateTime
+import org.threeten.bp.*
 import org.threeten.bp.temporal.ChronoUnit
 
 class EventsViewModelTest {
@@ -39,7 +36,7 @@ class EventsViewModelTest {
     }
 
     @Test
-    fun `when events are refreshed emits refresh false`() {
+    fun `when events are not refreshed emits refresh false`() {
         val refreshObserver = viewModel.refreshing.testObserver()
 
         mockEvents.onNext(Result(loading = false, data = null, error = null))
@@ -49,43 +46,79 @@ class EventsViewModelTest {
     }
 
     @Test
-    fun `on WtmEvents parsed to EventItems`() {
-        //EventsFragment
-        val noUpcomingEventsHeaderItem = NoUpcomingEventsItem
-        val pastHeaderItem = PastHeaderItem
+    fun `when no events emit NoUpcomingEvents`() {
+        val observer = viewModel.adapterItems.testObserver()
 
-        val events = listOf<WtmEvent>(wtmEvent("2", "Android Co-Learning Testing part 2"),
-                                      wtmEvent("3", "Android Co-Learning Testing part 3"),
-                                      wtmEvent("4", "Android Co-Learning Testing part 4"))
+        mockEvents.onNext(Result(loading = false, data = emptyList(), error = null))
 
-        val expected = listOf<AdapterItem>(noUpcomingEventsHeaderItem,
-                                   pastHeaderItem,
-                                   eventItem("2", "Android Co-Learning Testing part 2"),
-                                   eventItem("3", "Android Co-Learning Testing part 3"),
-                                   eventItem("4", "Android Co-Learning Testing part 4"))
-
-        mockEvents.onNext(Result(loading = false, data = events, error = null))
-
-        val dataObserver = viewModel.adapterItems.testObserver()
-
-        assertThat(dataObserver.observedValues[0])
-            .isEqualTo(expected)
+        assertThat(observer.observedValues)
+            .containsExactly(listOf(NoUpcomingEventsItem))
     }
 
-    private fun wtmEvent(id: String, eventName: String): WtmEvent {
-        return WtmEvent(id,
-                        eventName,
-                        ZonedDateTime.of(LocalDateTime.of(2018, 12, 18, 18, 30),
-                        ZoneId.of("Europe/Paris")),
-                        Duration.of(120, ChronoUnit.MINUTES),
-               "amazing event", "fake url",
-                        Venue("Example Company", "Example Address", Coordinates(22.0, 33.2)))
+    @Test
+    fun `when one past event emit past header item and event`() {
+        val input = listOf(wtmEvent("2", "DevOps", yesterday(), "CompanyA"))
+        val expected = listOf(
+            NoUpcomingEventsItem,
+            PastHeaderItem,
+            EventItem("2", "DevOps", yesterday(), "CompanyA")
+        )
+
+        val observer = viewModel.adapterItems.testObserver()
+
+        mockEvents.onNext(Result(loading = false, data = input, error = null))
+
+        assertThat(observer.observedValues).containsExactly(expected)
     }
 
-    private fun eventItem(id: String, eventName: String): EventItem {
-        return EventItem(id,
-                         eventName,
-                         LocalDateTime.of(2018, 12, 18, 18, 30),
-               "Example Company")
+    @Test
+    fun `when one upcoming event emit upcoming header item and event`() {
+        val input = listOf(wtmEvent("2", "DevOps", tomorrow(), "CompanyA"))
+        val expected = listOf(
+            UpcomingHeaderItem,
+            EventItem("2", "DevOps", tomorrow(), "CompanyA")
+        )
+        val observer = viewModel.adapterItems.testObserver()
+
+        mockEvents.onNext(Result(loading = false, data = input, error = null))
+
+        assertThat(observer.observedValues).containsExactly(expected)
     }
+
+    @Test
+    fun `when one upcoming and one past event emit upcoming header item, upcoming event, past header item, past event`() {
+        val input = listOf(
+            wtmEvent("2", "DevOps", tomorrow(), "CompanyA"),
+            wtmEvent("1", "Android Study Jam", yesterday(), "CompanyB")
+        )
+        val expected = listOf(
+            UpcomingHeaderItem,
+            EventItem("2", "DevOps", tomorrow(), "CompanyA"),
+            PastHeaderItem,
+            EventItem("1", "Android Study Jam", yesterday(), "CompanyB")
+        )
+
+        val observer = viewModel.adapterItems.testObserver()
+
+        mockEvents.onNext(Result(loading = false, data = input, error = null))
+
+        assertThat(observer.observedValues).containsExactly(expected)
+    }
+
+
+    fun wtmEvent(id: String, name: String, dateTime: LocalDateTime, venueName: String): WtmEvent {
+        return WtmEvent(
+            id,
+            name,
+            ZonedDateTime.of(dateTime, ZoneId.systemDefault()),
+            Duration.ofMinutes(120),
+            "amazing event",
+            "https://www.meetup.com/de-DE/Women-Techmakers-Berlin/events/258092838/",
+            Venue(venueName, "Example Address", Coordinates(22.0, 33.2))
+        )
+    }
+
+    fun yesterday() = LocalDateTime.of(LocalDate.now(), LocalTime.NOON).minusDays(1)
+
+    fun tomorrow() = LocalDateTime.of(LocalDate.now(), LocalTime.NOON).plusDays(1)
 }
