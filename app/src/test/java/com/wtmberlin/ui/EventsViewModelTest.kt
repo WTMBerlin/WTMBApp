@@ -6,6 +6,7 @@ import com.wtmberlin.TestSchedulerProvider
 import com.wtmberlin.data.*
 import com.wtmberlin.mock
 import com.wtmberlin.testObserver
+import com.wtmberlin.util.AdapterItem
 import io.reactivex.processors.PublishProcessor
 import org.junit.Rule
 import org.junit.Test
@@ -57,7 +58,7 @@ class EventsViewModelTest {
                                       wtmEvent("3", "Android Co-Learning Testing part 3"),
                                       wtmEvent("4", "Android Co-Learning Testing part 4"))
 
-        val expected = listOf<Any>(noUpcomingEventsHeaderItem,
+        val expected = listOf<AdapterItem>(noUpcomingEventsHeaderItem,
                                    pastHeaderItem,
                                    eventItem("2", "Android Co-Learning Testing part 2"),
                                    eventItem("3", "Android Co-Learning Testing part 3"),
