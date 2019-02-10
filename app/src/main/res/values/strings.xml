@@ -43,15 +43,11 @@
         offer positions in #job-postings that reach more diverse audience or announce free/discounted diversity tickets.
         For Twitter you can use #womentechmakers.</string>
 
-    <!-- Statistics -->
-    <string name="statistics_header">Statistics</string>
-
     <!-- Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>
     <string name="nav_drawer_social_media_menu_item">@string/social_media_header</string>
     <string name="nav_drawer_community_local_menu_item">@string/community_local_header</string>
     <string name="nav_drawer_community_global_menu_item">Women Techmakers</string>
-    <string name="nav_drawer_statistics_menu_item">@string/statistics_header</string>
     <string name="nav_drawer_events_menu_item">@string/events_header</string>
     <string name="nav_drawer_collaborations_menu_item">@string/collaborations_header</string>
 </resources>

@@ -10,9 +10,6 @@
             android:id="@+id/wtm_website"
             android:title="@string/nav_drawer_community_global_menu_item" />
         <item
-            android:id="@+id/stats_screen"
-            android:title="@string/nav_drawer_statistics_menu_item" />
-        <item
             android:id="@+id/events_screen"
             android:title="@string/nav_drawer_events_menu_item" />
         <item
