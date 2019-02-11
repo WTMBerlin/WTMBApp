@@ -10,15 +10,7 @@ import retrofit2.http.Path
 interface MeetupService {
     @GET("Women-Techmakers-Berlin/events?status=cancelled,past,upcoming&desc=true&only=id,name,time,utc_offset,duration,venue,description,featured_photo.photo_link&fields=featured_photo&omit=venue.localized_country_name,venue.repinned,venue.phone&page=200")
     fun events(): Single<List<MeetupEvent>>
-
-    @GET("Women-Techmakers-Berlin?only=past_event_count,members")
-    fun group(): Single<MeetupGroup>
 }
-
-data class MeetupGroup(
-    val past_event_count: Int,
-    val members: Int
-)
 
 data class MeetupEvent(
     val id: String,

@@ -1,7 +1,6 @@
 package com.wtmberlin.data
 
 import com.wtmberlin.meetup.MeetupEvent
-import com.wtmberlin.meetup.MeetupGroup
 import com.wtmberlin.meetup.MeetupService
 import com.wtmberlin.meetup.MeetupVenue
 import io.reactivex.Flowable
@@ -18,14 +17,6 @@ class Repository(private val apiService: MeetupService, private val database: Da
             .map { it.distinct() }
             .map { Result(loading = false, data = it, error = null) }
             .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
-    }
-
-    fun group(): Flowable<Result<WtmGroup>> {
-        return apiService.group()
-            .map { it.toWtmGroup() }
-            .map { Result(loading = false, data = it, error = null) }
-            .onErrorReturn { Result(loading = false, data = null, error = it) }
-            .toFlowable()
     }
 
     fun events(): Flowable<Result<List<WtmEvent>>> {
@@ -112,12 +103,6 @@ private fun MeetupVenue.addressText() =
             append(it)
         }
     }.toString()
-
-
-private fun MeetupGroup.toWtmGroup() = WtmGroup(
-    pastEventCount = past_event_count,
-    members = members
-)
 
 private fun MeetupEvent.toVenueName() = VenueName(
     name = venue?.name ?: ""

@@ -42,10 +42,4 @@
         android:label="Blank"
         tools:layout="@layout/collaborations_screen" />
 
-    <fragment
-        android:id="@+id/stats_screen"
-        android:name="com.wtmberlin.ui.DetailStatsFragment"
-        android:label="Blank"
-        tools:layout="@layout/stats_screen" />
-
 </navigation>
