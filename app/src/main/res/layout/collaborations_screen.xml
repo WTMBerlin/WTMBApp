@@ -17,13 +17,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/collaborations_header"
-            style="@style/WtmBerlin.Events.ListHeader"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/collaborations_header" />
-
-        <TextView
             android:id="@+id/collaborations_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

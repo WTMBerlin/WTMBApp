@@ -5,19 +5,10 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/social_media_header"
-        style="@style/WtmBerlin.Events.ListHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/social_media_header" />
-
-    <TextView
         android:id="@+id/social_media_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/material_space"
-        android:layout_marginEnd="@dimen/material_space"
-        android:layout_marginBottom="@dimen/material_space"
+        android:layout_margin="@dimen/material_space"
         android:text="@string/social_media_description" />
 
     <TextView
