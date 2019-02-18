@@ -1,163 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-    <ImageView
-        android:id="@+id/icon_meetup"
-        android:layout_width="76dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/ic_meetup"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/social_media_content" />
-
-    <TextView
-        android:id="@+id/link_meetup"
-        android:layout_width="222dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="313dp"
-        android:autoLink="web"
-        android:clickable="true"
-        android:text="@string/social_media_link_meetup"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/icon_meetup"
-        app:layout_constraintTop_toBottomOf="@+id/social_media_header" />
-
-    <ImageView
-        android:id="@+id/icon_slack"
-        android:layout_width="100dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/ic_slack"
-        app:layout_constraintBottom_toTopOf="@+id/icon_twitter"
-        app:layout_constraintEnd_toStartOf="@+id/link_slack"
-        app:layout_constraintHorizontal_bias="0.755"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon_meetup"
-        app:layout_constraintVertical_bias="0.506" />
-
-    <TextView
-        android:id="@+id/link_slack"
-        android:layout_width="0dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="44dp"
-        android:autoLink="web"
-        android:clickable="true"
-        android:text="@string/social_media_link_slack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/link_meetup" />
-
-    <ImageView
-        android:id="@+id/icon_twitter"
-        android:layout_width="97dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="36dp"
-        android:src="@drawable/ic_twitter"
-        app:layout_constraintBottom_toTopOf="@+id/icon_facebook"
-        app:layout_constraintEnd_toStartOf="@+id/link_twitter"
-        app:layout_constraintHorizontal_bias="0.616"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/link_twitter"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="42dp"
-        android:autoLink="web"
-        android:clickable="true"
-        android:text="@string/social_media_link_twitter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/link_slack" />
-
-
-    <ImageView
-        android:id="@+id/icon_facebook"
-        android:layout_width="97dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="52dp"
-        android:src="@drawable/ic_facebook"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/link_facebook"
-        app:layout_constraintHorizontal_bias="0.698"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/link_facebook"
-        android:layout_width="214dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="32dp"
-        android:autoLink="web"
-        android:clickable="true"
-        android:text="@string/social_media_link_facebook"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/link_twitter"
-        app:layout_constraintVertical_bias="0.709" />
-
     <TextView
         android:id="@+id/social_media_header"
         style="@style/WtmBerlin.Events.ListHeader"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="171dp"
-        android:text="@string/social_media_header"
-        app:layout_constraintBottom_toTopOf="@+id/link_meetup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/social_media_header" />
 
     <TextView
         android:id="@+id/social_media_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="60dp"
-        android:padding="8dp"
-        android:text="@string/social_media_description"
-        app:layout_constraintBottom_toTopOf="@+id/link_meetup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/social_media_header"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginStart="@dimen/material_space"
+        android:layout_marginEnd="@dimen/material_space"
+        android:layout_marginBottom="@dimen/material_space"
+        android:text="@string/social_media_description" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/link_meetup"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        style="@style/WtmBerlin.SocialMedia.Item"
+        android:autoLink="web"
+        android:drawableStart="@drawable/social_media_icon_meetup"
+        android:text="@string/social_media_link_meetup" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group2"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/link_slack"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        style="@style/WtmBerlin.SocialMedia.Item"
+        android:autoLink="web"
+        android:drawableStart="@drawable/social_media_icon_slack"
+        android:text="@string/social_media_link_slack" />
+
+    <TextView
+        android:id="@+id/link_twitter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/WtmBerlin.SocialMedia.Item"
+        android:autoLink="web"
+        android:drawableStart="@drawable/social_media_icon_twitter"
+        android:text="@string/social_media_link_twitter" />
+
+    <TextView
+        android:id="@+id/link_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/WtmBerlin.SocialMedia.Item"
+        android:autoLink="web"
+        android:drawableStart="@drawable/social_media_icon_facebook"
+        android:text="@string/social_media_link_facebook" />
+
+</LinearLayout>

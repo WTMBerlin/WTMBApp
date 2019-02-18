@@ -55,6 +55,17 @@
         <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventDateVenue</item>
     </style>
 
+    <style name="WtmBerlin.SocialMedia" />
+
+    <style name="WtmBerlin.SocialMedia.Item">
+        <item name="android:paddingStart">@dimen/material_space</item>
+        <item name="android:paddingEnd">@dimen/material_space</item>
+        <item name="android:minHeight">@dimen/material_single_line_with_icon_list_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/material_space_double</item>
+        <item name="android:background">?selectableItemBackground</item>
+    </style>
+
     <style name="WtmBerlin.TextAppearance" />
 
     <style name="WtmBerlin.TextAppearance.ListHeader">
