@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Women Techmakers Berlin</string>
+    <string name="wtm_website_url">https://www.womentechmakers.com</string>
 
     <!-- Collaborations -->
     <string name="collaborations_header">Collaboration partners</string>

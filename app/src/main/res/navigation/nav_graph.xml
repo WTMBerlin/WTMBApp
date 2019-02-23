@@ -42,4 +42,9 @@
         android:label="@string/collaborations_header"
         tools:layout="@layout/collaborations_screen" />
 
+    <activity
+        android:id="@+id/wtm_website"
+        app:action="android.intent.action.VIEW"
+        app:data="@string/wtm_website_url" />
+
 </navigation>
