@@ -8,7 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface MeetupService {
-    @GET("Women-Techmakers-Berlin/events?status=cancelled,past,upcoming&desc=true&only=id,name,time,utc_offset,duration,venue,description,featured_photo.photo_link&fields=featured_photo&omit=venue.localized_country_name,venue.repinned,venue.phone&page=200")
+    @GET("Women-Techmakers-Berlin/events?status=cancelled,past,upcoming&desc=true&only=id,name,time,utc_offset,duration,venue,description,featured_photo.photo_link,link&fields=featured_photo&omit=venue.localized_country_name,venue.repinned,venue.phone&page=200")
     fun events(): Single<List<MeetupEvent>>
 }
 
@@ -17,6 +17,7 @@ data class MeetupEvent(
     val name: String,
     val description: String,
     val featured_photo: MeetupPhoto?,
+    val link: String,
     val time: Long,
     val utc_offset: Long,
     val duration: Long,

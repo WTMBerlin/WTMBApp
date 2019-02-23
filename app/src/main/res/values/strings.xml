@@ -31,6 +31,7 @@
 
     <!-- Event details -->
     <string name="event_details_header_description">Description</string>
+    <string name="event_details_open_meetup_page">View on Meetup</string>
 
     <!-- Social Media -->
     <string name="social_media_link_meetup" translatable="false">https://www.meetup.com/de-DE/women-techmakers-berlin/</string>

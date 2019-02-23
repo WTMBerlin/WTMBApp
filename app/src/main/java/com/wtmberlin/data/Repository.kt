@@ -72,6 +72,7 @@ private fun MeetupEvent.toWtmEvent() = WtmEvent(
     duration = Duration.ofMillis(duration),
     description = description,
     photoUrl = featured_photo?.photo_link,
+    meetupUrl = link,
     venue = venue?.let { venue -> Venue(
         name = venue.name,
         address = venue.addressText(),
