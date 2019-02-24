@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/events_screen"
         android:name="com.wtmberlin.ui.EventsFragment"
-        android:label="Blank"
+        android:label="@string/events_header"
         tools:layout="@layout/events_screen">
         <action
             android:id="@+id/start_event_details_screen"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/event_details_screen"
         android:name="com.wtmberlin.ui.EventDetailsFragment"
-        android:label="Blank"
+        android:label="@string/events_header"
         tools:layout="@layout/event_details_screen">
         <argument
             android:name="eventId"
@@ -27,25 +27,24 @@
     <fragment
         android:id="@+id/social_media_screen"
         android:name="com.wtmberlin.ui.SocialMediaFragment"
-        android:label="Blank"
+        android:label="@string/social_media_header"
         tools:layout="@layout/social_media_screen" />
 
     <fragment
         android:id="@+id/community_info_screen"
         android:name="com.wtmberlin.ui.CommunityLocalFragment"
-        android:label="Blank"
+        android:label="@string/nav_drawer_community_local_menu_item"
         tools:layout="@layout/community_local_screen" />
 
     <fragment
         android:id="@+id/collaborations_screen"
         android:name="com.wtmberlin.ui.CollaborationsFragment"
-        android:label="Blank"
+        android:label="@string/collaborations_header"
         tools:layout="@layout/collaborations_screen" />
 
-    <fragment
-        android:id="@+id/stats_screen"
-        android:name="com.wtmberlin.ui.DetailStatsFragment"
-        android:label="Blank"
-        tools:layout="@layout/stats_screen" />
+    <activity
+        android:id="@+id/wtm_website"
+        app:action="android.intent.action.VIEW"
+        app:data="@string/wtm_website_url" />
 
 </navigation>

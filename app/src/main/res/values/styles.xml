@@ -40,7 +40,7 @@
         <item name="android:ellipsize">end</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:drawablePadding">@dimen/material_space_half</item>
-        <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventDateVenue</item>
+        <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.ListPrimary</item>
     </style>
 
     <style name="WtmBerlin.Events.Date" parent="WtmBerlin.Events.DateVenue">
@@ -52,7 +52,18 @@
     </style>
 
     <style name="WtmBerlin.Events.Description">
-        <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventDateVenue</item>
+        <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.ListPrimary</item>
+    </style>
+
+    <style name="WtmBerlin.SocialMedia" />
+
+    <style name="WtmBerlin.SocialMedia.Item">
+        <item name="android:paddingStart">@dimen/material_space</item>
+        <item name="android:paddingEnd">@dimen/material_space</item>
+        <item name="android:minHeight">@dimen/material_single_line_with_icon_list_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/material_space_double</item>
+        <item name="android:background">?selectableItemBackground</item>
     </style>
 
     <style name="WtmBerlin.TextAppearance" />
@@ -70,7 +81,7 @@
         <item name="android:textColor">@color/black_87</item>
     </style>
 
-    <style name="WtmBerlin.TextAppearance.EventDateVenue">
+    <style name="WtmBerlin.TextAppearance.ListPrimary">
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">false</item>

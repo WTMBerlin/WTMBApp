@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Women Techmakers Berlin</string>
+    <string name="wtm_website_url">https://www.womentechmakers.com</string>
 
     <!-- Collaborations -->
     <string name="collaborations_header">Collaboration partners</string>
@@ -12,7 +13,7 @@
         check the social media tab TODO! We have previously worked with the following companies:</string>
 
     <!-- Community Local -->
-    <string name="community_local_header">Women Techmakers Berlin</string>
+    <string name="community_local_header">About us</string>
     <string name="community_local_description">
         Women Techmakers Berlin is part of a global Women Techmakers program run by Google.
         At Women Techmakers Berlin we are encouraging diversity in tech in Berlin since 2015. Get visibility,
@@ -30,6 +31,7 @@
 
     <!-- Event details -->
     <string name="event_details_header_description">Description</string>
+    <string name="event_details_open_meetup_page">View on Meetup</string>
 
     <!-- Social Media -->
     <string name="social_media_link_meetup" translatable="false">https://www.meetup.com/de-DE/women-techmakers-berlin/</string>
@@ -43,15 +45,11 @@
         offer positions in #job-postings that reach more diverse audience or announce free/discounted diversity tickets.
         For Twitter you can use #womentechmakers.</string>
 
-    <!-- Statistics -->
-    <string name="statistics_header">Statistics</string>
-
     <!-- Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>
     <string name="nav_drawer_social_media_menu_item">@string/social_media_header</string>
     <string name="nav_drawer_community_local_menu_item">@string/community_local_header</string>
     <string name="nav_drawer_community_global_menu_item">Women Techmakers</string>
-    <string name="nav_drawer_statistics_menu_item">@string/statistics_header</string>
     <string name="nav_drawer_events_menu_item">@string/events_header</string>
     <string name="nav_drawer_collaborations_menu_item">@string/collaborations_header</string>
 </resources>

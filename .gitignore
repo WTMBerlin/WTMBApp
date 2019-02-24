@@ -5,9 +5,9 @@
 /.idea/assetWizardSettings.xml
 /.idea/libraries
 /.idea/modules.xml
+/.idea/navEditor.xml
 /.idea/workspace.xml
 .DS_Store
 /build
-/buildSrc/build
 /captures
 .externalNativeBuild

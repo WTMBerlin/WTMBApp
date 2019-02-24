@@ -6,13 +6,11 @@ import com.wtmberlin.TestSchedulerProvider
 import com.wtmberlin.data.*
 import com.wtmberlin.mock
 import com.wtmberlin.testObserver
-import com.wtmberlin.util.AdapterItem
 import io.reactivex.processors.PublishProcessor
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.`when`
 import org.threeten.bp.*
-import org.threeten.bp.temporal.ChronoUnit
 
 class EventsViewModelTest {
     @get:Rule
@@ -114,6 +112,7 @@ class EventsViewModelTest {
             Duration.ofMinutes(120),
             "amazing event",
             "https://www.meetup.com/de-DE/Women-Techmakers-Berlin/events/258092838/",
+            "https://www.meetup.com/event/123456",
             Venue(venueName, "Example Address", Coordinates(22.0, 33.2))
         )
     }

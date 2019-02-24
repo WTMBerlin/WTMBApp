@@ -85,7 +85,7 @@
                                 android:ellipsize="end"
                                 android:maxLines="1"
                                 android:text="@{BindingKt.toLongDate(viewModel.event.localDateTimeStart)}"
-                                android:textAppearance="@style/WtmBerlin.TextAppearance.EventDateVenue"
+                                android:textAppearance="@style/WtmBerlin.TextAppearance.ListPrimary"
                                 tools:text="Tuesday, December 11, 2018" />
 
                             <TextView
@@ -132,7 +132,7 @@
                                 android:ellipsize="end"
                                 android:maxLines="1"
                                 android:text="@{viewModel.event.venue.name}"
-                                android:textAppearance="@style/WtmBerlin.TextAppearance.EventDateVenue"
+                                android:textAppearance="@style/WtmBerlin.TextAppearance.ListPrimary"
                                 tools:text="Dalia Research GmbH" />
 
                             <TextView
@@ -146,6 +146,24 @@
 
                         </LinearLayout>
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?selectableItemBackground"
+                        android:drawableStart="@drawable/social_media_icon_meetup"
+                        android:drawablePadding="@dimen/material_space"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:minHeight="@dimen/material_two_line_list_height"
+                        android:onClick="@{v -> viewModel.onOpenMeetupPageClicked()}"
+                        android:paddingStart="@dimen/material_space"
+                        android:paddingTop="@dimen/material_space_half"
+                        android:paddingEnd="@dimen/material_space"
+                        android:paddingBottom="@dimen/material_space_half"
+                        android:text="@string/event_details_open_meetup_page"
+                        android:textAppearance="@style/WtmBerlin.TextAppearance.ListPrimary" />
 
                     <View
                         android:layout_width="match_parent"
