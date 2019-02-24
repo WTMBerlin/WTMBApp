@@ -42,6 +42,7 @@ class EventDetailsFragment : Fragment() {
 
         viewModel.addToCalendar.observeNotHandled(this) { addEventToCalendar(it.calendarEvent) }
         viewModel.openMaps.observeNotHandled(this) { openMaps(it.venueName, it.coordinates) }
+        viewModel.openMeetupPage.observeNotHandled(this) { openMeetupPage(it.url) }
     }
 
     private fun openMaps(venueName: String, coordinates: Coordinates) {
@@ -65,5 +66,12 @@ class EventDetailsFragment : Fragment() {
         intent.resolveActivity(context!!.packageManager)?.let {
             startActivity(intent)
         }
+    }
+
+    private fun openMeetupPage(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW);
+        intent.data = Uri.parse(url)
+
+        startActivity(intent);
     }
 }

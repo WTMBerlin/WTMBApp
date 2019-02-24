@@ -20,6 +20,7 @@ data class WtmEvent(
     @ColumnInfo(name = "duration") val duration: Duration,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "photo_url") val photoUrl: String?,
+    @ColumnInfo(name = "meetup_url") val meetupUrl: String,
     @Embedded(prefix = "venue_") val venue: Venue?
 ) {
     fun localDateTimeStart() = dateTimeStart.toLocalDateTime()

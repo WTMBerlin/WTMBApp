@@ -17,6 +17,7 @@ class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel
 
     val addToCalendar = MutableLiveData<AddToCalendarEvent>()
     val openMaps = MutableLiveData<OpenMapsEvent>()
+    val openMeetupPage = MutableLiveData<OpenMeetupPageEvent>()
 
     private val subscriptions = CompositeDisposable()
 
@@ -48,6 +49,12 @@ class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel
         }
     }
 
+    fun onOpenMeetupPageClicked() {
+        event.value?.let {
+            openMeetupPage.value = OpenMeetupPageEvent(it.meetupUrl)
+        }
+    }
+
     override fun onCleared() {
         super.onCleared()
 
@@ -58,6 +65,8 @@ class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel
 data class OpenMapsEvent(val venueName: String, val coordinates: Coordinates) : Event()
 
 data class AddToCalendarEvent(val calendarEvent: CalendarEvent) : Event()
+
+data class OpenMeetupPageEvent(val url: String) : Event()
 
 data class CalendarEvent(
     val beginTime: Long,
