@@ -46,7 +46,7 @@ open class Repository(private val apiService: MeetupService, private val databas
         }
     }
 
-    fun event(eventId: String): Flowable<Result<WtmEvent>> = DetailedEventResource(eventId).values()
+    open fun event(eventId: String): Flowable<Result<WtmEvent>> = DetailedEventResource(eventId).values()
 
     inner class DetailedEventResource(private val eventId: String) : NetworkBoundResource<List<WtmEvent>, WtmEvent>() {
         override fun loadFromNetwork(): Single<List<WtmEvent>> {

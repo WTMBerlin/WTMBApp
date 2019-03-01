@@ -40,7 +40,7 @@ class EventDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.addToCalendar.observeNotHandled(this) { addEventToCalendar(it.calendarEvent) }
+        viewModel.addToCalendar.observeNotHandled(this) { addEventToCalendar(it) }
         viewModel.openMaps.observeNotHandled(this) { openMaps(it.venueName, it.coordinates) }
         viewModel.openMeetupPage.observeNotHandled(this) { openMeetupPage(it.url) }
     }
@@ -54,7 +54,7 @@ class EventDetailsFragment : Fragment() {
         }
     }
 
-    private fun addEventToCalendar(calendarEvent: CalendarEvent) {
+    private fun addEventToCalendar(calendarEvent: AddToCalendarEvent) {
         val intent = Intent(Intent.ACTION_INSERT).apply {
             data = Events.CONTENT_URI
             putExtra(Events.TITLE, calendarEvent.title)

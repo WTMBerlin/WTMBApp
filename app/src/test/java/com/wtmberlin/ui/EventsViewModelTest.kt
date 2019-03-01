@@ -2,15 +2,18 @@ package com.wtmberlin.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.common.truth.Truth.assertThat
-import com.wtmberlin.TestSchedulerProvider
-import com.wtmberlin.data.*
-import com.wtmberlin.mock
-import com.wtmberlin.testObserver
+import com.wtmberlin.*
+import com.wtmberlin.data.Repository
+import com.wtmberlin.data.Result
+import com.wtmberlin.data.WtmEvent
 import io.reactivex.processors.PublishProcessor
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.`when`
-import org.threeten.bp.*
+import org.threeten.bp.LocalDate
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.LocalTime
+import org.threeten.bp.ZoneId
 
 class EventsViewModelTest {
     @get:Rule
@@ -105,15 +108,11 @@ class EventsViewModelTest {
 
 
     fun wtmEvent(id: String, name: String, dateTime: LocalDateTime, venueName: String): WtmEvent {
-        return WtmEvent(
-            id,
-            name,
-            ZonedDateTime.of(dateTime, ZoneId.systemDefault()),
-            Duration.ofMinutes(120),
-            "amazing event",
-            "https://www.meetup.com/de-DE/Women-Techmakers-Berlin/events/258092838/",
-            "https://www.meetup.com/event/123456",
-            Venue(venueName, "Example Address", Coordinates(22.0, 33.2))
+        return defaultWtmEvent(
+            id = id,
+            name = name,
+            dateTimeStart = dateTime.atZone(ZoneId.systemDefault()),
+            venue = defaultVenue(name = venueName)
         )
     }
 

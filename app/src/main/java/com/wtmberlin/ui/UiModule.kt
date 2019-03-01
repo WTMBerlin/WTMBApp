@@ -9,6 +9,6 @@ val uiModule = module {
     single<SchedulerProvider> { StandardSchedulerProvider() }
 
     viewModel { EventsViewModel(get(), get()) }
-    viewModel { (eventId: String) -> EventDetailsViewModel(eventId, get()) }
+    viewModel { (eventId: String) -> EventDetailsViewModel(eventId, get(), get()) }
     viewModel { CollaborationsViewModel(get()) }
 }
