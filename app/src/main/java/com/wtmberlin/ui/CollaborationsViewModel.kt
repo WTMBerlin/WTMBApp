@@ -10,7 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 
-class CollaborationsViewModel(private val repository: Repository) : ViewModel() {
+class CollaborationsViewModel(repository: Repository) : ViewModel() {
     val adapterItems = MutableLiveData<List<CollaborationsAdapterItem>>()
     private val subscriptions = CompositeDisposable()
 

@@ -35,7 +35,7 @@ class CollaborationsFragment : Fragment() {
                     false
                 )
 
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
         return binding.root

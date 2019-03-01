@@ -31,7 +31,7 @@ class EventDetailsFragment : Fragment() {
             false
         )
 
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
         return binding.root
@@ -69,9 +69,9 @@ class EventDetailsFragment : Fragment() {
     }
 
     private fun openMeetupPage(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW);
+        val intent = Intent(Intent.ACTION_VIEW)
         intent.data = Uri.parse(url)
 
-        startActivity(intent);
+        startActivity(intent)
     }
 }

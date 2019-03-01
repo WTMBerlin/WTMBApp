@@ -11,7 +11,7 @@ import io.reactivex.disposables.CompositeDisposable
 import org.threeten.bp.ZonedDateTime
 import timber.log.Timber
 
-class EventsViewModel(private val repository: Repository, private val schedulerProvider: SchedulerProvider) : ViewModel() {
+class EventsViewModel(private val repository: Repository, schedulerProvider: SchedulerProvider) : ViewModel() {
     val adapterItems = MutableLiveData<List<EventsAdapterItem>>()
     val refreshing = MutableLiveData<Boolean>()
     val displayEventDetails = MutableLiveData<DisplayEventDetailsEvent>()
