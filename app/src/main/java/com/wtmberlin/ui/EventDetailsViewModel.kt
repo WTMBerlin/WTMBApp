@@ -2,17 +2,20 @@ package com.wtmberlin.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.wtmberlin.SchedulerProvider
 import com.wtmberlin.data.Coordinates
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.util.Event
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 
-class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel() {
+class EventDetailsViewModel(
+    eventId: String,
+    repository: Repository,
+    schedulerProvider: SchedulerProvider
+) : ViewModel() {
     val event = MutableLiveData<WtmEvent>()
 
     val addToCalendar = MutableLiveData<AddToCalendarEvent>()
@@ -24,8 +27,8 @@ class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel
     init {
         subscriptions.add(
             repository.event(eventId)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io)
+                .observeOn(schedulerProvider.ui)
                 .subscribe(this::onDataLoaded)
         )
     }
@@ -37,7 +40,7 @@ class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel
 
     fun onDateTimeClicked() {
         event.value?.let {
-            addToCalendar.value = AddToCalendarEvent(it.toCalendarEvent())
+            addToCalendar.value = it.toCalendarEvent()
         }
     }
 
@@ -64,18 +67,16 @@ class EventDetailsViewModel(eventId: String, repository: Repository) : ViewModel
 
 data class OpenMapsEvent(val venueName: String, val coordinates: Coordinates) : Event()
 
-data class AddToCalendarEvent(val calendarEvent: CalendarEvent) : Event()
-
-data class OpenMeetupPageEvent(val url: String) : Event()
-
-data class CalendarEvent(
+data class AddToCalendarEvent(
     val beginTime: Long,
     val endTime: Long,
     val title: String,
     val location: String?
-)
+) : Event()
 
-private fun WtmEvent.toCalendarEvent() = CalendarEvent(
+data class OpenMeetupPageEvent(val url: String) : Event()
+
+private fun WtmEvent.toCalendarEvent() = AddToCalendarEvent(
     beginTime = dateTimeStart.toInstant().toEpochMilli(),
     endTime = dateTimeStart.toInstant().toEpochMilli() + duration.toMillis(),
     title = name,

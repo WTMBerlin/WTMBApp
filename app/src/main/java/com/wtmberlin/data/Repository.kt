@@ -10,7 +10,7 @@ import org.threeten.bp.Instant
 import org.threeten.bp.ZoneOffset
 import org.threeten.bp.ZonedDateTime
 
-class Repository(private val apiService: MeetupService, private val database: Database) {
+open class Repository(private val apiService: MeetupService, private val database: Database) {
     fun venues(): Flowable<Result<List<VenueName>>> {
         return apiService.events()
             .map { it.map(MeetupEvent::toVenueName) }
@@ -19,7 +19,8 @@ class Repository(private val apiService: MeetupService, private val database: Da
             .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
     }
 
-    fun events(): Flowable<Result<List<WtmEvent>>> {
+
+    open fun events(): Flowable<Result<List<WtmEvent>>> {
         return eventsResource.values()
             .doOnSubscribe { eventsResource.refresh() }
     }
@@ -45,7 +46,7 @@ class Repository(private val apiService: MeetupService, private val database: Da
         }
     }
 
-    fun event(eventId: String): Flowable<Result<WtmEvent>> = DetailedEventResource(eventId).values()
+    open fun event(eventId: String): Flowable<Result<WtmEvent>> = DetailedEventResource(eventId).values()
 
     inner class DetailedEventResource(private val eventId: String) : NetworkBoundResource<List<WtmEvent>, WtmEvent>() {
         override fun loadFromNetwork(): Single<List<WtmEvent>> {
