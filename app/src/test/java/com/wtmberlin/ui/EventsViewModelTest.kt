@@ -116,7 +116,7 @@ class EventsViewModelTest {
         )
     }
 
-    fun yesterday() = LocalDateTime.of(LocalDate.now(), LocalTime.NOON).minusDays(1)
+    fun yesterday() : LocalDateTime  = LocalDateTime.of(LocalDate.now(), LocalTime.NOON).minusDays(1)
 
-    fun tomorrow() = LocalDateTime.of(LocalDate.now(), LocalTime.NOON).plusDays(1)
+    fun tomorrow() : LocalDateTime = LocalDateTime.of(LocalDate.now(), LocalTime.NOON).plusDays(1)
 }

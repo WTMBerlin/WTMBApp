@@ -5,12 +5,8 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.threeten.bp.Duration
+import org.threeten.bp.LocalDateTime
 import org.threeten.bp.ZonedDateTime
-
-data class WtmGroup(
-    val pastEventCount: Int,
-    val members: Int
-)
 
 @Entity
 data class WtmEvent(
@@ -23,9 +19,9 @@ data class WtmEvent(
     @ColumnInfo(name = "meetup_url") val meetupUrl: String,
     @Embedded(prefix = "venue_") val venue: Venue?
 ) {
-    fun localDateTimeStart() = dateTimeStart.toLocalDateTime()
+    fun localDateTimeStart() : LocalDateTime = dateTimeStart.toLocalDateTime()
 
-    fun localDateTimeEnd() = dateTimeStart.plus(duration).toLocalDateTime()
+    fun localDateTimeEnd() : LocalDateTime = dateTimeStart.plus(duration).toLocalDateTime()
 }
 
 data class Venue(

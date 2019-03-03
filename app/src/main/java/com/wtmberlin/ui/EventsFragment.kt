@@ -39,7 +39,7 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
                     false
                 )
 
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
         return binding.root
@@ -126,21 +126,20 @@ object NoUpcomingEventsItem : EventsAdapterItem() {
     override val viewType = R.layout.events_no_upcoming_events_item
 }
 
-class OffsetItemDecoration(val offset: Int) : RecyclerView.ItemDecoration() {
+class OffsetItemDecoration(private val offset: Int) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
         parent: RecyclerView,
         state: RecyclerView.State
     ) {
-
         super.getItemOffsets(outRect, view, parent, state)
 
         parent.adapter?.let {
             val itemCount = it.itemCount
             val position = parent.getChildAdapterPosition(view)
 
-            if (position < itemCount - 1) {
+            if (position != RecyclerView.NO_POSITION && position < itemCount - 1) {
                 val thisViewType = it.getItemViewType(position)
                 val nextViewType = it.getItemViewType(position + 1)
 

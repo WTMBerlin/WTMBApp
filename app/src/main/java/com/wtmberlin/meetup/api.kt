@@ -1,11 +1,7 @@
 package com.wtmberlin.meetup
 
 import io.reactivex.Single
-import org.threeten.bp.Duration
-import org.threeten.bp.LocalDate
-import org.threeten.bp.LocalTime
 import retrofit2.http.GET
-import retrofit2.http.Path
 
 interface MeetupService {
     @GET("Women-Techmakers-Berlin/events?status=cancelled,past,upcoming&desc=true&only=id,name,time,utc_offset,duration,venue,description,featured_photo.photo_link,link&fields=featured_photo&omit=venue.localized_country_name,venue.repinned,venue.phone&page=200")

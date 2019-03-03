@@ -69,6 +69,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginStart="@dimen/material_space"
+                            android:contentDescription="@null"
                             android:src="@drawable/events_icon_date" />
 
                         <LinearLayout
@@ -116,6 +117,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginStart="@dimen/material_space"
+                            android:contentDescription="@null"
                             android:src="@drawable/events_icon_venue" />
 
                         <LinearLayout

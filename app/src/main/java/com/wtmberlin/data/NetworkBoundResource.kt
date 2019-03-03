@@ -8,7 +8,6 @@ import io.reactivex.functions.BiFunction
 import io.reactivex.processors.BehaviorProcessor
 import io.reactivex.processors.PublishProcessor
 import io.reactivex.schedulers.Schedulers
-import org.threeten.bp.ZonedDateTime
 import timber.log.Timber
 
 abstract class NetworkBoundResource<NetworkT, DatabaseT> {
