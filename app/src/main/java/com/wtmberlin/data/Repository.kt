@@ -22,6 +22,13 @@ open class Repository(private val apiService: MeetupService, private val databas
 
     open fun events(): Flowable<Result<List<WtmEvent>>> {
         return eventsResource.values()
+            .map {
+                if (it.data != null && it.data.isEmpty()) {
+                    Result(it.loading, null, it.error)
+                } else {
+                    it
+                }
+            }
             .doOnSubscribe { eventsResource.refresh() }
     }
 
