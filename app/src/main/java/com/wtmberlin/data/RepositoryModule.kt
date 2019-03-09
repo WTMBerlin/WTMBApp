@@ -6,13 +6,20 @@ import org.koin.dsl.module.module
 
 val repositoryModule = module {
     single {
-        val database = Room.databaseBuilder(
-            androidContext(),
-            Database::class.java, "wtm-events"
-        )
+        ApiService(get())
+    }
+
+    single {
+        Room.databaseBuilder(androidContext(), Database::class.java, "wtm-events")
             .fallbackToDestructiveMigration()
             .build()
+    }
 
-        Repository(get(), database)
+    single { createWtmEventDao(get()) }
+
+    single {
+        Repository(get(), get())
     }
 }
+
+private fun createWtmEventDao(database: Database) = database.wtmEventDAO()
