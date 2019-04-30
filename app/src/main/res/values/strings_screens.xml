@@ -5,12 +5,10 @@
 
     <!-- Collaborations -->
     <string name="collaborations_header">Collaboration partners</string>
-    <string name="collaborations_description">
-        Our events are possible thanks to many diversity supporting companies.
-        We also work with external partners, speakers and tutors.
-        If you are interested in a partnership of any kind, for example hosting our event,
-        feel free to reach out via Slack TODO or other communication channels -
-        check the social media tab TODO! We have previously worked with the following companies:
+    <string name="collaborations_header_description">If you were interested in supporting us, ping Roxy or Anna on our slack: http://slack.wtmberlin.com</string>
+    <string name="collaborations_description">As community of volunteers we work with external speakers and
+        tutors.\nOur meetups are possible not only thanks to us but also thanks to the wonderful support, that we receive from Google and companies that are listed below.
+        This is our contribution to making Berlin\'s tech scene diverse and inclusive!
     </string>
 
     <!-- Community Local -->
@@ -19,10 +17,11 @@
     <string name="community_local_description">
         At WTM Berlin we are encouraging diversity in tech in Berlin since 2015. Get visibility,
         networking and resources to make the tech community of Berlin diverse and inclusive!
-        We have different activities: intense study groups, inspirational fireside chats and international events. New
+        We have different activities: intense coding study groups, workshops or technical topics or social skills as well as inspirational fireside chats. New
         and existing members are always welcome to all of the events, and all events are always opened for everyone,
         regardless of your gender/age/race/experience, etc. We follow the Berlin code of conduct for communities:
-        http://berlincodeofconduct.org</string>
+        http://berlincodeofconduct.org
+    </string>
 
     <!-- Events -->
     <string name="events_upcoming_header">Upcoming</string>
