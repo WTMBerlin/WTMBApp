@@ -58,6 +58,7 @@
     <style name="WtmBerlin.SocialMedia" />
 
     <style name="WtmBerlin.SocialMedia.Item">
+        <item name="android:textSize">@dimen/readable_text_size</item>
         <item name="android:paddingStart">@dimen/material_space</item>
         <item name="android:paddingEnd">@dimen/material_space</item>
         <item name="android:minHeight">@dimen/material_single_line_with_icon_list_height</item>

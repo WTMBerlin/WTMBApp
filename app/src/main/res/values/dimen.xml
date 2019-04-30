@@ -14,4 +14,6 @@
 
     <dimen name="material_elevation_toolbar">4dp</dimen>
     <dimen name="material_elevation_card">2dp</dimen>
+
+    <dimen name="readable_text_size">18sp</dimen>
 </resources>

@@ -10,7 +10,8 @@
         We also work with external partners, speakers and tutors.
         If you are interested in a partnership of any kind, for example hosting our event,
         feel free to reach out via Slack TODO or other communication channels -
-        check the social media tab TODO! We have previously worked with the following companies:</string>
+        check the social media tab TODO! We have previously worked with the following companies:
+    </string>
 
     <!-- Community Local -->
     <string name="community_local_header">About us</string>
@@ -21,7 +22,8 @@
         We have different activities: intense study groups, inspirational fireside chats and international events. New
         and existing members are always welcome to all of the events, and all events are always opened for everyone,
         regardless of your gender/age/race/experience, etc. We follow the Berlin code of conduct for communities:
-        http://berlincodeofconduct.org</string>
+        http://berlincodeofconduct.org
+    </string>
 
     <!-- Events -->
     <string name="events_upcoming_header">Upcoming</string>
@@ -34,16 +36,21 @@
     <string name="event_details_open_meetup_page">View on Meetup</string>
 
     <!-- Social Media -->
-    <string name="social_media_link_meetup" translatable="false">https://www.meetup.com/de-DE/women-techmakers-berlin/</string>
-    <string name="social_media_link_facebook" translatable="false">https://b-m.facebook.com/WomenTechmakersBerlinPage/</string>
+    <string name="social_media_link_meetup" translatable="false">https://www.meetup.com/de-DE/women-techmakers-berlin/
+    </string>
+    <string name="social_media_link_facebook" translatable="false">https://b-m.facebook.com/WomenTechmakersBerlinPage/
+    </string>
     <string name="social_media_link_twitter" translatable="false">https://twitter.com/wtm_berlin</string>
     <string name="social_media_link_slack" translatable="false">https://slack.wtmberlin.com/</string>
     <string name="social_media_header">Social Media</string>
-    <string name="social_media_description">
-        We are active across social media. You can find all our events on Meetup.
+    <string name="social_media_description_general">We are active across social media!</string>
+    <string name="social_media_description_meetup">You can find all our events on Meetup.</string>
+    <string name="social_media_description_slack">
         Slack is one of the main parts of our Community - it is a good place to connect with other members,
         offer positions in #job-postings that reach more diverse audience or announce free/discounted diversity tickets.
-        For Twitter you can use #womentechmakers.</string>
+    </string>
+    <string name="social_media_description_twitter">For Twitter you can use #womentechmakers.</string>
+    <string name="social_media_description_facebook">There is also a facebook group and a page.</string>
 
     <!-- Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>
