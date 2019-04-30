@@ -3,6 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <TextView
+            android:id="@+id/community_local_description_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/WtmBerlin.Events.Name"
+            android:padding="16dp"
+            android:text="@string/community_local_description_header"
+            android:textSize="16sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,6 +20,7 @@
             android:id="@+id/description_community"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/WtmBerlin.Events.Description"
             android:padding="16dp"
             android:text="@string/community_local_description"
             android:textSize="16sp" />
@@ -19,6 +28,8 @@
 
     <ImageView
         android:id="@+id/logo"
+        android:src="@color/black_87"
+        android:contentDescription="@null"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 </LinearLayout>
