@@ -24,6 +24,14 @@
             android:padding="16dp"
             android:text="@string/community_local_description"
             android:textSize="16sp" />
+
+        <TextView
+                android:id="@+id/community_reviews_click"
+                android:text="Click to see community reviews!"
+                android:layout_width="match_parent"
+                style="@style/WtmBerlin.Events.Name"
+                android:onClick="open_reviews"
+                android:layout_height="wrap_content"/>
     </ScrollView>
 
     <ImageView
