@@ -30,7 +30,6 @@
                 android:text="Click to see community reviews!"
                 android:layout_width="match_parent"
                 style="@style/WtmBerlin.Events.Name"
-                android:onClick="open_reviews"
                 android:layout_height="wrap_content"/>
     </ScrollView>
 

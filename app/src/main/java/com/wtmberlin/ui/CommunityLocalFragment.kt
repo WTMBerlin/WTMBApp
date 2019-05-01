@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDeepLinkBuilder
+import androidx.navigation.findNavController
 import com.squareup.picasso.Picasso
 import com.wtmberlin.R
 import kotlinx.android.synthetic.main.community_local_screen.*
@@ -30,9 +31,6 @@ class CommunityLocalFragment : Fragment() {
     }
 
     fun openReviews(view:View){
-        NavDeepLinkBuilder(view.context)
-            .setGraph(R.navigation.nav_graph)
-            .setDestination(R.id.reviews_screen)
-            .createPendingIntent()
+        activity!!.findNavController(R.id.nav_host_fragment).navigate(R.id.reviews_screen)
     }
 }
