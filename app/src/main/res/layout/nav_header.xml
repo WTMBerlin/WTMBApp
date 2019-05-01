@@ -7,7 +7,7 @@
              android:padding="16dp"
              android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView android:layout_width="180dp"
+    <ImageView android:layout_width="170dp"
                android:layout_height="wrap_content"
                android:layout_gravity="center"
                android:layout_marginTop="@dimen/material_space"

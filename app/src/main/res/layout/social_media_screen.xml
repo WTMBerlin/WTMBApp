@@ -12,8 +12,11 @@
             android:padding="16dp"
             android:text="@string/social_media_description_general"/>
 
-    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
                       android:orientation="vertical">
 
             <TextView
@@ -21,7 +24,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
-                    android:layout_margin="@dimen/material_space_half"
                     android:text="@string/social_media_description_meetup"/>
 
             <TextView
@@ -30,7 +32,8 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
-                    android:drawableStart="@drawable/social_media_icon_meetup"
+                    android:layout_marginEnd="@dimen/material_space"
+                    android:drawableEnd="@drawable/social_media_icon_meetup"
                     android:text="@string/social_media_link_meetup"/>
 
             <TextView
@@ -38,7 +41,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
-                    android:layout_margin="@dimen/material_space_half"
+                    android:layout_marginTop="@dimen/material_space_half"
+                    android:layout_marginBottom="@dimen/material_space_half"
                     android:text="@string/social_media_description_slack"/>
 
             <TextView
@@ -47,7 +51,8 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
-                    android:drawableStart="@drawable/social_media_icon_slack"
+                    android:layout_marginEnd="@dimen/material_space"
+                    android:drawableEnd="@drawable/social_media_icon_slack"
                     android:text="@string/social_media_link_slack"/>
 
             <TextView
@@ -55,7 +60,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
-                    android:layout_margin="@dimen/material_space_half"
                     android:text="@string/social_media_description_twitter"/>
 
             <TextView
@@ -64,7 +68,8 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
-                    android:drawableStart="@drawable/social_media_icon_twitter"
+                    android:layout_marginEnd="@dimen/material_space"
+                    android:drawableEnd="@drawable/social_media_icon_twitter"
                     android:text="@string/social_media_link_twitter"/>
 
             <TextView
@@ -72,7 +77,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
-                    android:layout_margin="@dimen/material_space_half"
                     android:text="@string/social_media_description_facebook"/>
 
             <TextView
@@ -81,8 +85,9 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
+                    android:layout_marginEnd="@dimen/material_space"
                     android:layout_marginBottom="@dimen/material_space"
-                    android:drawableStart="@drawable/social_media_icon_facebook"
+                    android:drawableEnd="@drawable/social_media_icon_facebook"
                     android:text="@string/social_media_link_facebook"/>
         </LinearLayout>
     </ScrollView>

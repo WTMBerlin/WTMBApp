@@ -31,6 +31,6 @@ class CommunityLocalFragment : Fragment() {
     }
 
     fun openReviews(view:View){
-        activity!!.findNavController(R.id.nav_host_fragment).navigate(R.id.reviews_screen)
+        view.findNavController().navigate(R.id.reviews_screen)
     }
 }
