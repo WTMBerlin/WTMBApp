@@ -15,5 +15,9 @@
         <item
             android:id="@+id/collaborations_screen"
             android:title="@string/nav_drawer_collaborations_menu_item" />
+
+        <item
+            android:id="@+id/reviews_screen"
+            android:title="@string/community_reviews" />
     </group>
 </menu>

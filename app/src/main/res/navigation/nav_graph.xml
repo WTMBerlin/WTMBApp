@@ -37,6 +37,12 @@
         tools:layout="@layout/community_local_screen" />
 
     <fragment
+        android:id="@+id/reviews_screen"
+        android:name="com.wtmberlin.ui.ReviewsFragment"
+        android:label="@string/community_reviews"
+        tools:layout="@layout/reviews_screen" />
+
+    <fragment
         android:id="@+id/collaborations_screen"
         android:name="com.wtmberlin.ui.CollaborationsFragment"
         android:label="@string/collaborations_header"

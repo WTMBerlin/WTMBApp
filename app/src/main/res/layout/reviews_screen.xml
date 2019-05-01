@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:text="Our community members and organizars sharing their experience with WTMB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/WtmBerlin.Events.Name"
+            android:padding="16dp"/>
+
+    <ScrollView
+            android:paddingTop="@dimen/material_space"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/material_space">
+
+
+            <TextView
+                    android:text="Maria's story of switching from a non-tech background to a JavaScript developer after the JavaScript Crash course that Women Techmakers organized. In the following year Maria stayed in the community and even organized the next JavaScript Crash Course edition! "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:text="http://wtmberlin.com/blog/Maria-story"/>
+            <TextView
+                    android:text="Ely, Software Engineer, JavaScript CrashCourse graduate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:text="http://wtmberlin.com/blog/my-experience-at-js-crash-course"/>
+            <TextView
+                    android:paddingTop="@dimen/material_space"
+                    android:text="Lara, who currently works as Android Engineer gave us an interview shortly after graduating from Android Study Jam. Lara supported our community by co-organising Flutter Study Jam on mobile development last year!"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:text="https://youtu.be/1RmKXYcL20I?t=114"/>
+
+            <TextView
+                    android:text="Natalie, Women Techmakers Berlin lead about how it all started"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:text="https://youtu.be/1RmKXYcL20I?t=3"/>
+
+            <TextView
+                    android:paddingTop="@dimen/material_space"
+                    android:text="Miquel supported our community as organizer and tutor during Android, Kotlin and Flutter study Jams sharing his motivation on community work"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:text="https://youtu.be/1RmKXYcL20I?t=95"/>
+
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:text="Anna is a Jr Android Developer, first job after graduating from Android Study Jam, co-wrote this app"
+                    android:layout_marginTop="@dimen/material_space"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+            android:background="@drawable/events_no_upcoming_events"
+            android:layout_width="190dp" android:layout_height="0dp" android:layout_weight=".3"/>
+
+</LinearLayout>

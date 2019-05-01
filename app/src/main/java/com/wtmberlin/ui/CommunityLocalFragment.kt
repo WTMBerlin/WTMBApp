@@ -21,7 +21,6 @@ class CommunityLocalFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Picasso.get()
             .load("https://raw.githubusercontent.com/WTMBerlin/slides/master/logos/fb-cover.jpg")
-            .placeholder(R.drawable.events_event_image_placeholder)
             .into(logo)
     }
 }

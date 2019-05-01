@@ -20,7 +20,7 @@
             android:id="@+id/description_community"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/WtmBerlin.Events.Description"
+            style="@style/WtmBerlin.SocialMedia.Item"
             android:padding="16dp"
             android:text="@string/community_local_description"
             android:textSize="16sp" />

@@ -21,14 +21,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/WtmBerlin.Events.Name"
-                android:padding="8dp"
+                android:padding="16dp"
                 android:text="@string/collaborations_header_description"/>
 
         <TextView
                 android:id="@+id/collaborations_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/WtmBerlin.Events.Description"
+                style="@style/WtmBerlin.SocialMedia.Item"
                 android:padding="8dp"
                 android:text="@string/collaborations_description"/>
 
