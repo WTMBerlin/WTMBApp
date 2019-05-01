@@ -96,4 +96,18 @@
         <item name="android:textColor">@color/black_54</item>
     </style>
 
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/wtmGreenLight</item>
+        <item name="colorPrimaryDark">@color/wtmGreenDark</item>
+        <item name="colorAccent">@color/wtmBlueLight</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/wtmGreyDark</item>
+    </style>
+
 </resources>
