@@ -1,5 +1,6 @@
 package com.wtmberlin.ui
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,10 +11,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.wtmberlin.R
 import com.wtmberlin.data.Coordinates
 import com.wtmberlin.databinding.EventDetailsScreenBinding
 import com.wtmberlin.util.observeNotHandled
+import kotlinx.android.synthetic.main.event_details_screen.view.*
+import kotlinx.android.synthetic.main.notes_screen.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -43,6 +47,10 @@ class EventDetailsFragment : Fragment() {
         viewModel.addToCalendar.observeNotHandled(this) { addEventToCalendar(it) }
         viewModel.openMaps.observeNotHandled(this) { openMaps(it.venueName, it.coordinates) }
         viewModel.openMeetupPage.observeNotHandled(this) { openMeetupPage(it.url) }
+
+        view.event_photo.setOnClickListener {
+            findNavController().navigate(R.id.notes_screen)
+        }
     }
 
     private fun openMaps(venueName: String, coordinates: Coordinates) {
@@ -74,4 +82,5 @@ class EventDetailsFragment : Fragment() {
 
         startActivity(intent)
     }
+
 }

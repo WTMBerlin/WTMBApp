@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/community_local_description_header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            style="@style/WtmBerlin.Events.Name"
+            android:background="@color/white"
+            android:text="Here you can store personal notes, contact info."
+            android:textSize="18sp"/>
+
+    <EditText
+            android:id="@+id/notes_input"
+            android:hint="add *Name* *Surname* on Linkedin, discuss *topic*"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:layout_marginEnd="@dimen/material_space"
+            android:layout_marginStart="@dimen/material_space"
+            android:layout_weight=".1"
+            android:layout_height="0dp"/>
+    <TextView
+            android:id="@+id/notes_button"
+            android:background="@drawable/events_no_upcoming_events"
+            android:text="save"
+            android:textColor="@color/black_87"
+            android:textSize="28sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/material_space"
+            android:layout_marginBottom="@dimen/material_space"
+            android:clickable="true"
+            android:onClick="saveNotes"
+            android:layout_width="170dp"
+            android:layout_weight=".2"
+            android:layout_height="0dp"/>
+
+    <TextView
+            android:id="@+id/notes_output"
+            android:layout_width="match_parent"
+            android:layout_weight=".4"
+            xmlns:tools="http://schemas.android.com/tools"
+            tools:text="@tools:sample/lorem/random"
+            android:padding="@dimen/material_space"
+            android:textSize="24dp"
+            android:text="Here your notes will be displayed. Keep in mind this storage is not very persistent! "
+            android:layout_height="90dp"/>
+
+</LinearLayout>

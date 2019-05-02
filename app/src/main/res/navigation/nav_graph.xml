@@ -1,56 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/events_screen">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/events_screen">
 
     <fragment
-        android:id="@+id/events_screen"
-        android:name="com.wtmberlin.ui.EventsFragment"
-        android:label="@string/events_header"
-        tools:layout="@layout/events_screen">
+            android:id="@+id/events_screen"
+            android:name="com.wtmberlin.ui.EventsFragment"
+            android:label="@string/events_header"
+            tools:layout="@layout/events_screen">
         <action
-            android:id="@+id/start_event_details_screen"
-            app:destination="@+id/event_details_screen" />
+                android:id="@+id/start_event_details_screen"
+                app:destination="@+id/event_details_screen"/>
     </fragment>
 
     <fragment
-        android:id="@+id/event_details_screen"
-        android:name="com.wtmberlin.ui.EventDetailsFragment"
-        android:label="@string/events_header"
-        tools:layout="@layout/event_details_screen">
+            android:id="@+id/event_details_screen"
+            android:name="com.wtmberlin.ui.EventDetailsFragment"
+            android:label="@string/events_header"
+            tools:layout="@layout/event_details_screen">
+        <action
+                android:id="@+id/start_notes_screen"
+                app:destination="@+id/notes_screen"/>
         <argument
-            android:name="eventId"
-            app:argType="string" />
+                android:name="eventId"
+                app:argType="string"/>
     </fragment>
 
     <fragment
-        android:id="@+id/social_media_screen"
-        android:name="com.wtmberlin.ui.SocialMediaFragment"
-        android:label="@string/social_media_header"
-        tools:layout="@layout/social_media_screen" />
+            android:id="@+id/social_media_screen"
+            android:name="com.wtmberlin.ui.SocialMediaFragment"
+            android:label="@string/social_media_header"
+            tools:layout="@layout/social_media_screen"/>
 
     <fragment
-        android:id="@+id/community_info_screen"
-        android:name="com.wtmberlin.ui.CommunityLocalFragment"
-        android:label="@string/nav_drawer_community_local_menu_item"
-        tools:layout="@layout/community_local_screen" />
+            android:id="@+id/community_info_screen"
+            android:name="com.wtmberlin.ui.CommunityLocalFragment"
+            android:label="@string/nav_drawer_community_local_menu_item"
+            tools:layout="@layout/community_local_screen"/>
 
     <fragment
-        android:id="@+id/reviews_screen"
-        android:name="com.wtmberlin.ui.ReviewsFragment"
-        android:label="@string/community_reviews"
-        tools:layout="@layout/reviews_screen" />
+            android:id="@+id/reviews_screen"
+            android:name="com.wtmberlin.ui.ReviewsFragment"
+            android:label="@string/community_reviews"
+            tools:layout="@layout/reviews_screen"/>
+    <fragment
+            android:id="@+id/notes_screen"
+            android:name="com.wtmberlin.ui.NotesFragment"
+            android:label="Personal notes"
+            tools:layout="@layout/notes_screen">
+        <argument
+                android:name="eventId"
+                app:argType="string"/>
+    </fragment>
 
     <fragment
-        android:id="@+id/collaborations_screen"
-        android:name="com.wtmberlin.ui.CollaborationsFragment"
-        android:label="@string/collaborations_header"
-        tools:layout="@layout/collaborations_screen" />
+            android:id="@+id/collaborations_screen"
+            android:name="com.wtmberlin.ui.CollaborationsFragment"
+            android:label="@string/collaborations_header"
+            tools:layout="@layout/collaborations_screen"/>
 
     <activity
-        android:id="@+id/wtm_website"
-        app:action="android.intent.action.VIEW"
-        app:data="@string/wtm_website_url" />
+            android:id="@+id/wtm_website"
+            app:action="android.intent.action.VIEW"
+            app:data="@string/wtm_website_url"/>
 
 </navigation>
