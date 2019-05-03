@@ -1,13 +1,10 @@
 package com.wtmberlin.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavDeepLinkBuilder
 import androidx.navigation.findNavController
 import com.squareup.picasso.Picasso
 import com.wtmberlin.R
@@ -30,7 +27,7 @@ class CommunityLocalFragment : Fragment() {
         view.setOnClickListener { openReviews(view) }
     }
 
-    fun openReviews(view:View){
+    fun openReviews(view: View) {
         view.findNavController().navigate(R.id.reviews_screen)
     }
 }

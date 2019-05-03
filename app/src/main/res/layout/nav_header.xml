@@ -7,9 +7,10 @@
              android:padding="16dp"
              android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView android:layout_width="170dp"
+    <ImageView android:layout_width="160dp"
                android:layout_height="wrap_content"
                android:layout_gravity="center"
                android:layout_marginTop="@dimen/material_space"
+               android:contentDescription="@null"
                android:background="@drawable/events_no_upcoming_events"/>
 </FrameLayout>

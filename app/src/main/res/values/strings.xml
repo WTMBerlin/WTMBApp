@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="notes_header">Here you can store personal notes, contact info or questions for the speakers</string>
+    <string name="notes_description_hint">Your notes will be displayed here, after you save them with a click on save.
+        Keep in mind, this storage is not very persistent!
+    </string>
 </resources>

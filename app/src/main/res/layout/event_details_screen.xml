@@ -38,6 +38,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
+                        android:contentDescription="@null"
                         app:image_url="@{viewModel.event.photoUrl}"
                         app:placeholder="@{@drawable/events_event_image_placeholder}"
                         tools:src="@drawable/tools_event_image" />
@@ -159,6 +160,7 @@
                         android:gravity="center_vertical"
                         android:maxLines="1"
                         android:minHeight="@dimen/material_two_line_list_height"
+                        android:contentDescription="@null"
                         android:onClick="@{v -> viewModel.onOpenMeetupPageClicked()}"
                         android:paddingStart="@dimen/material_space"
                         android:paddingTop="@dimen/material_space_half"

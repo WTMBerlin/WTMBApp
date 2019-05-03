@@ -33,6 +33,7 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
+                    android:contentDescription="Maria's blog post on the Women Techmakers blog"
                     android:text="http://wtmberlin.com/blog/Maria-story"/>
             <TextView
                     android:text="Ely, Software Engineer, JavaScript CrashCourse graduate"
@@ -45,6 +46,7 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
+                    android:contentDescription="Ely's blog post on the Women Techmakers blog"
                     android:text="http://wtmberlin.com/blog/my-experience-at-js-crash-course"/>
             <TextView
                     android:paddingTop="@dimen/material_space"
@@ -58,6 +60,7 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
+                    android:contentDescription="Lara's interview at the International Women Day, YouTube"
                     android:text="https://youtu.be/1RmKXYcL20I?t=114"/>
 
             <TextView
@@ -71,6 +74,7 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
+                    android:contentDescription="Natalie's interview at the International Women Day, YouTube"
                     android:text="https://youtu.be/1RmKXYcL20I?t=3"/>
 
             <TextView
@@ -85,6 +89,7 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
+                    android:contentDescription="Miquel's interview at the International Women Day, YouTube"
                     android:text="https://youtu.be/1RmKXYcL20I?t=95"/>
 
 
@@ -93,7 +98,7 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:layout_marginBottom="@dimen/material_space"
-                    android:text="Anna is a Jr Android Developer, first job after graduating from Android Study Jam, co-wrote this app"
+                    android:text="Anna is a Jr Android Developer, got her first job after graduating from Android Study Jam, co-wrote this app"
                     android:layout_marginTop="@dimen/material_space"/>
         </LinearLayout>
     </ScrollView>
