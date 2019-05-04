@@ -20,7 +20,8 @@
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/white"
             android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+            style="@style/DrawerIcon"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
         <fragment
             android:id="@+id/nav_host_fragment"
@@ -37,7 +38,6 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        style="@style/DrawerArrowStyle"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawer_view" />
