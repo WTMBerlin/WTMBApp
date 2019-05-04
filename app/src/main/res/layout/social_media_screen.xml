@@ -112,7 +112,7 @@
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
                     android:contentDescription="@null"
-                    android:background="@drawable/Octocat"
+                    android:background="@drawable/octocat"
                     android:text="@string/social_media_link_slack"/>
         </LinearLayout>
     </ScrollView>

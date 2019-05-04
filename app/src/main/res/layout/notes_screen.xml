@@ -19,7 +19,7 @@
 
     <EditText
             android:id="@+id/notes_input"
-            android:hint="Write contact *Name* *Surname*, discuss *topic* and click save"
+            android:hint="Write something here and then click to save!"
             android:layout_width="match_parent"
             android:textSize="20sp"
             android:layout_marginEnd="@dimen/material_space"
