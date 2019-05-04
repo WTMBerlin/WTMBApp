@@ -55,6 +55,7 @@
             android:id="@+id/logo"
             android:src="@color/black_87"
             android:contentDescription="@null"
+            android:importantForAccessibility="no"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 </LinearLayout>

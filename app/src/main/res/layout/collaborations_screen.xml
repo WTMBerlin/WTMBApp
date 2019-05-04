@@ -35,23 +35,26 @@
         <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-        <ImageView
-                android:background="@drawable/events_no_upcoming_events"
-                android:layout_width="wrap_content"
-                android:layout_gravity="end"
-                android:layout_height="wrap_content"/>
+            <ImageView
+                    android:background="@drawable/events_no_upcoming_events"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="end"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no"
+                    android:layout_height="wrap_content"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/collaborations_recycler"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false"
-                android:layout_gravity="end"
-                android:background="@null"
-                android:paddingTop="@dimen/material_space_half"
-                android:paddingBottom="@dimen/material_space_half"
-                app:data="@{viewModel.adapterItems}"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/collaborations_event_item"/></FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/collaborations_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:layout_gravity="end"
+                    android:background="@null"
+                    android:paddingTop="@dimen/material_space_half"
+                    android:paddingBottom="@dimen/material_space_half"
+                    app:data="@{viewModel.adapterItems}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/collaborations_event_item"/>
+        </FrameLayout>
     </LinearLayout>
 </layout>

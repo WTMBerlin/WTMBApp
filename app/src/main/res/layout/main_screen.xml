@@ -30,6 +30,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_marginEnd="@dimen/material_space"
+                    android:importantForAccessibility="no"
                     android:drawableEnd="@drawable/ic_rotate"
                     android:contentDescription="@null">
             </TextView>

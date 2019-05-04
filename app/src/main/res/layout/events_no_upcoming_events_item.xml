@@ -8,6 +8,7 @@
         android:drawablePadding="@dimen/material_space"
         android:gravity="center"
         android:contentDescription="@null"
+        android:importantForAccessibility="no"
         android:padding="@dimen/material_space"
         android:textAppearance="@style/WtmBerlin.TextAppearance.NoUpcoming" />
 

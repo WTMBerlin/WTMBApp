@@ -39,6 +39,7 @@
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
                             android:contentDescription="@null"
+                            android:importantForAccessibility="no"
                             android:onClick="@{v -> viewModel.onOpenMeetupPageClicked()}"
                             app:image_url="@{viewModel.event.photoUrl}"
                             app:placeholder="@{@drawable/events_event_image_placeholder}"

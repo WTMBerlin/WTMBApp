@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-        android:orientation="vertical"
         xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <TextView
             android:id="@+id/contributions_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/material_space"
-            style="@style/WtmBerlin.Events.Description"
-            android:text="@string/community_contributions_info"/>
+            style="@style/WtmBerlin.Events.Name"
+            android:text="@string/community_contributions_header"/>
     <ScrollView
             app:layout_constraintTop_toBottomOf="@id/contributions_header"
             app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +23,13 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      style="@style/WtmBerlin.Events.Description"
+                      android:textSize="18sp"
+                      android:text="@string/community_contributions_info"
+                      android:layout_margin="@dimen/material_space"/>
             <TextView
                     android:id="@+id/contributions_link"
                     android:text="@string/community_contributions_link"
@@ -38,6 +45,8 @@
                     android:layout_height="90dp"
                     android:layout_marginTop="@dimen/material_space"
                     android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no"
                     android:background="@drawable/octocat"/>
 
             <TextView
@@ -48,6 +57,7 @@
                     style="@style/WtmBerlin.Events.Description"
                     android:drawableBottom="@drawable/events_no_upcoming_events"
                     android:gravity="center"
+                    android:textSize="18sp"
                     android:text="If you had any questions, accessibility remarks, or other feedback, submit an issue or reach out via Slack to Anna"/>
             <TextView
                     android:id="@+id/link_slack"
@@ -58,6 +68,7 @@
                     android:layout_marginEnd="@dimen/material_space"
                     android:contentDescription="slack link"
                     android:drawableEnd="@drawable/social_media_icon_slack"
+
                     android:text="@string/social_media_link_slack"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -67,6 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.Events.Description"
+                    android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/link_slack"

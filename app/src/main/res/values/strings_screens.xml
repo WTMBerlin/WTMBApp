@@ -24,6 +24,8 @@
 
     <string name="community_contributions_link">
         https://github.com/WTMBerlin/WTMBApp</string>
+    <string name="community_contributions_header">
+        Contributors Guide:</string>
 
     <!-- Reviews -->
     <string name="community_reviews">Community reviews</string>
