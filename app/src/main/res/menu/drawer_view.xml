@@ -21,5 +21,8 @@
         <item
                 android:id="@+id/notes_screen"
                 android:title="Personal notes"/>
+        <item
+                android:id="@+id/contributions_screen"
+                android:title="Contributions and feedback "/>
     </group>
 </menu>

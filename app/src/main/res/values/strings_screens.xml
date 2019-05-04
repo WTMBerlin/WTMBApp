@@ -12,6 +12,19 @@
         This is our contribution to making Berlin\'s tech scene diverse and inclusive!
     </string>
 
+    <!-- Contributions -->
+
+    <string name="community_contributions_info">
+        This App was created as learning project that would benefit the community WTM Berlin 💻.
+        \nGreat place to start an adventure of being an open source contributor 🚀
+        \n
+        \n👨‍💻 👩‍💻
+        \n
+        \nFeel free to submit issues, pull requests or forks:</string>
+
+    <string name="community_contributions_link">
+        https://github.com/WTMBerlin/WTMBApp</string>
+
     <!-- Reviews -->
     <string name="community_reviews">Community reviews</string>
     <string name="community_reviews_header">Organizers and community members about WTMB</string>

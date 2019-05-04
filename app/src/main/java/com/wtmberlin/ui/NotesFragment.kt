@@ -38,14 +38,14 @@ class NotesFragment : Fragment() {
 
     //TODO persist in one common shared prefs, pass event name to the notes screen
     private fun persist(view: View, note: String) {
-//        val prefs = activity?.getPreferences(Context.MODE_PRIVATE) ?:return
-//        with(prefs.edit()){
-//            putString("note", ).commit()
-//        }.also{
-//            val oldNote = prefs.getString("name", "")
-//            val newNote = oldNote.plus("\n" + note)
-//            display(view, newNote)
-//        }
+        val prefs = activity?.getPreferences(Context.MODE_PRIVATE) ?:return
+        with(prefs.edit()){
+            putString("note", view.notes_input.text.toString()).apply()
+        }.also{
+            val oldNote = prefs.getString("note", "")
+            val newNote = oldNote.plus("\n" + note)
+            display(view, newNote)
+        }
     }
 
     private fun display(view: View, text: String? ?= "See? This is how a default note looks like!") {

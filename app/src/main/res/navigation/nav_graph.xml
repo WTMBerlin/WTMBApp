@@ -60,6 +60,12 @@
             android:label="@string/collaborations_header"
             tools:layout="@layout/collaborations_screen"/>
 
+    <fragment
+            android:id="@+id/contributions_screen"
+            android:name="com.wtmberlin.ui.ContributionsFragment"
+            android:label="Contributions"
+            tools:layout="@layout/contributions_screen"/>
+
     <activity
             android:id="@+id/wtm_website"
             app:action="android.intent.action.VIEW"

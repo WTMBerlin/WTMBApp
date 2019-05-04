@@ -12,6 +12,15 @@
             android:text="@string/community_local_description_header"
             android:textSize="16sp"/>
 
+    <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/WtmBerlin.SocialMedia"
+            android:drawableBottom="@drawable/ic_desktop_mac_black_24dp"
+            android:text="http://wtmberlin.com"
+            android:autoLink="web"/>
+
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
