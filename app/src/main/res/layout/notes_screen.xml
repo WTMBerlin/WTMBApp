@@ -13,7 +13,6 @@
             android:layout_margin="@dimen/material_space"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/white"
             android:text="@string/notes_header"
             android:textSize="18sp"/>
 
