@@ -8,18 +8,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/WtmBerlin.Events.Name"
-            android:padding="16dp"
+            android:layout_margin="@dimen/material_space"
             android:text="@string/community_local_description_header"
             android:textSize="16sp"/>
 
     <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:id="@+id/link_wtmb"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/WtmBerlin.SocialMedia"
-            android:drawableBottom="@drawable/ic_desktop_mac_black_24dp"
-            android:text="http://wtmberlin.com"
-            android:autoLink="web"/>
+            style="@style/WtmBerlin.SocialMedia.Item"
+            android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
+            android:autoLink="web"
+            android:contentDescription="facebook link"
+            android:text="http://wtmberlin.com/"/>
 
     <ScrollView
             android:layout_width="match_parent"

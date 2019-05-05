@@ -29,13 +29,12 @@
                       style="@style/WtmBerlin.Events.Description"
                       android:textSize="18sp"
                       android:text="@string/community_contributions_info"
-                      android:layout_margin="@dimen/material_space"/>
+                      android:layout_marginHorizontal="@dimen/material_space"/>
             <TextView
                     android:id="@+id/contributions_link"
                     android:text="@string/community_contributions_link"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/material_space"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:contentDescription="Link to website Women Techmakers Berlin"
                     android:autoLink="web"/>

@@ -14,7 +14,7 @@
             android:text="Past courses and workshops:"/>
     <TextView
             android:text="We hope to repeat some of those course formats soon, so keep an eye on our Meetup calendar!"
-            android:layout_margin="@dimen/material_space"
+            android:layout_marginHorizontal="@dimen/material_space"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     <ScrollView
@@ -24,6 +24,7 @@
         <LinearLayout
                 android:layout_marginHorizontal="@dimen/material_space"
                 android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/material_space_half"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 

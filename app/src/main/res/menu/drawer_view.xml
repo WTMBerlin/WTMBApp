@@ -22,6 +22,9 @@
                 android:id="@+id/notes_screen"
                 android:title="Personal notes"/>
         <item
+                android:id="@+id/study_groups_screen"
+                android:title="Study groups"/>
+        <item
                 android:id="@+id/contributions_screen"
                 android:title="Contributions and feedback "/>
     </group>

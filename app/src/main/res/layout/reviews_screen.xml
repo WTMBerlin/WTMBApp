@@ -8,11 +8,10 @@
             android:text="Our community members and organizars sharing their experience with WTMB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/WtmBerlin.Events.Name"
-            android:padding="16dp"/>
+            android:layout_margin="@dimen/material_space"
+            style="@style/WtmBerlin.Events.Name"/>
 
     <ScrollView
-            android:paddingTop="@dimen/material_space"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <LinearLayout
