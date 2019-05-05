@@ -5,65 +5,153 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
+            android:id="@+id/study_groups"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Our Women Techmakers Berlin team organizes one day workshops and longer courses, that last over few or several weeks.
-              Those one day events are usually called Workshops and longer courses Study Jams and Crash Courses.
-
-              Most of the events are for the complete beginners, so having your laptop and charger with you you are good to start, no previous knowledge is required. Bring friends, this is a fun activity to do in a group.
-              You and other participants can take first steps within some technology or learn certain skills guided by our supportive tutors.
-
-              During Study Jams and Crash Courses we meet every one or two weeks and work on projects for the portfolio that you. Last event marks the graduation ceremony - you can invite friends and family, from our side we try invite employees looking for juniors. We also support you by providing feedback on CV and professional profiles.
-
-              Many community members who graduate from those courses are giving back to the community, Lara, Maria and I graduated from those courses and hosted the following edition to giver other folks the same experience we had, that contributed to each of us not only getting a Software Engineering job and discovering a great source of interesting opportinities that come with learning coding including fun conferences and meetups, in"/>
-
-
+            android:layout_margin="@dimen/material_space"
+            style="@style/WtmBerlin.Events.Name"
+            android:textSize="18sp"
+            android:text="Past courses and workshops:"/>
     <TextView
-            android:text="Some of our recorded events"
+            android:text="We hope to repeat some of those course formats soon, so keep an eye on our Meetup calendar!"
+            android:layout_margin="@dimen/material_space"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
-    <TextView
-            android:text="JavaScript Crash Course"
+    <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <TextView
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:text="http://wtmberlin.com/javascript-crash-course/"/>
-    <TextView
-            android:text="Public speaking workshop: You should give a talk this year!"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
 
-    <TextView
-            android:text="Public speaking workshop part 1: Motivation and best practices"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <LinearLayout
+                android:layout_marginHorizontal="@dimen/material_space"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <TextView
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:text="https://twitter.com/wtm_berlin/status/1034140735698661376"/>
+            <TextView
+                    android:text="Recordings of a JavaScript Crash Course organized by Maria, who graduated from the previous edition."
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
 
-    <TextView
-            android:text="Public speaking workshop part 2: Write a great talk proposal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="Open to see lessons description and recordings, GitHub materials are linked below. If you had any questions, ask them in a dedicated slack channel: #js-crash course"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-    <TextView
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:text="https://twitter.com/wtm_berlin/status/1037384246191640576"/>
+            <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:layout_marginVertical="@dimen/material_space"
+                    android:text="http://wtmberlin.com/javascript-crash-course/"/>
 
-    <TextView
-            android:text="Public speaking workshop part 3: Practical tips for composing the talks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:text="https://github.com/WTMBerlin/jscc2018"/>
 
-    <TextView
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:text="https://twitter.com/wtm_berlin/status/1039197181989683200"/>
+            <TextView
+                    android:text="Maria, JS graduate and current tutor about the course"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:autoLink="web"
+                    android:text="http://wtmberlin.com/blog/Maria-story"/>
+            <TextView
+                    android:text="Recordings of a Public Speaking Workshop: \nYou should give a talk this year!"
+                    style="@style/WtmBerlin.SocialMedia"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="@dimen/material_space_half"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:text="Part 1: Motivation and best practices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:text="https://twitter.com/wtm_berlin/status/1034140735698661376"/>
+
+            <TextView
+                    android:text="Part 2: Write a great talk proposal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:text="https://twitter.com/wtm_berlin/status/1037384246191640576"/>
+
+            <TextView
+                    android:text="Part 3: Practical tips for composing the talks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:text="https://twitter.com/wtm_berlin/status/1039197181989683200"/>
+
+
+            <TextView
+                    android:text="Android Study Jam"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:text="Lesson descriptions, GitHub materials are linked below. If you had any questions, ask them in a dedicated slack channel: #android-study-jam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:layout_marginVertical="@dimen/material_space"
+                    android:text="http://wtmberlin.com/android-study-jam/"/>
+
+            <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:text="https://github.com/WTMBerlin/codelab-android-kotlin"/>
+
+            <TextView
+                    android:text="Google Assistant Workshop given by Anna, who graduated from the Android Study Jam"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="@dimen/material_space_half"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginBottom="@dimen/material_space"
+                      android:autoLink="web"
+                      android:text="https://www.meetup.com/Women-Techmakers-Berlin/events/251198434/"/>
+
+            <TextView
+                    android:text="Flutter Study Jam given by Lara, who graduated from the Android Study Jam"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginBottom="@dimen/material_space"
+                      android:autoLink="web"
+                      android:text="https://www.meetup.com/Women-Techmakers-Berlin/events/lftrcqyxnbpb/"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
