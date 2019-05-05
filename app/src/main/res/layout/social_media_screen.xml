@@ -139,7 +139,7 @@
                     android:autoLink="web"
                     android:contentDescription="@null"
                     android:importantForAccessibility="no"
-                    android:background="@drawable/octocat"/>
+                    android:background="@drawable/ic_octocat"/>
             <TextView
                     android:id="@+id/community_reviews_click"
                     android:text="Click to see how to contribute to this app!"
