@@ -1,4 +1,4 @@
-####Our community Women Techmakers Berlin follows the Berlin's Code of Conduct available here: https://berlincodeofconduct.org
+#### Our community Women Techmakers Berlin follows the Berlin's Code of Conduct available here: https://berlincodeofconduct.org
 
 The Code of Conduct for the contents of this repo:
 
