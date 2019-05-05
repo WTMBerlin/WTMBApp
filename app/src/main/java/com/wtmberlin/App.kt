@@ -6,6 +6,7 @@ import com.wtmberlin.data.repositoryModule
 import com.wtmberlin.meetup.meetupModule
 import com.wtmberlin.notifications.Notifications
 import com.wtmberlin.notifications.notificationsModule
+import com.wtmberlin.ui.AppPreferences
 import com.wtmberlin.ui.uiModule
 import com.wtmberlin.work.Works
 import com.wtmberlin.work.workModule
@@ -30,5 +31,6 @@ class App : Application() {
         notifications.init()
 
         works.schedulePeriodicEventRefresh()
+        AppPreferences.init(this)
     }
 }

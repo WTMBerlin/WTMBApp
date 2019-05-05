@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
                     rotate_icon.rotation + 180.0f
                 )
         }
+
+
     }
 
 
