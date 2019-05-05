@@ -55,6 +55,7 @@ Some of the features are marked with `good first issue`. As this is a community 
 General rule: aim to write nice code, commits. :tulip:
 
 Protip: this app could be easily forked and adjusted for your community if you are present on Meetup :octopus:
+more details: https://github.com/WTMBerlin/WTMBApp/blob/master/CONTRIBUTING.md
 
 ### License
 
