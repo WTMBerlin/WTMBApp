@@ -96,15 +96,41 @@
                     android:text="@string/social_media_link_facebook"/>
 
             <TextView
-                    android:id="@+id/social_media_content_github"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:id="@+id/social_media_content_wtmb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="wtm berlin github link"
-                    android:text="https://github.com/WTMBerlin/WTMBApp"/>
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:text="Here is our website"/>
+
+            <TextView
+                    android:id="@+id/link_wtmb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:layout_marginEnd="@dimen/material_space"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:contentDescription="facebook link"
+                    android:text="http://wtmberlin.com/"/>
+
+            <TextView
+                    android:id="@+id/social_media_content_github"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:text="our GitHub repo"/>
 
             <TextView
                     android:id="@+id/link_github"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:contentDescription="wtm berlin github link"
+                    android:text="https://github.com/WTMBerlin"/>
+
+            <TextView
+                    android:id="@+id/icon_github"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_gravity="center"
@@ -113,8 +139,18 @@
                     android:autoLink="web"
                     android:contentDescription="@null"
                     android:importantForAccessibility="no"
-                    android:background="@drawable/octocat"
-                    android:text="@string/social_media_link_slack"/>
+                    android:background="@drawable/octocat"/>
+            <TextView
+                    android:id="@+id/community_reviews_click"
+                    android:text="Click to see how to contribute to this app!"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/wtmGreenDark"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:onClick="openContributions"
+                    android:padding="@dimen/material_space_half"
+                    style="@style/WtmBerlin.Events.Name"
+                    android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

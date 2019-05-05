@@ -65,6 +65,11 @@
             android:name="com.wtmberlin.ui.ContributionsFragment"
             android:label="Contributions"
             tools:layout="@layout/contributions_screen"/>
+    <fragment
+            android:id="@+id/study_groups_screen"
+            android:name="com.wtmberlin.ui.StudyGroupsFragment"
+            android:label="Contributions"
+            tools:layout="@layout/study_groups_screen"/>
 
     <activity
             android:id="@+id/wtm_website"

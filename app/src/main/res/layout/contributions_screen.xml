@@ -56,9 +56,8 @@
                     android:layout_margin="@dimen/material_space"
                     style="@style/WtmBerlin.Events.Description"
                     android:drawableBottom="@drawable/events_no_upcoming_events"
-                    android:gravity="center"
                     android:textSize="18sp"
-                    android:text="If you had any questions, accessibility remarks, or other feedback, submit an issue or reach out via Slack to Anna"/>
+                    android:text="If you had any questions, accessibility remarks, or other feedback, submit an issue or reach out via Slack to one of our organizer with WTM icon symbol next to the name"/>
             <TextView
                     android:id="@+id/link_slack"
                     android:layout_width="match_parent"
