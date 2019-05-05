@@ -47,7 +47,7 @@
                     android:layout_gravity="center"
                     android:contentDescription="@null"
                     android:importantForAccessibility="no"
-                    android:background="@drawable/octocat"/>
+                    android:background="@drawable/ic_octocat"/>
 
             <TextView
                     android:id="@+id/contributions_info"
