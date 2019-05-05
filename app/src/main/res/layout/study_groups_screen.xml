@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Women Techmakers Berlin team organizes one day workshops and longer courses, that last over few or several weeks.
+              Those one day events are usually called Workshops and longer courses Study Jams and Crash Courses.
+
+              Most of the events are for the complete beginners, so having your laptop and charger with you you are good to start, no previous knowledge is required. Bring friends, this is a fun activity to do in a group.
+              You and other participants can take first steps within some technology or learn certain skills guided by our supportive tutors.
+
+              During Study Jams and Crash Courses we meet every one or two weeks and work on projects for the portfolio that you. Last event marks the graduation ceremony - you can invite friends and family, from our side we try invite employees looking for juniors. We also support you by providing feedback on CV and professional profiles.
+
+              Many community members who graduate from those courses are giving back to the community, Lara, Maria and I graduated from those courses and hosted the following edition to giver other folks the same experience we had, that contributed to each of us not only getting a Software Engineering job and discovering a great source of interesting opportinities that come with learning coding including fun conferences and meetups, in"/>
+
+
+    <TextView
+            android:text="Some of our recorded events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="JavaScript Crash Course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="http://wtmberlin.com/javascript-crash-course/"/>
+    <TextView
+            android:text="Public speaking workshop: You should give a talk this year!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="Public speaking workshop part 1: Motivation and best practices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="https://twitter.com/wtm_berlin/status/1034140735698661376"/>
+
+    <TextView
+            android:text="Public speaking workshop part 2: Write a great talk proposal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="https://twitter.com/wtm_berlin/status/1037384246191640576"/>
+
+    <TextView
+            android:text="Public speaking workshop part 3: Practical tips for composing the talks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="https://twitter.com/wtm_berlin/status/1039197181989683200"/>
+</LinearLayout>
