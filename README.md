@@ -15,27 +15,35 @@ This app was written as a learning project to give a practical overview over our
 
 Our app fetches Meetup Events via Meetup API from https://www.meetup.com/Women-Techmakers-Berlin/ and displays the events including venue and description details as a clickable list. 
 
-<img src=“https://TODO.png” width=“350"/>
-                                    
-Info about the community
-<img src=“https://TODO.png” width=“350"/>
-                                    
-Links to our blog and social media.
-<img src=“https://TODO.png” width=“350"/>
-                                    
-Collaboration partners - companies that have been supporting us and thus contributing to Berlin's tech scene becoming more diverse and inclusive!
+#### Events screen 
 
 <img src=“https://TODO.png” width=“350"/>
                                     
- Community reviews                                   
+#### Info about the community
+
+<img src=“https://TODO.png” width=“350"/>
+                                    
+#### Links to our blog and social media.
+
+<img src=“https://TODO.png” width=“350"/>
+                                    
+#### Collaboration partners 
+
+Companies that have been supporting us and thus contributing to Berlin's tech scene becoming more diverse and inclusive!
+
+<img src=“https://TODO.png” width=“350"/>
+                                    
+#### Community reviews                                   
 
 As a bonus feature, user can save notes. [WIP]
 <img src=“https://TODO.png” width=“350"/>
                                     
-Contributions and feedback.
+#### Contributions and feedback
+
 <img src=“https://TODO.png” width=“350"/>                                    
 
-### Contributor's Guide
+#### Contributor's Guide
+
 As soon as you started working on some issue from this project: https://github.com/WTMBerlin/WTMBApp/issues, put the `in progress` label on it and change the status to `done` after it is ready. 
 You can also assign yourself to the ticket if you want to commit implementing it.
 
