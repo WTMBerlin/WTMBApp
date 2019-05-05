@@ -1,9 +1,9 @@
-# Women Techmakers Berlin
+# Women Techmakers Berlin App
 
+### Women Techmakers Berlin 
 Women Techmakers is a global Women Techmakers run by Google. All our events are free of charge, we are open not only to women, but to everyone who respects Berlin's code of conduct https://berlincodeofconduct.org 
 
-# Women Techmakers Berlin App
-Meetup Assistant for Women Techmakers Berlin events :robot: 
+### Meetup Assistant for Women Techmakers Berlin events :robot: 
 This app was written as a learning project to give a practical overview over our events including:
 
 - programming courses
@@ -11,7 +11,7 @@ This app was written as a learning project to give a practical overview over our
 - workshops on technical topics and soft skills
 - talks with inspirational speakers
 
-# What can I find 
+### What can I find here
 
 Our app fetches Meetup Events via Meetup API from https://www.meetup.com/Women-Techmakers-Berlin/ and displays the events including venue and description details as a clickable list. 
 
@@ -35,7 +35,7 @@ As a bonus feature, user can save notes. [WIP]
 Contributions and feedback.
 <img src=“https://TODO.png” width=“350"/>                                    
 
-# Contributor's Guide
+### Contributor's Guide
 As soon as you started working on some issue from this project: https://github.com/WTMBerlin/WTMBApp/issues, put the `in progress` label on it and change the status to `done` after it is ready. 
 You can also assign yourself to the ticket if you want to commit implementing it.
 
@@ -48,7 +48,7 @@ General rule: aim to write nice code, commits. :tulip:
 
 Protip: this app could be easily forked and adjusted for your community if you are present on Meetup :octopus:
 
-# License
+### License
 
    Copyright Women Techmakers Berlin Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
