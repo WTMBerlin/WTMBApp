@@ -18,6 +18,16 @@ class MainActivity : AppCompatActivity() {
 
         toolbar.setupWithNavController(navController, appBarConfiguration)
         nav_view.setupWithNavController(findNavController(R.id.nav_host_fragment))
+
+        rotate_icon.setOnClickListener {
+            it
+                .animate()
+                .rotation(
+                    rotate_icon.rotation + 180.0f
+                )
+        }
     }
+
+
 }
 

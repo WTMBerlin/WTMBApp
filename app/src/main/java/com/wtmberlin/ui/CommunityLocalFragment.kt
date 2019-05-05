@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.squareup.picasso.Picasso
 import com.wtmberlin.R
 import kotlinx.android.synthetic.main.community_local_screen.*
@@ -21,7 +23,13 @@ class CommunityLocalFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Picasso.get()
             .load("https://raw.githubusercontent.com/WTMBerlin/slides/master/logos/fb-cover.jpg")
-            .placeholder(R.drawable.events_event_image_placeholder)
             .into(logo)
+
+        view.setOnClickListener { openReviews(view) }
+    }
+
+    fun openReviews(view: View) {
+        view.findNavController().navigate(R.id.reviews_screen)
+        Toast.makeText(view.context, "Keep on clicking, it takes a while, I'm working on fixing it", Toast.LENGTH_LONG).show()
     }
 }

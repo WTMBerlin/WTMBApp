@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/community_local_description_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/WtmBerlin.Events.Name"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/material_space"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/notes_header"
+            android:textSize="18sp"/>
+
+    <EditText
+            android:id="@+id/notes_input"
+            android:hint="Write something here and then click to save!"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:layout_marginEnd="@dimen/material_space"
+            android:layout_marginStart="@dimen/material_space"
+            android:contentDescription="add notes here, click save and display below"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/community_local_description_header"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/notes_button_save"
+            android:background="@drawable/events_no_upcoming_events"
+            android:text="save"
+            android:gravity="top"
+            android:textColor="@color/black_87"
+            android:textSize="30sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/material_space"
+            android:clickable="true"
+            android:onClick="saveNotes"
+            android:textStyle="bold"
+            android:contentDescription="save new note"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/notes_button_clean"
+            app:layout_constraintTop_toBottomOf="@id/notes_input"
+            android:layout_width="90dp"
+            android:layout_height="90dp"/>
+
+    <TextView
+            android:id="@+id/notes_button_clean"
+            android:background="@drawable/events_no_upcoming_events"
+            android:text="delete"
+            android:gravity="top"
+            android:textColor="@color/black_87"
+            android:textSize="30sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/material_space"
+            android:contentDescription="delete all notes"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:onClick="saveNotes"
+            app:layout_constraintStart_toStartOf="@id/notes_button_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notes_input"
+            android:layout_width="90dp"
+            android:layout_height="90dp"/>
+
+    <ScrollView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notes_button_clean"
+            android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/notes_output"
+                android:layout_width="match_parent"
+                tools:text="@tools:sample/lorem/random"
+                android:padding="@dimen/material_space"
+                android:textSize="24dp"
+                android:text="@string/notes_description_hint"
+                android:layout_height="match_parent"/>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

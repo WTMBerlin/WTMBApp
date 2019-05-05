@@ -6,5 +6,6 @@
         style="@style/WtmBerlin.Events.ListHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:importantForAccessibility="yes"
         android:text="@string/events_past_header" />
 </layout>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
     <TextView
             android:id="@+id/community_local_description_header"
             android:layout_width="match_parent"
@@ -10,26 +10,52 @@
             style="@style/WtmBerlin.Events.Name"
             android:padding="16dp"
             android:text="@string/community_local_description_header"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
+
+    <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/WtmBerlin.SocialMedia"
+            android:drawableBottom="@drawable/ic_desktop_mac_black_24dp"
+            android:text="http://wtmberlin.com"
+            android:autoLink="web"/>
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/description_community"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/WtmBerlin.Events.Description"
-            android:padding="16dp"
-            android:text="@string/community_local_description"
-            android:textSize="16sp" />
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <TextView
+                    android:id="@+id/description_community"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:padding="16dp"
+                    android:text="@string/community_local_description"
+                    android:textSize="16sp"/>
+
+            <TextView
+                    android:id="@+id/community_reviews_click"
+                    android:text="Click to see community reviews!"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/wtmGreenDark"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:padding="@dimen/material_space_half"
+                    style="@style/WtmBerlin.Events.Name"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
     </ScrollView>
 
     <ImageView
-        android:id="@+id/logo"
-        android:src="@color/black_87"
-        android:contentDescription="@null"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            android:id="@+id/logo"
+            android:src="@color/black_87"
+            android:contentDescription="@null"
+            android:importantForAccessibility="no"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 </LinearLayout>

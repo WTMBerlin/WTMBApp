@@ -1,19 +1,31 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/social_media_screen"
-            android:title="@string/nav_drawer_social_media_menu_item" />
+                android:id="@+id/community_info_screen"
+                android:title="@string/nav_drawer_community_local_menu_item"/>
         <item
-            android:id="@+id/community_info_screen"
-            android:title="@string/nav_drawer_community_local_menu_item" />
+                android:id="@+id/social_media_screen"
+                android:title="@string/nav_drawer_social_media_menu_item"/>
         <item
-            android:id="@+id/wtm_website"
-            android:title="@string/nav_drawer_community_global_menu_item" />
+                android:id="@+id/events_screen"
+                android:title="@string/nav_drawer_events_menu_item"/>
         <item
-            android:id="@+id/events_screen"
-            android:title="@string/nav_drawer_events_menu_item" />
+                android:id="@+id/reviews_screen"
+                android:title="@string/community_reviews"/>
         <item
-            android:id="@+id/collaborations_screen"
-            android:title="@string/nav_drawer_collaborations_menu_item" />
+                android:id="@+id/collaborations_screen"
+                android:title="@string/nav_drawer_collaborations_menu_item"/>
+        <item
+                android:id="@+id/wtm_website"
+                android:title="@string/nav_drawer_community_global_menu_item"/>
+        <item
+                android:id="@+id/notes_screen"
+                android:title="Personal notes"/>
+        <item
+                android:id="@+id/study_groups_screen"
+                android:title="Free coding study groups"/>
+        <item
+                android:id="@+id/contributions_screen"
+                android:title="Contributions and feedback "/>
     </group>
 </menu>

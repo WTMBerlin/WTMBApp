@@ -1,83 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <TextView
-        android:id="@+id/social_media_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/WtmBerlin.Events.Name"
-        android:layout_margin="@dimen/material_space"
-        android:text="@string/social_media_description_general" />
-
-    <TextView
-            android:id="@+id/social_media_content_meetup"
+            android:id="@+id/social_media_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/WtmBerlin.Events.Description"
-            android:layout_margin="@dimen/material_space"
-            android:text="@string/social_media_description_meetup" />
+            style="@style/WtmBerlin.Events.Name"
+            android:padding="16dp"
+            android:text="@string/social_media_description_general"/>
 
-    <TextView
-        android:id="@+id/link_meetup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/WtmBerlin.SocialMedia.Item"
-        android:autoLink="web"
-        android:drawableStart="@drawable/social_media_icon_meetup"
-        android:text="@string/social_media_link_meetup" />
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <TextView
-            android:id="@+id/social_media_content_slack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/WtmBerlin.Events.Description"
-            android:layout_margin="@dimen/material_space"
-            android:text="@string/social_media_description_slack" />
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/link_slack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/WtmBerlin.SocialMedia.Item"
-        android:autoLink="web"
-        android:drawableStart="@drawable/social_media_icon_slack"
-        android:text="@string/social_media_link_slack" />
+            <TextView
+                    android:id="@+id/social_media_content_meetup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:text="@string/social_media_description_meetup"/>
 
-    <TextView
-            android:id="@+id/social_media_content_twitter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/WtmBerlin.Events.Description"
-            android:layout_margin="@dimen/material_space"
-            android:text="@string/social_media_description_twitter" />
+            <TextView
+                    android:id="@+id/link_meetup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:layout_marginEnd="@dimen/material_space"
+                    android:contentDescription="meetup link"
+                    android:drawableEnd="@drawable/social_media_icon_meetup"
+                    android:text="@string/social_media_link_meetup"/>
 
-    <TextView
-        android:id="@+id/link_twitter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/WtmBerlin.SocialMedia.Item"
-        android:autoLink="web"
-        android:drawableStart="@drawable/social_media_icon_twitter"
-        android:text="@string/social_media_link_twitter" />
+            <TextView
+                    android:id="@+id/social_media_content_slack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:layout_marginTop="@dimen/material_space_half"
+                    android:layout_marginBottom="@dimen/material_space_half"
+                    android:text="@string/social_media_description_slack"/>
 
-    <TextView
-            android:id="@+id/social_media_content_facebook"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/WtmBerlin.Events.Description"
-            android:layout_margin="@dimen/material_space"
-            android:text="@string/social_media_description_facebook" />
+            <TextView
+                    android:id="@+id/link_slack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:layout_marginEnd="@dimen/material_space"
+                    android:contentDescription="slack link"
+                    android:drawableEnd="@drawable/social_media_icon_slack"
+                    android:text="@string/social_media_link_slack"/>
 
-    <TextView
-        android:id="@+id/link_facebook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/WtmBerlin.SocialMedia.Item"
-        android:autoLink="web"
-        android:drawableStart="@drawable/social_media_icon_facebook"
-        android:text="@string/social_media_link_facebook" />
+            <TextView
+                    android:id="@+id/social_media_content_twitter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="twitter link"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:text="@string/social_media_description_twitter"/>
 
+            <TextView
+                    android:id="@+id/link_twitter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:layout_marginEnd="@dimen/material_space"
+                    android:contentDescription="twitter link"
+                    android:drawableEnd="@drawable/social_media_icon_twitter"
+                    android:text="@string/social_media_link_twitter"/>
+
+            <TextView
+                    android:id="@+id/social_media_content_facebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:text="@string/social_media_description_facebook"/>
+
+            <TextView
+                    android:id="@+id/link_facebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:layout_marginEnd="@dimen/material_space"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:contentDescription="facebook link"
+                    android:drawableEnd="@drawable/social_media_icon_facebook"
+                    android:text="@string/social_media_link_facebook"/>
+
+            <TextView
+                    android:id="@+id/social_media_content_wtmb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:text="Here is our website"/>
+
+            <TextView
+                    android:id="@+id/link_wtmb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:layout_marginEnd="@dimen/material_space"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:contentDescription="facebook link"
+                    android:text="http://wtmberlin.com/"/>
+
+            <TextView
+                    android:id="@+id/social_media_content_github"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:text="our GitHub repo"/>
+
+            <TextView
+                    android:id="@+id/link_github"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:contentDescription="wtm berlin github link"
+                    android:text="https://github.com/WTMBerlin"/>
+
+            <TextView
+                    android:id="@+id/icon_github"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:autoLink="web"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no"
+                    android:background="@drawable/octocat"/>
+            <TextView
+                    android:id="@+id/community_reviews_click"
+                    android:text="Click to see how to contribute to this app!"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/wtmGreenDark"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:onClick="openContributions"
+                    android:padding="@dimen/material_space_half"
+                    style="@style/WtmBerlin.Events.Name"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
