@@ -71,6 +71,12 @@
             android:label="Stydy Groups"
             tools:layout="@layout/study_groups_screen"/>
 
+    <fragment
+            android:id="@+id/kids_friendly_screen"
+            android:name="com.wtmberlin.ui.KidsFriendlyEventsFragment"
+            android:label="Special kids friendly events"
+            tools:layout="@layout/kids_friendly_screen"/>
+
     <activity
             android:id="@+id/wtm_website"
             app:action="android.intent.action.VIEW"

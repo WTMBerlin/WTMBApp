@@ -32,7 +32,7 @@
                     android:layout_marginEnd="@dimen/material_space"
                     android:importantForAccessibility="no"
                     android:drawableEnd="@drawable/ic_rotate"
-                    android:contentDescription="@null">
+                    android:contentDescription="zz zz zz ziuuum zz zz ziuum zzzzzzz ziuuuuuuuum zz">
             </TextView>
             </FrameLayout>
         </androidx.appcompat.widget.Toolbar>
