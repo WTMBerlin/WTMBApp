@@ -15,14 +15,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-        <TextView
-                android:id="@+id/collaborations_content_header"
-                android:layout_width="match_parent"
+        <com.google.android.material.card.MaterialCardView
                 android:layout_height="wrap_content"
-                style="@style/WtmBerlin.Events.Name"
-                android:padding="16dp"
-                android:text="@string/collaborations_header_description"/>
+                android:layout_width="wrap_content">
+
+            <TextView
+                    android:id="@+id/collaborations_content_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/WtmBerlin.Events.Name"
+                    android:padding="16dp"
+                    android:text="@string/collaborations_header_description"/>
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
                 android:id="@+id/collaborations_content"

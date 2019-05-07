@@ -3,14 +3,17 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
-
-    <TextView
-            android:id="@+id/social_media_content"
-            android:layout_width="match_parent"
+    <com.google.android.material.card.MaterialCardView
             android:layout_height="wrap_content"
-            style="@style/WtmBerlin.Events.Name"
-            android:padding="16dp"
-            android:text="@string/social_media_description_general"/>
+            android:layout_width="match_parent">
+        <TextView
+                android:id="@+id/social_media_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/WtmBerlin.Events.Name"
+                android:padding="16dp"
+                android:text="@string/social_media_description_general"/>
+    </com.google.android.material.card.MaterialCardView>
 
     <ScrollView android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -100,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
-                    android:text="Here is our website"/>
+                    android:text="Our website"/>
 
             <TextView
                     android:id="@+id/link_wtmb"
@@ -109,7 +112,6 @@
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
                     android:layout_marginEnd="@dimen/material_space"
-                    android:layout_marginBottom="@dimen/material_space"
                     android:contentDescription="facebook link"
                     android:text="http://wtmberlin.com/"/>
 
@@ -118,7 +120,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
-                    android:text="our GitHub repo"/>
+                    android:text="WTM Berlin GitHub repo"/>
 
             <TextView
                     android:id="@+id/link_github"
@@ -148,6 +150,7 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:onClick="openContributions"
+                    android:layout_marginBottom="@dimen/material_space"
                     android:padding="@dimen/material_space_half"
                     style="@style/WtmBerlin.Events.Name"
                     android:layout_height="wrap_content"/>

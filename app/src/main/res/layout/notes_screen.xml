@@ -4,17 +4,26 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <TextView
-            android:id="@+id/community_local_description_header"
-            android:layout_width="match_parent"
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/community_local_description_header_card"
             android:layout_height="wrap_content"
-            style="@style/WtmBerlin.Events.Name"
+            android:layout_width="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="@dimen/material_space"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/notes_header"
-            android:textSize="18sp"/>
+            app:layout_constraintBottom_toTopOf="@id/notes_input"
+    >
+        <TextView
+                android:id="@+id/community_local_description_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/WtmBerlin.Events.Name"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/material_space"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/notes_header"
+                android:textSize="18sp"/>
+    </com.google.android.material.card.MaterialCardView>
 
     <EditText
             android:id="@+id/notes_input"
@@ -26,7 +35,7 @@
             android:contentDescription="add notes here, click save and display below"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/community_local_description_header"
+            app:layout_constraintTop_toBottomOf="@id/community_local_description_header_card"
             android:layout_height="wrap_content"/>
     <TextView
             android:id="@+id/notes_button_save"
@@ -45,7 +54,7 @@
             app:layout_constraintEnd_toStartOf="@id/notes_button_clean"
             app:layout_constraintTop_toBottomOf="@id/notes_input"
             android:padding="20dp"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"/>
 
     <TextView
@@ -65,7 +74,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/notes_input"
             android:padding="20dp"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"/>
 
     <ScrollView

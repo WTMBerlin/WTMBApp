@@ -1,6 +1,5 @@
 package com.wtmberlin.ui
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -17,7 +16,6 @@ import com.wtmberlin.data.Coordinates
 import com.wtmberlin.databinding.EventDetailsScreenBinding
 import com.wtmberlin.util.observeNotHandled
 import kotlinx.android.synthetic.main.event_details_screen.view.*
-import kotlinx.android.synthetic.main.notes_screen.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 

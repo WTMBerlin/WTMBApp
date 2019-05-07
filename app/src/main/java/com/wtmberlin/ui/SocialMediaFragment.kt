@@ -16,10 +16,10 @@ class SocialMediaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         openContributions(view)
-
     }
 
     fun openContributions(view: View) {
+        //TODO: fix open on click not on start :(
         view.findNavController().navigate(R.id.contributions_screen)
     }
 }
