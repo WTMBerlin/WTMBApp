@@ -8,7 +8,7 @@
             <solid android:color="@color/white" />
         </shape>
     </item>
-    <item android:drawable="@drawable/wtm"
+    <item android:drawable="@drawable/wtm_large"
         android:width="200dp"
         android:height="200dp"
         android:gravity="center" />

@@ -39,7 +39,7 @@
 
     <!-- Community Local -->
     <string name="community_local_header">About WTM Berlin</string>
-    <string name="community_local_description_header">Women Techmakers Berlin is part of the global \nWomen Techmakers program run by Google.</string>
+    <string name="community_local_description_header">WTM Berlin is part of the global \nWomen Techmakers program run by Google.</string>
     <string name="community_local_description">
         At WTM Berlin we are encouraging diversity in tech in Berlin since 2015. Get visibility,
         networking and resources to make the tech community of Berlin diverse and inclusive!

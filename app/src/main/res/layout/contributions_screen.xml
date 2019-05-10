@@ -12,8 +12,8 @@
                 android:id="@+id/contributions_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space"
-                style="@style/WtmBerlin.Events.Name"
+                android:drawableEnd="@drawable/wtm_mini"
+                style="@style/WtmBerlin.Events.Header"
                 android:text="@string/community_contributions_header"/>
     </com.google.android.material.card.MaterialCardView>
     <ScrollView
@@ -67,10 +67,8 @@
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:autoLink="web"
-                    android:layout_marginEnd="@dimen/material_space"
                     android:contentDescription="slack link"
-                    android:drawableEnd="@drawable/social_media_icon_slack"
-
+                    android:drawableStart="@drawable/social_media_icon_slack"
                     android:text="@string/social_media_link_slack"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

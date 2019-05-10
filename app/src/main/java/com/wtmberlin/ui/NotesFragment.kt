@@ -24,7 +24,7 @@ class NotesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         notes_button_save.setOnClickListener { saveNotes(view) }
-        notes_button_clean.setOnClickListener { deleteAllNotes(view) }
+        notes_button_clear.setOnClickListener { deleteAllNotes(view) }
         display(view, AppPreferences.note)
     }
 

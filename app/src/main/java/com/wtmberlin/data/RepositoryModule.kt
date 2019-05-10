@@ -10,7 +10,7 @@ val repositoryModule = module {
     }
 
     single {
-        Room.databaseBuilder(androidContext(), Database::class.java, "wtm-events")
+        Room.databaseBuilder(androidContext(), Database::class.java, "wtm_large-events")
             .fallbackToDestructiveMigration()
             .build()
     }

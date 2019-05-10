@@ -23,7 +23,8 @@
                     android:id="@+id/collaborations_content_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.Events.Name"
+                    android:drawableEnd="@drawable/wtm_mini"
+                    style="@style/WtmBerlin.Events.Header"
                     android:padding="16dp"
                     android:text="@string/collaborations_header_description"/>
         </com.google.android.material.card.MaterialCardView>

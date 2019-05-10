@@ -16,13 +16,12 @@
                 android:id="@+id/community_local_description_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/WtmBerlin.Events.Name"
+                style="@style/WtmBerlin.Events.Header"
+                android:drawableEnd="@drawable/wtm_mini"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_margin="@dimen/material_space"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="@string/notes_header"
-                android:textSize="18sp"/>
+                android:text="@string/notes_header"/>
     </com.google.android.material.card.MaterialCardView>
 
     <EditText
@@ -30,64 +29,65 @@
             android:hint="Write something here and then click to save!"
             android:layout_width="match_parent"
             android:textSize="20sp"
-            android:layout_marginEnd="@dimen/material_space"
-            android:layout_marginStart="@dimen/material_space"
+            android:layout_marginHorizontal="@dimen/material_space"
+            android:layout_marginTop="@dimen/material_space"
             android:contentDescription="add notes here, click save and display below"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/community_local_description_header_card"
             android:layout_height="wrap_content"/>
+
+
+    <TextView
+            android:id="@+id/notes_button_clear"
+            android:text="delete"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:contentDescription="delete all notes"
+            android:elevation="3dp"
+            android:clickable="true"
+            android:background="@color/wtmGreenDark"
+            android:textStyle="bold"
+            android:onClick="deleteAllNotes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/notes_button_save"
+            app:layout_constraintTop_toBottomOf="@+id/notes_scroll_view"
+            android:padding="20dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"/>
+
     <TextView
             android:id="@+id/notes_button_save"
             android:text="save"
             android:gravity="center"
             android:textColor="@color/white"
             android:textSize="30sp"
-            android:layout_marginTop="@dimen/material_space"
             android:clickable="true"
             android:onClick="saveNotes"
             android:textStyle="bold"
             android:elevation="3dp"
             android:background="@color/wtmGreenDark"
             android:contentDescription="save new note"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/notes_button_clean"
-            app:layout_constraintTop_toBottomOf="@id/notes_input"
-            android:padding="20dp"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"/>
-
-    <TextView
-            android:id="@+id/notes_button_clean"
-            android:text="delete"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:layout_marginTop="@dimen/material_space"
-            android:contentDescription="delete all notes"
-            android:elevation="3dp"
-            android:clickable="true"
-            android:background="@color/wtmGreenDark"
-            android:textStyle="bold"
-            android:onClick="saveNotes"
-            app:layout_constraintStart_toEndOf="@id/notes_button_save"
+            app:layout_constraintStart_toEndOf="@id/notes_button_clear"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/notes_input"
+            app:layout_constraintTop_toBottomOf="@id/notes_scroll_view"
             android:padding="20dp"
             android:layout_width="180dp"
             android:layout_height="wrap_content"/>
 
     <ScrollView
+            android:id="@+id/notes_scroll_view"
+            app:layout_constraintTop_toBottomOf="@id/notes_input"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/notes_button_clean"
             android:layout_width="match_parent" android:layout_height="wrap_content">
         <TextView
                 xmlns:tools="http://schemas.android.com/tools"
                 android:id="@+id/notes_output"
                 android:layout_width="match_parent"
                 tools:text="@tools:sample/lorem/random"
-                android:drawableBottom="@drawable/wtm"
+                android:drawableBottom="@drawable/wtm_large"
                 android:padding="@dimen/material_space"
                 android:textSize="24dp"
                 android:text="@string/notes_description_hint"

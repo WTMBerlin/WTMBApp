@@ -36,8 +36,8 @@ class Notifications(private val context: Context) {
 
     fun showNewUpcomingEventNotification(event: WtmEvent) {
         val notification = NotificationCompat.Builder(context, UPCOMING_EVENTS_CHANNEL_ID)
-            .setSmallIcon(R.drawable.wtm)
-            .setLargeIcon(context.getDrawable(R.drawable.wtm)!!.toBitmap())
+            .setSmallIcon(R.drawable.wtm_large)
+            .setLargeIcon(context.getDrawable(R.drawable.wtm_large)!!.toBitmap())
             .setContentTitle(context.getString(R.string.upcoming_event_title))
             .setContentText(event.name)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)

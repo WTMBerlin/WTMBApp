@@ -9,9 +9,9 @@
         <item name="drawerArrowStyle">@style/DrawerIcon</item>
     </style>
 
-    <style name="WtmBerlin" />
+    <style name="WtmBerlin"/>
 
-    <style name="WtmBerlin.Events" />
+    <style name="WtmBerlin.Events"/>
 
     <style name="WtmBerlin.Events.ListHeader">
         <item name="android:gravity">center_vertical</item>
@@ -36,6 +36,14 @@
         <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventName</item>
     </style>
 
+    <style name="WtmBerlin.Events.Header">
+        <item name="android:padding">@dimen/material_space_half</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventName</item>
+    </style>
+
     <style name="WtmBerlin.Events.DateVenue">
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
@@ -56,7 +64,7 @@
         <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.ListPrimary</item>
     </style>
 
-    <style name="WtmBerlin.SocialMedia" />
+    <style name="WtmBerlin.SocialMedia"/>
 
     <style name="WtmBerlin.SocialMedia.Item">
         <item name="android:textSize">@dimen/readable_text_size</item>
@@ -67,8 +75,29 @@
         <item name="android:drawablePadding">@dimen/material_space_double</item>
         <item name="android:background">?selectableItemBackground</item>
     </style>
+    <style name="WtmBerlin.SocialMedia.Content">
+        <item name="android:textSize">@dimen/readable_text_size</item>
+        <item name="android:paddingStart">@dimen/material_space</item>
+        <item name="android:paddingEnd">@dimen/material_space</item>
+        <item name="android:minHeight">@dimen/material_single_line_with_icon_list_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/material_space_double</item>
+        <item name="android:background">?selectableItemBackground</item>
+    </style>
 
-    <style name="WtmBerlin.TextAppearance" />
+    <style name="WtmBerlin.SocialMedia.Link">
+        <item name="android:textSize">@dimen/readable_text_size</item>
+        <item name="android:paddingStart">@dimen/material_space</item>
+        <item name="android:paddingEnd">@dimen/material_space</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:minHeight">@dimen/material_single_line_with_icon_list_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/material_space_double</item>
+        <item name="android:background">?selectableItemBackground</item>
+    </style>
+
+    <style name="WtmBerlin.TextAppearance"/>
 
     <style name="WtmBerlin.TextAppearance.ListHeader">
         <item name="android:textSize">14sp</item>

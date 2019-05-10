@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.wtmberlin.R
+import kotlinx.android.synthetic.main.social_media_screen.*
 
 class SocialMediaFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -15,11 +16,10 @@ class SocialMediaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        openContributions(view)
+        community_reviews_click.setOnClickListener {  openContributions(view) }
     }
 
     fun openContributions(view: View) {
-        //TODO: fix open on click not on start :(
         view.findNavController().navigate(R.id.contributions_screen)
     }
 }

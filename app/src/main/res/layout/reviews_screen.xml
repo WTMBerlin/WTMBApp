@@ -35,7 +35,8 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Link"
+                    android:drawableEnd="@drawable/ic_text"
                     android:autoLink="web"
                     android:contentDescription="Maria's blog post on the Women Techmakers blog"
                     android:text="http://wtmberlin.com/blog/Maria-story"/>
@@ -48,7 +49,8 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Link"
+                    android:drawableEnd="@drawable/ic_text"
                     android:autoLink="web"
                     android:contentDescription="Ely's blog post on the Women Techmakers blog"
                     android:text="http://wtmberlin.com/blog/my-experience-at-js-crash-course"/>
@@ -57,12 +59,13 @@
                     android:text="Lara, who currently works as Android Engineer gave us an interview shortly after graduating from Android Study Jam. Lara supported our community by co-organising Flutter Study Jam on mobile development last year!"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"/>
+                    style="@style/WtmBerlin.SocialMedia.Content"/>
 
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Content"
+                    android:drawableEnd="@drawable/ic_video"
                     android:autoLink="web"
                     android:contentDescription="Lara's interview at the International Women Day, YouTube"
                     android:text="https://youtu.be/1RmKXYcL20I?t=114"/>
@@ -76,8 +79,10 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Link"
+                    android:drawableEnd="@drawable/ic_video"
                     android:autoLink="web"
+                    android:ellipsize="end"
                     android:contentDescription="Natalie's interview at the International Women Day, YouTube"
                     android:text="https://youtu.be/1RmKXYcL20I?t=3"/>
 
@@ -91,17 +96,21 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Link"
+                    android:drawableEnd="@drawable/ic_video"
                     android:autoLink="web"
                     android:contentDescription="Miquel's interview at the International Women Day, YouTube"
                     android:text="https://youtu.be/1RmKXYcL20I?t=95"/>
 
 
             <TextView
+                    android:id="@+id/rotate_icon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:layout_marginBottom="@dimen/material_space"
+                    android:drawableEnd="@drawable/ic_rotate"
+                    android:onClick="rotate"
                     android:text="Anna is a Jr Android Developer, got her first job after graduating from Android Study Jam, co-wrote this app"
                     android:layout_marginTop="@dimen/material_space"/>
         </LinearLayout>

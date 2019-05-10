@@ -10,8 +10,8 @@
                 android:id="@+id/social_media_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/WtmBerlin.Events.Name"
-                android:padding="16dp"
+                android:drawableEnd="@drawable/wtm_mini"
+                style="@style/WtmBerlin.Events.Header"
                 android:text="@string/social_media_description_general"/>
     </com.google.android.material.card.MaterialCardView>
 
@@ -26,58 +26,80 @@
                     android:id="@+id/social_media_content_meetup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:drawableEnd="@drawable/ic_text"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:text="@string/social_media_description_meetup"/>
 
             <TextView
                     android:id="@+id/link_meetup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:autoLink="web"
-                    android:layout_marginEnd="@dimen/material_space"
                     android:contentDescription="meetup link"
                     android:drawableEnd="@drawable/social_media_icon_meetup"
                     android:text="@string/social_media_link_meetup"/>
 
+            <View
+                    android:layout_width="match_parent"
+                    android:alpha=".4"
+                    android:layout_marginHorizontal="@dimen/material_space"
+                    android:background="@color/wtmGreyDark"
+                    android:layout_height="1dp"/>
             <TextView
                     android:id="@+id/social_media_content_slack"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
-                    android:layout_marginTop="@dimen/material_space_half"
-                    android:layout_marginBottom="@dimen/material_space_half"
+                    android:layout_marginTop="@dimen/material_space"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:text="@string/social_media_description_slack"/>
 
             <TextView
                     android:id="@+id/link_slack"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Link"
                     android:autoLink="web"
-                    android:layout_marginEnd="@dimen/material_space"
                     android:contentDescription="slack link"
                     android:drawableEnd="@drawable/social_media_icon_slack"
                     android:text="@string/social_media_link_slack"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:alpha=".4"
+                    android:layout_marginHorizontal="@dimen/material_space"
+                    android:background="@color/wtmGreyDark"
+                    android:layout_height="1dp"/>
+            <View
+                    android:layout_width="match_parent"
+                    android:alpha=".4"
+                    android:layout_marginHorizontal="@dimen/material_space"
+                    android:background="@color/wtmGreyDark"
+                    android:layout_height="1dp"/>
 
             <TextView
                     android:id="@+id/social_media_content_twitter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="twitter link"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:text="@string/social_media_description_twitter"/>
 
             <TextView
                     android:id="@+id/link_twitter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:autoLink="web"
-                    android:layout_marginEnd="@dimen/material_space"
                     android:contentDescription="twitter link"
                     android:drawableEnd="@drawable/social_media_icon_twitter"
                     android:text="@string/social_media_link_twitter"/>
+            <View
+                    android:layout_width="match_parent"
+                    android:alpha=".4"
+                    android:layout_marginHorizontal="@dimen/material_space"
+                    android:background="@color/wtmGreyDark"
+                    android:layout_height="1dp"/>
 
             <TextView
                     android:id="@+id/social_media_content_facebook"
@@ -90,26 +112,30 @@
                     android:id="@+id/link_facebook"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:autoLink="web"
-                    android:layout_marginEnd="@dimen/material_space"
-                    android:layout_marginBottom="@dimen/material_space"
                     android:contentDescription="facebook link"
                     android:drawableEnd="@drawable/social_media_icon_facebook"
                     android:text="@string/social_media_link_facebook"/>
 
+            <View
+                    android:layout_width="match_parent"
+                    android:alpha=".4"
+                    android:layout_marginHorizontal="@dimen/material_space"
+                    android:background="@color/wtmGreyDark"
+                    android:layout_height="1dp"/>
             <TextView
                     android:id="@+id/social_media_content_wtmb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:text="Our website"/>
 
             <TextView
                     android:id="@+id/link_wtmb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:autoLink="web"
                     android:layout_marginEnd="@dimen/material_space"
                     android:contentDescription="facebook link"
@@ -119,12 +145,12 @@
                     android:id="@+id/social_media_content_github"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:text="WTM Berlin GitHub repo"/>
 
             <TextView
                     android:id="@+id/link_github"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autoLink="web"
@@ -133,11 +159,11 @@
 
             <TextView
                     android:id="@+id/icon_github"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    style="@style/WtmBerlin.SocialMedia.Item"
+                    style="@style/WtmBerlin.SocialMedia.Content"
                     android:autoLink="web"
                     android:contentDescription="@null"
                     android:importantForAccessibility="no"

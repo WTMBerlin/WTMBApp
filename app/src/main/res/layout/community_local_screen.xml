@@ -10,8 +10,8 @@
                 android:id="@+id/community_local_description_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/WtmBerlin.Events.Name"
-                android:layout_margin="@dimen/material_space"
+                style="@style/WtmBerlin.Events.Header"
+                android:drawableEnd="@drawable/wtm_mini"
                 android:text="@string/community_local_description_header"
                 android:textSize="16sp"/>
     </com.google.android.material.card.MaterialCardView>
