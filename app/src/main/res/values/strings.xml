@@ -26,7 +26,7 @@
         \n
         \n👨‍💻 👩‍💻
         \n
-        \nFeel free to submit issues, pull requests or forks:</string>
+        \nFeel free to submit issues, pull requests or to create forks:</string>
 
     <string name="community_contributions_link">
         https://github.com/WTMBerlin/WTMBApp</string>
@@ -74,7 +74,7 @@
         offer positions in #jobs that reach more diverse audience or announce free/discounted diversity tickets.
     </string>
     <string name="social_media_description_twitter">For Twitter you can use #womentechmakers.</string>
-    <string name="social_media_description_facebook">There is also a facebook group and a page.</string>
+    <string name="social_media_description_facebook">Facebook group.</string>
 
     <!-- Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>

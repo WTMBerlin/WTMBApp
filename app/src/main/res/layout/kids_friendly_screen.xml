@@ -35,7 +35,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/material_space"
-                            android:textSize="22dp"
+                            android:textSize="18dp"
                             android:text="We hosted kids friendly events in the past and hope to do so in the future. If the event is child friendly, this will be always stated in the event description!"/>
                     <TextView
                             android:id="@+id/kids_screen_info_contact"
@@ -43,7 +43,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/material_space"
                             android:text="If you could host a child friendly event, please reach out via one of our social media channels"
-                            android:textSize="22dp"/>
+                            android:textSize="18dp"/>
 
                     <TextView
                             android:id="@+id/link_facebook"
@@ -85,7 +85,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/material_space"
                             android:importantForAccessibility="yes"
-                            android:textSize="22dp"
+                            android:textSize="18dp"
                             android:text="The icon above is a simple toy for children with or without visual impairments. If you open the list of installed apps on your phone and switch TalkBack, the Accessibility tool for Android Apps on, you can understand the experience for your own, TalkBack should be preinstalled, if not it is available in app store for free.  After opening talkback, come back to this app, open this screen and perform a click on the image above. You should hear some entertaining words and sounds. As a developer aware of needs of people with disabilities, I encourage you to try TalkBack out. Adding basic accessibility is very easy, so after watching some videos you can contribute to open source projects like I did with this one, but perhaps start with adding labels and content descriptions that are more meaningful that the one that I implemented on the image above."/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

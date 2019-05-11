@@ -95,7 +95,7 @@
                 android:padding="@dimen/material_space"
                 android:textSize="18sp"
                 android:text="@string/notes_description_hint"
-                android:layout_height="340dp"/>
+                android:layout_height="match_parent"/>
         </com.google.android.material.card.MaterialCardView>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
