@@ -15,15 +15,21 @@
                 android:text="@string/community_local_description_header"
                 android:textSize="16sp"/>
     </com.google.android.material.card.MaterialCardView>
-    <TextView
-            android:id="@+id/link_wtmb"
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_margin="@dimen/material_space"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/WtmBerlin.SocialMedia.Item"
-            android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
-            android:autoLink="web"
-            android:contentDescription="facebook link"
-            android:text="http://wtmberlin.com/"/>
+            android:layout_height="wrap_content">
+        <TextView
+                android:id="@+id/link_wtmb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/WtmBerlin.SocialMedia.Item"
+                android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
+                android:autoLink="web"
+                android:contentDescription="facebook link"
+                android:text="http://wtmberlin.com/"/>
+    </com.google.android.material.card.MaterialCardView>
 
     <ScrollView
             android:layout_width="match_parent"
@@ -31,19 +37,26 @@
 
         <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="match_parent" android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_marginHorizontal="@dimen/material_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <TextView
-                    android:id="@+id/description_community"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"
-                    android:padding="16dp"
-                    android:text="@string/community_local_description"
-                    android:textSize="16sp"/>
+                <TextView
+                        android:id="@+id/description_community"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:padding="16dp"
+                        android:text="@string/community_local_description"
+                        android:textSize="16sp"/>
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                     android:id="@+id/community_reviews_click"
+                    android:layout_gravity="center_vertical"
                     android:text="Click to see community reviews!"
                     android:layout_width="match_parent"
                     android:textColor="@color/wtmGreenDark"
@@ -54,12 +67,17 @@
                     android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
-
-    <ImageView
-            android:id="@+id/logo"
-            android:src="@color/black_87"
-            android:contentDescription="@null"
-            android:importantForAccessibility="no"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+    <com.google.android.material.card.MaterialCardView
+            android:layout_marginHorizontal="@dimen/material_space"
+            android:layout_marginBottom="@dimen/material_space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:id="@+id/logo"
+                android:src="@color/black_87"
+                android:contentDescription="@null"
+                android:importantForAccessibility="no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

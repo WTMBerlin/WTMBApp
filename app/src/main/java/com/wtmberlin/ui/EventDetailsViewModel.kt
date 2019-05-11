@@ -1,5 +1,6 @@
 package com.wtmberlin.ui
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wtmberlin.SchedulerProvider
@@ -34,7 +35,8 @@ class EventDetailsViewModel(
     }
 
     private fun onDataLoaded(result: Result<WtmEvent>) {
-        result.data?.let { event.value = it }
+        result.data?.let {
+            event.value = it }
         result.error?.let { Timber.i(it) }
     }
 

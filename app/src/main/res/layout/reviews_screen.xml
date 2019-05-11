@@ -27,10 +27,10 @@
 
 
             <TextView
-                    android:text="Maria's story of switching from a non-tech background to a JavaScript developer after the JavaScript Crash course that Women Techmakers organized. In the following year Maria stayed in the community and even organized the next JavaScript Crash Course edition! "
+                    android:text="Maria's blog post of switching from a non-tech background to a JavaScript developer after attending JS Crash Course. In the following year Maria stayed in the community and even organized the next edition! "
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"/>
+                    style="@style/WtmBerlin.SocialMedia.Content"/>
 
             <TextView
                     android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                     android:text="Ely, Software Engineer, JavaScript CrashCourse graduate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/WtmBerlin.SocialMedia.Item"/>
+                    style="@style/WtmBerlin.SocialMedia.Content"/>
 
             <TextView
                     android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                     android:text="http://wtmberlin.com/blog/my-experience-at-js-crash-course"/>
             <TextView
                     android:paddingTop="@dimen/material_space"
-                    android:text="Lara, who currently works as Android Engineer gave us an interview shortly after graduating from Android Study Jam. Lara supported our community by co-organising Flutter Study Jam on mobile development last year!"
+                    android:text="Lara currently works as Android Engineer. This interview was recorded shortly after her graduation from Android Study Jam. Lara supported our community by co-organising Flutter Study Jam on mobile development!"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Content"/>
@@ -71,7 +71,7 @@
                     android:text="https://youtu.be/1RmKXYcL20I?t=114"/>
 
             <TextView
-                    android:text="Natalie, Women Techmakers Berlin lead about how it all started"
+                    android:text="Natalie, Women Techmakers Berlin lead about the origins."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"/>
@@ -88,7 +88,7 @@
 
             <TextView
                     android:paddingTop="@dimen/material_space"
-                    android:text="Miquel supported our community as organizer and tutor during Android, Kotlin and Flutter study Jams sharing his motivation on community work"
+                    android:text="Miquel supported our community as an organizer and a tutor during the Android, Kotlin and Flutter study Jams, always sharing his enthusiasm on community work."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/WtmBerlin.SocialMedia.Item"/>
@@ -111,7 +111,7 @@
                     android:layout_marginBottom="@dimen/material_space"
                     android:drawableEnd="@drawable/ic_rotate"
                     android:onClick="rotate"
-                    android:text="Anna is a Jr Android Developer, got her first job after graduating from Android Study Jam, co-wrote this app"
+                    android:text="Anna is a Jr Android Developer and WTM organizer, co-wrote this app."
                     android:layout_marginTop="@dimen/material_space"/>
         </LinearLayout>
     </ScrollView>
