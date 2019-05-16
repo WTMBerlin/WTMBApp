@@ -77,6 +77,12 @@
             android:label="Special kids friendly events"
             tools:layout="@layout/kids_friendly_screen"/>
 
+    <fragment
+            android:id="@+id/accessibility_screen"
+            android:name="com.wtmberlin.ui.AccessibilityFragment"
+            android:label="Accessibility"
+            tools:layout="@layout/accessibility_screen"/>
+
     <activity
             android:id="@+id/wtm_website"
             app:action="android.intent.action.VIEW"

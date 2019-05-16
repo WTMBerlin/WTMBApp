@@ -73,8 +73,8 @@
         Slack is one of the main points of our Community - it is a good place to connect with other members,
         offer positions in #jobs that reach more diverse audience or announce free/discounted diversity tickets.
     </string>
-    <string name="social_media_description_twitter">For Twitter you can use #womentechmakers.</string>
-    <string name="social_media_description_facebook">Facebook group.</string>
+    <string name="social_media_description_twitter">Tweet with #womentechmakers or tag @wtm_berlin</string>
+    <string name="social_media_description_facebook">Facebook page and group</string>
 
     <!-- Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>
@@ -83,4 +83,5 @@
     <string name="nav_drawer_community_global_menu_item">Global Women Techmakers program</string>
     <string name="nav_drawer_events_menu_item">@string/events_header</string>
     <string name="nav_drawer_collaborations_menu_item">@string/collaborations_header</string>
+    <string name="facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
 </resources>

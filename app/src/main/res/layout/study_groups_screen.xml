@@ -20,7 +20,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-            android:layout_marginVertical="@dimen/material_space_quarter"
+            android:layout_marginTop="@dimen/material_space_half"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -43,6 +43,8 @@
                 android:orientation="vertical">
 
             <com.google.android.material.card.MaterialCardView
+                    android:layout_marginTop="@dimen/material_space"
+                    android:layout_marginHorizontal="@dimen/material_space_half"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent">
 
@@ -99,7 +101,8 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                    android:layout_marginVertical="@dimen/material_space_half"
+                    android:layout_marginHorizontal="@dimen/material_space_half"
+                    android:layout_marginVertical="@dimen/material_space"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent">
                 <LinearLayout
@@ -165,6 +168,7 @@
             </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+                android:layout_marginHorizontal="@dimen/material_space_half"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent">
 
@@ -177,7 +181,6 @@
             <TextView
                     android:text="Android Study Jam"
                     android:layout_width="match_parent"
-                    android:layout_marginBottom="@dimen/material_space_half"
                     android:textStyle="bold"
                     android:textSize="16sp"
                     android:gravity="center_vertical"
@@ -207,6 +210,7 @@
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView
                 android:layout_marginTop="@dimen/material_space_half"
+                android:layout_marginHorizontal="@dimen/material_space_half"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent">
 
@@ -236,6 +240,7 @@
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView
                 android:layout_marginVertical="@dimen/material_space_half"
+                android:layout_marginHorizontal="@dimen/material_space_half"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent">
 

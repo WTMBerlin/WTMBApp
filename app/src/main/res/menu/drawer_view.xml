@@ -28,6 +28,9 @@
                 android:id="@+id/kids_friendly_screen"
                 android:title="Special kids friendly events"/>
         <item
+                android:id="@+id/accessibility_screen"
+                android:title="Accessibility "/>
+        <item
                 android:id="@+id/contributions_screen"
                 android:title="Contributions and feedback "/>
     </group>

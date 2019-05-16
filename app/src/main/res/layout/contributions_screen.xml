@@ -96,9 +96,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Content"
-                            android:textSize="18sp"
-                            android:gravity="center"
-                            android:text="Thanks and kudos to the organizers team, supporters and community members!"/>
+                            android:text="Thanks to the organizers team, all supporters and community members!"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>

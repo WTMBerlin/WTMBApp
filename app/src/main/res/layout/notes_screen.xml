@@ -39,6 +39,7 @@
 
 
     <TextView
+            android:layout_marginBottom="@dimen/material_space"
             android:id="@+id/notes_button_clear"
             android:text="delete"
             android:gravity="center"
@@ -85,17 +86,31 @@
         <com.google.android.material.card.MaterialCardView
                 android:layout_margin="@dimen/material_space"
                 android:layout_width="match_parent"
-                                                           android:layout_height="wrap_content">
-        <TextView
-                xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/notes_output"
-                android:layout_width="match_parent"
-                tools:text="@tools:sample/lorem/random"
-                android:drawableBottom="@drawable/wtm_large"
-                android:padding="@dimen/material_space"
-                android:textSize="18sp"
-                android:text="@string/notes_description_hint"
-                android:layout_height="match_parent"/>
+                android:layout_height="wrap_content">
+
+            <FrameLayout
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp">
+
+                <TextView
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/material_space"
+                        android:drawableBottom="@drawable/wtm_mini"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:id="@+id/notes_output"
+                        android:layout_width="match_parent"
+                        tools:text="@tools:sample/lorem/random"
+                        android:padding="@dimen/material_space"
+                        android:textSize="18sp"
+                        android:text="@string/notes_description_hint"
+                        android:layout_height="match_parent"/>
+                </ScrollView>
+            </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

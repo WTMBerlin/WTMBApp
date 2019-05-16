@@ -8,6 +8,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.wtmberlin.R
 import kotlinx.android.synthetic.main.main_screen.*
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,6 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
 
 }
 
