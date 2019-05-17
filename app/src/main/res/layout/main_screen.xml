@@ -21,20 +21,17 @@
                 app:titleTextColor="@color/white"
                 android:background="?attr/colorPrimary"
                 style="@style/DrawerIcon"
-                android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
-            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
             <TextView
                     android:id="@+id/rotate_icon"
                     android:layout_gravity="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginEnd="@dimen/material_space"
+                    android:paddingEnd="@dimen/material_space"
                     android:importantForAccessibility="no"
                     android:drawableEnd="@drawable/ic_rotate"
                     android:contentDescription="zz zz zz ziuuum zz zz ziuum zzzzzzz ziuuuuuuuum zz">
             </TextView>
-            </FrameLayout>
         </androidx.appcompat.widget.Toolbar>
 
         <fragment
@@ -42,6 +39,7 @@
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:itemTextColor = "@color/nav_item_color"
                 app:defaultNavHost="true"
                 app:navGraph="@navigation/nav_graph"/>
 
