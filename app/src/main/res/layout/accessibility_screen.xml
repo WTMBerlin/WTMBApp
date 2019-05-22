@@ -97,6 +97,7 @@
                     android:layout_gravity="bottom"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/material_space"
+                    android:autoLink="web"
                     android:text="https://github.com/WTMBerlin/WTMBApp/blob/master/ACCESSIBILITY.md"
                     android:importantForAccessibility="yes"/>
               </ScrollView>

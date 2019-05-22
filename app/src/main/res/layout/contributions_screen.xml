@@ -78,10 +78,20 @@
                             android:id="@+id/contributions_info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/WtmBerlin.SocialMedia.Content"
+                            style="@style/WtmBerlin.Events.Description"
                             android:drawableBottom="@drawable/events_no_upcoming_events"
                             android:textSize="18sp"
                             android:text="If you had any questions, accessibility remarks, or other feedback, submit an issue or reach out via Slack to one of our organizer with WTM icon symbol next to the name"/>
+
+                    <TextView
+                            android:id="@+id/link_issues"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/WtmBerlin.SocialMedia.Item"
+                            android:autoLink="web"
+                            android:contentDescription="slack link"
+                            android:text="https://github.com/WTMBerlin/WTMBApp/issues"/>
+
                     <TextView
                             android:id="@+id/link_slack"
                             android:layout_width="match_parent"
@@ -89,7 +99,6 @@
                             style="@style/WtmBerlin.SocialMedia.Item"
                             android:autoLink="web"
                             android:contentDescription="slack link"
-                            android:drawableStart="@drawable/social_media_icon_slack"
                             android:text="@string/social_media_link_slack"/>
 
                     <TextView
