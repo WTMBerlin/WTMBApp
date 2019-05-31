@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -7,6 +7,11 @@
         <item name="colorPrimaryDark">@color/wtmGreenDark</item>
         <item name="colorAccent">@color/wtmBlueLight</item>
         <item name="drawerArrowStyle">@style/DrawerIcon</item>
+    </style>
+
+    <style name="AppTheme.Launcher">
+        <item name="android:background">@drawable/splash_screen</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
     </style>
 
     <style name="WtmBerlin"/>
