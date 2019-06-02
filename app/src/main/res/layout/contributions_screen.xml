@@ -69,7 +69,7 @@
                     android:layout_width="match_parent">
 
                 <LinearLayout
-                        android:layout_marginVertical="@dimen/material_space"
+                        android:layout_margin="@dimen/material_space"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -105,7 +105,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Content"
-                            android:text="Thanks to the organizers team, all supporters and community members!"/>
+                            android:drawableBottom="@drawable/ic_favorite_border_black_24dp"
+                            android:text="Thanks to the organizers team, all supporters and community members"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>

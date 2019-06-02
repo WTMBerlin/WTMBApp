@@ -1,6 +1,9 @@
 package com.wtmberlin.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -27,9 +30,13 @@ class MainActivity : AppCompatActivity() {
                     rotate_icon.rotation + 180.0f
                 )
         }
-
-
+    }
+    fun openMeetup(view:View){
+        val openURL = Intent(Intent.ACTION_VIEW)
+        openURL.data = Uri.parse("https://www.meetup.com/de-DE/women-techmakers-berlin/")
+        startActivity(openURL)
     }
 
 }
+
 

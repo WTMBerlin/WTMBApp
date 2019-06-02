@@ -68,7 +68,7 @@
     <fragment
             android:id="@+id/study_groups_screen"
             android:name="com.wtmberlin.ui.StudyGroupsFragment"
-            android:label="Stydy Groups"
+            android:label="Study Groups"
             tools:layout="@layout/study_groups_screen"/>
 
     <fragment

@@ -41,14 +41,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Content"
-                            android:drawableEnd="@drawable/social_media_icon_meetup"
                             android:text="@string/social_media_description_meetup"/>
 
                     <TextView
                             android:id="@+id/link_meetup"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space_half"
                             style="@style/WtmBerlin.SocialMedia.Content"
+                            android:drawableEnd="@drawable/social_media_icon_meetup"
                             android:textIsSelectable="true"
                             android:autoLink="web"
                             android:contentDescription="meetup link"
@@ -71,7 +72,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/material_space"
                             style="@style/WtmBerlin.SocialMedia.Content"
-                            android:drawableEnd="@drawable/social_media_icon_slack"
                             android:text="@string/social_media_description_slack"/>
 
                     <TextView
@@ -79,10 +79,19 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Link"
+
+                            android:drawableEnd="@drawable/social_media_icon_slack"
                             android:autoLink="web"
                             android:contentDescription="slack link"
                             android:textIsSelectable="true"
                             android:text="@string/social_media_link_slack"/>
+
+                    <ImageView
+                            android:layout_gravity="center"
+                            android:src="@drawable/qr_wtm_slack"
+                            android:contentDescription="QR code to slack"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -98,7 +107,6 @@
                             android:id="@+id/social_media_content_twitter"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/social_media_icon_twitter"
                             android:contentDescription="twitter link"
                             style="@style/WtmBerlin.SocialMedia.Content"
                             android:text="@string/social_media_description_twitter"/>
@@ -108,6 +116,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Content"
+                            android:drawableEnd="@drawable/social_media_icon_twitter"
                             android:autoLink="web"
                             android:contentDescription="twitter link"
                             android:textIsSelectable="true"
@@ -169,12 +178,20 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Content"
-                            android:drawableStart="@drawable/wtm_mini"
+                            android:drawableEnd="@drawable/wtm_mini"
                             android:autoLink="web"
                             android:textIsSelectable="true"
                             android:layout_marginEnd="@dimen/material_space_half"
                             android:contentDescription="facebook link"
                             android:text="http://wtmberlin.com/"/>
+
+                    <ImageView
+                            android:layout_gravity="center"
+                            android:src="@drawable/qr_wtm_website"
+                            android:contentDescription="QR code to slack"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"/>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

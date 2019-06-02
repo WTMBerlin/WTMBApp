@@ -10,7 +10,7 @@
             android:layout_width="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/notes_input"
+            app:layout_constraintBottom_toTopOf="@+id/notes_scroll_view"
     >
         <TextView
                 android:id="@+id/community_local_description_header"
@@ -24,19 +24,25 @@
                 android:text="@string/notes_header"/>
     </com.google.android.material.card.MaterialCardView>
 
+    <ScrollView
+            android:id="@+id/notes_scroll_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/community_local_description_header_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
     <EditText
             android:id="@+id/notes_input"
             android:hint="Write something here and then click to save!"
             android:layout_width="match_parent"
             android:textSize="20sp"
             android:layout_marginHorizontal="@dimen/material_space"
+            android:maxLines="2"
             android:layout_marginTop="@dimen/material_space"
             android:contentDescription="add notes here, click save and display below"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/community_local_description_header_card"
             android:layout_height="wrap_content"/>
-
+    </ScrollView>
 
     <TextView
             android:layout_marginBottom="@dimen/material_space"
@@ -51,14 +57,15 @@
             android:background="@color/wtmGreenDark"
             android:textStyle="bold"
             android:onClick="deleteAllNotes"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/notes_button_save"
-            app:layout_constraintTop_toBottomOf="@+id/notes_scroll_view"
             android:padding="20dp"
-            android:layout_width="180dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"/>
 
     <TextView
+            android:layout_marginBottom="@dimen/material_space"
             android:id="@+id/notes_button_save"
             android:text="save"
             android:gravity="center"
@@ -70,16 +77,16 @@
             android:elevation="3dp"
             android:background="@color/wtmGreenDark"
             android:contentDescription="save new note"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/notes_button_clear"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/notes_scroll_view"
             android:padding="20dp"
-            android:layout_width="180dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"/>
 
     <ScrollView
-            android:id="@+id/notes_scroll_view"
-            app:layout_constraintTop_toBottomOf="@id/notes_input"
+            android:id="@+id/saved_notes_scroll_view"
+            app:layout_constraintTop_toBottomOf="@id/notes_scroll_view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="match_parent" android:layout_height="wrap_content">

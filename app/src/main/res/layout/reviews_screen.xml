@@ -177,7 +177,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/WtmBerlin.SocialMedia.Item"
-                        android:drawableEnd="@drawable/ic_rotate"
+                        android:drawableBottom="@drawable/wtm_mini"
                         android:onClick="rotate"
                         android:text="Anna is a Jr Android Developer and WTM organizer, co-wrote this app."
                         android:layout_marginBottom="@dimen/material_space_half"
