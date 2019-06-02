@@ -8,6 +8,11 @@ import org.threeten.bp.Duration
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.ZonedDateTime
 
+data class WtmGroup(
+    val pastEventCount: Int,
+    val members: Int
+)
+
 @Entity
 data class WtmEvent(
     @PrimaryKey val id: String,

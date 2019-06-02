@@ -3,6 +3,8 @@ package com.wtmberlin.data
 import com.wtmberlin.meetup.MeetupEvent
 import com.wtmberlin.meetup.MeetupService
 import com.wtmberlin.meetup.MeetupVenue
+import com.wtmberlin.ui.WtmGroup
+import io.reactivex.Flowable
 import io.reactivex.Single
 import org.threeten.bp.Duration
 import org.threeten.bp.Instant
@@ -14,6 +16,7 @@ open class ApiService(private val meetupService: MeetupService) {
         return meetupService.events().map { it.map(MeetupEvent::toWtmEvent) }
     }
 }
+
 
 private fun MeetupEvent.toWtmEvent() = WtmEvent(
     id = id,

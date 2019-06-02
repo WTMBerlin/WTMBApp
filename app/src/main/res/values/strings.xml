@@ -27,12 +27,15 @@
         \n
         \n👨‍💻 👩‍💻
         \n
-        \nFeel free to submit issues, pull requests or to create forks:</string>
+        \nFeel free to submit issues, pull requests or to create forks:
+    </string>
 
     <string name="community_contributions_link">
-        https://github.com/WTMBerlin/WTMBApp</string>
+        https://github.com/WTMBerlin/WTMBApp
+    </string>
     <string name="community_contributions_header">
-        Contributors Guide:</string>
+        Contribution guidelines:
+    </string>
 
     <!-- Reviews -->
     <string name="community_reviews">Community reviews</string>
@@ -40,12 +43,14 @@
 
     <!-- Community Local -->
     <string name="community_local_header">About WTM Berlin</string>
-    <string name="community_local_description_header">WTM Berlin is part of the global \nWomen Techmakers program run by Google.</string>
+    <string name="community_local_description_header">Women Techmakers Berlin
+    </string>
     <string name="community_local_description">
+        Women Techmakers Berlin is one of the most active chapters of the global Women Techmakers program run by Google. Last year Meetup announced by organising 81 events we the most active tech community in Berlin!
         At WTM Berlin we are encouraging diversity in tech in Berlin since 2015. Get visibility,
         networking and resources to make the tech community of Berlin diverse and inclusive!
-        We have different activities: intense coding study groups, workshops or technical topics or social skills as well as inspirational fireside chats. New
-        and existing members are always welcome to all of the events, and all events are always opened for everyone,
+        Our activitiesinclude: intense coding study groups, workshops on technical topics or social skills as
+        well as Fireside Chats with inspirational speakers. New and existing members are always welcome to all of the events, and all events are always opened for everyone,
         regardless of your gender/age/race/experience, etc. We follow the Berlin code of conduct for communities:
         http://berlincodeofconduct.org
     </string>
@@ -77,11 +82,15 @@
     <string name="social_media_description_twitter">Tweet with #womentechmakers or tag @wtm_berlin</string>
     <string name="social_media_description_facebook">Facebook page and group</string>
 
+    <!-- Statistics -->
+    <string name="statistics_header">Meetup statistics</string>
+
     <!-- Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>
     <string name="nav_drawer_social_media_menu_item">@string/social_media_header</string>
     <string name="nav_drawer_community_local_menu_item">@string/community_local_header</string>
     <string name="nav_drawer_community_global_menu_item">Global Women Techmakers program</string>
+    <string name="nav_drawer_statistics_menu_item">@string/statistics_header</string>
     <string name="nav_drawer_events_menu_item">@string/events_header</string>
     <string name="nav_drawer_collaborations_menu_item">@string/collaborations_header</string>
     <string name="facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
