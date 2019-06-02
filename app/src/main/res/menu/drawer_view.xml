@@ -25,6 +25,9 @@
                 android:id="@+id/study_groups_screen"
                 android:title="Study groups"/>
         <item
+                android:id="@+id/stats_screen"
+                android:title="Statistics"/>
+        <item
                 android:id="@+id/kids_friendly_screen"
                 android:title="Special kids friendly events"/>
         <item

@@ -20,7 +20,7 @@ open class Repository(private val apiService: MeetupService, private val databas
             .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
     }
 
-    fun group(): Flowable<Result<WtmGroup>> {
+    open fun group(): Flowable<Result<WtmGroup>> {
         return apiService.group()
             .map { it.toWtmGroup() }
             .map { Result(loading = false, data = it, error = null) }

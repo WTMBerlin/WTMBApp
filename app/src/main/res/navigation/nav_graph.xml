@@ -83,6 +83,12 @@
             android:label="Accessibility"
             tools:layout="@layout/accessibility_screen"/>
 
+    <fragment
+            android:id="@+id/stats_screen"
+            android:name="com.wtmberlin.ui.StatsFragment"
+            android:label="@string/statistics_header"
+            tools:layout="@layout/stats_screen"/>
+
     <activity
             android:id="@+id/wtm_website"
             app:action="android.intent.action.VIEW"
