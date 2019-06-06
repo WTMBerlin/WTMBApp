@@ -3,7 +3,6 @@
     <!-- The background color, preferably the same as your normal theme -->
     <item android:drawable="@android:color/black"/>
     <!-- Your product logo - 144dp color version of your app icon -->
-    <item
-            android:src="@drawable/wtm_mini"
-            android:gravity="center"/>
+    <item android:drawable="@drawable/wtm_mini"
+          android:gravity="center"/>
 </layer-list>

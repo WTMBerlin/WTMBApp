@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.main_screen.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_screen)
 
@@ -27,9 +28,5 @@ class MainActivity : AppCompatActivity() {
                     rotate_icon.rotation + 180.0f
                 )
         }
-
-
     }
-
 }
-
