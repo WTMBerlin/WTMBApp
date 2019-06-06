@@ -5,6 +5,8 @@
         android:id="@+id/upcoming_header"
         style="@style/WtmBerlin.Events.ListHeader"
         android:drawableEnd="@drawable/wtm_mini"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/material_space_quarter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/events_upcoming_header" />

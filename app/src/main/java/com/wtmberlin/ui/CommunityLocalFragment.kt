@@ -24,7 +24,8 @@ class CommunityLocalFragment : Fragment() {
             .load("https://raw.githubusercontent.com/WTMBerlin/slides/master/logos/fb-cover.jpg")
             .into(logo)
 
-        view.setOnClickListener { openReviews(view) }
+        community_reviews_click.setOnClickListener { openReviews(community_reviews_click) }
+        logo.setOnClickListener { openReviews(logo) }
     }
 
     fun openReviews(view: View) {
