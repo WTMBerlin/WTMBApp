@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.main_screen.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_screen)
 
@@ -36,7 +37,5 @@ class MainActivity : AppCompatActivity() {
         openURL.data = Uri.parse("https://www.meetup.com/de-DE/women-techmakers-berlin/")
         startActivity(openURL)
     }
-
 }
-
 

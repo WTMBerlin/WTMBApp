@@ -13,6 +13,7 @@
             app:layout_constraintBottom_toTopOf="@+id/notes_scroll_view"
     >
         <TextView
+                android:gravity="center"
                 android:id="@+id/community_local_description_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

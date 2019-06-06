@@ -7,6 +7,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
         <TextView
+                android:gravity="center"
                 android:id="@+id/kids_screen_info_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

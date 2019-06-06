@@ -25,6 +25,7 @@
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/wtm_mini"
                     style="@style/WtmBerlin.Events.Header"
+                    android:gravity="center"
                     android:padding="16dp"
                     android:text="@string/collaborations_header_description"/>
         </com.google.android.material.card.MaterialCardView>

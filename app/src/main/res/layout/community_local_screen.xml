@@ -62,22 +62,19 @@
                     android:textColor="@color/wtmGreenDark"
                     android:gravity="center"
                     android:textSize="18sp"
-                    android:padding="@dimen/material_space_half"
+                    android:paddingTop="@dimen/material_space_half"
                     style="@style/WtmBerlin.Events.Name"
                     android:layout_height="wrap_content"/>
+
+                <ImageView
+                        android:layout_marginTop="-70dp"
+                        android:id="@+id/logo"
+                        android:src="@color/black_87"
+                        android:contentDescription="@null"
+                        android:importantForAccessibility="no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
-    <com.google.android.material.card.MaterialCardView
-            android:layout_marginHorizontal="@dimen/material_space"
-            android:layout_marginBottom="@dimen/material_space"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <ImageView
-                android:id="@+id/logo"
-                android:src="@color/black_87"
-                android:contentDescription="@null"
-                android:importantForAccessibility="no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-    </com.google.android.material.card.MaterialCardView>
+
 </LinearLayout>

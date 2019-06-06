@@ -83,6 +83,12 @@
             android:label="Accessibility"
             tools:layout="@layout/accessibility_screen"/>
 
+    <fragment
+            android:id="@+id/organizers_screen"
+            android:name="com.wtmberlin.ui.WtmbOrganizers"
+            android:label="WTM Berlin organizers"
+            tools:layout="@layout/organizers_screen"/>
+
     <activity
             android:id="@+id/wtm_website"
             app:action="android.intent.action.VIEW"
