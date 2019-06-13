@@ -89,4 +89,7 @@ dependencies {
     // WorkManager
     implementation("androidx.work:work-runtime-ktx:${rootProject.workManagerVersion}")
     implementation("androidx.work:work-rxjava2:${rootProject.workManagerVersion}")
+
+    //Other
+    implementation("de.hdodenhof:circleimageview:3.0.0")
 }

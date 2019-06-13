@@ -16,6 +16,7 @@
                 style="@style/WtmBerlin.Events.Header"
                 android:text="WTM organizers"/>
     </com.google.android.material.card.MaterialCardView>
+
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -33,52 +34,92 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/wtm_natalie"
-                        android:text="We are all unpaid volunteers passionate about supporting the community. Please respect our time! After reaching out and setting up a collaboration, we will be usually requesting an info about the company and short speaker's biographies for the website - see one of the events to get a better idea. It would be great if you could provide them ahead!"/>
+                        android:text="We are all unpaid volunteers passionate about supporting the community. Please respect our time! After reaching out and setting up a collaboration, we will be usually requesting an info about the company and short speaker's biographies for the website - see one of the events to get a better idea. It would be great if you could provide them ahead. \n\nContact Roxy-WTM-organizer or join channel #hostingwtm to find out more!"/>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                <TextView
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/social_media_icon_slack"
+                        android:layout_marginStart="@dimen/material_space"
+                        android:layout_marginEnd="@dimen/material_space"
+                        android:autoLink="web"
+                        style="@style/WtmBerlin.Events.Description"
+                        android:text="slack.wtmberlin.com"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_margin="@dimen/material_space_half"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/wtm_roxy"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                     android:layout_margin="@dimen/material_space_half"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/wtm_roxy"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/wtm_natalie"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"/>
+
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                     android:layout_margin="@dimen/material_space_half"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/wtm_natalie"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/wtm_corina"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                     android:layout_margin="@dimen/material_space_half"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/wtm_corina"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/wtm_amanda"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                     android:layout_margin="@dimen/material_space_half"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/wtm_amanda"/>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                    android:layout_margin="@dimen/material_space_half"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/wtm_anna"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/wtm_anna"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"/>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
