@@ -2,10 +2,30 @@ package com.wtmberlin.meetup
 
 import io.reactivex.Single
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface MeetupService {
-    @GET("Women-Techmakers-Berlin/events?status=cancelled,past,upcoming&desc=true&only=id,name,time,utc_offset,duration,venue,description,featured_photo.photo_link,link&fields=featured_photo&omit=venue.localized_country_name,venue.repinned,venue.phone&page=200")
-    fun events(): Single<List<MeetupEvent>>
+
+    @GET("Women-Techmakers-Berlin/events")
+    fun events(
+        @Query("status") status: String = "cancelled,past,upcoming",
+        @Query("desc") desc: String = "true",
+        @Query("only") only: String = "id,name,time,utc_offset,duration,venue,description,featured_photo.photo_link,link",
+        @Query("fields") fields: String = "featured_photo",
+        @Query("omit") omit: String = "venue.localized_country_name,venue.repinned,venue.phone",
+        @Query("page") page: String = "200"
+    ): Single<List<MeetupEvent>>
+
+    @GET("Women-Techmakers-Berlin/events")
+    fun events2018(
+        @Query("status") status: String = "cancelled,past,upcoming",
+        @Query("desc") desc: String = "true",
+        @Query("time") time: String = ",",
+        @Query("only") only: String = "id,name,time,utc_offset,duration,venue,description,featured_photo.photo_link,link",
+        @Query("fields") fields: String = "featured_photo",
+        @Query("omit") omit: String = "venue.localized_country_name,venue.repinned,venue.phone",
+        @Query("page") page: String = "200"
+    ): Single<List<MeetupEvent>>
 
     @GET("Women-Techmakers-Berlin?only=past_event_count,members")
     fun group(): Single<MeetupGroup>

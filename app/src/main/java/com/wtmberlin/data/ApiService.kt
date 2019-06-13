@@ -13,6 +13,20 @@ open class ApiService(private val meetupService: MeetupService) {
     fun events(): Single<List<WtmEvent>> {
         return meetupService.events().map { it.map(MeetupEvent::toWtmEvent) }
     }
+
+    fun events2018(): Single<List<WtmEvent>> {
+        return meetupService.events2018(time = convertToMillis()).map { it.map(MeetupEvent::toWtmEvent) }
+    }
+
+    private fun convertToMillis(dateRangeBegin: String, dateRangeEnd: String): ZonedDateTime{
+
+
+
+        ZonedDateTime.ofInstant(
+            Instant.ofEpochMilli(time),
+            ZoneOffset.ofTotalSeconds((utc_offset / 1000).toInt())
+        )
+    }
 }
 
 

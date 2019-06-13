@@ -21,7 +21,7 @@ import timber.log.Timber
  * */
 
 class StatsViewModel(private val repository: Repository) : ViewModel() {
-    //TODO implement VM
+
     val stats = MutableLiveData<WtmGroup>()
 
     private val subscriptions = CompositeDisposable()
