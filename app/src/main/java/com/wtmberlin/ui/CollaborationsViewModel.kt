@@ -31,8 +31,9 @@ class CollaborationsViewModel(repository: Repository) : ViewModel() {
 
     private fun processVenues(list: List<VenueName>) {
         adapterItems.value = list.map {
-            CollaborationsAdapterItem(it.name, it.name)
+            CollaborationsAdapterItem(it.name, it.name.trimStart().capitalize())
         }
+            .sortedBy { it.venueName }
     }
 
     override fun onCleared() {
