@@ -21,7 +21,7 @@ buildscript {
     ext.navigationVersion = "1.0.0-alpha11"
     ext.picassoVersion = "2.71828"
     ext.recyclerViewVersion = "1.0.0"
-    ext.retrofitVersion = "2.5.0"
+    ext.retrofitVersion = "2.6.0"
     ext.roomVersion = "2.1.0-alpha03"
     ext.rxandroidVersion = "2.1.0"
     ext.rxjavaVersion = "2.2.4"
@@ -30,6 +30,7 @@ buildscript {
     ext.threetenbpAndroidVersion = "1.1.1"
     ext.truthVersion = "0.42"
     ext.workManagerVersion = "2.0.0-rc01"
+    ext.archCompPoroutinesVersion = "2.2.0-alpha02"
 
     repositories {
         google()

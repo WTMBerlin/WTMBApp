@@ -1,7 +1,7 @@
 package com.wtmberlin.work
 
 import android.content.Context
-import androidx.work.Worker
+import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.wtmberlin.data.ApiService
 import com.wtmberlin.data.WtmEvent
@@ -15,16 +15,16 @@ class RefreshEventsWorker(
     private val apiService: ApiService,
     private val eventDao: WtmEventDao,
     private val notifications: Notifications
-): Worker(context, params) {
-    override fun doWork(): Result {
-        val oldEvents = eventDao.getAll().blockingFirst()
+) : CoroutineWorker(context, params) {
+    override suspend fun doWork(): Result {
+        val oldEvents = eventDao.getAll()
 
         if (oldEvents.isEmpty()) {
             // The database hasn't been initialized yet, so nothing to refresh. Just try again the next time.
             return Result.success()
         }
 
-        val currentEvents = apiService.events().blockingGet()
+        val currentEvents = apiService.events()
 
         val now = ZonedDateTime.now()
 

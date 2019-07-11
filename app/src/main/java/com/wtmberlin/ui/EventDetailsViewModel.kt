@@ -1,21 +1,19 @@
 package com.wtmberlin.ui
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.wtmberlin.SchedulerProvider
+import androidx.lifecycle.viewModelScope
 import com.wtmberlin.data.Coordinates
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.util.Event
-import io.reactivex.disposables.CompositeDisposable
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class EventDetailsViewModel(
     eventId: String,
-    repository: Repository,
-    schedulerProvider: SchedulerProvider
+    repository: Repository
 ) : ViewModel() {
     val event = MutableLiveData<WtmEvent>()
 
@@ -23,20 +21,15 @@ class EventDetailsViewModel(
     val openMaps = MutableLiveData<OpenMapsEvent>()
     val openMeetupPage = MutableLiveData<OpenMeetupPageEvent>()
 
-    private val subscriptions = CompositeDisposable()
-
     init {
-        subscriptions.add(
-            repository.event(eventId)
-                .subscribeOn(schedulerProvider.io)
-                .observeOn(schedulerProvider.ui)
-                .subscribe(this::onDataLoaded)
-        )
+        viewModelScope.launch {
+            val eventsById = repository.event(eventId)
+            onDataLoaded(eventsById)
+        }
     }
 
     private fun onDataLoaded(result: Result<WtmEvent>) {
-        result.data?.let {
-            event.value = it }
+        result.data?.let { event.value = it }
         result.error?.let { Timber.i(it) }
     }
 
@@ -58,12 +51,6 @@ class EventDetailsViewModel(
         event.value?.let {
             openMeetupPage.value = OpenMeetupPageEvent(it.meetupUrl)
         }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-
-        subscriptions.clear()
     }
 }
 

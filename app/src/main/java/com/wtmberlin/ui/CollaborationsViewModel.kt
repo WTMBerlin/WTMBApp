@@ -2,27 +2,21 @@ package com.wtmberlin.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.VenueName
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class CollaborationsViewModel(repository: Repository) : ViewModel() {
     val adapterItems = MutableLiveData<List<CollaborationsAdapterItem>>()
-    private val subscriptions = CompositeDisposable()
 
     init {
-        subscriptions.add(
-            repository.venues()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::onDataLoaded)
-        )
+        viewModelScope.launch {
+            onDataLoaded(repository.venues())
+        }
     }
-
 
     private fun onDataLoaded(result: Result<List<VenueName>>) {
         result.data?.let { processVenues(it) }
@@ -35,9 +29,4 @@ class CollaborationsViewModel(repository: Repository) : ViewModel() {
         }
     }
 
-    override fun onCleared() {
-        super.onCleared()
-
-        subscriptions.clear()
-    }
 }
