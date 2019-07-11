@@ -5,14 +5,17 @@ import com.wtmberlin.meetup.MeetupMembers
 import com.wtmberlin.meetup.MeetupService
 import com.wtmberlin.meetup.MeetupVenue
 import io.reactivex.Single
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.threeten.bp.Duration
 import org.threeten.bp.Instant
 import org.threeten.bp.ZoneOffset
 import org.threeten.bp.ZonedDateTime
 
 open class ApiService(private val meetupService: MeetupService) {
-    fun events(): Single<List<WtmEvent>> {
-        return meetupService.events().map { it.map(MeetupEvent::toWtmEvent) }
+    suspend fun events() = withContext(Dispatchers.IO) {
+        val meetupEventList = meetupService.events()
+        meetupEventList.map(::meetupEventToWtmEvent)
     }
 
     fun events2017(): Single<List<WtmEvent>> {
@@ -33,16 +36,43 @@ open class ApiService(private val meetupService: MeetupService) {
 
     fun eventsTotal(): Single<List<WtmEvent>> {
         return meetupService.eventsTotal().map {
-            it.map(MeetupEvent::toWtmEvent) }
+            it.map(MeetupEvent::toWtmEvent)
+        }
     }
+
     fun members(): Single<MeetupMembers> {
         return meetupService.members()
     }
 
-
 }
 
-private fun MeetupEvent.toWtmEvent() =
+fun ensureDurationNonNull(duration: Long?): Long = duration ?: 0L
+
+private fun MeetupEvent.toWtmEvent() = WtmEvent(
+    id = id,
+    name = name,
+    dateTimeStart = ZonedDateTime.ofInstant(
+        Instant.ofEpochMilli(time),
+        ZoneOffset.ofTotalSeconds((utc_offset / 1000).toInt())
+    ),
+    duration = Duration.ofMillis(ensureDurationNonNull(duration)),
+    description = description,
+    photoUrl = featured_photo?.photo_link,
+    meetupUrl = link,
+    venue = venue?.let { venue ->
+        Venue(
+            name = venue.name,
+            address = venue.address_1,
+            coordinates = venue.lat?.let {
+                Coordinates(
+                    latitude = venue.lat,
+                    longitude = venue.lon!!
+                )
+            })
+    }
+)
+
+private fun meetupEventToWtmEvent(event: MeetupEvent) = with(event) {
     WtmEvent(
         id = id,
         name = name,
@@ -57,7 +87,7 @@ private fun MeetupEvent.toWtmEvent() =
         venue = venue?.let { venue ->
             Venue(
                 name = venue.name,
-                address = venue.addressText(),
+                address = meetupVenueToAddressText(venue),
                 coordinates = venue.lat?.let {
                     Coordinates(
                         latitude = venue.lat,
@@ -66,11 +96,9 @@ private fun MeetupEvent.toWtmEvent() =
                 })
         }
     )
+}
 
-fun ensureDurationNonNull(duration: Long?): Long = duration ?: 0L
-
-
-private fun MeetupVenue.addressText() =
+private fun meetupVenueToAddressText(meetup: MeetupVenue) = with(meetup) {
     StringBuilder().apply {
         address_1?.let {
             append(it)
@@ -91,3 +119,4 @@ private fun MeetupVenue.addressText() =
             append(it)
         }
     }.toString()
+}

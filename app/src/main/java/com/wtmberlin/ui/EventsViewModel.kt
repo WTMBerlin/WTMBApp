@@ -2,12 +2,13 @@ package com.wtmberlin.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.wtmberlin.SchedulerProvider
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.util.Event
-import io.reactivex.disposables.CompositeDisposable
+import kotlinx.coroutines.launch
 import org.threeten.bp.ZonedDateTime
 import timber.log.Timber
 
@@ -17,19 +18,17 @@ class EventsViewModel(private val repository: Repository, schedulerProvider: Sch
     val refreshing = MutableLiveData<Boolean>()
     val displayEventDetails = MutableLiveData<DisplayEventDetailsEvent>()
 
-    private val subscriptions = CompositeDisposable()
-
     init {
-        subscriptions.add(
-            repository.events()
-                .subscribeOn(schedulerProvider.io)
-                .observeOn(schedulerProvider.ui)
-                .subscribe(this::onDataLoaded)
-        )
+        viewModelScope.launch {
+            onDataLoaded(repository.events())
+        }
     }
 
     fun refreshEvents() {
-        repository.refreshEvents()
+        viewModelScope.launch {
+            repository.refreshEvents()
+            onDataLoaded(repository.events())
+        }
     }
 
     fun onEventItemClicked(item: EventItem) {
@@ -78,11 +77,6 @@ class EventsViewModel(private val repository: Repository, schedulerProvider: Sch
         venueName = venue?.name
     )
 
-    override fun onCleared() {
-        super.onCleared()
-
-        subscriptions.clear()
-    }
 }
 
 data class DisplayEventDetailsEvent(val eventId: String) : Event()

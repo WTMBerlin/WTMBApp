@@ -22,16 +22,16 @@ buildscript {
     ext.navigationVersion = "1.0.0"
     ext.picassoVersion = "2.71828"
     ext.recyclerViewVersion = "1.0.0"
-    ext.retrofitVersion = "2.7.1"
-    ext.roomVersion = "2.2.5"
-    ext.rxandroidVersion = "2.1.1"
-    ext.rxjavaVersion = "2.2.17"
+    ext.retrofitVersion = "2.6.0"
+    ext.roomVersion = "2.1.0-alpha03"
+    ext.rxandroidVersion = "2.1.0"
+    ext.rxjavaVersion = "2.2.4"
     ext.timberVersion = "4.7.1"
     ext.threetenbpVersion = "1.4.1"
     ext.threetenbpAndroidVersion = "1.2.2"
     ext.truthVersion = "0.42"
-    ext.workManagerVersion = "2.3.4"
-    ext.archVersion = "2.1.0"
+    ext.workManagerVersion = "2.0.0-rc01"
+    ext.archCompPoroutinesVersion = "2.2.0-alpha02"
 
     repositories {
         google()

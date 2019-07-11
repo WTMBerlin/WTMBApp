@@ -1,15 +1,14 @@
 package com.wtmberlin.ui
 
-import com.wtmberlin.SchedulerProvider
-import com.wtmberlin.StandardSchedulerProvider
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val uiModule = module {
-    single<SchedulerProvider> { StandardSchedulerProvider() }
 
     viewModel { EventsViewModel(get(), get()) }
     viewModel { StatsViewModel(get()) }
-    viewModel { (eventId: String) -> EventDetailsViewModel(eventId, get(), get()) }
+    viewModel { (eventId: String) -> EventDetailsViewModel(eventId, get()) }
+
     viewModel { CollaborationsViewModel(get()) }
+
 }

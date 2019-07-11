@@ -2,20 +2,19 @@ package com.wtmberlin.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.wtmberlin.SchedulerProvider
+import androidx.lifecycle.viewModelScope
 import com.wtmberlin.data.Coordinates
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.util.Event
-import io.reactivex.disposables.CompositeDisposable
 import org.threeten.bp.Duration
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class EventDetailsViewModel(
     eventId: String,
-    repository: Repository,
-    schedulerProvider: SchedulerProvider
+    repository: Repository
 ) : ViewModel() {
     val event = MutableLiveData<WtmEvent>()
 
@@ -24,15 +23,11 @@ class EventDetailsViewModel(
     val openMeetupPage = MutableLiveData<OpenMeetupPageEvent>()
     val shareEvent = MutableLiveData<String>()
 
-    private val subscriptions = CompositeDisposable()
-
     init {
-        subscriptions.add(
-            repository.event(eventId)
-                .subscribeOn(schedulerProvider.io)
-                .observeOn(schedulerProvider.ui)
-                .subscribe(this::onDataLoaded)
-        )
+        viewModelScope.launch {
+            val eventsById = repository.event(eventId)
+            onDataLoaded(eventsById)
+        }
     }
 
     private fun onDataLoaded(result: Result<WtmEvent>) {
@@ -68,11 +63,6 @@ class EventDetailsViewModel(
         }
     }
 
-    override fun onCleared() {
-        super.onCleared()
-
-        subscriptions.clear()
-    }
 }
 
 data class OpenMapsEvent(val venueName: String, val coordinates: Coordinates) : Event()

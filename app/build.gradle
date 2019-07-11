@@ -54,6 +54,10 @@ dependencies {
     implementation("androidx.core:core-ktx:${rootProject.coreVersion}")
     implementation("androidx.fragment:fragment-ktx:${rootProject.fragmentVersion}")
     implementation("androidx.constraintlayout:constraintlayout:${rootProject.constraintLayoutVersion}")
+    // Coroutines With Arch Components
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.archCompPoroutinesVersion}")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.archCompPoroutinesVersion}")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.archCompPoroutinesVersion}")
 
     // Support Library
     implementation("androidx.appcompat:appcompat:${rootProject.appcompatVersion}")
@@ -92,6 +96,7 @@ dependencies {
     implementation("androidx.room:room-runtime:${rootProject.roomVersion}")
     implementation("androidx.room:room-rxjava2:${rootProject.roomVersion}")
     kapt("androidx.room:room-compiler:${rootProject.roomVersion}") // use kapt for Kotlin
+    implementation("androidx.room:room-coroutines:${rootProject.roomVersion}")
 
     // ThreeTenBp
     testImplementation("org.threeten:threetenbp:${rootProject.threetenbpVersion}")

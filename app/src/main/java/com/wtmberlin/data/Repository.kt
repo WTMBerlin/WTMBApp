@@ -2,29 +2,25 @@ package com.wtmberlin.data
 
 import com.wtmberlin.meetup.MeetupMembers
 import io.reactivex.Flowable
-import io.reactivex.Single
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 open class Repository(private val apiService: ApiService, private val database: Database) {
-    fun venues(): Flowable<Result<List<VenueName>>> {
-        return apiService.events()
-            .map { it.map(WtmEvent::toVenueName) }
-            .map { it.distinct() }
-            .map { it.sortedBy { vName -> vName.name.toLowerCase().trimStart() } }
-            .map { Result(loading = false, data = it, error = null) }
-            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
+    suspend fun venues() = withContext(Dispatchers.IO) {
+        try {
+            Result(
+                loading = false, data = apiService.events()
+                    .map(::toVenueName)
+                    .distinct()
+                    .sortedBy { it.name.toLowerCase().trimStart() }, error = null
+            )
+        } catch (e: Exception) {
+            Result(loading = false, data = null, error = e)
+        }
     }
 
-
-    open fun events(): Flowable<Result<List<WtmEvent>>> {
-        return eventsResource.values()
-            .map {
-                if (it.data != null && it.data.isEmpty()) {
-                    Result(it.loading, null, it.error)
-                } else {
-                    it
-                }
-            }
-            .doOnSubscribe { eventsResource.refresh() }
+    suspend fun events() = withContext(Dispatchers.IO) {
+        fetchEvents()
     }
 
     open fun events2017(): Flowable<Result<List<WtmEvent>>> {
@@ -59,43 +55,35 @@ open class Repository(private val apiService: ApiService, private val database: 
             .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
     }
 
-    fun refreshEvents() {
-        eventsResource.refresh()
+    suspend fun refreshEvents() = withContext(Dispatchers.IO) {
+        fetchEvents()
     }
 
-    private val eventsResource = object : NetworkBoundResource<List<WtmEvent>, List<WtmEvent>>() {
-        override fun loadFromNetwork(): Single<List<WtmEvent>> {
-            return apiService.events()
-        }
-
-        override fun loadFromDatabase(): Flowable<List<WtmEvent>> {
-            return database.wtmEventDAO().getAll()
-        }
-
-        override fun saveToDatabase(value: List<WtmEvent>) {
-            database.wtmEventDAO().replaceAll(value)
+    private suspend fun fetchEvents(): Result<List<WtmEvent>> {
+        return try {
+            updateDb()
+            val fetchEvents = fetchEventsFromDb()
+            Result(false, fetchEvents, null)
+        } catch (e: Exception) {
+            Result(true, null, e)
         }
     }
 
-    open fun event(eventId: String): Flowable<Result<WtmEvent>> = DetailedEventResource(eventId).values()
-
-    inner class DetailedEventResource(private val eventId: String) : NetworkBoundResource<List<WtmEvent>, WtmEvent>() {
-        override fun loadFromNetwork(): Single<List<WtmEvent>> {
-            return apiService.events()
-        }
-
-        override fun loadFromDatabase(): Flowable<WtmEvent> {
-            return database.wtmEventDAO().getById(eventId)
-        }
-
-        override fun saveToDatabase(value: List<WtmEvent>) {
-            database.wtmEventDAO().replaceAll(value)
-        }
+    private suspend fun updateDb() = withContext(Dispatchers.IO) {
+        database.wtmEventDAO().replaceAll(apiService.events())
     }
+
+    private suspend fun fetchEventsFromDb() = withContext(Dispatchers.IO) {
+        database.wtmEventDAO().getAll()
+    }
+
+    open suspend fun event(eventId: String) = withContext(Dispatchers.IO) {
+        Result(loading = true, data = database.wtmEventDAO().getById(eventId), error = null)
+    }
+
+    private fun toVenueName(event: WtmEvent) = VenueName(
+        name = event.venue?.name ?: ""
+    )
 }
-
-private fun WtmEvent.toVenueName() = VenueName(
-    name = venue?.name ?: ""
-)
 
 data class VenueName(val name: String = "")

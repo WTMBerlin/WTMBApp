@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface MeetupService {
     @GET("Women-Techmakers-Berlin/events?status=cancelled,past,upcoming&desc=true&only=id,name,time,utc_offset,duration,venue,description,featured_photo.photo_link,link&fields=featured_photo&omit=venue.localized_country_name,venue.repinned,venue.phone&page=200")
-    fun events(): Single<List<MeetupEvent>>
+    suspend fun events(): List<MeetupEvent>
 
     @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&no_later_than=2018-01-01T00:00:00.000&no_earlier_than=2017-01-01T00:00:00.000&page=200&status=past")
     fun events2017(): Single<List<MeetupEvent>>
