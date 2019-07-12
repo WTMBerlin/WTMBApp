@@ -54,6 +54,8 @@ dependencies {
 
     // Mockito
     testImplementation("org.mockito:mockito-core:${rootProject.mockitoVersion}")
+    testImplementation("io.mockk:mockk:${rootProject.mockkVersion}")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${rootProject.coroutinesTestVersion}")
 
     // Moshi
     implementation("com.squareup.moshi:moshi:${rootProject.moshiVersion}")
