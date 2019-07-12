@@ -20,6 +20,7 @@ class EventsViewModel(private val repository: Repository, schedulerProvider: Sch
 
     init {
         viewModelScope.launch {
+            refreshing.value = true
             onDataLoaded(repository.events())
         }
     }

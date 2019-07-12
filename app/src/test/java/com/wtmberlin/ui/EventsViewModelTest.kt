@@ -1,122 +1,92 @@
 package com.wtmberlin.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.google.common.truth.Truth.assertThat
-import com.wtmberlin.*
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
-import io.reactivex.processors.PublishProcessor
+import io.mockk.MockKAnnotations
+import io.mockk.coEvery
+import io.mockk.every
+import io.mockk.impl.annotations.MockK
+import io.mockk.mockk
+import junit.framework.Assert.assertEquals
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.setMain
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.Mockito.`when`
-import org.threeten.bp.LocalDate
 import org.threeten.bp.LocalDateTime
-import org.threeten.bp.LocalTime
 import org.threeten.bp.ZoneId
+import org.threeten.bp.ZonedDateTime
 
 class EventsViewModelTest {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    val mockEvents = PublishProcessor.create<Result<List<WtmEvent>>>()
-    val mockRepository = mock<Repository>().also {
-        `when`(it.events()).thenReturn(mockEvents)
+    @MockK
+    internal lateinit var repository: Repository
+    private val viewModel by lazy { EventsViewModel(repository) }
+    private val testDispatcher = TestCoroutineDispatcher()
+
+    private val simpleEvent = mockk<WtmEvent>().also {
+        every { it.id } returns "1"
+        every { it.dateTimeStart } returns ZonedDateTime.now()
+        every { it.name } returns "nameEvent"
+        every { it.venue } returns null
+        every { it.meetupUrl } returns "www.google.com"
     }
 
-    val viewModel = EventsViewModel(mockRepository, TestSchedulerProvider())
-
-    @Test
-    fun `when events are refreshed emits refresh true`() {
-        val refreshObserver = viewModel.refreshing.testObserver()
-
-        mockEvents.onNext(Result(loading = true, data = null, error = null))
-
-        assertThat(refreshObserver.observedValues)
-            .containsExactly(true)
+    private fun startEvents(event: WtmEvent = simpleEvent): WtmEvent {
+        coEvery { repository.events() } returns Result(false, listOf(event), null)
+        return event
     }
 
-    @Test
-    fun `when events are not refreshed emits refresh false`() {
-        val refreshObserver = viewModel.refreshing.testObserver()
-
-        mockEvents.onNext(Result(loading = false, data = null, error = null))
-
-        assertThat(refreshObserver.observedValues)
-            .containsExactly(false)
+    private val simpleUpcomingEvent = mockk<WtmEvent>().also {
+        val dateStart = LocalDateTime.of(2020, 6, 27, 8, 30)
+        every { it.id } returns "1"
+        every { it.dateTimeStart } returns ZonedDateTime.of(dateStart, ZoneId.systemDefault())
+        every { it.name } returns "nameEvent"
+        every { it.venue } returns null
+        every { it.meetupUrl } returns "www.google.com"
     }
 
-    @Test
-    fun `when no events emit NoUpcomingEvents`() {
-        val observer = viewModel.adapterItems.testObserver()
-
-        mockEvents.onNext(Result(loading = false, data = emptyList(), error = null))
-
-        assertThat(observer.observedValues)
-            .containsExactly(listOf(NoUpcomingEventsItem))
+    private fun startUpcomingEvents(event: WtmEvent = simpleUpcomingEvent): WtmEvent {
+        coEvery { repository.events() } returns Result(false, listOf(event), null)
+        return event
     }
 
-    @Test
-    fun `when one past event emit past header item and event`() {
-        val input = listOf(wtmEvent("2", "DevOps", yesterday(), "CompanyA"))
-        val expected = listOf(
-            NoUpcomingEventsItem,
-            PastHeaderItem,
-            EventItem("2", "DevOps", yesterday(), "CompanyA")
-        )
-
-        val observer = viewModel.adapterItems.testObserver()
-
-        mockEvents.onNext(Result(loading = false, data = input, error = null))
-
-        assertThat(observer.observedValues).containsExactly(expected)
+    @Before
+    fun setUp() {
+        MockKAnnotations.init(this)
+        Dispatchers.setMain(testDispatcher)
     }
 
     @Test
-    fun `when one upcoming event emit upcoming header item and event`() {
-        val input = listOf(wtmEvent("2", "DevOps", tomorrow(), "CompanyA"))
-        val expected = listOf(
-            UpcomingHeaderItem,
-            EventItem("2", "DevOps", tomorrow(), "CompanyA")
-        )
-        val observer = viewModel.adapterItems.testObserver()
-
-        mockEvents.onNext(Result(loading = false, data = input, error = null))
-
-        assertThat(observer.observedValues).containsExactly(expected)
+    fun `with upcoming Events`() {
+        startUpcomingEvents()
+        viewModel.refreshEvents()
     }
 
     @Test
-    fun `when one upcoming and one past event emit upcoming header item, upcoming event, past header item, past event`() {
-        val input = listOf(
-            wtmEvent("2", "DevOps", tomorrow(), "CompanyA"),
-            wtmEvent("1", "Android Study Jam", yesterday(), "CompanyB")
-        )
-        val expected = listOf(
-            UpcomingHeaderItem,
-            EventItem("2", "DevOps", tomorrow(), "CompanyA"),
-            PastHeaderItem,
-            EventItem("1", "Android Study Jam", yesterday(), "CompanyB")
-        )
+    fun `on events clicked`() {
+        val eventItem = mockk<EventItem>()
+        val id = "1"
+        every { eventItem.id } returns id
+        startEvents()
 
-        val observer = viewModel.adapterItems.testObserver()
+        viewModel.onEventItemClicked(eventItem)
+        viewModel.displayEventDetails.observeForever { }
 
-        mockEvents.onNext(Result(loading = false, data = input, error = null))
-
-        assertThat(observer.observedValues).containsExactly(expected)
+        val result = viewModel.displayEventDetails.value
+        assertEquals(id, result?.eventId)
     }
 
+    @Test
+    fun `on events refreshed`() {
+        startEvents()
 
-    fun wtmEvent(id: String, name: String, dateTime: LocalDateTime, venueName: String): WtmEvent {
-        return defaultWtmEvent(
-            id = id,
-            name = name,
-            dateTimeStart = dateTime.atZone(ZoneId.systemDefault()),
-            venue = defaultVenue(name = venueName)
-        )
+        viewModel.refreshEvents()
     }
 
-    fun yesterday() : LocalDateTime  = LocalDateTime.of(LocalDate.now(), LocalTime.NOON).minusDays(1)
-
-    fun tomorrow() : LocalDateTime = LocalDateTime.of(LocalDate.now(), LocalTime.NOON).plusDays(1)
 }
