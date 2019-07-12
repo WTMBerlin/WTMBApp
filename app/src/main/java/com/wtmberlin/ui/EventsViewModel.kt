@@ -18,6 +18,7 @@ class EventsViewModel(private val repository: Repository) : ViewModel() {
 
     init {
         viewModelScope.launch {
+            refreshing.value = true
             onDataLoaded(repository.events())
         }
     }
