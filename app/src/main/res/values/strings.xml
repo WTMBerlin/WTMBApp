@@ -14,7 +14,8 @@
     <string name="collaborations_header">Collaboration partners</string>
     <string name="collaborations_header_description">To support us, ping one of the organizers on our slack</string>
     <string name="collaborations_description">As community of volunteers we work with external speakers and
-        tutors.\nOur meetups are possible not only thanks to us but also thanks to the wonderful support, that we receive from Google and companies that are listed below.
+        tutors.\nOur meetups are possible not only thanks to us but also thanks to the wonderful support, that we
+        receive from Google and companies that are listed below.
         This is our contribution to making Berlin\'s tech scene diverse and inclusive!
     </string>
 
@@ -22,29 +23,35 @@
 
     <string name="community_contributions_info">
         This App was created as learning project that would benefit the community WTM Berlin 💻.
-        \nIt is a great place to start an adventure of becoming an open source contributor! Check the issues list in our GitHub Repository, some are labeled with `good first issue`.
+        \nIt is a great place to start an adventure of becoming an open source contributor! Check the issues list in our
+        GitHub Repository, some are labeled with `good first issue`.
         Support us by adding a pull request 🚀
         \n
         \n👨‍💻 👩‍💻
         \n
-        \nFeel free to submit issues, pull requests or to create forks:</string>
+        \nFeel free to submit issues, pull requests or to create forks:
+    </string>
 
     <string name="community_contributions_link">
-        https://github.com/WTMBerlin/WTMBApp</string>
+        https://github.com/WTMBerlin/WTMBApp
+    </string>
     <string name="community_contributions_header">
-        Contributors Guide:</string>
+        Contributors Guide:
+    </string>
 
     <!-- Reviews -->
-    <string name="community_reviews">Community reviews</string>
     <string name="community_reviews_header">Organizers and community members about WTMB</string>
 
     <!-- Community Local -->
-    <string name="community_local_header">About WTM Berlin</string>
-    <string name="community_local_description_header">WTM Berlin is part of the global \nWomen Techmakers program run by Google.</string>
+    <string name="community_local_header">About WTM Berlin️</string>
+    <string name="community_local_description_header">WTM Berlin is part of the global \nWomen Techmakers program run by
+        Google.
+    </string>
     <string name="community_local_description">
         At WTM Berlin we are encouraging diversity in tech in Berlin since 2015. Get visibility,
         networking and resources to make the tech community of Berlin diverse and inclusive!
-        We have different activities: intense coding study groups, workshops or technical topics or social skills as well as inspirational fireside chats. New
+        We have different activities: intense coding study groups, workshops or technical topics or social skills as
+        well as inspirational fireside chats. New
         and existing members are always welcome to all of the events, and all events are always opened for everyone,
         regardless of your gender/age/race/experience, etc. We follow the Berlin code of conduct for communities:
         http://berlincodeofconduct.org
@@ -79,10 +86,17 @@
 
     <!-- Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>
-    <string name="nav_drawer_social_media_menu_item">@string/social_media_header</string>
-    <string name="nav_drawer_community_local_menu_item">@string/community_local_header</string>
-    <string name="nav_drawer_community_global_menu_item">Global Women Techmakers program</string>
-    <string name="nav_drawer_events_menu_item">@string/events_header</string>
-    <string name="nav_drawer_collaborations_menu_item">@string/collaborations_header</string>
+    <string name="nav_drawer_social_media_menu_item">Social Media 📱</string>
+    <string name="nav_drawer_community_local_menu_item">About Women Techmakers Berlin ℹ️💡</string>
+    <string name="nav_drawer_community_global_menu_item">Global Women Techmakers program 👩 ‍💻</string>
+    <string name="nav_drawer_events_menu_item">Events 👥 📅 💻</string>
+    <string name="nav_drawer_collaborations_menu_item">Collaboration partners 🏢</string>
     <string name="facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
+    <string name="nav_drawer_personal_notes_menu_item">Personal notes 📝</string>
+    <string name="nav_drawer_study_groups_menu_item">Study groups 📅 🤖</string>
+    <string name="nav_drawer_special_kids_friendly_events_menu_item">Special kids friendly events 🐻</string>
+    <string name="nav_drawer_accessibility_menu_tem">Accessibility 🕶 💻️</string>
+    <string name="nav_drawer_community_reviews_menu_item">Community reviews 📰</string>
+    <string name="nav_drawer_wtm_berlin_organizers_menu_item">WTM Berlin organizers 👥</string>
+    <string name="nav_drawer_contributions_and_feedback_menu_item">Contributions and feedback 📩 💡</string>
 </resources>

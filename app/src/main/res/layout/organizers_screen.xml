@@ -38,6 +38,7 @@
             </androidx.cardview.widget.CardView>
 
             <com.google.android.material.card.MaterialCardView
+                    android:paddingStart="@dimen/material_space_double"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent">
                 <TextView
@@ -46,6 +47,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/social_media_icon_slack"
+                        android:paddingStart="@dimen/material_space"
+                        android:paddingBottom="@dimen/material_space_half"
+                        android:paddingTop="@dimen/material_space_half"
                         android:layout_marginStart="@dimen/material_space"
                         android:layout_marginEnd="@dimen/material_space"
                         android:autoLink="web"
