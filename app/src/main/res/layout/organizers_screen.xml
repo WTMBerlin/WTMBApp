@@ -34,7 +34,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/wtm_natalie"
-                        android:text="We are all unpaid volunteers passionate about supporting the community. Please respect our time! After reaching out and setting up a collaboration, we will be usually requesting an info about the company and short speaker's biographies for the website - see one of the events to get a better idea. It would be great if you could provide them ahead. \n\nContact Roxy-WTM-organizer or join channel #hostingwtm to find out more!"/>
+                        android:text="@string/organizers_info_screen_attendees"/>
             </androidx.cardview.widget.CardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -46,6 +46,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/social_media_icon_slack"
+                        android:paddingBottom="@dimen/material_space_half"
+                        android:paddingTop="@dimen/material_space_half"
                         android:layout_marginStart="@dimen/material_space"
                         android:layout_marginEnd="@dimen/material_space"
                         android:autoLink="web"

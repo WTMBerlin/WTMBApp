@@ -17,7 +17,7 @@
             android:orientation="vertical">
         <com.google.android.material.card.MaterialCardView
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
+                android:layout_width="match_parent">
 
             <TextView
                     android:id="@+id/collaborations_content_header"
@@ -27,7 +27,8 @@
                     style="@style/WtmBerlin.Events.Header"
                     android:gravity="center"
                     android:padding="16dp"
-                    android:text="@string/collaborations_header_description"/>
+                    android:text="@string/collaborations_header"/>
+
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -42,6 +43,32 @@
                 style="@style/WtmBerlin.SocialMedia.Item"
                 android:padding="8dp"
                 android:text="@string/collaborations_description"/>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+                android:layout_margin="@dimen/material_space"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/collaborations_content_cfa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/WtmBerlin.SocialMedia.Item"
+                android:padding="8dp"
+                android:text="@string/collaboratiosn_call_for_action"/>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+                android:layout_margin="@dimen/material_space"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/collaborations_content_contact_person"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/WtmBerlin.SocialMedia.Item"
+                android:padding="8dp"
+                android:text="@string/collaborations_screen_contact_person"/>
         </com.google.android.material.card.MaterialCardView>
         <FrameLayout
                 android:layout_marginStart="@dimen/material_space"
