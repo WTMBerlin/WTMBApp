@@ -24,10 +24,19 @@ android {
     dataBinding {
         enabled = true
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.kotlinVersion}")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${rootProject.kotlinVersion}")
 
     // Architecture Components
     implementation("androidx.lifecycle:lifecycle-extensions:${rootProject.lifecycleVersion}")
@@ -36,9 +45,9 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:${rootProject.fragmentVersion}")
     implementation("androidx.constraintlayout:constraintlayout:${rootProject.constraintLayoutVersion}")
     // Coroutines With Arch Components
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.archCompPoroutinesVersion}")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.archCompPoroutinesVersion}")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.archCompPoroutinesVersion}")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.archCompCoroutinesVersion}")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.archCompCoroutinesVersion}")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.archCompCoroutinesVersion}")
 
     // Support Library
     implementation("androidx.appcompat:appcompat:${rootProject.appcompatVersion}")
@@ -96,4 +105,5 @@ dependencies {
     // WorkManager
     implementation("androidx.work:work-runtime-ktx:${rootProject.workManagerVersion}")
     implementation("androidx.work:work-rxjava2:${rootProject.workManagerVersion}")
+    testImplementation("androidx.work:work-testing:${rootProject.workManagerVersion}")
 }
