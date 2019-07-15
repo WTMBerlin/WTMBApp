@@ -43,7 +43,7 @@ class EventsViewModelTest {
     }
 
     private val simpleUpcomingEvent = mockk<WtmEvent>().also {
-        val dateStart = LocalDateTime.of(2020, 6, 27, 8, 30)
+        val dateStart = LocalDateTime.now().plusDays(1)
         every { it.id } returns "1"
         every { it.dateTimeStart } returns ZonedDateTime.of(dateStart, ZoneId.systemDefault())
         every { it.name } returns "nameEvent"
