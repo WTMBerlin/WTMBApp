@@ -9,7 +9,7 @@ open class Repository(private val apiService: ApiService, private val database: 
     suspend fun venues() = withContext(Dispatchers.IO) {
         try {
             Result(
-                loading = false, data = apiService.events()
+                loading = true, data = apiService.events()
                     .map(::toVenueName)
                     .distinct()
                     .sortedBy { it.name.toLowerCase().trimStart() }, error = null
@@ -65,7 +65,7 @@ open class Repository(private val apiService: ApiService, private val database: 
             val fetchEvents = fetchEventsFromDb()
             Result(false, fetchEvents, null)
         } catch (e: Exception) {
-            Result(true, null, e)
+            Result(false, null, e)
         }
     }
 
