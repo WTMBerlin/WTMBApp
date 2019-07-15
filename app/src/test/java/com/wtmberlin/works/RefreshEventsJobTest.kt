@@ -1,70 +1,80 @@
 package com.wtmberlin.works
 
 import android.content.Context
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.work.WorkerParameters
 import com.wtmberlin.data.ApiService
 import com.wtmberlin.data.WtmEventDao
 import com.wtmberlin.defaultWtmEvent
-import com.wtmberlin.mock
 import com.wtmberlin.notifications.Notifications
 import com.wtmberlin.work.RefreshEventsWorker
-import io.reactivex.Flowable
-import io.reactivex.Single
-import org.junit.Ignore
+import io.mockk.*
+import io.mockk.impl.annotations.MockK
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.setMain
+import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.verify
 import org.threeten.bp.ZonedDateTime
 
 class RefreshEventsJobTest {
-    val context = mock<Context>()
-    val params = mock<WorkerParameters>()
-    val apiService = mock<ApiService>()
-    val eventDao = mock<WtmEventDao>()
-    val notifications = mock<Notifications>()
+    @get:Rule
+    var instantExecutorRule = InstantTaskExecutorRule()
 
-    val worker = RefreshEventsWorker(context, params, apiService, eventDao, notifications)
+    @MockK
+    internal lateinit var ctx: Context
+    @MockK
+    private val params = mockk<WorkerParameters>()
+    @MockK
+    internal lateinit var apiService: ApiService
+    @MockK
+    private lateinit var eventDao: WtmEventDao
+    @MockK
+    private lateinit var notifications: Notifications
 
-    @Test
-    fun `replaces old events in database with new events from api`() {
-        val eventInDatabase = defaultWtmEvent(
-            id = "1",
-            name = "Fun with Java"
-        )
+    private val work by lazy { RefreshEventsWorker(ctx, params, apiService, eventDao, notifications) }
+    private val testDispatcher = TestCoroutineDispatcher()
 
-        val eventFromNetwork = defaultWtmEvent(
-            id = "2",
-            name = "Fun with Kotlin"
-        )
+    @Before
+    fun setUp() {
+        MockKAnnotations.init(this)
+        Dispatchers.setMain(testDispatcher)
 
-        `when`(eventDao.getAll()).thenReturn(Flowable.just(listOf(eventInDatabase)))
-        `when`(apiService.events()).thenReturn(Single.just(listOf(eventFromNetwork)))
-
-        worker.doWork()
-
-        verify(eventDao).replaceAll(listOf(eventFromNetwork))
+        every { params.taskExecutor } returns mockk()
+        every { params.taskExecutor.backgroundExecutor } returns mockk()
     }
 
     @Test
-    @Ignore("will fix after CI setup") // TODO
-    fun `notifies about single new upcoming event`() {
-        val newEventFromNetwork = defaultWtmEvent(
-            id = "1",
-            name = "Fun with Kotlin",
-            dateTimeStart = tomorrow()
-        )
+    fun `replaces old events in database with new events from api`() = runBlocking {
+        val eventDb = defaultWtmEvent(id = "1", name = "No Idea", dateTimeStart = ZonedDateTime.now())
+        val eventApi1 = eventDb.copy(id = "15")
+        val eventApi2 = eventDb.copy(id = "14")
+        val listApi = listOf(eventApi1, eventApi2)
+        coEvery { eventDao.getAll() } returns listOf(eventDb)
+        coEvery { apiService.events() } returns listApi
 
-        `when`(eventDao.getAll()).thenReturn(Flowable.just(listOf()))
-        `when`(apiService.events()).thenReturn(Single.just(listOf(newEventFromNetwork)))
+        work.doWork()
 
-        worker.doWork()
-
-        verify(notifications).showNewUpcomingEventNotification(newEventFromNetwork)
+        verify { eventDao.replaceAll(listApi) }
     }
 
     @Test
-    @Ignore("will fix after CI setup") // TODO
-    fun `notifies about multiple new upcoming events`() {
+    fun `notifies about single new upcoming event`() = runBlocking {
+        val event = defaultWtmEvent(id = "23", name = "Kt", dateTimeStart = tomorrow())
+        val oldEvent = event.copy(id = "0", dateTimeStart = ZonedDateTime.now().minusDays(1))
+
+        coEvery { eventDao.getAll() } returns listOf(oldEvent)
+        coEvery { apiService.events() } returns listOf(event)
+
+        work.doWork()
+
+        verify { notifications.showNewUpcomingEventNotification(event) }
+    }
+
+    @Test
+    fun `notifies about multiple new upcoming events`() = runBlocking {
         val newEventsFromNetwork = listOf(
             defaultWtmEvent(
                 id = "2",
@@ -82,39 +92,16 @@ class RefreshEventsJobTest {
                 dateTimeStart = tomorrow()
             )
         )
+        coEvery { eventDao.getAll() } returns listOf(defaultWtmEvent(id = "15"))
+        coEvery { apiService.events() } returns newEventsFromNetwork
 
-        `when`(eventDao.getAll()).thenReturn(Flowable.just(listOf()))
-        `when`(apiService.events()).thenReturn(Single.just(newEventsFromNetwork))
+        work.doWork()
 
-        worker.doWork()
-
-        verify(notifications).showNewUpcomingEventNotification(newEventsFromNetwork[0])
-        verify(notifications).showNewUpcomingEventNotification(newEventsFromNetwork[1])
-        verify(notifications).showNewUpcomingEventNotification(newEventsFromNetwork[2])
+        verify { notifications.showNewUpcomingEventNotification(newEventsFromNetwork[0]) }
+        verify { notifications.showNewUpcomingEventNotification(newEventsFromNetwork[1]) }
+        verify { notifications.showNewUpcomingEventNotification(newEventsFromNetwork[2]) }
     }
 
-    @Test
-    @Ignore("will fix after CI setup") // TODO
-    fun `notifies only about upcoming events that were not in database already`() {
-        val eventInDatabase = defaultWtmEvent(
-            id = "1",
-            name = "Fun with Kotlin Part 1",
-            dateTimeStart = tomorrow()
-        )
+    private fun tomorrow(): ZonedDateTime = ZonedDateTime.now().plusDays(1)
 
-        val newEventFromNetwork = defaultWtmEvent(
-            id = "2",
-            name = "Fun with Kotlin Part 2",
-            dateTimeStart = tomorrow()
-        )
-
-        `when`(eventDao.getAll()).thenReturn(Flowable.just(listOf(eventInDatabase)))
-        `when`(apiService.events()).thenReturn(Single.just(listOf(eventInDatabase, newEventFromNetwork)))
-
-        worker.doWork()
-
-        verify(notifications).showNewUpcomingEventNotification(newEventFromNetwork)
-    }
-
-    fun tomorrow() : ZonedDateTime = ZonedDateTime.now().plusDays(1)
 }
