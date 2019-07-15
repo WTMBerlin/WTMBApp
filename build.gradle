@@ -33,7 +33,7 @@ buildscript {
     ext.threetenbpAndroidVersion = "1.2.2"
     ext.truthVersion = "0.42"
     ext.workManagerVersion = "2.0.0-rc01"
-    ext.archCompPoroutinesVersion = "2.2.0-alpha02"
+    ext.archCompCoroutinesVersion = "2.2.0-alpha02"
 
     repositories {
         google()
