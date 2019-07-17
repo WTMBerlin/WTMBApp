@@ -38,6 +38,8 @@
             </androidx.cardview.widget.CardView>
 
             <com.google.android.material.card.MaterialCardView
+
+                    android:layout_margin="@dimen/material_space_half"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent">
                 <TextView
@@ -55,6 +57,18 @@
                         android:text="slack.wtmberlin.com"/>
             </com.google.android.material.card.MaterialCardView>
 
+
+            <androidx.cardview.widget.CardView
+                    android:layout_margin="@dimen/material_space_half"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:text="Feel free to reach out via Slack to:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                     android:layout_margin="@dimen/material_space_half"
                     android:layout_width="match_parent"
@@ -64,10 +78,17 @@
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="96dp"
                         android:layout_height="96dp"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="end"
                         android:src="@drawable/wtm_roxy"
                         app:civ_border_width="2dp"
                         app:civ_border_color="#FF000000"/>
+
+                <TextView
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Roxy-WTM-organizer"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                     android:layout_margin="@dimen/material_space_half"
@@ -78,10 +99,37 @@
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="96dp"
                         android:layout_height="96dp"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="end"
                         android:src="@drawable/wtm_natalie"
                         app:civ_border_width="2dp"
                         app:civ_border_color="#FF000000"/>
+                <TextView
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Natalie "/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_margin="@dimen/material_space_half"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="end"
+                        android:src="@drawable/wtm_corina"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"/>
+                <TextView
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Corina"/>
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -92,23 +140,16 @@
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="96dp"
                         android:layout_height="96dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/wtm_corina"
-                        app:civ_border_width="2dp"
-                        app:civ_border_color="#FF000000"/>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                    android:layout_margin="@dimen/material_space_half"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                <de.hdodenhof.circleimageview.CircleImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="end"
                         android:src="@drawable/wtm_amanda"
                         app:civ_border_width="2dp"
                         app:civ_border_color="#FF000000"/>
+                <TextView
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Amanda"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                     android:layout_margin="@dimen/material_space_half"
@@ -118,11 +159,37 @@
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="96dp"
                         android:layout_height="96dp"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="end"
+                        android:src="@drawable/wtm_lisa"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"/>
+                <TextView
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Lisa Trujillo"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                    android:layout_margin="@dimen/material_space_half"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="end"
                         android:src="@drawable/wtm_anna"
                         app:civ_border_width="2dp"
                         app:civ_border_color="#FF000000"/>
+                <TextView
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Anna"/>
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
