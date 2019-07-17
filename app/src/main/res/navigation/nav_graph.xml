@@ -42,7 +42,7 @@
     <fragment
             android:id="@+id/reviews_screen"
             android:name="com.wtmberlin.ui.ReviewsFragment"
-            android:label="@string/community_reviews"
+            android:label="@string/nav_drawer_contributions_and_feedback_menu_item"
             tools:layout="@layout/reviews_screen"/>
     <fragment
             android:id="@+id/notes_screen"
