@@ -67,12 +67,15 @@
 
     <style name="WtmBerlin.Events.Description">
         <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.ListPrimary</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
     </style>
 
     <style name="WtmBerlin.SocialMedia"/>
 
     <style name="WtmBerlin.SocialMedia.Item">
         <item name="android:textSize">@dimen/readable_text_size</item>
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
         <item name="android:paddingStart">@dimen/material_space</item>
         <item name="android:paddingEnd">@dimen/material_space</item>
         <item name="android:minHeight">@dimen/material_single_line_with_icon_list_height</item>
@@ -82,6 +85,8 @@
     </style>
     <style name="WtmBerlin.SocialMedia.Content">
         <item name="android:textSize">@dimen/readable_text_size</item>
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
         <item name="android:paddingStart">@dimen/material_space</item>
         <item name="android:paddingEnd">@dimen/material_space</item>
         <item name="android:minHeight">@dimen/material_single_line_with_icon_list_height</item>
@@ -94,6 +99,7 @@
         <item name="android:textSize">@dimen/readable_text_size</item>
         <item name="android:paddingStart">@dimen/material_space</item>
         <item name="android:paddingEnd">@dimen/material_space</item>
+        <item name="android:textColor">@color/black_87</item>
         <item name="android:ellipsize">end</item>
         <item name="android:maxLines">1</item>
         <item name="android:minHeight">@dimen/material_single_line_with_icon_list_height</item>

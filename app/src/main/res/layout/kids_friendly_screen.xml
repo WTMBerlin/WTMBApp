@@ -17,105 +17,105 @@
     </com.google.android.material.card.MaterialCardView>
 
     <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
 
 
-    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <com.google.android.material.card.MaterialCardView
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/material_space"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content">
+                        <TextView
+                                android:id="@+id/kids_screen_info_contact"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/material_space"
+                                android:textColor="@color/black_87"
+                                android:drawableEnd="@drawable/ic_favorite_border_black_24dp"
+                                android:text="We hosted kids friendly events in the past and hope to do so in the future. If you could host a child friendly event, please reach out via one of our social media channels"
+                                android:textSize="18dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/material_space"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content">
+                        <TextView
+                                android:id="@+id/kids_screen_toy"
+                                android:background="@drawable/ic_rotate"
+                                android:backgroundTint="@color/wtmGreenDark"
+                                android:contentDescription="zz zz zz ziuuum zz zz ziuum zzzzzzz meow ziuuuuuuuum zz zz zz zz ziuuum meow meow zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz ziuuumzz zzziuum zzzzzzz ziuuuuuuuum zz meow meow meow"
+                                android:rotation="56"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                            android:layout_margin="@dimen/material_space"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent">
+
+                        <LinearLayout
+                                android:layout_marginVertical="@dimen/material_space"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            <TextView
+                                    android:id="@+id/kids_screen_info"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/material_space"
+                                    android:textSize="18dp"
+                                    android:text="The kids-friendly events will always be explicitly marked in the event description. \n\nClick below to see our last kids-friendly event, International Women's Day Celebration at Wooga. We provided childcare, food and a separate parents room. "/>
+
+                            <TextView
+                                    android:id="@+id/link_facebook"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    style="@style/WtmBerlin.SocialMedia.Link"
+                                    android:autoLink="web"
+                                    android:contentDescription="@null"
+                                    android:importantForAccessibility="no"
+                                    android:drawableStart="@drawable/social_media_icon_facebook"
+                                    android:text="https://www.facebook.com/WomenTechmakersBerlinPage/videos/563501104173571/?t=91"/>
+
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+            </ScrollView>
+
             <com.google.android.material.card.MaterialCardView
-                    android:layout_gravity="center"
-                    android:layout_margin="@dimen/material_space"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-            <TextView
-                    android:id="@+id/kids_screen_info_contact"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/material_space"
-                    android:drawableEnd="@drawable/ic_favorite_border_black_24dp"
-                    android:text="We hosted kids friendly events in the past and hope to do so in the future. If you could host a child friendly event, please reach out via one of our social media channels"
-                    android:textSize="18dp"/>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                    android:layout_gravity="center"
-                    android:layout_margin="@dimen/material_space"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                <TextView
-                        android:id="@+id/kids_screen_toy"
-                        android:background="@drawable/ic_rotate"
-                        android:backgroundTint="@color/wtmGreenDark"
-                        android:contentDescription="zz zz zz ziuuum zz zz ziuum zzzzzzz meow ziuuuuuuuum zz zz zz zz ziuuum meow meow zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz ziuuumzz zzziuum zzzzzzz ziuuuuuuuum zz meow meow meow"
-                        android:rotation="56"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"/>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
+                    android:visibility="gone"
                     android:layout_margin="@dimen/material_space"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent">
 
                 <LinearLayout
-                        android:layout_marginVertical="@dimen/material_space"
+                        android:layout_margin="@dimen/material_space"
+                        android:gravity="center"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                    <TextView
-                            android:id="@+id/kids_screen_info"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/material_space"
-                            android:textSize="18dp"
-                            android:text="The kids-friendly events will always be explicitly marked in the event description. \n\nClick below to see our last kids-friendly event, International Women's Day Celebration at Wooga. We provided childcare, food and a separate parents room. "/>
 
                     <TextView
-                            android:id="@+id/link_facebook"
+                            style="@style/WtmBerlin.Events.Description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/WtmBerlin.SocialMedia.Link"
-                            android:autoLink="web"
-                            android:contentDescription="@null"
-                            android:importantForAccessibility="no"
-                            android:drawableStart="@drawable/social_media_icon_facebook"
-                            android:text="https://www.facebook.com/WomenTechmakersBerlinPage/videos/563501104173571/?t=91"/>
-
-
-
-
-</LinearLayout>
+                            android:text="The icon above is a simple toy for children with or without visual impairments. To learn more open Accessibility screen from the menu."/>
+                </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-
-
-        </LinearLayout>
-    </ScrollView>
-
-        <com.google.android.material.card.MaterialCardView
-                android:visibility="gone"
-                android:layout_margin="@dimen/material_space"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-
-            <LinearLayout
-                    android:layout_margin="@dimen/material_space"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TextView
-                        style="@style/WtmBerlin.Events.Description"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="The icon above is a simple toy for children with or without visual impairments. To learn more open Accessibility screen from the menu."/>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

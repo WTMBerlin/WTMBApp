@@ -26,83 +26,90 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-        <com.google.android.material.card.MaterialCardView
-                android:layout_margin="@dimen/material_space"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
                     android:layout_margin="@dimen/material_space"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                <LinearLayout
+                        android:layout_margin="@dimen/material_space"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            style="@style/WtmBerlin.Events.Description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/accessibility_content_1"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/material_space"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+                <TextView
+                        android:id="@+id/kids_screen_toy"
+                        android:background="@drawable/ic_rotate"
+                        android:backgroundTint="@color/wtmGreenDark"
+                        android:contentDescription="@string/accessibility_screen_sound_effect"
+                        android:rotation="56"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="@dimen/material_space"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <TextView
+                            style="@style/WtmBerlin.Events.Description"
+                            android:id="@+id/kids_screen_toy_info"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/material_space"
+                            android:importantForAccessibility="yes"
+                            android:text="@string/accessibility_content_2"/>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="@dimen/material_space"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <TextView
+                            style="@style/WtmBerlin.Events.Description"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/material_space"
+                            android:importantForAccessibility="yes"
+                            android:text="@string/accessibility_content_3"/>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="@dimen/material_space"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
 
                 <TextView
                         style="@style/WtmBerlin.Events.Description"
-                        android:layout_width="match_parent"
+                        android:id="@+id/accessibility_resources"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="bottom"
                         android:layout_height="wrap_content"
-                        android:text="The icon below is a simple toy for children with or without visual impairments. If you open the list of apps preinstalled on your phone and switch TalkBack on, then this Accessibility tool for Android Apps will open, tap twice to confirm and scroll sideways to navigate. Thanks to this exercise you can understand their everyday experience for your own."/>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/material_space"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
-            <TextView
-                    android:id="@+id/kids_screen_toy"
-                    android:background="@drawable/ic_rotate"
-                    android:backgroundTint="@color/wtmGreenDark"
-                    android:contentDescription="zz zz zz ziuuum zz zz ziuum zzzzzzz meow ziuuuuuuuum zz zz zz zz ziuuum meow meow zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz ziuuumzz zzziuum zzzzzzz ziuuuuuuuum zz meow meow meow"
-                    android:rotation="56"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"/>
-        </com.google.android.material.card.MaterialCardView>
+                        android:layout_margin="@dimen/material_space"
+                        android:autoLink="web"
+                        android:text="@string/accessibility_github"
+                        android:importantForAccessibility="yes"/>
 
-        <com.google.android.material.card.MaterialCardView
-                android:layout_margin="@dimen/material_space"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-
-            <ScrollView
-                    android:layout_marginTop="@dimen/material_space"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-            <TextView
-                    style="@style/WtmBerlin.Events.Description"
-                    android:id="@+id/kids_screen_toy_info"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/material_space"
-                    android:importantForAccessibility="yes"
-                    android:text="TalkBack should be preinstalled, if not it is available in app store for free. After opening Talkback, come back to this app, open this screen and perform a click on the image above. You should hear some entertaining words and sounds. We should be aware of needs of people with impairments, so I highly encourage you to try TalkBack out. Adding basic accessibility to an Android app is very easy, so after watching some videos you can contribute to open source projects like I did with this one! Start with adding labels @null and content descriptions (ideally ones that are more meaningful that the one that I implemented on the image above)."/>
-            </ScrollView>
-        </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_margin="@dimen/material_space"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-
-            <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-            <TextView
-                    style="@style/WtmBerlin.Events.Description"
-                    android:id="@+id/accessibility_resources"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/material_space"
-                    android:autoLink="web"
-                    android:text="https://github.com/WTMBerlin/WTMBApp/blob/master/ACCESSIBILITY.md"
-                    android:importantForAccessibility="yes"/>
-              </ScrollView>
-        </com.google.android.material.card.MaterialCardView>
+            </com.google.android.material.card.MaterialCardView>
 
 
         </LinearLayout>
