@@ -17,6 +17,10 @@
         tutors.\nOur meetups are possible not only thanks to us but also thanks to the wonderful support, that we receive from Google and companies that are listed below.
         This is our contribution to making Berlin\'s tech scene diverse and inclusive!
     </string>
+    <string name="collaboratiosn_call_for_action">We are open to collaborations! After reaching out and setting up the collaboration details, we will be usually requesting an info about
+        the company and short speaker\'s biographies for the website - see one of the events to get a better idea. It would be great if you could provide them ahead.
+    </string>
+    <string name="collaborations_screen_contact_person">Contact Roxy-WTM-organizer on slack </string>
 
     <!-- Contributions -->
 
@@ -85,4 +89,10 @@
     <string name="nav_drawer_events_menu_item">@string/events_header</string>
     <string name="nav_drawer_collaborations_menu_item">@string/collaborations_header</string>
     <string name="facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
+    <string name="organizers_info_screen_attendees">We are all unpaid volunteers passionate about supporting the community. Please
+        respect our time!
+        RVSP responsibly and if you can\'t make it to the event - just update your choice on Meetup.
+        \nThis helps us estimate size of the events for the company, catering and the attendees.
+    </string>
+    <string name="organizers_info_screen_tutors">If you have a skill to offer, like supporting one of our Study Groups on Android, Go, JavaScript or to give a one-time workshop on the topic of your expertise, reach out via slack</string>
 </resources>
