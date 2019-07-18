@@ -53,12 +53,12 @@ Last spring we had a few courses on mobile development where participants learne
 ### How can we be in touch? 💛
 - [Slack](http://slack.wtmberlin.com) is one of our main points of our community. Share info that might be relevant for the community, keep in touch with people you met on our meetups and add endless :party-parrot: emojis.
 
--[Facebook](https://www.facebook.com/groups/1106085959408694) is another place where we are very active
+- [Facebook](https://www.facebook.com/groups/1106085959408694) is another place where we are very active
 
 - You are welcome to follow us on [Twitter](https://twitter.com/wtm_berlin)
 
 - And mainly stay up to date with our events on [Meetup](https://www.meetup.com/Women-Techmakers-Berlin)
 
 
-Looking forward to meeting you in one of our next events!
+We can't wait to meet you all in our next events!
 
