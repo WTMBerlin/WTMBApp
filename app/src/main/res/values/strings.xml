@@ -131,5 +131,6 @@
         implemented on the image above). Ah, and mind the text-background contrast. \nYou are good to go! For more resources visit:
     </string>
     <string name="accessibility_github">https://github.com/WTMBerlin/WTMBApp/blob/master/ACCESSIBILITY.md</string>
+    <string name="stats_screen_header">WTM Berlin in numbers</string>
 
 </resources>
