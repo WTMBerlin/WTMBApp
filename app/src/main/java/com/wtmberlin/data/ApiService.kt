@@ -13,6 +13,21 @@ open class ApiService(private val meetupService: MeetupService) {
     fun events(): Single<List<WtmEvent>> {
         return meetupService.events().map { it.map(MeetupEvent::toWtmEvent) }
     }
+    fun events2017(): Single<List<WtmEvent>> {
+        return meetupService.events2017().map { it.map(MeetupEvent::toWtmEvent) }
+    }
+
+    fun events2018(): Single<List<WtmEvent>> {
+        return meetupService.events2018().map { it.map(MeetupEvent::toWtmEvent) }
+    }
+    fun events2019(): Single<List<WtmEvent>> {
+        return meetupService.events2019().map { it.map(MeetupEvent::toWtmEvent) }
+    }
+    fun eventsTotal(): Single<List<WtmEvent>> {
+        return meetupService.eventsTotal().map { it.map(MeetupEvent::toWtmEvent) }
+    }
+
+
 }
 
 private fun MeetupEvent.toWtmEvent() = WtmEvent(

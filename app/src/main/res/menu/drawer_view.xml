@@ -25,6 +25,9 @@
                 android:id="@+id/study_groups_screen"
                 android:title="@string/nav_drawer_study_groups_menu_item"/>
         <item
+                android:id="@+id/stats_screen"
+                android:title="@string/stats_screen_header"/>
+        <item
                 android:id="@+id/kids_friendly_screen"
                 android:title="@string/nav_drawer_special_kids_friendly_events_menu_item"/>
         <item

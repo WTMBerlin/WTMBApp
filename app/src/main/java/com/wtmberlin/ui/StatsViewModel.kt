@@ -24,7 +24,7 @@ class StatsViewModel(repository: Repository) : ViewModel() {
     }
 
 
-    private fun onDataLoaded(result: Result<List<VenueName>>) {
+    private fun onDataLoaded(result: Result<List<>>) {
         result.data?.let { processStats(it) }
         result.error?.let { Timber.i(it) }
     }
