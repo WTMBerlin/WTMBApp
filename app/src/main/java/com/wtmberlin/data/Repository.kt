@@ -8,6 +8,7 @@ open class Repository(private val apiService: ApiService, private val database: 
         return apiService.events()
             .map { it.map(WtmEvent::toVenueName) }
             .map { it.distinct() }
+            .map { it.sortedBy { vName -> vName.name.toLowerCase().trimStart() } }
             .map { Result(loading = false, data = it, error = null) }
             .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
     }
