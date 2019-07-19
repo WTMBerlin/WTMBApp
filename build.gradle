@@ -37,6 +37,7 @@ buildscript {
     ext.truthVersion = "0.42"
     ext.archCompCoroutinesVersion = "2.2.0-alpha02"
     ext.workManagerVersion = "2.1.0"
+    ext.mockkVersion = "1.9.3"
 
     repositories {
         google()

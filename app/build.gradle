@@ -82,6 +82,9 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${rootProject.coroutinesTestVersion}")
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:${rootProject.mockitoKotlinVersion}")
 
+    // Mockk
+    testImplementation("io.mockk:mockk:${rootProject.mockkVersion}")
+
     // Moshi
     implementation("com.squareup.moshi:moshi:${rootProject.moshiVersion}")
     implementation("com.squareup.moshi:moshi-kotlin:${rootProject.moshiVersion}")

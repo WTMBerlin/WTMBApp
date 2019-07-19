@@ -4,6 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
+import com.wtmberlin.util.ErrorLogger
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.every
@@ -26,7 +27,9 @@ class EventsViewModelTest {
 
     @MockK
     internal lateinit var repository: Repository
-    private val viewModel by lazy { EventsViewModel(repository) }
+    @MockK
+    internal lateinit var errorLogger: ErrorLogger
+    private val viewModel by lazy { EventsViewModel(repository, errorLogger) }
     private val testDispatcher = TestCoroutineDispatcher()
 
     private val simpleEvent = mockk<WtmEvent>().also {
