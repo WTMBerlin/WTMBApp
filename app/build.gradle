@@ -57,9 +57,8 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:${rootProject.fragmentVersion}")
     implementation("androidx.constraintlayout:constraintlayout:${rootProject.constraintLayoutVersion}")
     // Coroutines With Arch Components
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.archCompCoroutinesVersion}")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.archCompCoroutinesVersion}")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.archCompCoroutinesVersion}")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.lifecycleVersion}")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.lifecycleVersion}")
 
     // Support Library
     implementation("androidx.appcompat:appcompat:${rootProject.appcompatVersion}")
@@ -68,6 +67,7 @@ dependencies {
 
     // JUnit
     testImplementation("junit:junit:${rootProject.junitVersion}")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:${rootProject.kotlinVersion}")
 
     // Koin
     implementation("org.koin:koin-android:${rootProject.koinVersion}")
@@ -75,8 +75,12 @@ dependencies {
 
     // Mockito
     testImplementation("org.mockito:mockito-core:${rootProject.mockitoVersion}")
-    testImplementation("io.mockk:mockk:${rootProject.mockkVersion}")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.coroutinesTestCoreVersion}")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.coroutinesTestCoreVersion}")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.coroutinesTestCoreVersion}")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.coroutinesTestCoreVersion}")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${rootProject.coroutinesTestVersion}")
+    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:${rootProject.mockitoKotlinVersion}")
 
     // Moshi
     implementation("com.squareup.moshi:moshi:${rootProject.moshiVersion}")

@@ -21,6 +21,9 @@ buildscript {
     ext.moshiVersion = "1.9.2"
     ext.mockkVersion = "1.9"
     ext.coroutinesTestVersion = "1.3.0-M2"
+    ext.coroutinesTestCoreVersion = "1.2.2"
+    ext.mockitoKotlinVersion = "2.1.0"
+    ext.coroutinesTestCoreVersion = "1.2.2"
     ext.navigationVersion = "1.0.0-alpha11"
     ext.picassoVersion = "2.71828"
     ext.recyclerViewVersion = "1.0.0"
@@ -32,8 +35,8 @@ buildscript {
     ext.threetenbpVersion = "1.4.1"
     ext.threetenbpAndroidVersion = "1.2.2"
     ext.truthVersion = "0.42"
-    ext.workManagerVersion = "2.0.0-rc01"
     ext.archCompCoroutinesVersion = "2.2.0-alpha02"
+    ext.workManagerVersion = "2.1.0"
 
     repositories {
         google()
