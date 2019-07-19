@@ -5,15 +5,17 @@ import com.wtmberlin.meetup.MeetupMembers
 import com.wtmberlin.meetup.MeetupService
 import com.wtmberlin.meetup.MeetupVenue
 import io.reactivex.Single
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.threeten.bp.Duration
 import org.threeten.bp.Instant
 import org.threeten.bp.ZoneOffset
 import org.threeten.bp.ZonedDateTime
 
-open class ApiService(private val meetupService: MeetupService) {
-    suspend fun events() = withContext(Dispatchers.IO) {
+open class ApiService(
+    private val meetupService: MeetupService,
+    private val dispatchers: CoroutinesDispatcherProvider
+) {
+    suspend fun events() = withContext(dispatchers.io) {
         val meetupEventList = meetupService.events()
         meetupEventList.map(::meetupEventToWtmEvent)
     }

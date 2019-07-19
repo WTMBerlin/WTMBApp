@@ -6,7 +6,7 @@ import org.koin.dsl.module
 
 val repositoryModule = module {
     single {
-        ApiService(get())
+        ApiService(get(), get())
     }
 
     single {
@@ -18,7 +18,7 @@ val repositoryModule = module {
     single { createWtmEventDao(get()) }
 
     single {
-        Repository(get(), get())
+        Repository(get(), get(), get())
     }
 }
 

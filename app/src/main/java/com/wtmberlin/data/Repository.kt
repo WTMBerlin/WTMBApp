@@ -5,21 +5,23 @@ import io.reactivex.Flowable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-open class Repository(private val apiService: ApiService, private val database: Database) {
-    suspend fun venues() = withContext(Dispatchers.IO) {
-        try {
+open class Repository(
+    private val apiService: ApiService,
+    private val database: Database,
+    private val dispatchers: CoroutinesDispatcherProvider
+) {
+    suspend fun venues() = withContext(dispatchers.io) {
+        com.wtmberlin.data.runCatching {
             Result(
                 loading = true, data = apiService.events()
                     .map(::toVenueName)
                     .distinct()
                     .sortedBy { it.name.toLowerCase().trimStart() }, error = null
             )
-        } catch (e: Exception) {
-            Result(loading = false, data = null, error = e)
         }
     }
 
-    suspend fun events() = withContext(Dispatchers.IO) {
+    suspend fun events() = withContext(dispatchers.io) {
         fetchEvents()
     }
 
@@ -69,15 +71,15 @@ open class Repository(private val apiService: ApiService, private val database: 
         }
     }
 
-    private suspend fun updateDb() = withContext(Dispatchers.IO) {
+    private suspend fun updateDb() = withContext(dispatchers.io) {
         database.wtmEventDAO().replaceAll(apiService.events())
     }
 
-    private suspend fun fetchEventsFromDb() = withContext(Dispatchers.IO) {
+    private suspend fun fetchEventsFromDb() = withContext(dispatchers.io) {
         database.wtmEventDAO().getAll()
     }
 
-    open suspend fun event(eventId: String) = withContext(Dispatchers.IO) {
+    open suspend fun event(eventId: String) = withContext(dispatchers.io) {
         Result(loading = true, data = database.wtmEventDAO().getById(eventId), error = null)
     }
 
