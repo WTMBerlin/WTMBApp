@@ -7,7 +7,7 @@ val uiModule = module {
 
     viewModel { EventsViewModel(get(), get()) }
     viewModel { StatsViewModel(get()) }
-    viewModel { (eventId: String) -> EventDetailsViewModel(eventId, get()) }
+    viewModel { (eventId: String) -> EventDetailsViewModel(eventId, get(), get()) }
 
     viewModel { CollaborationsViewModel(get()) }
 

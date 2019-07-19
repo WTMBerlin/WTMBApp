@@ -1,12 +1,12 @@
 package com.wtmberlin.ui
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.wtmberlin.data.Coordinates
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
+import com.wtmberlin.util.CoroutineViewModel
+import com.wtmberlin.util.ErrorLogger
 import com.wtmberlin.util.Event
 import org.threeten.bp.Duration
 import kotlinx.coroutines.launch
@@ -14,8 +14,9 @@ import timber.log.Timber
 
 class EventDetailsViewModel(
     eventId: String,
-    repository: Repository
-) : ViewModel() {
+    repository: Repository,
+    private val errorLogger: ErrorLogger
+) : CoroutineViewModel() {
     val event = MutableLiveData<WtmEvent>()
 
     val addToCalendar = MutableLiveData<AddToCalendarEvent>()
@@ -24,17 +25,15 @@ class EventDetailsViewModel(
     val shareEvent = MutableLiveData<String>()
 
     init {
-        viewModelScope.launch {
+        launch {
             val eventsById = repository.event(eventId)
             onDataLoaded(eventsById)
         }
     }
 
     private fun onDataLoaded(result: Result<WtmEvent>) {
-        result.data?.let {
-            event.value = it
-        }
-        result.error?.let { Timber.i(it) }
+        result.data?.let { event.value = it }
+        result.error?.let { errorLogger.getException(it) }
     }
 
     fun onDateTimeClicked() {
