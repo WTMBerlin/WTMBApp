@@ -47,7 +47,7 @@ class NotesFragment : Fragment() {
 
     }
 
-    private fun display(view: View, text: String?? = "See? This is how a default note looks like!") {
+    private fun display(view: View, text: String? = "See? This is how a default note looks like!") {
         view.notes_output.text = text
     }
 

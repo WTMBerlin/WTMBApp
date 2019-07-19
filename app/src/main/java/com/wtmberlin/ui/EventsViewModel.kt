@@ -1,30 +1,32 @@
 package com.wtmberlin.ui
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
+import com.wtmberlin.util.CoroutineViewModel
+import com.wtmberlin.util.ErrorLogger
 import com.wtmberlin.util.Event
 import kotlinx.coroutines.launch
 import org.threeten.bp.ZonedDateTime
-import timber.log.Timber
 
-class EventsViewModel(private val repository: Repository) : ViewModel() {
+class EventsViewModel(
+    private val repository: Repository,
+    private val errorLogger: ErrorLogger
+) : CoroutineViewModel() {
     val adapterItems = MutableLiveData<List<EventsAdapterItem>>()
     val refreshing = MutableLiveData<Boolean>()
     val displayEventDetails = MutableLiveData<DisplayEventDetailsEvent>()
 
     init {
-        viewModelScope.launch {
+        launch {
             refreshing.value = true
             onDataLoaded(repository.events())
         }
     }
 
     fun refreshEvents() {
-        viewModelScope.launch {
+        launch {
             repository.refreshEvents()
             onDataLoaded(repository.events())
         }
@@ -37,7 +39,7 @@ class EventsViewModel(private val repository: Repository) : ViewModel() {
     private fun onDataLoaded(result: Result<List<WtmEvent>>) {
         refreshing.value = result.loading
         result.data?.let { processEvents(it) }
-        result.error?.let { Timber.i(it) }
+        result.error?.let { errorLogger.getException(it) }
     }
 
     private fun processEvents(events: List<WtmEvent>) {
@@ -46,7 +48,10 @@ class EventsViewModel(private val repository: Repository) : ViewModel() {
         val now = ZonedDateTime.now()
 
         for (event in events) {
-            if (event.dateTimeStart.isAfter(now)) upcomingEvents += event else pastEvents += event
+            if (event.dateTimeStart.isAfter(now))
+                upcomingEvents += event
+            else
+                pastEvents += event
         }
 
         val adapterItems = mutableListOf<EventsAdapterItem>()
