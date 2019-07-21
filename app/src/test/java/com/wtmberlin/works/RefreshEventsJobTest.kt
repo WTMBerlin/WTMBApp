@@ -3,105 +3,114 @@ package com.wtmberlin.works
 import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.work.WorkerParameters
+import com.nhaarman.mockitokotlin2.*
+import com.wtmberlin.SetMainDispatcherRule
 import com.wtmberlin.data.ApiService
+import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.data.WtmEventDao
 import com.wtmberlin.defaultWtmEvent
+import com.wtmberlin.mock
 import com.wtmberlin.notifications.Notifications
 import com.wtmberlin.work.RefreshEventsWorker
-import io.mockk.*
-import io.mockk.impl.annotations.MockK
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.TestCoroutineDispatcher
-import kotlinx.coroutines.test.setMain
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.Mock
+import org.mockito.MockitoAnnotations
 import org.threeten.bp.ZonedDateTime
 
+@ExperimentalCoroutinesApi
 class RefreshEventsJobTest {
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
+    @get:Rule
+    var setMainDispatcherRule = SetMainDispatcherRule()
 
-    @MockK
-    internal lateinit var ctx: Context
-    @MockK
-    private val params = mockk<WorkerParameters>()
-    @MockK
-    internal lateinit var apiService: ApiService
-    @MockK
+    @Mock
+    private lateinit var ctx: Context
+    @Mock
+    private lateinit var params: WorkerParameters
+    @Mock
+    private lateinit var apiService: ApiService
+    @Mock
     private lateinit var eventDao: WtmEventDao
-    @MockK
+    @Mock
     private lateinit var notifications: Notifications
 
-    private val work by lazy { RefreshEventsWorker(ctx, params, apiService, eventDao, notifications) }
-    private val testDispatcher = TestCoroutineDispatcher()
+    private val work by lazy(LazyThreadSafetyMode.NONE) {
+        RefreshEventsWorker(
+            ctx,
+            params,
+            apiService,
+            eventDao,
+            notifications
+        )
+    }
+
+    private fun startEventDb(event: WtmEvent = mock()): WtmEvent {
+        given(event.id).willReturn("1")
+        given(event.dateTimeStart).willReturn(ZonedDateTime.now())
+
+        mock<WtmEventDao> {
+            onBlocking {
+                eventDao.getAll()
+            } doReturn listOf(event)
+        }
+        return event
+    }
+
+    private fun startEventApi(events: List<WtmEvent> = mock()): List<WtmEvent> {
+        val firstEvent = defaultWtmEvent(id = "2", dateTimeStart = ZonedDateTime.now().plusDays(1))
+        val secondEvent = defaultWtmEvent(id = "3", dateTimeStart = ZonedDateTime.now().plusDays(2))
+        val eventListApi = listOf(firstEvent, secondEvent)
+
+        mock<ApiService> {
+            onBlocking {
+                apiService.events()
+            } doReturn eventListApi
+        }
+        return eventListApi
+    }
 
     @Before
     fun setUp() {
-        MockKAnnotations.init(this)
-        Dispatchers.setMain(testDispatcher)
+        MockitoAnnotations.initMocks(this)
 
-        every { params.taskExecutor } returns mockk()
-        every { params.taskExecutor.backgroundExecutor } returns mockk()
+        given(params.taskExecutor).willReturn(mock())
+        given(params.taskExecutor.backgroundExecutor).willReturn(mock())
     }
 
     @Test
-    fun `replaces old events in database with new events from api`() = runBlocking {
-        val eventDb = defaultWtmEvent(id = "1", name = "No Idea", dateTimeStart = ZonedDateTime.now())
-        val eventApi1 = eventDb.copy(id = "15")
-        val eventApi2 = eventDb.copy(id = "14")
-        val listApi = listOf(eventApi1, eventApi2)
-        coEvery { eventDao.getAll() } returns listOf(eventDb)
-        coEvery { apiService.events() } returns listApi
+    fun `replaces old events in database with new events from api`() {
+        startEventDb()
+        val eventApi = startEventApi()
 
-        work.doWork()
+        runBlocking { work.doWork() }
 
-        verify { eventDao.replaceAll(listApi) }
+        verify(eventDao, times(1)).replaceAll(eventApi)
     }
 
     @Test
     fun `notifies about single new upcoming event`() = runBlocking {
-        val event = defaultWtmEvent(id = "23", name = "Kt", dateTimeStart = tomorrow())
-        val oldEvent = event.copy(id = "0", dateTimeStart = ZonedDateTime.now().minusDays(1))
+        val upcomingEvent = startEventApi()
+        startEventDb()
 
-        coEvery { eventDao.getAll() } returns listOf(oldEvent)
-        coEvery { apiService.events() } returns listOf(event)
+        runBlocking { work.doWork() }
 
-        work.doWork()
-
-        verify { notifications.showNewUpcomingEventNotification(event) }
+        verify(notifications).showNewUpcomingEventNotification(upcomingEvent[0])
     }
 
     @Test
-    fun `notifies about multiple new upcoming events`() = runBlocking {
-        val newEventsFromNetwork = listOf(
-            defaultWtmEvent(
-                id = "2",
-                name = "Fun with Kotlin Part 1",
-                dateTimeStart = tomorrow()
-            ),
-            defaultWtmEvent(
-                id = "3",
-                name = "Fun with Kotlin Part 2",
-                dateTimeStart = tomorrow()
-            ),
-            defaultWtmEvent(
-                id = "4",
-                name = "Fun with Kotlin Part 3",
-                dateTimeStart = tomorrow()
-            )
-        )
-        coEvery { eventDao.getAll() } returns listOf(defaultWtmEvent(id = "15"))
-        coEvery { apiService.events() } returns newEventsFromNetwork
+    fun `notifies about multiple new upcoming events`() {
+        val upcomingEvent = startEventApi()
+        startEventDb()
 
-        work.doWork()
+        runBlocking { work.doWork() }
 
-        verify { notifications.showNewUpcomingEventNotification(newEventsFromNetwork[0]) }
-        verify { notifications.showNewUpcomingEventNotification(newEventsFromNetwork[1]) }
-        verify { notifications.showNewUpcomingEventNotification(newEventsFromNetwork[2]) }
+        verify(notifications).showNewUpcomingEventNotification(upcomingEvent[0])
+        verify(notifications).showNewUpcomingEventNotification(upcomingEvent[1])
     }
-
-    private fun tomorrow(): ZonedDateTime = ZonedDateTime.now().plusDays(1)
 
 }
