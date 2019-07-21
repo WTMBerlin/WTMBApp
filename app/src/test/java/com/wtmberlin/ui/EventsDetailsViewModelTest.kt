@@ -2,6 +2,7 @@ package com.wtmberlin.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nhaarman.mockitokotlin2.*
+import com.wtmberlin.SetMainDispatcherRule
 import com.wtmberlin.data.Coordinates
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
@@ -14,14 +15,11 @@ import com.wtmberlin.util.io
 import com.wtmberlin.util.ui
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.setMain
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 import org.threeten.bp.Duration
 import org.threeten.bp.ZonedDateTime
@@ -31,14 +29,20 @@ import kotlin.test.assertEquals
 class EventsDetailsViewModelTest {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
-
-    private val mainThreadSurrogate = newSingleThreadContext("UI thread")
+    @get:Rule
+    var setMainDispatcherRule = SetMainDispatcherRule()
 
     @Mock
     private lateinit var mockRepository: Repository
     @Mock
     private lateinit var mockErrorLogger: ErrorLogger
-    private val viewModel by lazy { EventDetailsViewModel("1", mockRepository, mockErrorLogger) }
+    private val viewModel by lazy(LazyThreadSafetyMode.NONE) {
+        EventDetailsViewModel(
+            "1",
+            mockRepository,
+            mockErrorLogger
+        )
+    }
 
     private fun startEvent(event: WtmEvent? = mock(), eventId: String? = null): WtmEvent? {
         mock<Repository> {
@@ -66,7 +70,6 @@ class EventsDetailsViewModelTest {
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        Dispatchers.setMain(mainThreadSurrogate)
         unconfinifyTestScope()
         doNothing().`when`(mockErrorLogger).getException(any())
     }
@@ -94,11 +97,11 @@ class EventsDetailsViewModelTest {
         val eventMocked = startEvent()
         val dateTimeStart = ZonedDateTime.now()
         val duration = Duration.ofHours(3)
-        Mockito.`when`(eventMocked?.id).thenReturn("1")
-        Mockito.`when`(eventMocked?.name).thenReturn("Fun with Kotlin")
-        Mockito.`when`(eventMocked?.dateTimeStart).thenReturn(dateTimeStart)
-        Mockito.`when`(eventMocked?.duration).thenReturn(duration)
-        Mockito.`when`(eventMocked?.venue).thenReturn(defaultVenue(name = "Google Berlin"))
+        given(eventMocked?.id).willReturn("1")
+        given(eventMocked?.name).willReturn("Fun with Kotlin")
+        given(eventMocked?.dateTimeStart).willReturn(dateTimeStart)
+        given(eventMocked?.duration).willReturn(duration)
+        given(eventMocked?.venue).willReturn(defaultVenue(name = "Google Berlin"))
 
         viewModel.onDateTimeClicked()
 
@@ -109,8 +112,8 @@ class EventsDetailsViewModelTest {
     @Test
     fun `when location clicked map event with no coordinates`() = runBlocking {
         val eventMocked = startEvent()
-        Mockito.`when`(eventMocked?.id).thenReturn("1")
-        Mockito.`when`(eventMocked?.venue).thenReturn(defaultVenue(name = "Google Berlin", coordinates = null))
+        given(eventMocked?.id).willReturn("1")
+        given(eventMocked?.venue).willReturn(defaultVenue(name = "Google Berlin", coordinates = null))
 
         viewModel.onLocationClicked()
 
@@ -121,8 +124,8 @@ class EventsDetailsViewModelTest {
     @Test
     fun `when location clicked emits open map event`() = runBlocking {
         val eventMocked = startEvent()
-        Mockito.`when`(eventMocked?.id).thenReturn("1")
-        Mockito.`when`(eventMocked?.venue).thenReturn(
+        given(eventMocked?.id).willReturn("1")
+        given(eventMocked?.venue).willReturn(
             defaultVenue(
                 name = "Google Berlin",
                 coordinates = Coordinates(12.34, 56.78)
@@ -138,8 +141,8 @@ class EventsDetailsViewModelTest {
     @Test
     fun `when open meetup page clicked emits open meetup page event`() = runBlocking {
         val eventMocked = startEvent()
-        Mockito.`when`(eventMocked?.id).thenReturn("1")
-        Mockito.`when`(eventMocked?.meetupUrl).thenReturn("https://meetup.com/events/1")
+        given(eventMocked?.id).willReturn("1")
+        given(eventMocked?.meetupUrl).willReturn("https://meetup.com/events/1")
 
         viewModel.onOpenMeetupPageClicked()
 
@@ -149,7 +152,7 @@ class EventsDetailsViewModelTest {
 
     @Test
     fun `emits event with given id with error`() = runBlocking {
-        val crash = startEventError(eventId = "1")
+        startEventError(eventId = "1")
 
         verify(mockErrorLogger, times(1)).getException(any())
     }

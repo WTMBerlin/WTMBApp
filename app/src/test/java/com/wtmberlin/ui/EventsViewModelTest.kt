@@ -4,6 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
+import com.wtmberlin.SetMainDispatcherRule
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
@@ -15,13 +16,11 @@ import com.wtmberlin.util.io
 import com.wtmberlin.util.ui
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.newSingleThreadContext
-import kotlinx.coroutines.test.setMain
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.BDDMockito.given
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.Mockito.times
 import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
@@ -33,19 +32,19 @@ import org.threeten.bp.ZonedDateTime
 class EventsViewModelTest {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
-
-    private val mainThreadSurrogate = newSingleThreadContext("UI thread")
+    @get:Rule
+    var setMainDispatcherRule = SetMainDispatcherRule()
 
     @Mock
     private lateinit var mockRepo: Repository
     @Mock
     private lateinit var mockErrorLog: ErrorLogger
-    private val viewModel by lazy { EventsViewModel(mockRepo, mockErrorLog) }
+    private val viewModel by lazy(LazyThreadSafetyMode.NONE) { EventsViewModel(mockRepo, mockErrorLog) }
 
     private fun startEvents(event: WtmEvent = mock()): WtmEvent {
-        Mockito.`when`(event.id).thenReturn("1")
-        Mockito.`when`(event.name).thenReturn("name")
-        Mockito.`when`(event.venue).thenReturn(defaultVenue(name = "name"))
+        given(event.id).willReturn("1")
+        given(event.name).willReturn("name")
+        given(event.venue).willReturn(defaultVenue(name = "name"))
 
         mock<Repository> {
             onBlocking {
@@ -67,7 +66,6 @@ class EventsViewModelTest {
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        Dispatchers.setMain(mainThreadSurrogate)
         unconfinifyTestScope()
     }
 
@@ -75,7 +73,7 @@ class EventsViewModelTest {
     fun `with upcoming Events`() {
         val upcomingEvents = startEvents()
         val dateStart = LocalDateTime.now().plusDays(1)
-        Mockito.`when`(upcomingEvents.dateTimeStart).thenReturn(ZonedDateTime.of(dateStart, ZoneId.systemDefault()))
+        given(upcomingEvents.dateTimeStart).willReturn(ZonedDateTime.of(dateStart, ZoneId.systemDefault()))
 
         viewModel.refreshing.observeForever { }
     }
@@ -83,7 +81,7 @@ class EventsViewModelTest {
     @Test
     fun `with no upcoming Events`() {
         val noUpcomingEvents = startEvents()
-        Mockito.`when`(noUpcomingEvents.dateTimeStart).thenReturn(ZonedDateTime.now())
+        given(noUpcomingEvents.dateTimeStart).willReturn(ZonedDateTime.now())
 
         viewModel.refreshing.observeForever { }
     }
@@ -91,8 +89,7 @@ class EventsViewModelTest {
     @Test
     fun `on events clicked`() {
         val clickedEvent = mock<EventItem>()
-        val id = "1"
-        Mockito.`when`(clickedEvent.id).thenReturn(id)
+        given(clickedEvent.id).willReturn("1")
 
         startEventsError()
 
@@ -102,7 +99,7 @@ class EventsViewModelTest {
     @Test
     fun `on events refreshed`() {
         val eventsMocked = startEvents()
-        Mockito.`when`(eventsMocked.dateTimeStart).thenReturn(ZonedDateTime.now())
+        given(eventsMocked.dateTimeStart).willReturn(ZonedDateTime.now())
 
         viewModel.refreshEvents()
     }
