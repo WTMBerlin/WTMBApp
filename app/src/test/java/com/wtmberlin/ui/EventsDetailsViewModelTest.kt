@@ -10,7 +10,7 @@ import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.defaultVenue
 import com.wtmberlin.mock
-import com.wtmberlin.util.ErrorLogger
+import com.wtmberlin.util.LogException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
@@ -34,12 +34,12 @@ class EventsDetailsViewModelTest {
     @Mock
     private lateinit var mockRepository: Repository
     @Mock
-    private lateinit var mockErrorLogger: ErrorLogger
+    private lateinit var mockLogException: LogException
     private val viewModel by lazy(LazyThreadSafetyMode.NONE) {
         EventDetailsViewModel(
             "1",
             mockRepository,
-            mockErrorLogger
+            mockLogException
         )
     }
 
@@ -69,7 +69,7 @@ class EventsDetailsViewModelTest {
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        doNothing().`when`(mockErrorLogger).getException(any())
+        doNothing().`when`(mockLogException).getException(any())
     }
 
     @Test
@@ -152,7 +152,7 @@ class EventsDetailsViewModelTest {
     fun `emits event with given id with error`() = runBlocking {
         startEventError(eventId = "1")
 
-        verify(mockErrorLogger, times(1)).getException(any())
+        verify(mockLogException, times(1)).getException(any())
     }
 
 }

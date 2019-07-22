@@ -3,6 +3,7 @@ package com.wtmberlin.data
 import com.wtmberlin.meetup.MeetupEvent
 import com.wtmberlin.meetup.MeetupService
 import com.wtmberlin.meetup.MeetupVenue
+import com.wtmberlin.util.CoroutinesDispatcherProvider
 import kotlinx.coroutines.withContext
 import org.threeten.bp.Duration
 import org.threeten.bp.Instant

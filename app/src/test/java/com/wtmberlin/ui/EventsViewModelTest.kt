@@ -11,7 +11,7 @@ import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.defaultVenue
 import com.wtmberlin.mock
-import com.wtmberlin.util.ErrorLogger
+import com.wtmberlin.util.LogException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -37,7 +37,7 @@ class EventsViewModelTest {
     @Mock
     private lateinit var mockRepo: Repository
     @Mock
-    private lateinit var mockErrorLog: ErrorLogger
+    private lateinit var mockErrorLog: LogException
     private val viewModel by lazy(LazyThreadSafetyMode.NONE) { EventsViewModel(mockRepo, mockErrorLog) }
 
     private fun startEvents(event: WtmEvent = mock()): WtmEvent {

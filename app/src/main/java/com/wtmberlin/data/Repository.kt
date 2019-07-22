@@ -1,5 +1,6 @@
 package com.wtmberlin.data
 
+import com.wtmberlin.util.CoroutinesDispatcherProvider
 import kotlinx.coroutines.withContext
 
 open class Repository(
