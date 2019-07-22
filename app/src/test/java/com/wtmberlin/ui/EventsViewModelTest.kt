@@ -5,16 +5,13 @@ import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.wtmberlin.SetMainDispatcherRule
+import com.wtmberlin.UnconfinedTestScopeRule
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.defaultVenue
 import com.wtmberlin.mock
 import com.wtmberlin.util.ErrorLogger
-import com.wtmberlin.util.background
-import com.wtmberlin.util.io
-import com.wtmberlin.util.ui
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -34,6 +31,8 @@ class EventsViewModelTest {
     val instantTaskExecutorRule = InstantTaskExecutorRule()
     @get:Rule
     var setMainDispatcherRule = SetMainDispatcherRule()
+    @get:Rule
+    var unconfinedTestScopeRule = UnconfinedTestScopeRule()
 
     @Mock
     private lateinit var mockRepo: Repository
@@ -66,7 +65,6 @@ class EventsViewModelTest {
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        unconfinifyTestScope()
     }
 
     @Test
@@ -113,11 +111,4 @@ class EventsViewModelTest {
         verify(mockErrorLog, times(1)).getException(any())
     }
 
-
-    @ExperimentalCoroutinesApi
-    private fun unconfinifyTestScope() {
-        ui = Dispatchers.Unconfined
-        io = Dispatchers.Unconfined
-        background = Dispatchers.Unconfined
-    }
 }
