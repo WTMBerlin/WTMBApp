@@ -5,14 +5,14 @@ import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.util.CoroutineViewModel
-import com.wtmberlin.util.ErrorLogger
 import com.wtmberlin.util.Event
+import com.wtmberlin.util.LogException
 import kotlinx.coroutines.launch
 import org.threeten.bp.ZonedDateTime
 
 class EventsViewModel(
     private val repository: Repository,
-    private val errorLogger: ErrorLogger
+    private val logException: LogException
 ) : CoroutineViewModel() {
     val adapterItems = MutableLiveData<List<EventsAdapterItem>>()
     val refreshing = MutableLiveData<Boolean>()
@@ -39,7 +39,7 @@ class EventsViewModel(
     private fun onDataLoaded(result: Result<List<WtmEvent>>) {
         refreshing.value = result.loading
         result.data?.let { processEvents(it) }
-        result.error?.let { errorLogger.getException(it) }
+        result.error?.let { logException.getException(it) }
     }
 
     private fun processEvents(events: List<WtmEvent>) {

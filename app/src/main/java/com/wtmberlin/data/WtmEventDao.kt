@@ -11,7 +11,7 @@ interface WtmEventDao {
     suspend fun getAll(): List<WtmEvent>
 
     @Query("SELECT * FROM WtmEvent WHERE id = :eventId")
-    suspend fun getById(eventId: String): WtmEvent
+    suspend fun getById(eventId: String): WtmEvent?
 
     @Transaction
     fun replaceAll(newWtmEvents: List<WtmEvent>) {

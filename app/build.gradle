@@ -65,22 +65,13 @@ dependencies {
     implementation("com.google.android.material:material:${rootProject.materialVersion}")
     implementation("androidx.recyclerview:recyclerview:${rootProject.recyclerViewVersion}")
 
-    // JUnit
-    testImplementation("junit:junit:${rootProject.junitVersion}")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:${rootProject.kotlinVersion}")
-
     // Koin
     implementation("org.koin:koin-android:${rootProject.koinVersion}")
     implementation("org.koin:koin-android-viewmodel:${rootProject.koinVersion}")
 
     // Mockito
-    testImplementation("org.mockito:mockito-core:${rootProject.mockitoVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.coroutinesTestCoreVersion}")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.coroutinesTestCoreVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.coroutinesTestCoreVersion}")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.coroutinesTestCoreVersion}")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${rootProject.coroutinesTestVersion}")
-    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:${rootProject.mockitoKotlinVersion}")
 
     // Mockk
     testImplementation("io.mockk:mockk:${rootProject.mockkVersion}")
@@ -110,14 +101,10 @@ dependencies {
     implementation("androidx.room:room-coroutines:${rootProject.roomVersion}")
 
     // ThreeTenBp
-    testImplementation("org.threeten:threetenbp:${rootProject.threetenbpVersion}")
     implementation("com.jakewharton.threetenabp:threetenabp:${rootProject.threetenbpAndroidVersion}")
 
     // Timber
     implementation("com.jakewharton.timber:timber:${rootProject.timberVersion}")
-
-    // Truth
-    testImplementation("com.google.truth:truth:${rootProject.truthVersion}")
 
     // Picasso
     implementation("com.squareup.picasso:picasso:${rootProject.picassoVersion}")
@@ -129,5 +116,24 @@ dependencies {
     //Other
     implementation("de.hdodenhof:circleimageview:3.0.1")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
+
+    // JUnit
+    testImplementation("junit:junit:${rootProject.junitVersion}")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:${rootProject.kotlinVersion}")
+    // Architecture Components
+    testImplementation("androidx.arch.core:core-testing:${rootProject.lifecycleTestVersion}")
+    // Coroutines
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.coroutinesTestCoreVersion}")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.coroutinesTestCoreVersion}")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${rootProject.coroutinesTestVersion}")
+    // Mockito
+    testImplementation("org.mockito:mockito-core:${rootProject.mockitoVersion}")
+    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:${rootProject.mockitoKotlinVersion}")
+    // ThreeTenBp
+    testImplementation("org.threeten:threetenbp:${rootProject.threetenbpVersion}")
+    // Truth
+    testImplementation("com.google.truth:truth:${rootProject.truthVersion}")
+    // WorkManager
     testImplementation("androidx.work:work-testing:${rootProject.workManagerVersion}")
+
 }

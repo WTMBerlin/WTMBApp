@@ -8,7 +8,7 @@ import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.VenueName
 import com.wtmberlin.mock
-import com.wtmberlin.util.ErrorLogger
+import com.wtmberlin.util.LogException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -29,9 +29,9 @@ class CollaborationsViewModelTest {
     @Mock
     private lateinit var mockRepo: Repository
     @Mock
-    private lateinit var mockErrorLogger: ErrorLogger
+    private lateinit var mockLogException: LogException
 
-    private val viewModel by lazy(LazyThreadSafetyMode.NONE) { CollaborationsViewModel(mockRepo, mockErrorLogger) }
+    private val viewModel by lazy(LazyThreadSafetyMode.NONE) { CollaborationsViewModel(mockRepo, mockLogException) }
 
     private fun startError(exception: Exception = Exception()): Exception {
         mock<Repository> {
@@ -55,7 +55,7 @@ class CollaborationsViewModelTest {
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        doNothing().`when`(mockErrorLogger).getException(any())
+        doNothing().`when`(mockLogException).getException(any())
     }
 
     @Test
@@ -64,7 +64,7 @@ class CollaborationsViewModelTest {
 
         viewModel.adapterItems.observeForever { }
 
-        verify(mockErrorLogger, times(1)).getException(any())
+        verify(mockLogException, times(1)).getException(any())
     }
 
     @Test

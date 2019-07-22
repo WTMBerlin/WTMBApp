@@ -9,6 +9,6 @@ val uiModule = module {
     viewModel { StatsViewModel(get()) }
     viewModel { (eventId: String) -> EventDetailsViewModel(eventId, get(), get()) }
 
-    viewModel { CollaborationsViewModel(get()) }
+    viewModel { CollaborationsViewModel(get(), get()) }
 
 }

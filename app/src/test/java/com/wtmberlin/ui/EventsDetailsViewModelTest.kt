@@ -2,7 +2,7 @@ package com.wtmberlin.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.wtmberlin.data.*
-import com.wtmberlin.util.ErrorLogger
+import com.wtmberlin.util.LogException
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.every
@@ -10,6 +10,7 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
 import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.setMain
 import org.junit.Before
@@ -25,10 +26,11 @@ class EventsDetailsViewModelTest {
     @MockK
     internal lateinit var repository: Repository
     @MockK
-    internal lateinit var errorLogger: ErrorLogger
-    private val viewModel by lazy { EventDetailsViewModel("1", repository, errorLogger) }
+    internal lateinit var logException: LogException
+    private val viewModel by lazy { EventDetailsViewModel("1", repository, logException) }
     private val testDispatcher = TestCoroutineDispatcher()
 
+    @ExperimentalCoroutinesApi
     @Before
     fun before() {
         MockKAnnotations.init(this)

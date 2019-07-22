@@ -6,16 +6,15 @@ import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.util.CoroutineViewModel
-import com.wtmberlin.util.ErrorLogger
 import com.wtmberlin.util.Event
 import org.threeten.bp.Duration
+import com.wtmberlin.util.LogException
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 class EventDetailsViewModel(
     eventId: String,
     repository: Repository,
-    private val errorLogger: ErrorLogger
+    private val logException: LogException
 ) : CoroutineViewModel() {
     val event = MutableLiveData<WtmEvent>()
 
@@ -33,7 +32,7 @@ class EventDetailsViewModel(
 
     private fun onDataLoaded(result: Result<WtmEvent>) {
         result.data?.let { event.value = it }
-        result.error?.let { errorLogger.getException(it) }
+        result.error?.let { logException.getException(it) }
     }
 
     fun onDateTimeClicked() {

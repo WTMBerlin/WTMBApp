@@ -5,6 +5,7 @@ import com.wtmberlin.meetup.MeetupMembers
 import com.wtmberlin.meetup.MeetupService
 import com.wtmberlin.meetup.MeetupVenue
 import io.reactivex.Single
+import com.wtmberlin.util.CoroutinesDispatcherProvider
 import kotlinx.coroutines.withContext
 import org.threeten.bp.Duration
 import org.threeten.bp.Instant

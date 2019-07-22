@@ -1,4 +1,4 @@
-package com.wtmberlin.data
+package com.wtmberlin.util
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers.Default

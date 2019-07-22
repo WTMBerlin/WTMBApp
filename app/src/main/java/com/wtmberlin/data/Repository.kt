@@ -3,6 +3,7 @@ package com.wtmberlin.data
 import com.wtmberlin.meetup.MeetupMembers
 import io.reactivex.Flowable
 import kotlinx.coroutines.Dispatchers
+import com.wtmberlin.util.CoroutinesDispatcherProvider
 import kotlinx.coroutines.withContext
 
 open class Repository(
