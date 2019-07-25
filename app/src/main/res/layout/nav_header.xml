@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="192dp"
-             android:gravity="bottom"
-             android:orientation="vertical"
-             android:padding="16dp"
-             android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="192dp"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView android:layout_width="160dp"
-               android:layout_height="wrap_content"
-               android:layout_gravity="center"
-               android:layout_marginTop="@dimen/material_space"
-               android:contentDescription="@null"
-               android:importantForAccessibility="no"
-               android:background="@drawable/events_no_upcoming_events"/>
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/material_space"
+        android:background="@drawable/events_no_upcoming_events"
+        android:contentDescription="@null"
+        android:importantForAccessibility="no" />
+
+    <ImageView
+        android:id="@+id/darkImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="24dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_dark_mode"
+        android:tint="@color/wtmBlueDark"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/lightImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="24dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_light_mode"
+        android:tint="@color/wtmGreenLight"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
 </FrameLayout>

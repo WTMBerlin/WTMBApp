@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <style name="AppThemeLightMode" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/wtmGreenLight</item>
         <item name="colorPrimaryDark">@color/wtmGreenDark</item>
         <item name="colorAccent">@color/wtmBlueLight</item>
         <item name="drawerArrowStyle">@style/DrawerIcon</item>
+        <item name="primaryTextColor">@color/black_87</item>
+        <item name="secondaryTextColor">@color/black_54</item>
+        <item name="backgroundCardColor">@color/white</item>
+        <item name="navigationViewSelectedColor">@color/wtmGreenDark</item>
     </style>
 
-    <style name="AppTheme.Launcher">
+    <style name="AppThemeNightMode" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/black_54</item>
+        <item name="colorPrimaryDark">@color/black_87</item>
+        <item name="colorAccent">@color/wtmBlueLight</item>
+        <item name="primaryTextColor">@color/white</item>
+        <item name="secondaryTextColor">@color/wtmBlueLight</item>
+        <item name="backgroundCardColor">@color/black_54</item>
+        <item name="navigationViewSelectedColor">@color/wtmGreenDark</item>
+    </style>
+
+    <style name="AppThemeLightMode.Launcher">
         <item name="android:background">@drawable/splash_screen</item>
         <item name="colorPrimaryDark">@android:color/white</item>
     </style>
@@ -27,7 +41,7 @@
     </style>
 
     <style name="WtmBerlin.Events.ThreeLineListItem">
-        <item name="android:background">@color/white</item>
+        <item name="android:background">?attr/backgroundCardColor</item>
         <item name="android:foreground">?selectableItemBackground</item>
         <item name="android:gravity">center</item>
         <item name="android:padding">@dimen/material_space</item>
@@ -108,27 +122,27 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:textColor">@color/black_54</item>
+        <item name="android:textColor">?attr/secondaryTextColor</item>
     </style>
 
     <style name="WtmBerlin.TextAppearance.EventName">
         <item name="android:textSize">17sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textColor">?attr/primaryTextColor</item>
     </style>
 
     <style name="WtmBerlin.TextAppearance.ListPrimary">
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textColor">?attr/primaryTextColor</item>
     </style>
 
     <style name="WtmBerlin.TextAppearance.NoUpcoming">
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textColor">@color/black_54</item>
+        <item name="android:textColor">?attr/secondaryTextColor</item>
     </style>
 
     <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -143,4 +157,9 @@
     <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@color/white</item>
     </style>
+
+    <style name="WtmBerlin.NavigationDrawer" parent="Widget.Design.NavigationView">
+        <item name="itemTextColor">@drawable/nav_view_item_selected_color</item>
+    </style>
+
 </resources>
