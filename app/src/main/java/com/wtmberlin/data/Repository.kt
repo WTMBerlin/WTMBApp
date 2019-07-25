@@ -26,6 +26,10 @@ open class Repository(private val apiService: ApiService, private val database: 
             .doOnSubscribe { eventsResource.refresh() }
     }
 
+    open fun events2017(): Flowable<Result<List<WtmEvent>>> {
+        return Flowable.just(Result(loading = false, data = apiService.events2017().blockingGet(), error = throw IllegalStateException()))
+    }
+
     fun refreshEvents() {
         eventsResource.refresh()
     }

@@ -62,7 +62,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="@{viewModel.stats.pastEventCount}"
+                        android:text="@{viewModel.events2017}"
                         tools:text=" events total count"/>
 
             </LinearLayout>
@@ -96,7 +96,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="@{viewModel.stats.members}"
+                        android:text="@{viewModel.events2017}"
                         tools:text="members count"/>
 
             </LinearLayout>
@@ -164,7 +164,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        tools:text="@{viewModel.stats.pastEventCount}"/>
+                        tools:text="@{viewModel.events2017}"/>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
