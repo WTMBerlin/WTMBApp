@@ -33,6 +33,7 @@
                         android:id="@+id/stats_header_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:drawableEnd="@drawable/wtm_mini"
                         style="@style/WtmBerlin.Events.Header"
                         android:text="@string/stats_screen_header"/>
@@ -135,7 +136,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            tools:text="@{viewModel.events2019}"/>
+                            android:text="@{viewModel.events2019}"/>
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -161,14 +162,14 @@
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            tools:text="Events total:"/>
+                            android:text="Events total:"/>
 
                     <TextView
                             android:id="@+id/events_total_count"
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            tools:text="TODO"/>
+                            android:text="TODO"/>
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -202,7 +203,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            tools:text="@{viewModel.members}"/>
+                            android:text="@{viewModel.members}"/>
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

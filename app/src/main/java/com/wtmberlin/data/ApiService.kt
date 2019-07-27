@@ -1,9 +1,6 @@
 package com.wtmberlin.data
 
-import com.wtmberlin.meetup.MeetupEvent
-import com.wtmberlin.meetup.MeetupMemberId
-import com.wtmberlin.meetup.MeetupService
-import com.wtmberlin.meetup.MeetupVenue
+import com.wtmberlin.meetup.*
 import io.reactivex.Single
 import org.threeten.bp.Duration
 import org.threeten.bp.Instant
@@ -31,8 +28,8 @@ open class ApiService(private val meetupService: MeetupService) {
         return meetupService.eventsTotal().map {
             it.map(MeetupEvent::toWtmEvent) }
     }
-    fun members(): Single<List<MeetupMemberId>> {
-        return meetupService.memberIds()
+    fun members(): Single<MeetupMembers> {
+        return meetupService.members()
     }
 
 

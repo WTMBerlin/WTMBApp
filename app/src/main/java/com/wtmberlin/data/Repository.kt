@@ -1,6 +1,6 @@
 package com.wtmberlin.data
 
-import com.wtmberlin.meetup.MeetupMemberId
+import com.wtmberlin.meetup.MeetupMembers
 import io.reactivex.Flowable
 import io.reactivex.Single
 
@@ -47,7 +47,7 @@ open class Repository(private val apiService: ApiService, private val database: 
             .map { Result(loading = false, data = it, error = null) }
             .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
     }
-    open fun members(): Flowable<Result<List<MeetupMemberId>>> {
+    open fun members(): Flowable<Result<MeetupMembers>> {
         return apiService.members()
             .map { Result(loading = false, data = it, error = null) }
             .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()

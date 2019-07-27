@@ -6,12 +6,11 @@ import androidx.lifecycle.ViewModel
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
-import com.wtmberlin.meetup.MeetupMemberId
+import com.wtmberlin.meetup.MeetupMembers
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
-import java.lang.reflect.Member
 
 class StatsViewModel(repository: Repository) : ViewModel() {
     private var _events2017: MutableLiveData<String> = MutableLiveData()
@@ -84,9 +83,9 @@ class StatsViewModel(repository: Repository) : ViewModel() {
         }
         result.error?.let { Timber.i(it) }
     }
-    private fun onDataMembersLoaded(result: Result<List<MeetupMemberId>>) {
+    private fun onDataMembersLoaded(result: Result<MeetupMembers>) {
         result.data?.let {
-            _members.value = result.data.size.toString()
+            _members.value = result.data.members.toString()
         }
         result.error?.let { Timber.i(it) }
     }
