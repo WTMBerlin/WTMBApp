@@ -19,6 +19,9 @@ interface MeetupService {
     @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&page=200&status=past")
     fun eventsTotal(): Single<List<MeetupEvent>>
 
+    @GET("https://api.meetup.com/women-techmakers-berlin/members?&sign=true&photo-host=public&page=400")
+    fun memberIds(): Single<List<MeetupMemberId>>
+
 }
 
 data class MeetupEvent(
@@ -46,4 +49,7 @@ data class MeetupVenue(
 
 data class MeetupPhoto(
     val photo_link: String
+)
+data class MeetupMemberId(
+    val id: String
 )

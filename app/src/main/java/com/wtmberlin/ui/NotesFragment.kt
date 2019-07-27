@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.notes_screen.view.*
 
 class NotesFragment : Fragment() {
 
-    private lateinit var root:View
+    private lateinit var root: View
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         root = inflater.inflate(

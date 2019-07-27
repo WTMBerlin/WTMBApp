@@ -10,7 +10,7 @@ import com.wtmberlin.R
 import com.wtmberlin.databinding.StatsScreenBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class StatsFragment : Fragment(){
+class StatsFragment : Fragment() {
     private val viewModel: StatsViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

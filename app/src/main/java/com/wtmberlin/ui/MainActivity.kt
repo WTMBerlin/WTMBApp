@@ -32,7 +32,8 @@ class MainActivity : AppCompatActivity() {
                 )
         }
     }
-    fun openMeetup(view:View){
+
+    fun openMeetup(view: View) {
         val openURL = Intent(Intent.ACTION_VIEW)
         openURL.data = Uri.parse("https://www.meetup.com/de-DE/women-techmakers-berlin/")
         startActivity(openURL)

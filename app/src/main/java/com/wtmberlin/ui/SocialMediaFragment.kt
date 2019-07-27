@@ -16,7 +16,7 @@ class SocialMediaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        community_reviews_click.setOnClickListener {  openContributions(view) }
+        community_reviews_click.setOnClickListener { openContributions(view) }
     }
 
     fun openContributions(view: View) {

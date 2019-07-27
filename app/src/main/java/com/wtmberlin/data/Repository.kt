@@ -1,5 +1,6 @@
 package com.wtmberlin.data
 
+import com.wtmberlin.meetup.MeetupMemberId
 import io.reactivex.Flowable
 import io.reactivex.Single
 
@@ -27,7 +28,29 @@ open class Repository(private val apiService: ApiService, private val database: 
     }
 
     open fun events2017(): Flowable<Result<List<WtmEvent>>> {
-        return Flowable.just(Result(loading = false, data = apiService.events2017().blockingGet(), error = throw IllegalStateException()))
+        return apiService.events2017()
+            .map { Result(loading = false, data = it, error = null) }
+            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
+    }
+    open fun events2018(): Flowable<Result<List<WtmEvent>>> {
+        return apiService.events2018()
+            .map { Result(loading = false, data = it, error = null) }
+            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
+    }
+    open fun events2019(): Flowable<Result<List<WtmEvent>>> {
+        return apiService.events2019()
+            .map { Result(loading = false, data = it, error = null) }
+            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
+    }
+    open fun eventsTotal(): Flowable<Result<List<WtmEvent>>> {
+        return apiService.events2019()
+            .map { Result(loading = false, data = it, error = null) }
+            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
+    }
+    open fun members(): Flowable<Result<List<MeetupMemberId>>> {
+        return apiService.members()
+            .map { Result(loading = false, data = it, error = null) }
+            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
     }
 
     fun refreshEvents() {
