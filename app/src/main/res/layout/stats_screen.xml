@@ -49,12 +49,12 @@
                     android:layout_width="match_parent">
                 <LinearLayout
                         android:gravity="center"
-                        android:layout_marginVertical="@dimen/material_space"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_2017_text"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -63,6 +63,7 @@
                             android:text="Events in 2017:"/>
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_2017_count"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -82,12 +83,12 @@
                     android:layout_width="match_parent">
                 <LinearLayout
                         android:gravity="center"
-                        android:layout_marginVertical="@dimen/material_space"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_2018_text"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -96,6 +97,7 @@
                             android:text="Events in 2018:"/>
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_count_2018"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -116,13 +118,13 @@
                     android:layout_width="match_parent">
                 <LinearLayout
                         android:gravity="center"
-                        android:layout_marginVertical="@dimen/material_space"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_2019_text"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -132,6 +134,7 @@
 
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_count_2019"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -151,12 +154,12 @@
                     android:layout_width="match_parent">
                 <LinearLayout
                         android:gravity="center"
-                        android:layout_marginVertical="@dimen/material_space"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_total_text"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -165,6 +168,7 @@
                             android:text="Events total:"/>
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_total_count"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -185,12 +189,12 @@
                     android:layout_width="match_parent">
                 <LinearLayout
                         android:gravity="center"
-                        android:layout_marginVertical="@dimen/material_space"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/members_text"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -199,6 +203,7 @@
                             android:text="Members:"/>
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/members_count"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -221,7 +226,7 @@
                         android:id="@+id/link_wtmb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/WtmBerlin.SocialMedia.Item"
+                        style="@style/WtmBerlin.SocialMedia.Link"
                         android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
                         android:autoLink="web"
                         android:contentDescription="facebook link"
@@ -255,7 +260,7 @@
                         android:id="@+id/link_meetup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/WtmBerlin.SocialMedia.Item"
+                        style="@style/WtmBerlin.SocialMedia.Link"
                         android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
                         android:autoLink="web"
                         android:contentDescription="facebook link"

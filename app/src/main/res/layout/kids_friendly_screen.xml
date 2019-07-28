@@ -74,6 +74,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="@dimen/material_space"
+                                    android:textColor="@color/black_87"
                                     android:textSize="18dp"
                                     android:text="The kids-friendly events will always be explicitly marked in the event description. \n\nClick below to see our last kids-friendly event, International Women's Day Celebration at Wooga. We provided childcare, food and a separate parents room. "/>
 
