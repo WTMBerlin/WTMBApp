@@ -19,7 +19,7 @@ interface MeetupService {
     @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&page=200&status=past")
     fun eventsTotal(): Single<List<MeetupEvent>>
 
-    @GET("https://api.meetup.com/self/groups?&sign=true&photo-host=public&page=20")
+    @GET("https://api.meetup.com/women-techmakers-berlin?&sign=true&photo-host=public&only=members")
     fun members(): Single<MeetupMembers>
 
 }

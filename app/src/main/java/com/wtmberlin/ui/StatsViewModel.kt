@@ -1,6 +1,7 @@
 package com.wtmberlin.ui
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wtmberlin.data.Repository
@@ -11,6 +12,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
+
 
 class StatsViewModel(repository: Repository) : ViewModel() {
     private var _events2017: MutableLiveData<String> = MutableLiveData()
@@ -24,15 +26,14 @@ class StatsViewModel(repository: Repository) : ViewModel() {
     private var _members: MutableLiveData<String> = MutableLiveData()
     val members: LiveData<String> = _members
 
-
     private val subscriptions = CompositeDisposable()
 
     init {
-        _events2017.value = "initial value, -1"
-        _events2018.value = "initial value, -1"
-        _events2019.value = "initial value, -1"
-        _eventsTotal.value = "initial value, -1"
-        _members.value = "bluabi"
+        _events2017.value = "0"
+        _events2018.value = "0"
+        _events2019.value = "0"
+        _eventsTotal.value = "0"
+        _members.value = "0"
 
         subscriptions.add(
             repository.events2017()
@@ -62,33 +63,42 @@ class StatsViewModel(repository: Repository) : ViewModel() {
                 .subscribe(this::onDataMembersLoaded)
         )
 
-        //TODO add companies count
     }
 
     private fun onData2017Loaded(result: Result<List<WtmEvent>>) {
         result.data?.let {
-            _events2017.value = result.data.size.toString()
+            val eventCount = result.data.size
+            _events2017.value = eventCount.toString()
+            _eventsTotal.value = (_eventsTotal.value!!.toInt() + eventCount).toString()
         }
         result.error?.let { Timber.i(it) }
     }
+
     private fun onData2018Loaded(result: Result<List<WtmEvent>>) {
         result.data?.let {
-            _events2018.value = result.data.size.toString()
+            val eventCount = result.data.size
+            _events2018.value = eventCount.toString()
+            _eventsTotal.value = (_eventsTotal.value!!.toInt() + eventCount).toString()
         }
         result.error?.let { Timber.i(it) }
     }
+
     private fun onData2019Loaded(result: Result<List<WtmEvent>>) {
         result.data?.let {
-            _events2019.value = result.data.size.toString()
+            val eventCount = result.data.size
+            _events2019.value = eventCount.toString()
+            _eventsTotal.value = (_eventsTotal.value!!.toInt() + eventCount).toString()
         }
         result.error?.let { Timber.i(it) }
     }
+
     private fun onDataMembersLoaded(result: Result<MeetupMembers>) {
         result.data?.let {
             _members.value = result.data.members.toString()
         }
         result.error?.let { Timber.i(it) }
     }
+
 
     override fun onCleared() {
         super.onCleared()
