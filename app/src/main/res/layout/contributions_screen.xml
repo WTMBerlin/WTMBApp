@@ -82,7 +82,7 @@
                             style="@style/WtmBerlin.Events.Description"
                             android:drawableBottom="@drawable/events_no_upcoming_events"
                             android:textSize="18sp"
-                            android:text="If you had any questions, accessibility remarks, or other feedback, submit an issue or reach out via Slack to one of our organizer with WTM icon symbol next to the name"/>
+                            android:text="@string/contributions_cta"/>
 
                     <TextView
                             android:id="@+id/link_issues"
@@ -90,7 +90,6 @@
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Item"
                             android:autoLink="web"
-                            android:contentDescription="slack link"
                             android:text="https://github.com/WTMBerlin/WTMBApp/issues"/>
 
                     <TextView
@@ -99,7 +98,6 @@
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Item"
                             android:autoLink="web"
-                            android:contentDescription="slack link"
                             android:text="@string/social_media_link_slack"/>
 
                     <TextView
@@ -107,7 +105,7 @@
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Content"
                             android:drawableBottom="@drawable/ic_favorite_border_black_24dp"
-                            android:text="Thanks to the organizers team, all supporters and community members"/>
+                            android:text="@string/contributions_thanks_you_note"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>

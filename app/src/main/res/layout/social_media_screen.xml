@@ -41,7 +41,7 @@
                             android:id="@+id/social_media_content_meetup"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/WtmBerlin.SocialMedia.Content"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:text="@string/social_media_description_meetup"/>
 
                     <TextView
@@ -72,7 +72,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/material_space"
-                            style="@style/WtmBerlin.SocialMedia.Content"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:text="@string/social_media_description_slack"/>
 
                     <TextView
@@ -80,7 +80,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Link"
-
                             android:drawableEnd="@drawable/social_media_icon_slack"
                             android:autoLink="web"
                             android:contentDescription="slack link"

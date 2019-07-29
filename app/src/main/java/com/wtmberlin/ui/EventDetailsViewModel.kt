@@ -21,6 +21,7 @@ class EventDetailsViewModel(
     val addToCalendar = MutableLiveData<AddToCalendarEvent>()
     val openMaps = MutableLiveData<OpenMapsEvent>()
     val openMeetupPage = MutableLiveData<OpenMeetupPageEvent>()
+    val shareEvent = MutableLiveData<String>()
 
     private val subscriptions = CompositeDisposable()
 
@@ -57,6 +58,12 @@ class EventDetailsViewModel(
     fun onOpenMeetupPageClicked() {
         event.value?.let {
             openMeetupPage.value = OpenMeetupPageEvent(it.meetupUrl)
+        }
+    }
+
+    fun onSharingMeetupClicked() {
+        event.value?.let {
+            shareEvent.value = it.meetupUrl
         }
     }
 

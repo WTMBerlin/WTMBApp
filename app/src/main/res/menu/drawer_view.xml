@@ -19,9 +19,6 @@
                 android:id="@+id/wtm_website"
                 android:title="@string/nav_drawer_community_global_menu_item"/>
         <item
-                android:id="@+id/notes_screen"
-                android:title="@string/nav_drawer_personal_notes_menu_item"/>
-        <item
                 android:id="@+id/study_groups_screen"
                 android:title="@string/nav_drawer_study_groups_menu_item"/>
         <item
@@ -39,5 +36,8 @@
         <item
                 android:id="@+id/contributions_screen"
                 android:title="@string/nav_drawer_contributions_and_feedback_menu_item"/>
+        <item
+                android:id="@+id/notes_screen"
+                android:title="@string/nav_drawer_personal_notes_menu_item"/>
     </group>
 </menu>

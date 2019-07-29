@@ -38,6 +38,7 @@
     <style name="WtmBerlin.Events.Name">
         <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
         <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventName</item>
     </style>
 
@@ -45,7 +46,7 @@
         <item name="android:padding">@dimen/material_space_half</item>
         <item name="android:maxLines">3</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
         <item name="android:textAppearance">@style/WtmBerlin.TextAppearance.EventName</item>
     </style>
 

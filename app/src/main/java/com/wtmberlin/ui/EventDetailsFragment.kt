@@ -8,6 +8,7 @@ import android.provider.CalendarContract.Events
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -15,6 +16,7 @@ import com.wtmberlin.R
 import com.wtmberlin.data.Coordinates
 import com.wtmberlin.databinding.EventDetailsScreenBinding
 import com.wtmberlin.util.observeNotHandled
+import kotlinx.android.synthetic.main.event_details_screen.*
 import kotlinx.android.synthetic.main.event_details_screen.view.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -45,6 +47,8 @@ class EventDetailsFragment : Fragment() {
         viewModel.addToCalendar.observeNotHandled(this) { addEventToCalendar(it) }
         viewModel.openMaps.observeNotHandled(this) { openMaps(it.venueName, it.coordinates) }
         viewModel.openMeetupPage.observeNotHandled(this) { openMeetupPage(it.url) }
+
+        event_name_text.setOnClickListener { shareEvent(eventId) }
 
         view.event_photo.setOnClickListener {
             findNavController().navigate(R.id.notes_screen)
@@ -79,6 +83,24 @@ class EventDetailsFragment : Fragment() {
         intent.data = Uri.parse(url)
 
         startActivity(intent)
+    }
+
+    private fun shareEvent(url: String) {
+        ShareCompat.IntentBuilder
+            .from(activity)
+            .setType("text/plain")
+            .setChooserTitle(url)
+            .setText(url)
+            .startChooser()
+    }
+
+    private fun shareMeetup(url: String) {
+        ShareCompat.IntentBuilder
+            .from(activity)
+            .setType("text/plain")
+            .setChooserTitle(url)
+            .setText(url)
+            .startChooser()
     }
 
 }

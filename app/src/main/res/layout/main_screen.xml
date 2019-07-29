@@ -23,16 +23,47 @@
                 android:background="?attr/colorPrimary"
                 style="@style/DrawerIcon"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-            <TextView
-                    android:id="@+id/rotate_icon"
-                    android:layout_gravity="end"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="@dimen/material_space"
-                    android:importantForAccessibility="no"
-                    android:drawableEnd="@drawable/ic_rotate"
-                    android:contentDescription="zz zz zz ziuuum zz zz ziuum zzzzzzz ziuuuuuuuum zz">
-            </TextView>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_icons"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.55"/>
+
+                <ImageView
+                        android:id="@+id/share_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:importantForAccessibility="yes"
+                        android:tint="@color/black_87"
+                        android:src="@drawable/ic_share_black_24dp"
+                        android:onClick="shareMeetup"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/guideline_icons"
+                        app:layout_constraintEnd_toStartOf="@id/twitter_icon"
+                        android:contentDescription="share meetup link to WTM group">
+                </ImageView>
+
+                <ImageView
+                        android:id="@+id/twitter_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:importantForAccessibility="yes"
+                        android:tint="@color/black_87"
+                        android:src="@drawable/social_media_icon_twitter"
+                        android:onClick="openTwitter"
+                        android:contentDescription="share meetup link to WTM group"
+                        app:layout_constraintStart_toEndOf="@id/share_icon"
+                        app:layout_constraintTop_toTopOf="@id/share_icon"
+                        app:layout_constraintBottom_toBottomOf="@id/share_icon"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
 
         <fragment

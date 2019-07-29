@@ -50,10 +50,12 @@
                             style="@style/WtmBerlin.Events.Name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_share_black_24dp"
+                            android:drawableTint="@color/black_87"
+                            android:drawablePadding="@dimen/material_space"
                             android:layout_marginStart="@dimen/material_space"
                             android:layout_marginTop="@dimen/material_space"
                             android:layout_marginEnd="@dimen/material_space"
-                            android:onClick="@{v -> viewModel.onOpenMeetupPageClicked()}"
                             android:layout_marginBottom="@dimen/material_space_half"
                             android:text="@{viewModel.event.name}"
                             tools:text="Product Development in the Age of Big Data"/>

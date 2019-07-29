@@ -16,7 +16,7 @@
                 android:drawableEnd="@drawable/wtm_mini"
                 style="@style/WtmBerlin.Events.Header"
                 android:textSize="18sp"
-                android:text="Past courses and workshops:"/>
+                android:text="@string/study_groups_header"/>
 
     </com.google.android.material.card.MaterialCardView>
 

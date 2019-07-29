@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ShareCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -23,20 +24,29 @@ class MainActivity : AppCompatActivity() {
 
         toolbar.setupWithNavController(navController, appBarConfiguration)
         nav_view.setupWithNavController(findNavController(R.id.nav_host_fragment))
-
-        rotate_icon.setOnClickListener {
-            it
-                .animate()
-                .rotation(
-                    rotate_icon.rotation + 180.0f
-                )
-        }
     }
 
     fun openMeetup(view: View) {
         val openURL = Intent(Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("https://www.meetup.com/de-DE/women-techmakers-berlin/")
+        openURL.data = Uri.parse(resources.getString(R.string.social_media_link_meetup))
         startActivity(openURL)
     }
+
+    fun openTwitter(view: View) {
+        val openURL = Intent(Intent.ACTION_VIEW)
+        openURL.data = Uri.parse(resources.getString(R.string.social_media_link_twitter))
+        startActivity(openURL)
+    }
+
+    fun shareMeetup(view: View) {
+        ShareCompat.IntentBuilder
+            .from(this)
+            .setType("text/plain")
+            .setChooserTitle(getString(R.string.sharing_meetup_description))
+            .setText(resources.getString(R.string.social_media_link_meetup))
+            .startChooser()
+    }
+
+
 }
 

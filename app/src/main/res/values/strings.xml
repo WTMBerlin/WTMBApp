@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- TODO: add strings to the correct section -->
+    <!-- TODO: add strings to the correct sections -->
     <string name="notes_header">Store personal notes, contact info or questions for the speakers</string>
     <string name="notes_description_hint">Your notes will be displayed here, after you save them with a click on save.
         Keep in mind, this storage is not very persistent!
@@ -18,10 +18,8 @@
         receive from Google and companies that are listed below.
         This is our contribution to making Berlin\'s tech scene diverse and inclusive!
     </string>
-    <string name="collaboratiosn_call_for_action">We are open to collaborations! After reaching out and setting up the collaboration details, we will be usually requesting an info about
-        the company and short speaker\'s biographies for the website - see one of the events to get a better idea. It would be great if you could provide them ahead.
+    <string name="collaboratiosn_call_for_action">We are open to collaborations! Contact Roxy-WTM-organizer via Slack
     </string>
-    <string name="collaborations_screen_contact_person">Contact Roxy-WTM-organizer on slack </string>
 
     <!-- Contributions -->
 
@@ -48,16 +46,17 @@
 
     <!-- Community Local -->
     <string name="community_local_header">About WTM Berlin️</string>
-    <string name="community_local_description_header">WTM Berlin is part of the global \nWomen Techmakers program run by
-        Google.
+    <string name="community_local_description_header">WTM Berlin is part of the global \nWomen Techmakers program \nrun
+        by
+        Google
     </string>
     <string name="community_local_description">
-        At WTM Berlin we are encouraging diversity in tech in Berlin since 2015. Get visibility,
-        networking and resources to make the tech community of Berlin diverse and inclusive!
-        We have different activities: intense coding study groups, workshops or technical topics or social skills as
-        well as inspirational fireside chats. New
-        and existing members are always welcome to all of the events, and all events are always opened for everyone,
-        regardless of your gender/age/race/experience, etc. We follow the Berlin code of conduct for communities:
+        At WTM Berlin we are encouraging diversity in tech in Berlin since 2015. We offer visibility,
+        networking and resources to help you make the tech community of Berlin more diverse and inclusive!
+        Our activities include intense coding study groups, workshops on technical topics and social skills, as
+        well as inspirational fireside chats. New and existing members are always welcome at all events, and all events
+        are always open to everyone,
+        regardless of gender/age/race/experience, etc. We follow the Berlin code of conduct for communities:
         http://berlincodeofconduct.org
     </string>
 
@@ -132,5 +131,13 @@
     </string>
     <string name="accessibility_github">https://github.com/WTMBerlin/WTMBApp/blob/master/ACCESSIBILITY.md</string>
     <string name="stats_screen_header">WTM Berlin in numbers</string>
+    <string name="contributions_cta">If you had any questions, accessibility remarks, or other feedback, submit an issue
+        or reach out via Slack to one of our organizer with WTM icon symbol next to the name
+    </string>
+    <string name="contributions_thanks_you_note">Thanks to the organizers team, all supporters and community members,
+        especially to https://twitter.com/m_jedyny who wrote base base of this app
+    </string>
+    <string name="study_groups_header">Past courses and workshops:</string>
+    <string name="sharing_meetup_description">Women Techmakers Events on Meetup</string>
 
 </resources>
