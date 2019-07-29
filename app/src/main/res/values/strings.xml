@@ -95,21 +95,22 @@
     <string name="nav_drawer_events_menu_item">Events 👥 📅 💻</string>
     <string name="nav_drawer_collaborations_menu_item">Collaboration partners 🏢</string>
     <string name="facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
-    <string name="organizers_info_screen_attendees">We are all unpaid volunteers passionate about supporting the community. Please
+    <string name="organizers_info_screen_attendees">We are all unpaid volunteers supporting a tech community. Please
         respect our time!
-        RVSP responsibly and if you can\'t make it to the event - just update your choice on Meetup.
-        \nThis helps us estimate size of the events for the company, catering and the attendees.
+        RVSP responsibly and if you can\'t make it to the event - just update your choice on Meetup (no need of sending
+        us a private message).
+        \nThis helps us estimate size of the events for the company, catering service and the attendees.
     </string>
     <string name="organizers_info_screen_tutors">If you have a skill to offer, like supporting one of our Study Groups on Android, Go, JavaScript or to give a one-time workshop on the topic of your expertise, reach out via slack</string>
-    <string name="nav_drawer_personal_notes_menu_item">Personal notes 📝</string>
+    <string name="nav_drawer_personal_notes_menu_item">Personal notes 📝 💡</string>
     <string name="nav_drawer_study_groups_menu_item">Study groups 📅 🤖</string>
     <string name="nav_drawer_special_kids_friendly_events_menu_item">Special kids friendly events 🐻</string>
     <string name="nav_drawer_accessibility_menu_tem">Accessibility 🕶 💻️</string>
     <string name="nav_drawer_community_reviews_menu_item">Community reviews 📰</string>
     <string name="nav_drawer_wtm_berlin_organizers_menu_item">WTM Berlin organizers 👥</string>
     <string name="nav_drawer_contributions_and_feedback_menu_item">Contributions and feedback 📩 💡</string>
-    <string name="accessibility_screen_sound_effect">zz zz zz ziuuum zz zz ziuum zzzzzzz meow ziuuuuuuuum zz zz zz zz
-        ziuuum meow meow zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz ziuuumzz zzziuum zzzzzzz ziuuuuuuuum zz
+    <string name="accessibility_screen_sound_effect">zz zz zz ziuuum zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz
+        ziuuum zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz ziuuumzz zzziuum zzzzzzz ziuuuuuuuum zz
     </string>
     <string name="accessibility_content_1">The icon below is a very simple toy. If you open the list of apps on your phone and switch the TalkBack, the default
         accessibility tool for Android apps on, you can explore its hidden functionality.
@@ -130,7 +131,7 @@
         implemented on the image above). Ah, and mind the text-background contrast. \nYou are good to go! For more resources visit:
     </string>
     <string name="accessibility_github">https://github.com/WTMBerlin/WTMBApp/blob/master/ACCESSIBILITY.md</string>
-    <string name="stats_screen_header">WTM Berlin in numbers</string>
+    <string name="stats_screen_header">WTM Berlin in numbers 🔢 📈 🤝</string>
     <string name="contributions_cta">If you had any questions, accessibility remarks, or other feedback, submit an issue
         or reach out via Slack to one of our organizer with WTM icon symbol next to the name
     </string>

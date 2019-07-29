@@ -12,6 +12,7 @@
                android:layout_gravity="center"
                android:layout_marginTop="@dimen/material_space"
                android:contentDescription="@null"
+               android:onClick="closeDrawer"
                android:importantForAccessibility="no"
                android:background="@drawable/events_no_upcoming_events"/>
 </FrameLayout>

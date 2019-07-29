@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
+import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -47,6 +48,8 @@ class MainActivity : AppCompatActivity() {
             .startChooser()
     }
 
-
+    fun closeDrawer(view: View) {
+        drawer_layout.closeDrawer(GravityCompat.START)
+    }
 }
 
