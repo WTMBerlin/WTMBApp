@@ -19,6 +19,9 @@
                 android:id="@+id/wtm_website"
                 android:title="@string/nav_drawer_community_global_menu_item"/>
         <item
+                android:id="@+id/wtm_faq"
+                android:title="@string/faq"/>
+        <item
                 android:id="@+id/study_groups_screen"
                 android:title="@string/nav_drawer_study_groups_menu_item"/>
         <item

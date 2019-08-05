@@ -9,6 +9,7 @@
     <string name="app_name">Women Techmakers Berlin</string>
     <string name="app_name_short">WTM Berlin</string>
     <string name="wtm_website_url">https://www.womentechmakers.com</string>
+    <string name="wtm_faq">https://github.com/WTMBerlin/WTMBApp/blob/master/FAQ.md</string>
 
     <!-- Collaborations -->
     <string name="collaborations_header">Collaboration partners</string>
@@ -140,5 +141,6 @@
     </string>
     <string name="study_groups_header">Past courses and workshops:</string>
     <string name="sharing_meetup_description">Women Techmakers Events on Meetup</string>
+    <string name="faq">FAQ ℹ️💡 ‍ ‍‍</string>
 
 </resources>

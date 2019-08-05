@@ -98,5 +98,9 @@
             android:id="@+id/wtm_website"
             app:action="android.intent.action.VIEW"
             app:data="@string/wtm_website_url"/>
+    <activity
+            android:id="@+id/wtm_faq"
+            app:action="android.intent.action.VIEW"
+            app:data="@string/wtm_faq"/>
 
 </navigation>
