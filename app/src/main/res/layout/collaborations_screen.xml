@@ -46,7 +46,8 @@
                         android:text="@string/collaborations_description"/>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
-                    android:layout_margin="@dimen/material_space"
+                    android:layout_marginEnd="@dimen/material_space"
+                    android:layout_marginStart="@dimen/material_space"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 

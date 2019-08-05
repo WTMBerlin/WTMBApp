@@ -78,7 +78,7 @@
     </string>
     <string name="social_media_link_twitter" translatable="false">https://twitter.com/wtm_berlin</string>
     <string name="social_media_link_slack" translatable="false">https://slack.wtmberlin.com/</string>
-    <string name="social_media_header">Social Media</string>
+    <string name="social_media_header">Social media</string>
     <string name="social_media_description_general">We are active across social media!</string>
     <string name="social_media_description_meetup">You can find all our events on Meetup.</string>
     <string name="social_media_description_slack">
@@ -90,7 +90,7 @@
 
     <!-- Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>
-    <string name="nav_drawer_social_media_menu_item">Social Media 📱</string>
+    <string name="nav_drawer_social_media_menu_item">Social media 📱</string>
     <string name="nav_drawer_community_local_menu_item">About Women Techmakers Berlin ℹ️💡</string>
     <string name="nav_drawer_community_global_menu_item">Global Women Techmakers program 👩 ‍💻</string>
     <string name="nav_drawer_events_menu_item">Events 👥 📅 💻</string>
@@ -141,6 +141,7 @@
     </string>
     <string name="study_groups_header">Past courses and workshops:</string>
     <string name="sharing_meetup_description">Women Techmakers Events on Meetup</string>
-    <string name="faq">FAQ ℹ️💡 ‍ ‍‍</string>
+    <string name="faq">FAQ ℹ️💡👥‍ ‍‍</string>
+    <string name="loading_toast">Loading..</string>
 
 </resources>

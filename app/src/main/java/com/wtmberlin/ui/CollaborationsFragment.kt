@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -45,6 +46,8 @@ class CollaborationsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         collaborations_recycler.adapter = CollaborationsAdapter()
+        Toast.makeText(activity, getString(R.string.loading_toast), Toast.LENGTH_SHORT).show()
+
     }
 }
 
