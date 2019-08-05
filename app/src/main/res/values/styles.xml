@@ -146,6 +146,6 @@
     </style>
 
     <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
-        <item name="color">@color/white</item>
+        <item name="color">@color/black_87</item>
     </style>
 </resources>
