@@ -23,8 +23,10 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(nav_view.menu, drawer_layout)
 
+
         toolbar.setupWithNavController(navController, appBarConfiguration)
         nav_view.setupWithNavController(findNavController(R.id.nav_host_fragment))
+
     }
 
     fun openMeetup(view: View) {
