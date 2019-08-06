@@ -24,6 +24,8 @@ import org.koin.core.parameter.parametersOf
 class EventDetailsFragment : Fragment() {
     private lateinit var eventId: String
     private val viewModel: EventDetailsViewModel by viewModel { parametersOf(eventId) }
+    private val baseUrl = "https://www.meetup.com/de-DE/Women-Techmakers-Berlin/"
+    private val eventsEndpoint = "/events/"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         eventId = EventDetailsFragmentArgs.fromBundle(arguments!!).eventId
@@ -85,22 +87,12 @@ class EventDetailsFragment : Fragment() {
         startActivity(intent)
     }
 
-    private fun shareEvent(url: String) {
+    private fun shareEvent(event: String) {
         ShareCompat.IntentBuilder
             .from(activity)
             .setType("text/plain")
-            .setChooserTitle(url)
-            .setText(url)
+            .setChooserTitle("WTM Berlin Meetup")
+            .setText(baseUrl + eventsEndpoint + event)
             .startChooser()
     }
-
-    private fun shareMeetup(url: String) {
-        ShareCompat.IntentBuilder
-            .from(activity)
-            .setType("text/plain")
-            .setChooserTitle(url)
-            .setText(url)
-            .startChooser()
-    }
-
 }
