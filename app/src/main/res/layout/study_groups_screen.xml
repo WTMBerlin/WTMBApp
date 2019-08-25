@@ -27,7 +27,7 @@
 
         <TextView
                 android:layout_marginVertical="@dimen/material_space_half"
-                android:text="We hope to repeat some of those course formats soon, so keep an eye on our Meetup calendar!"
+                android:text="@string/study_groups_subheader"
                 android:drawableEnd="@drawable/social_media_icon_meetup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,6 +43,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_margin="@dimen/material_space"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                <TextView
+                        android:gravity="center_horizontal"
+                        android:drawableBottom="@drawable/wtm_mini"
+                        android:layout_marginVertical="@dimen/material_space"
+                        android:text="@string/study_groups_upcoming"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                     android:layout_marginTop="@dimen/material_space"
