@@ -17,9 +17,10 @@
     <string name="collaborations_description">As community of volunteers we work with external speakers and
         tutors.\nOur meetups are possible not only thanks to us but also thanks to the wonderful support, that we
         receive from Google and companies that are listed below.
-        This is our contribution to making Berlin\'s tech scene diverse and inclusive!
+        This is our contribution to making Berlin\'s tech scene diverse and inclusive. We are open to collaborations!
     </string>
-    <string name="collaboratiosn_call_for_action">We are open to collaborations! Contact Roxy-WTM-organizer via Slack
+    <string name="collaboratiosn_call_for_action">
+        https://docs.google.com/forms/d/e/1FAIpQLSfzD3oF2gRvNCF2UHpte5zn5zHZOtZ3tkPe6ZJ34jDm7Cd_-Q/viewform?usp=sf_link
     </string>
 
     <!-- Contributions -->
@@ -96,13 +97,7 @@
     <string name="nav_drawer_events_menu_item">Events 👥 📅 💻</string>
     <string name="nav_drawer_collaborations_menu_item">Collaboration partners 🏢</string>
     <string name="facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
-    <string name="organizers_info_screen_attendees">We are all unpaid volunteers supporting a tech community. Please
-        respect our time!
-        RVSP responsibly and if you can\'t make it to the event - just update your choice on Meetup (no need of sending
-        us a private message).
-        \nThis helps us estimate size of the events for the company, catering service and the attendees.
-    </string>
-    <string name="organizers_info_screen_tutors">If you have a skill to offer, like supporting one of our Study Groups on Android, Go, JavaScript or to give a one-time workshop on the topic of your expertise, reach out via slack</string>
+
     <string name="nav_drawer_personal_notes_menu_item">Personal notes 📝 💡</string>
     <string name="nav_drawer_study_groups_menu_item">Study groups 📅 🤖</string>
     <string name="nav_drawer_special_kids_friendly_events_menu_item">Special kids friendly events 🐻</string>

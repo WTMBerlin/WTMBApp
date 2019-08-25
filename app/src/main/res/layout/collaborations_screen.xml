@@ -57,6 +57,7 @@
                         android:layout_height="wrap_content"
                         style="@style/WtmBerlin.SocialMedia.Item"
                         android:padding="8dp"
+                        android:autoLink="web"
                         android:text="@string/collaboratiosn_call_for_action"/>
             </com.google.android.material.card.MaterialCardView>
 

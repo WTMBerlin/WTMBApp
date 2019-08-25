@@ -34,9 +34,6 @@
                 android:id="@+id/accessibility_screen"
                 android:title="@string/nav_drawer_accessibility_menu_tem"/>
         <item
-                android:id="@+id/organizers_screen"
-                android:title="@string/nav_drawer_wtm_berlin_organizers_menu_item"/>
-        <item
                 android:id="@+id/contributions_screen"
                 android:title="@string/nav_drawer_contributions_and_feedback_menu_item"/>
         <item
