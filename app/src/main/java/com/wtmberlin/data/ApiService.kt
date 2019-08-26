@@ -1,10 +1,8 @@
 package com.wtmberlin.data
 
 import com.wtmberlin.meetup.MeetupEvent
-import com.wtmberlin.meetup.MeetupMembers
 import com.wtmberlin.meetup.MeetupService
 import com.wtmberlin.meetup.MeetupVenue
-import io.reactivex.Single
 import com.wtmberlin.util.CoroutinesDispatcherProvider
 import kotlinx.coroutines.withContext
 import org.threeten.bp.Duration
@@ -21,30 +19,24 @@ open class ApiService(
         meetupEventList.map(::meetupEventToWtmEvent)
     }
 
-    fun events2017(): Single<List<WtmEvent>> {
-        return meetupService.events2017().map { it.map(MeetupEvent::toWtmEvent) }
+    suspend fun events2017() = withContext(dispatchers.io) {
+        meetupService.events2017().map(::meetupEventToWtmEvent)
     }
 
-    fun events2018(): Single<List<WtmEvent>> {
-        return meetupService.events2018().map { it.map(MeetupEvent::toWtmEvent) }
+    suspend fun events2018() = withContext(dispatchers.io) {
+        meetupService.events2018().map(::meetupEventToWtmEvent)
     }
 
-    fun events2019(): Single<List<WtmEvent>> {
-        return meetupService.events2019().map { it.map(MeetupEvent::toWtmEvent) }
+    suspend fun events2019() = withContext(dispatchers.io) {
+        meetupService.events2019().map(::meetupEventToWtmEvent)
     }
 
-    fun events2020(): Single<List<WtmEvent>> {
-        return meetupService.events2020().map { it.map(MeetupEvent::toWtmEvent) }
+    suspend fun eventsTotal() = withContext(dispatchers.io) {
+        meetupService.eventsTotal().map(::meetupEventToWtmEvent)
     }
 
-    fun eventsTotal(): Single<List<WtmEvent>> {
-        return meetupService.eventsTotal().map {
-            it.map(MeetupEvent::toWtmEvent)
-        }
-    }
-
-    fun members(): Single<MeetupMembers> {
-        return meetupService.members()
+    suspend fun members() = withContext(dispatchers.io) {
+        meetupService.members()
     }
 
 }

@@ -1,20 +1,18 @@
 package com.wtmberlin.ui
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.meetup.MeetupMembers
-import io.reactivex.android.schedulers.AndroidSchedulers
+import com.wtmberlin.util.CoroutineViewModel
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 
-class StatsViewModel(repository: Repository) : ViewModel() {
+class StatsViewModel(repository: Repository) : CoroutineViewModel() {
     private var _events2017: MutableLiveData<String> = MutableLiveData()
     val events2017: LiveData<String> = _events2017
     private var _events2018: MutableLiveData<String> = MutableLiveData()
@@ -38,37 +36,19 @@ class StatsViewModel(repository: Repository) : ViewModel() {
         _eventsTotal.value = "0"
         _members.value = "0"
 
-        subscriptions.add(
-            repository.events2017()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::onData2017Loaded)
-        )
+        launch {
+            val events2017 = repository.events2017()
+            onData2017Loaded(events2017)
 
-        subscriptions.add(
-            repository.events2018()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::onData2018Loaded)
-        )
-        subscriptions.add(
-            repository.events2019()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::onData2019Loaded)
-        )
-        subscriptions.add(
-            repository.events2020()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::onData2020Loaded)
-        )
-        subscriptions.add(
-            repository.members()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::onDataMembersLoaded)
-        )
+            val events2018 = repository.events2018()
+            onData2018Loaded(events2018)
+
+            val events2019 = repository.events2019()
+            onData2019Loaded(events2019)
+
+            val members = repository.members()
+            onDataMembersLoaded(members)
+        }
 
     }
 
@@ -119,4 +99,5 @@ class StatsViewModel(repository: Repository) : ViewModel() {
         super.onCleared()
         subscriptions.clear()
     }
+
 }

@@ -1,10 +1,13 @@
 package com.wtmberlin.data
 
 import androidx.room.Room
+import com.wtmberlin.util.CoroutinesDispatcherProvider
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val repositoryModule = module {
+    single { CoroutinesDispatcherProvider() }
+
     single {
         ApiService(get(), get())
     }

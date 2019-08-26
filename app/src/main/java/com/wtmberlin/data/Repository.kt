@@ -1,8 +1,5 @@
 package com.wtmberlin.data
 
-import com.wtmberlin.meetup.MeetupMembers
-import io.reactivex.Flowable
-import kotlinx.coroutines.Dispatchers
 import com.wtmberlin.util.CoroutinesDispatcherProvider
 import kotlinx.coroutines.withContext
 
@@ -26,49 +23,44 @@ open class Repository(
         fetchEvents()
     }
 
-    open fun events2017(): Flowable<Result<List<WtmEvent>>> {
-        return apiService.events2017()
-            .map { Result(loading = false, data = it, error = null) }
-            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
-    }
-    open fun events2018(): Flowable<Result<List<WtmEvent>>> {
-        return apiService.events2018()
-            .map { Result(loading = false, data = it, error = null) }
-            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
-    }
-    open fun events2019(): Flowable<Result<List<WtmEvent>>> {
-        return apiService.events2019()
-            .map { Result(loading = false, data = it, error = null) }
-            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
+    suspend fun events2017() = withContext(dispatchers.io) {
+        com.wtmberlin.data.runCatching {
+            Result(loading = false, data = apiService.events2017(), error = null)
+        }
     }
 
-    open fun events2020(): Flowable<Result<List<WtmEvent>>> {
-        return apiService.events2020()
-            .map { Result(loading = false, data = it, error = null) }
-            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
-    }
-    open fun eventsTotal(): Flowable<Result<List<WtmEvent>>> {
-        return apiService.events2019()
-            .map { Result(loading = false, data = it, error = null) }
-            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
-    }
-    open fun members(): Flowable<Result<MeetupMembers>> {
-        return apiService.members()
-            .map { Result(loading = false, data = it, error = null) }
-            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
+    suspend fun events2018() = withContext(dispatchers.io) {
+        com.wtmberlin.data.runCatching {
+            Result(loading = false, data = apiService.events2018(), error = null)
+        }
     }
 
-    suspend fun refreshEvents() = withContext(Dispatchers.IO) {
+    suspend fun events2019() = withContext(dispatchers.io) {
+        com.wtmberlin.data.runCatching {
+            Result(loading = false, data = apiService.events2019(), error = null)
+        }
+    }
+
+    suspend fun eventsTotal() = withContext(dispatchers.io) {
+        com.wtmberlin.data.runCatching {
+            Result(loading = false, data = apiService.events2019(), error = null)
+        }
+    }
+
+    suspend fun members() = withContext(dispatchers.io) {
+        com.wtmberlin.data.runCatching {
+            Result(loading = false, data = apiService.members(), error = null)
+        }
+    }
+
+    suspend fun refreshEvents() = withContext(dispatchers.io) {
         fetchEvents()
     }
 
-    private suspend fun fetchEvents(): Result<List<WtmEvent>> {
-        return try {
-            updateDb()
-            val fetchEvents = fetchEventsFromDb()
-            Result(false, fetchEvents, null)
-        } catch (e: Exception) {
-            Result(false, null, e)
+
+    private suspend fun fetchEvents() = withContext(dispatchers.io) {
+        com.wtmberlin.data.runCatching {
+            Result(loading = false, data = fetchEventsFromDb(), error = null)
         }
     }
 
@@ -84,9 +76,7 @@ open class Repository(
         Result(loading = true, data = database.wtmEventDAO().getById(eventId), error = null)
     }
 
-    private fun toVenueName(event: WtmEvent) = VenueName(
-        name = event.venue?.name ?: ""
-    )
+    private fun toVenueName(event: WtmEvent) = VenueName(name = event.venue?.name ?: "")
 }
 
 data class VenueName(val name: String = "")

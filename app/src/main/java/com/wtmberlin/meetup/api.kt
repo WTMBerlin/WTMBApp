@@ -1,6 +1,5 @@
 package com.wtmberlin.meetup
 
-import io.reactivex.Single
 import retrofit2.http.GET
 
 interface MeetupService {
@@ -8,22 +7,19 @@ interface MeetupService {
     suspend fun events(): List<MeetupEvent>
 
     @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&no_later_than=2018-01-01T00:00:00.000&no_earlier_than=2017-01-01T00:00:00.000&page=200&status=past")
-    fun events2017(): Single<List<MeetupEvent>>
+    suspend fun events2017(): List<MeetupEvent>
 
     @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&no_later_than=2019-01-01T00:00:00.000&no_earlier_than=2018-01-01T00:00:00.000&page=200&status=past")
-    fun events2018(): Single<List<MeetupEvent>>
+    suspend fun events2018(): List<MeetupEvent>
 
-    @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&no_later_than=2020-01-01T00:00:00.000&&no_earlier_than=2019-01-01T00:00:00.000&page=200&status=past")
-    fun events2019(): Single<List<MeetupEvent>>
-
-    @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&no_later_than=2021-01-01T00:00:00.000&&no_earlier_than=2020-01-01T00:00:00.000&page=200&status=past")
-    fun events2020(): Single<List<MeetupEvent>>
+    @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&no_earlier_than=2019-01-01T00:00:00.000&page=200&status=past")
+    suspend fun events2019(): List<MeetupEvent>
 
     @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&page=200&status=past")
-    fun eventsTotal(): Single<List<MeetupEvent>>
+    suspend fun eventsTotal(): List<MeetupEvent>
 
     @GET("https://api.meetup.com/women-techmakers-berlin?&sign=true&photo-host=public&only=members")
-    fun members(): Single<MeetupMembers>
+    suspend fun members(): MeetupMembers
 
 }
 

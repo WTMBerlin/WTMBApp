@@ -21,7 +21,7 @@ class EventDetailsViewModel(
     val addToCalendar = MutableLiveData<AddToCalendarEvent>()
     val openMaps = MutableLiveData<OpenMapsEvent>()
     val openMeetupPage = MutableLiveData<OpenMeetupPageEvent>()
-    val shareEvent = MutableLiveData<String>()
+    private val shareEvent = MutableLiveData<String>()
 
     init {
         launch {
