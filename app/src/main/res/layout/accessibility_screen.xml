@@ -53,7 +53,7 @@
                 <TextView
                         android:id="@+id/kids_screen_toy"
                         android:background="@drawable/ic_rotate"
-                        android:backgroundTint="@color/wtmGreenDark"
+                        android:backgroundTint="@color/primaryVariant"
                         android:contentDescription="@string/accessibility_screen_sound_effect"
                         android:rotation="56"
                         android:layout_width="200dp"
