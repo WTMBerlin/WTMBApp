@@ -1,7 +1,6 @@
 package com.wtmberlin
 
 import android.app.Application
-import androidx.appcompat.app.AppCompatDelegate
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.wtmberlin.data.repositoryModule
 import com.wtmberlin.meetup.meetupModule
