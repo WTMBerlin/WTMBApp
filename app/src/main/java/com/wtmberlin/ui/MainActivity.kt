@@ -1,10 +1,12 @@
 package com.wtmberlin.ui
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ShareCompat
 import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
@@ -18,6 +20,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
+        val isDarkModeEnabled = AppPreferences.darkTheme
+        if (isDarkModeEnabled) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+        else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
         setContentView(R.layout.main_screen)
 
         val navController = findNavController(R.id.nav_host_fragment)
@@ -52,6 +61,26 @@ class MainActivity : AppCompatActivity() {
 
     fun closeDrawer(view: View) {
         drawer_layout.closeDrawer(GravityCompat.START)
+    }
+
+    fun enableDarkMode(view: View) {
+        AppPreferences.darkTheme = true
+        restartApplication()
+    }
+
+    fun disableDarkMode(view: View) {
+        AppPreferences.darkTheme = false
+        restartApplication()
+    }
+
+    private fun restartApplication() {
+        val packageManager: PackageManager = packageManager
+        val intent =
+            packageManager.getLaunchIntentForPackage(packageName)
+        intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        startActivity(intent)
+        System.exit(0)
     }
 }
 
