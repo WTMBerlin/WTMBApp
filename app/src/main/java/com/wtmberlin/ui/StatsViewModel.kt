@@ -21,6 +21,8 @@ class StatsViewModel(repository: Repository) : ViewModel() {
     val events2018: LiveData<String> = _events2018
     private var _events2019: MutableLiveData<String> = MutableLiveData()
     val events2019: LiveData<String> = _events2019
+    private var _events2020: MutableLiveData<String> = MutableLiveData()
+    val events2020: LiveData<String> = _events2020
     private var _eventsTotal: MutableLiveData<String> = MutableLiveData()
     val eventsTotal: LiveData<String> = _eventsTotal
     private var _members: MutableLiveData<String> = MutableLiveData()
@@ -32,6 +34,7 @@ class StatsViewModel(repository: Repository) : ViewModel() {
         _events2017.value = "0"
         _events2018.value = "0"
         _events2019.value = "0"
+        _events2020.value = "0"
         _eventsTotal.value = "0"
         _members.value = "0"
 
@@ -54,8 +57,12 @@ class StatsViewModel(repository: Repository) : ViewModel() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::onData2019Loaded)
         )
-
-
+        subscriptions.add(
+            repository.events2020()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(this::onData2020Loaded)
+        )
         subscriptions.add(
             repository.members()
                 .subscribeOn(Schedulers.io())
@@ -87,6 +94,14 @@ class StatsViewModel(repository: Repository) : ViewModel() {
         result.data?.let {
             val eventCount = result.data.size
             _events2019.value = eventCount.toString()
+            _eventsTotal.value = (_eventsTotal.value!!.toInt() + eventCount).toString()
+        }
+        result.error?.let { Timber.i(it) }
+    }
+    private fun onData2020Loaded(result: Result<List<WtmEvent>>) {
+        result.data?.let {
+            val eventCount = result.data.size
+            _events2020.value = eventCount.toString()
             _eventsTotal.value = (_eventsTotal.value!!.toInt() + eventCount).toString()
         }
         result.error?.let { Timber.i(it) }

@@ -58,7 +58,7 @@
                             android:id="@+id/events_2017_text"
                             android:layout_width="0dp"
                             android:layout_weight="1"
-                            android:gravity="center"
+                            android:gravity="center_vertical"
                             android:layout_height="wrap_content"
                             android:text="Events in 2017:"/>
 
@@ -92,7 +92,7 @@
                             android:id="@+id/events_2018_text"
                             android:layout_width="0dp"
                             android:layout_weight="1"
-                            android:gravity="center"
+                            android:gravity="center_vertical"
                             android:layout_height="wrap_content"
                             android:text="Events in 2018:"/>
 
@@ -128,7 +128,7 @@
                             android:id="@+id/events_2019_text"
                             android:layout_width="0dp"
                             android:layout_weight="1"
-                            android:gravity="center"
+                            android:gravity="center_vertical"
                             android:layout_height="wrap_content"
                             android:text="Events in 2019:"/>
 
@@ -143,12 +143,47 @@
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/events_2020"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/events_2019"
+                    android:layout_margin="@dimen/material_space"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                    <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
+                            android:id="@+id/events_2020_text"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content"
+                            android:text="Events in 2020:"/>
+
+
+                    <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
+                            android:id="@+id/events_count_2020"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.events2020}"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                     android:id="@+id/events_total"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/events_2019"
+                    app:layout_constraintTop_toBottomOf="@id/events_2020"
                     android:layout_margin="@dimen/material_space"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent">
@@ -164,7 +199,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:gravity="center_vertical"
                             android:text="Events total:"/>
 
                     <TextView
@@ -199,7 +234,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:gravity="center_vertical"
                             android:text="Members:"/>
 
                     <TextView
