@@ -51,7 +51,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableEnd="@drawable/ic_share_black_24dp"
-                            android:drawableTint="@color/black_87"
+                            android:drawableTint="@color/divider"
                             android:drawablePadding="@dimen/material_space"
                             android:layout_marginStart="@dimen/material_space"
                             android:layout_marginTop="@dimen/material_space"
@@ -180,7 +180,7 @@
                             android:layout_marginStart="@dimen/material_space_half"
                             android:layout_marginTop="@dimen/material_space_half"
                             android:layout_marginEnd="@dimen/material_space_half"
-                            android:background="@color/wtmGreyDark"/>
+                            android:background="@color/onBackground"/>
 
                     <TextView
                             android:layout_width="match_parent"

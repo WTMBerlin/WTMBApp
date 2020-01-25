@@ -38,7 +38,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:importantForAccessibility="yes"
-                        android:tint="@color/black_87"
+                        android:tint="@color/divider"
                         android:src="@drawable/ic_share_black_24dp"
                         android:onClick="shareMeetup"
                         app:layout_constraintHorizontal_chainStyle="spread"
@@ -54,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:importantForAccessibility="yes"
-                        android:tint="@color/black_87"
+                        android:tint="@color/divider"
                         android:src="@drawable/social_media_icon_twitter"
                         android:onClick="openTwitter"
                         android:contentDescription="share meetup link to WTM group"
@@ -83,7 +83,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
-            app:itemTextColor="@color/black_87"
+            app:itemTextColor="@color/divider"
             app:headerLayout="@layout/nav_header"
             app:menu="@menu/drawer_view"/>
 </androidx.drawerlayout.widget.DrawerLayout>

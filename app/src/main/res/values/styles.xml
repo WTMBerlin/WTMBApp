@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/wtmGreenLight</item>
-        <item name="colorPrimaryDark">@color/wtmGreenDark</item>
-        <item name="colorAccent">@color/wtmBlueLight</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryVariant</item>
+        <item name="colorAccent">@color/secondary</item>
         <item name="drawerArrowStyle">@style/DrawerIcon</item>
     </style>
 
@@ -75,7 +75,7 @@
 
     <style name="WtmBerlin.SocialMedia.Item">
         <item name="android:textSize">@dimen/readable_text_size</item>
-        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textColor">@color/divider</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
         <item name="android:paddingStart">@dimen/material_space</item>
         <item name="android:paddingEnd">@dimen/material_space</item>
@@ -86,7 +86,7 @@
     </style>
     <style name="WtmBerlin.SocialMedia.Content">
         <item name="android:textSize">@dimen/readable_text_size</item>
-        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textColor">@color/divider</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
         <item name="android:paddingStart">@dimen/material_space</item>
         <item name="android:paddingEnd">@dimen/material_space</item>
@@ -100,7 +100,7 @@
         <item name="android:textSize">@dimen/readable_text_size</item>
         <item name="android:paddingStart">@dimen/material_space</item>
         <item name="android:paddingEnd">@dimen/material_space</item>
-        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textColor">@color/divider</item>
         <item name="android:minHeight">@dimen/material_single_line_with_icon_list_height</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:drawablePadding">@dimen/material_space_double</item>
@@ -113,39 +113,39 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:textColor">@color/black_54</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="WtmBerlin.TextAppearance.EventName">
         <item name="android:textSize">17sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textColor">@color/divider</item>
     </style>
 
     <style name="WtmBerlin.TextAppearance.ListPrimary">
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textColor">@color/divider</item>
     </style>
 
     <style name="WtmBerlin.TextAppearance.NoUpcoming">
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textColor">@color/black_54</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="colorPrimary">@color/wtmGreenLight</item>
-        <item name="colorPrimaryDark">@color/wtmGreenDark</item>
-        <item name="colorAccent">@color/wtmBlueLight</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryVariant</item>
+        <item name="colorAccent">@color/secondary</item>
         <item name="drawerArrowStyle">@style/DrawerIcon</item>
     </style>
 
     <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
-        <item name="color">@color/black_87</item>
+        <item name="color">@color/divider</item>
     </style>
 </resources>

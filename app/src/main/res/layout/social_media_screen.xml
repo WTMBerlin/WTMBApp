@@ -218,7 +218,7 @@
                             android:id="@+id/community_reviews_click"
                             android:text="Click to see how to contribute to this app!"
                             android:layout_width="match_parent"
-                            android:textColor="@color/wtmGreenDark"
+                            android:textColor="@color/primaryVariant"
                             android:layout_marginBottom="@dimen/material_space_half"
                             android:gravity="center"
                             android:layout_gravity="center"
@@ -247,7 +247,7 @@
                     <TextView
                             android:layout_margin="@dimen/material_space"
                             android:background="@drawable/ic_share_black_24dp"
-                            android:backgroundTint="@color/wtmGreyDark"
+                            android:backgroundTint="@color/onBackground"
                             android:layout_width="48dp"
                             android:layout_height="48dp"/>
 

@@ -55,10 +55,10 @@ class EventsFragment : Fragment(), EventsAdapter.Callbacks {
 
         swipe_refresh.setOnRefreshListener { viewModel.refreshEvents() }
         swipe_refresh.setColorSchemeResources(
-            R.color.wtmBlueDark,
-            R.color.wtmBlueLight,
-            R.color.wtmGreenLight,
-            R.color.wtmGreenLight
+            R.color.secondaryVariant,
+            R.color.secondary,
+            R.color.primary,
+            R.color.primary
         )
 
         viewModel.displayEventDetails.observeNotHandled(this) { startEventDetailsScreen(it.eventId) }
