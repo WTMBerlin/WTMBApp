@@ -13,8 +13,11 @@ interface MeetupService {
     @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&no_later_than=2019-01-01T00:00:00.000&no_earlier_than=2018-01-01T00:00:00.000&page=200&status=past")
     fun events2018(): Single<List<MeetupEvent>>
 
-    @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&no_earlier_than=2019-01-01T00:00:00.000&page=200&status=past")
+    @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&no_later_than=2020-01-01T00:00:00.000&&no_earlier_than=2019-01-01T00:00:00.000&page=200&status=past")
     fun events2019(): Single<List<MeetupEvent>>
+
+    @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&no_later_than=2021-01-01T00:00:00.000&&no_earlier_than=2020-01-01T00:00:00.000&page=200&status=past")
+    fun events2020(): Single<List<MeetupEvent>>
 
     @GET("https://api.meetup.com/women-techmakers-berlin/events?&sign=true&photo-host=public&page=200&status=past")
     fun eventsTotal(): Single<List<MeetupEvent>>

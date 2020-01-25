@@ -24,6 +24,10 @@ open class ApiService(private val meetupService: MeetupService) {
         return meetupService.events2019().map { it.map(MeetupEvent::toWtmEvent) }
     }
 
+    fun events2020(): Single<List<WtmEvent>> {
+        return meetupService.events2020().map { it.map(MeetupEvent::toWtmEvent) }
+    }
+
     fun eventsTotal(): Single<List<WtmEvent>> {
         return meetupService.eventsTotal().map {
             it.map(MeetupEvent::toWtmEvent) }

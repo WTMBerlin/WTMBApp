@@ -42,6 +42,12 @@ open class Repository(private val apiService: ApiService, private val database: 
             .map { Result(loading = false, data = it, error = null) }
             .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
     }
+
+    open fun events2020(): Flowable<Result<List<WtmEvent>>> {
+        return apiService.events2020()
+            .map { Result(loading = false, data = it, error = null) }
+            .onErrorReturn { Result(loading = false, data = null, error = it) }.toFlowable()
+    }
     open fun eventsTotal(): Flowable<Result<List<WtmEvent>>> {
         return apiService.events2019()
             .map { Result(loading = false, data = it, error = null) }
