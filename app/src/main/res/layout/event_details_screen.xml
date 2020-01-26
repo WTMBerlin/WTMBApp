@@ -49,7 +49,7 @@
                             android:id="@+id/event_name_text"
                             style="@style/WtmBerlin.Events.Name"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:drawableEnd="@drawable/ic_share_black_24dp"
                             android:drawableTint="@color/divider"
                             android:drawablePadding="@dimen/material_space"

@@ -45,20 +45,7 @@
                             android:text="@string/accessibility_content_1"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                    android:layout_gravity="center"
-                    android:layout_margin="@dimen/material_space"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                <TextView
-                        android:id="@+id/kids_screen_toy"
-                        android:background="@drawable/ic_rotate"
-                        android:backgroundTint="@color/primaryVariant"
-                        android:contentDescription="@string/accessibility_screen_sound_effect"
-                        android:rotation="56"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"/>
-            </com.google.android.material.card.MaterialCardView>
+
 
             <com.google.android.material.card.MaterialCardView
                     android:layout_margin="@dimen/material_space"

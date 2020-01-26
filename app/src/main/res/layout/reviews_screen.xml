@@ -10,7 +10,7 @@
 
         <TextView
                 android:gravity="center"
-                android:text="Community members and organizers sharing their experience with WTMB"
+                android:text="@string/reviews_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/wtm_mini"
@@ -39,7 +39,7 @@
                         android:layout_height="wrap_content">
 
                     <TextView
-                            android:text="Maria's blog post of switching from a non-tech background to a JavaScript developer after attending JS Crash Course. In the following year Maria stayed in the community and even organized the next edition! "
+                            android:text="@string/reviews_maria"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Content"/>
@@ -50,8 +50,8 @@
                             style="@style/WtmBerlin.SocialMedia.Link"
                             android:drawableEnd="@drawable/ic_text"
                             android:autoLink="web"
-                            android:contentDescription="Maria's blog post on the Women Techmakers blog"
-                            android:text="http://wtmberlin.com/blog/Maria-story"/>
+                            android:contentDescription="@string/reviews_maria_content_description"
+                            android:text="@string/reviews_maria_weblink"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -66,7 +66,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                     <TextView
-                            android:text="Eli, Software Engineer, JavaScript CrashCourse graduate"
+                            android:text="@string/reviews_ely"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Content"/>
@@ -77,8 +77,8 @@
                             style="@style/WtmBerlin.SocialMedia.Link"
                             android:drawableEnd="@drawable/ic_text"
                             android:autoLink="web"
-                            android:contentDescription="Ely's blog post on the Women Techmakers blog"
-                            android:text="http://wtmberlin.com/blog/my-experience-at-js-crash-course"/>
+                            android:contentDescription="@string/reviews_ely_content_description"
+                            android:text="@string/reviews_ely_weblink"/>
 
 
                 </LinearLayout>
@@ -95,7 +95,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                     <TextView
-                            android:text="Lara currently works as Android Engineer. This interview was recorded shortly after her graduation from Android Study Jam. Lara supported our community by co-organising Flutter Study Jam on mobile development!"
+                            android:text="@string/reviews_lara"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Content"/>
@@ -107,8 +107,8 @@
                             android:drawableEnd="@drawable/ic_video"
                             android:autoLink="web"
                             android:maxLines="1"
-                            android:contentDescription="Lara's interview at the International Women Day, YouTube"
-                            android:text="https://youtu.be/1RmKXYcL20I?t=114"/>
+                            android:contentDescription="@string/reviews_lara_content_description"
+                            android:text="@string/reviews_lara_weblink"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -124,7 +124,7 @@
                         android:layout_height="wrap_content">
 
                     <TextView
-                            android:text="Natalie, Women Techmakers Berlin lead about the origins."
+                            android:text="@string/reviews_natalie"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Item"/>
@@ -136,8 +136,8 @@
                             android:drawableEnd="@drawable/ic_video"
                             android:autoLink="web"
                             android:ellipsize="end"
-                            android:contentDescription="Natalie's interview at the International Women Day, YouTube"
-                            android:text="https://youtu.be/1RmKXYcL20I?t=3"/>
+                            android:contentDescription="@string/reviews_natalie_content_description"
+                            android:text="@string/reviews_natalie_weblink"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -153,7 +153,7 @@
                         android:layout_height="wrap_content">
 
                     <TextView
-                            android:text="Miquel supported our community as an organizer and a tutor during the Android, Kotlin and Flutter study Jams, always sharing his enthusiasm on community work."
+                            android:text="@string/reviews_miquel"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/WtmBerlin.SocialMedia.Item"/>
@@ -164,8 +164,8 @@
                             style="@style/WtmBerlin.SocialMedia.Link"
                             android:drawableEnd="@drawable/ic_video"
                             android:autoLink="web"
-                            android:contentDescription="Miquel's interview at the International Women Day, YouTube"
-                            android:text="https://youtu.be/1RmKXYcL20I?t=95"/>
+                            android:contentDescription="@string/reviews_miquel_content_description"
+                            android:text="@string/reviews_miquel_weblink"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -175,13 +175,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 <TextView
-                        android:id="@+id/rotate_icon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/WtmBerlin.SocialMedia.Item"
                         android:drawableBottom="@drawable/wtm_mini"
-                        android:onClick="rotate"
-                        android:text="Anna is a Jr Android Developer and WTM organizer, co-wrote this app."
+                        android:text="@string/reviews_anna"
+                        android:layout_marginBottom="@dimen/material_space_half"
+                        android:layout_marginTop="@dimen/material_space_half"/>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                    android:layout_margin="@dimen/material_space_half"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:drawableBottom="@drawable/wtm_mini"
+                        android:text="@string/reviews_cta"
                         android:layout_marginBottom="@dimen/material_space_half"
                         android:layout_marginTop="@dimen/material_space_half"/>
             </androidx.cardview.widget.CardView>

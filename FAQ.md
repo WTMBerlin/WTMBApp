@@ -19,7 +19,7 @@ We are also partnering with conferences and workshops, in Berlin and around the 
 ### Is there a Code of Conduct 📜 🤔
 Yes! We follow [Berlin's Code of Conduct](http://berlincodeofconduct.org)
 The short version would be "let's be respectful and excellent to each other". 
-If there is a need, feel free to contact organizers at the event or via Slack - reach out to Roxy-WTM-organizer.
+If there is a need, feel free to contact organizers at the event or via Slack - reach out to Anna.
 
 ### How often do you organise events? 📅 🎉
 As often as we can! Community work, especially over a few years (and we are active since 2015!) sums up but we always try to maintain a regular cycle of meetups. 

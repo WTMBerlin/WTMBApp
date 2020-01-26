@@ -19,13 +19,13 @@
         receive from Google and companies that are listed below.
         This is our contribution to making Berlin\'s tech scene diverse and inclusive!
     </string>
-    <string name="collaboratiosn_call_for_action">We are open to collaborations! Contact Roxy-WTM-organizer via Slack
+    <string name="collaboratiosn_call_for_action">We are open to collaborations! Contact Anna Morgiel via Slack
     </string>
 
     <!-- Contributions -->
 
     <string name="community_contributions_info">
-        This App was created as learning project that would benefit the community WTM Berlin 💻.
+        This App was created as learning project that would benefit the community Women Techmakers Berlin 💻.
         \nIt is a great place to start an adventure of becoming an open source contributor! Check the issues list in our
         GitHub Repository, some are labeled with `good first issue`.
         Support us by adding a pull request 🚀
@@ -80,13 +80,16 @@
     <string name="social_media_link_slack" translatable="false">https://slack.wtmberlin.com/</string>
     <string name="social_media_header">Social media</string>
     <string name="social_media_description_general">We are active across social media!</string>
-    <string name="social_media_description_meetup">You can find all our events on Meetup.</string>
+    <string name="social_media_description_meetup">You will find all our events on Meetup, open to RVSP:</string>
     <string name="social_media_description_slack">
-        Slack is one of the main points of our Community - it is a good place to connect with other members,
-        offer positions in #jobs that reach more diverse audience or announce free/discounted diversity tickets.
+        Slack is one of the most successful initiatives of our community - it has become a platform to connect with other members,
+        to spread the word about interesting open positions in #jobs channel and to offer your skills in the channel #CVs.
+        The channels #general and #random make it possible to reach out to more diverse Tech audience, for example to announce free/discounted diversity tickets or
+        scholarships.
+
     </string>
-    <string name="social_media_description_twitter">Tweet with #womentechmakers or tag @wtm_berlin</string>
-    <string name="social_media_description_facebook">Facebook page and group</string>
+    <string name="social_media_description_twitter">Tweet with #womentechmakers or tag us: @wtm_berlin</string>
+    <string name="social_media_description_facebook">There is a Facebook page and group but we primarily encourage to sing in to our Slack.</string>
 
     <!-- Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>
@@ -98,8 +101,7 @@
     <string name="facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
     <string name="organizers_info_screen_attendees">We are all unpaid volunteers supporting a tech community. Please
         respect our time!
-        RVSP responsibly and if you can\'t make it to the event - just update your choice on Meetup (no need of sending
-        us a private message).
+        RVSP responsibly and if you can\'t make it to the event - just update your choice on Meetup.
         \nThis helps us estimate size of the events for the company, catering service and the attendees.
     </string>
     <string name="organizers_info_screen_tutors">If you have a skill to offer, like supporting one of our Study Groups on Android, Go, JavaScript or to give a one-time workshop on the topic of your expertise, reach out via slack</string>
@@ -113,7 +115,8 @@
     <string name="accessibility_screen_sound_effect">zz zz zz ziuuum zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz
         ziuuum zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz ziuuumzz zzziuum zzzzzzz ziuuuuuuuum zz
     </string>
-    <string name="accessibility_content_1">The icon below is a very simple toy. If you open the list of apps on your phone and switch the TalkBack, the default
+    // TODO:
+    <string name="accessibility_content_1">TODO TODO TODO The icon below is a very simple toy. If you open the list of apps on your phone and switch the TalkBack, the default
         accessibility tool for Android apps on, you can explore its hidden functionality.
         \nTalkBack usage: tap twice to confirm and scroll sideways to navigate. Thanks to this exercise you can understand for your own this everyday experience for some
         people.
@@ -143,5 +146,23 @@
     <string name="sharing_meetup_description">Women Techmakers Events on Meetup</string>
     <string name="faq">FAQ ℹ️💡👥‍ ‍‍</string>
     <string name="loading_toast">Loading..</string>
+    <string name="reviews_cta">You can write a blogpost that will be displayed on our website. Submit it in the MARKDOWN format via a Pull Request to our GitHub repository!</string>
+    <string name="reviews_anna">Anna is a Jr Android Developer and WTM organizer, co-wrote this app.</string>
+    <string name="reviews_miquel">Miquel supported our community as an organizer and a tutor during the Android, Kotlin and Flutter study Jams, always sharing his enthusiasm on community work.</string>
+    <string name="reviews_miquel_weblink">https://youtu.be/1RmKXYcL20I?t=95</string>
+    <string name="reviews_miquel_content_description">Miquel\'s interview at the International Women Day, YouTube</string>
+    <string name="reviews_natalie_content_description">Natalie\'s interview at the International Women Day, YouTube</string>
+    <string name="reviews_natalie_weblink">https://youtu.be/1RmKXYcL20I?t=3</string>
+    <string name="reviews_natalie">Natalie, Women Techmakers Berlin lead about the origins of our WTM Chapter.</string>
+    <string name="reviews_lara_weblink">https://youtu.be/1RmKXYcL20I?t=114</string>
+    <string name="reviews_lara_content_description">Lara\'s interview at the International Women Day, YouTube</string>
+    <string name="reviews_lara">Lara, Android Engineer and Google Developer Expert on Flutter. This interview was recorded shortly after her graduation from Android Study Jam. Lara supported our community by co-organising Flutter Study Jam on mobile development!</string>
+    <string name="reviews_ely_weblink">http://wtmberlin.com/blog/my-experience-at-js-crash-course</string>
+    <string name="reviews_ely_content_description">Ely\'s blog post on the Women Techmakers blog</string>
+    <string name="reviews_ely">Ely, Software Engineer, JavaScript CrashCourse graduate</string>
+    <string name="reviews_maria_weblink">http://wtmberlin.com/blog/Maria-story</string>
+    <string name="reviews_maria_content_description">Maria\'s blog post on the Women Techmakers blog</string>
+    <string name="reviews_maria">Maria\'s blog post of switching from a chemist background to a JavaScript developer after attending JS Crash Course. In the following year not only Maria stayed in the community, she contributed by organized the next JSCC edition!</string>
+    <string name="reviews_title">Community members and organizers sharing their experience with WTM Berlin</string>
 
 </resources>
