@@ -40,6 +40,7 @@
                     android:src="@drawable/wtm_natalie"
                     android:text="@string/organizers_info_screen_attendees" />
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,6 +88,28 @@
                     android:text="Feel free to reach out via Slack to:" />
             </androidx.cardview.widget.CardView>
 
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space_half">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="end"
+                    android:src="@drawable/wtm_anna"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
+
+                <TextView
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Anna" />
+            </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -131,26 +154,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space_half">
-
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:layout_gravity="end"
-                    android:src="@drawable/wtm_anna"
-                    app:civ_border_color="#FF000000"
-                    app:civ_border_width="2dp" />
-
-                <TextView
-                    style="@style/WtmBerlin.SocialMedia.Item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Anna" />
-            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </ScrollView>

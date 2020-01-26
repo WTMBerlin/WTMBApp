@@ -20,21 +20,6 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
-            android:layout_marginTop="@dimen/material_space_half"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <TextView
-                android:layout_marginVertical="@dimen/material_space_half"
-                android:text="We hope to repeat some of those course formats soon, so keep an eye on our Meetup calendar!"
-                android:drawableEnd="@drawable/social_media_icon_meetup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="openMeetup"
-                style="@style/WtmBerlin.SocialMedia.Content"/>
-    </com.google.android.material.card.MaterialCardView>
-
     <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -45,7 +30,37 @@
                 android:orientation="vertical">
 
             <com.google.android.material.card.MaterialCardView
-                    android:layout_marginTop="@dimen/material_space"
+                android:layout_marginTop="@dimen/material_space_half"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginVertical="@dimen/material_space_half"
+                    android:text="We hope to repeat some of those course formats soon, so keep an eye on our Meetup calendar!"
+                    android:drawableEnd="@drawable/social_media_icon_meetup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="openMeetup"
+                    style="@style/WtmBerlin.SocialMedia.Content"/>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_marginTop="@dimen/material_space_half"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginVertical="@dimen/material_space_half"
+                    android:text="Our events are free of charge and possible thanks to a collaboration of volunteers and companies."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/material_space_half"
+                    android:onClick="openMeetup"
+                    style="@style/WtmBerlin.SocialMedia"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                     android:layout_marginHorizontal="@dimen/material_space_half"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent">
@@ -83,6 +98,13 @@
                             android:autoLink="web"
                             android:layout_marginBottom="@dimen/material_space"
                             android:contentDescription="wtm github"
+                            android:text="https://github.com/WTMBerlin/jscc-welcomeguide"/>
+
+                    <TextView
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:layout_marginBottom="@dimen/material_space"
+                            android:contentDescription="wtm github"
                             android:text="https://github.com/WTMBerlin/jscc2018"/>
 
                     <TextView
@@ -92,6 +114,14 @@
                             android:layout_height="wrap_content"/>
 
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:layout_marginBottom="@dimen/material_space_half"
+                        android:contentDescription="Join our slack "
+                        android:text="wtmberlin.slack.com, #js-crash-course channel"/>
+
+                    <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableEnd="@drawable/ic_text"
@@ -99,6 +129,7 @@
                             android:drawableBottom="@drawable/wtm_icon_mini"
                             android:contentDescription="Maria's post on our blog"
                             android:text="http://wtmberlin.com/blog/Maria-story"/>
+
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

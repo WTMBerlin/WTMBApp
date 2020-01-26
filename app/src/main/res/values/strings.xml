@@ -112,27 +112,11 @@
     <string name="nav_drawer_community_reviews_menu_item">Community reviews 📰</string>
     <string name="nav_drawer_wtm_berlin_organizers_menu_item">WTM Berlin organizers 👥</string>
     <string name="nav_drawer_contributions_and_feedback_menu_item">Contributions and feedback 📩 💡</string>
-    <string name="accessibility_screen_sound_effect">zz zz zz ziuuum zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz
-        ziuuum zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz ziuuumzz zzziuum zzzzzzz ziuuuuuuuum zz
-    </string>
-    // TODO:
-    <string name="accessibility_content_1">TODO TODO TODO The icon below is a very simple toy. If you open the list of apps on your phone and switch the TalkBack, the default
-        accessibility tool for Android apps on, you can explore its hidden functionality.
-        \nTalkBack usage: tap twice to confirm and scroll sideways to navigate. Thanks to this exercise you can understand for your own this everyday experience for some
-        people.
-    </string>
-    <string name="accessibility_content_2">TalkBack should be preinstalled, if not it is available in app store for
-        free. Explore the app in the TalkBack mode and click on the image above will result with an additional
-        functionality. We should be aware of needs of people with impairments, so I highly encourage you to try TalkBack
-        out and to support accessibility features in your project. Adding basic accessibility to an Android app is very
-        easy (for example for web development it is a bit more tricky but still quite straightforward), so after reading
-        an article or watching some videos you can contribute to open source projects, hopefully with more meaningful descriptions than implemented
-        on this one!
-    </string>
-    <string name="accessibility_content_3">Start with adding meaningful labels for custom designed elements (back arrow, check-marks, x)
-        and set importantForAccessibility=no for design elements will not be useful for the user in the screen reader user mode. Provide
-        content descriptions for pictures and elements (ideally descriptions that are more meaningful that the one
-        implemented on the image above). Ah, and mind the text-background contrast. \nYou are good to go! For more resources visit:
+
+    <string name="accessibility_content_1">Phones with Android Operating System support many accessibility features by default. It is up to developers to add the rest - luckily there are some build-it tools that support them:</string>
+    <string name="accessibility_content_2">Accessibility Scanner can be used for captioning the screen ratio contrast and detection of missing labels</string>
+    <string name="accessibility_content_3">For adding some basic accessibility support to the project, follow a few simple steps. Begin with adding meaningful labels for custom designed elements (back arrows, check-marks) and provide content descriptions for the remaining drawables and images.
+        Then set importantForAccessibility=no for design elements that will not be useful for the user in the screen reader user mode and shall therefore be excluded. To learn more visit:
     </string>
     <string name="accessibility_github">https://github.com/WTMBerlin/WTMBApp/blob/master/ACCESSIBILITY.md</string>
     <string name="stats_screen_header">WTM Berlin in numbers 🔢 📈 🤝</string>
@@ -140,7 +124,7 @@
         or reach out via Slack to one of our organizer with WTM icon symbol next to the name
     </string>
     <string name="contributions_thanks_you_note">Thanks to the organizers team, all supporters and community members,
-        especially to https://twitter.com/m_jedyny who wrote base base of this app
+        especially to https://twitter.com/m_jedyny who wrote base of this app, and contributors @victorvari, @mariobodemann, @alisene, @https://twitter.com/louis993546
     </string>
     <string name="study_groups_header">Past courses and workshops:</string>
     <string name="sharing_meetup_description">Women Techmakers Events on Meetup</string>
