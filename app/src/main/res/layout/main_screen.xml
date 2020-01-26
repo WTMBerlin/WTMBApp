@@ -33,7 +33,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.65"/>
+                    app:layout_constraintGuide_percent="0.55"/>
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline_icons_start"
@@ -78,7 +78,7 @@
                     android:layout_height="match_parent"
                     android:contentDescription="share meetup link to WTM group"
                     android:importantForAccessibility="yes"
-                    android:onClick="enableDarkMode"
+                    android:onClick="shareMeetup"
                     android:src="@drawable/ic_share_black_24dp"
                     android:tint="@color/onBackground"
                     app:layout_constraintTop_toTopOf="parent"
@@ -91,9 +91,9 @@
                     android:id="@+id/twitter_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="share meetup link to WTM group"
+                    android:contentDescription="open Twitter"
                     android:importantForAccessibility="yes"
-                    android:onClick="disableDarkMode"
+                    android:onClick="openTwitter"
                     android:src="@drawable/social_media_icon_twitter"
                     android:tint="@color/onBackground"
                     app:layout_constraintTop_toTopOf="parent"

@@ -14,6 +14,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.wtmberlin.R
 import kotlinx.android.synthetic.main.main_screen.*
+import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity() {
@@ -59,9 +60,11 @@ class MainActivity : AppCompatActivity() {
             .startChooser()
     }
 
-    fun closeDrawer(view: View) {
-        drawer_layout.closeDrawer(GravityCompat.START)
-    }
+    fun openReviews(view: View) = Intent(this, ReviewsFragment::class.java).apply { startActivity(this) }
+
+
+    fun closeDrawer(view: View) = drawer_layout.closeDrawer(GravityCompat.START)
+
 
     fun enableDarkMode(view: View) {
         AppPreferences.darkTheme = true
@@ -74,13 +77,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun restartApplication() {
-        val packageManager: PackageManager = packageManager
-        val intent =
-            packageManager.getLaunchIntentForPackage(packageName)
+        val intent = packageManager.getLaunchIntentForPackage(packageName)
         intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
-        System.exit(0)
+        exitProcess(0)
     }
 }
 
