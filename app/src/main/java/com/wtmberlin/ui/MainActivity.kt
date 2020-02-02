@@ -90,5 +90,12 @@ class MainActivity : AppCompatActivity() {
         openURL.data = Uri.parse(resources.getString(R.string.social_media_link_github_contributions))
         startActivity(openURL)
     }
+
+    fun rotate(kidsToy: View) {
+        kidsToy.animate()
+            .rotation(
+                kidsToy.rotation + 130.0f
+            )
+    }
 }
 
