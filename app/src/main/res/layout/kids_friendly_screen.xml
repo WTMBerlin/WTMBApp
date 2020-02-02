@@ -45,27 +45,11 @@
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
-                            android:layout_gravity="center"
-                            android:layout_margin="@dimen/material_space"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content">
-                        <TextView
-                                android:id="@+id/kids_screen_toy"
-                                android:background="@drawable/ic_rotate"
-                                android:backgroundTint="@color/primaryVariant"
-                                android:contentDescription="zz zz zz ziuuum zz zz ziuum zzzzzzz meow ziuuuuuuuum zz zz zz zz ziuuum meow meow zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz ziuuumzz zzziuum zzzzzzz ziuuuuuuuum zz meow meow meow"
-                                android:rotation="56"
-                                android:layout_width="200dp"
-                                android:layout_height="200dp"/>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
                             android:layout_margin="@dimen/material_space"
                             android:layout_height="wrap_content"
                             android:layout_width="match_parent">
 
                         <LinearLayout
-                                android:layout_marginVertical="@dimen/material_space"
                                 android:orientation="vertical"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">

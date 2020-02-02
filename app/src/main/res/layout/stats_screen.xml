@@ -5,14 +5,15 @@
 
     <data>
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
 
-        <import type="com.wtmberlin.util.BindingKt"/>
+        <import type="com.wtmberlin.util.BindingKt" />
 
         <variable
                 name="viewModel"
-                type="com.wtmberlin.ui.StatsViewModel"/>
+                type="com.wtmberlin.ui.StatsViewModel" />
     </data>
+
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -24,191 +25,199 @@
 
             <com.google.android.material.card.MaterialCardView
                     android:id="@+id/stats_header"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
                 <TextView
                         android:id="@+id/stats_header_tv"
+                        style="@style/WtmBerlin.Events.Header"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:drawableEnd="@drawable/wtm_mini"
-                        style="@style/WtmBerlin.Events.Header"
-                        android:text="@string/stats_screen_header"/>
+                        android:gravity="center"
+                        android:text="@string/stats_screen_header" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                     android:id="@+id/events_2017"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/stats_header"
-                    android:layout_margin="@dimen/material_space"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                    android:layout_margin="@dimen/material_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/stats_header">
+
                 <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_2017_text"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:layout_height="wrap_content"
-                            android:text="Events in 2017:"/>
+                            android:text="Events in 2017:" />
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_2017_count"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@{viewModel.events2017}"
-                            tools:text=" events total count"/>
+                            tools:text=" events total count" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                     android:id="@+id/events_2018"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/events_2017"
-                    android:layout_margin="@dimen/material_space"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                    android:layout_margin="@dimen/material_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/events_2017">
+
                 <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_2018_text"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:layout_height="wrap_content"
-                            android:text="Events in 2018:"/>
+                            android:text="Events in 2018:" />
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_count_2018"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@{viewModel.events2018}"
-                            tools:text=" events total count"/>
+                            tools:text=" events total count" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                     android:id="@+id/events_2019"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/events_2018"
-                    android:layout_margin="@dimen/material_space"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                    android:layout_margin="@dimen/material_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/events_2018">
+
                 <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_2019_text"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:layout_height="wrap_content"
-                            android:text="Events in 2019:"/>
+                            android:text="Events in 2019:" />
 
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_count_2019"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.events2019}"/>
+                            android:layout_weight="1"
+                            android:text="@{viewModel.events2019}" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                     android:id="@+id/events_2020"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/events_2019"
-                    android:layout_margin="@dimen/material_space"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                    android:layout_margin="@dimen/material_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/events_2019">
+
                 <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_2020_text"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:layout_height="wrap_content"
-                            android:text="Events in 2020:"/>
+                            android:text="Events in 2020:" />
 
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_count_2020"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.events2020}"/>
+                            android:layout_weight="1"
+                            android:text="@{viewModel.events2020}" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                     android:id="@+id/events_total"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/events_2020"
-                    android:layout_margin="@dimen/material_space"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                    android:layout_margin="@dimen/material_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/events_2020">
+
                 <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_total_text"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:text="Events total:"/>
+                            android:text="Events total:" />
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/events_total_count"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.eventsTotal}"/>
+                            android:layout_weight="1"
+                            android:text="@{viewModel.eventsTotal}" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -216,34 +225,35 @@
 
             <com.google.android.material.card.MaterialCardView
                     android:id="@+id/members"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/events_total"
-                    android:layout_margin="@dimen/material_space"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                    android:layout_margin="@dimen/material_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/events_total">
+
                 <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/members_text"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:text="Members:"/>
+                            android:text="Members:" />
 
                     <TextView
-                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:id="@+id/members_count"
+                            style="@style/WtmBerlin.SocialMedia.Item"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.members}"/>
+                            android:layout_weight="1"
+                            android:text="@{viewModel.members}" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -251,55 +261,58 @@
 
             <com.google.android.material.card.MaterialCardView
                     android:id="@+id/website_header"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/members"
-                    android:layout_margin="@dimen/material_space"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/material_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/members">
+
                 <TextView
                         android:id="@+id/link_wtmb"
+                        style="@style/WtmBerlin.SocialMedia.Link"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/WtmBerlin.SocialMedia.Link"
-                        android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
                         android:autoLink="web"
                         android:contentDescription="facebook link"
-                        android:text="http://wtmberlin.com/"/>
+                        android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
+                        android:text="http://wtmberlin.com/" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/meetup_header"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/material_space"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/meetup_header">
+
                 <TextView
-                        android:background="@drawable/wtm_mini"
                         android:layout_width="100dp"
-                        android:layout_height="100dp"/>
+                        android:layout_height="100dp"
+                        android:background="@drawable/wtm_mini" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                     android:id="@+id/meetup_header"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/website_header"
-                    android:layout_margin="@dimen/material_space"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/material_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/website_header">
+
                 <TextView
                         android:id="@+id/link_meetup"
+                        style="@style/WtmBerlin.SocialMedia.Link"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/WtmBerlin.SocialMedia.Link"
-                        android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
                         android:autoLink="web"
                         android:contentDescription="facebook link"
-                        android:text="@string/social_media_link_meetup"/>
+                        android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
+                        android:text="@string/social_media_link_meetup" />
             </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -63,6 +63,8 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:paddingTop="@dimen/material_space_half"
+                    android:paddingBottom="@dimen/material_space_half"
+                    android:onClick="openReviews"
                     style="@style/WtmBerlin.Events.Name"
                     android:layout_height="wrap_content"/>
 
