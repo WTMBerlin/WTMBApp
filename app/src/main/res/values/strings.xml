@@ -113,7 +113,7 @@
     <string name="nav_drawer_wtm_berlin_organizers_menu_item">WTM Berlin organizers 👥</string>
     <string name="nav_drawer_contributions_and_feedback_menu_item">Contributions and feedback 📩 💡</string>
 
-    <string name="accessibility_content_1">Phones with Android Operating System support many accessibility features by default. It is up to developers to add the rest - luckily there are some build-it tools that support them:</string>
+    <string name="accessibility_content_1">Smartphones with Android Operating System support many accessibility features by default. It is up to developers to add the rest - there are some build-it tools that are ease to use and communicate with other teams:</string>
     <string name="accessibility_content_2">Accessibility Scanner can be used for captioning the screen ratio contrast and detection of missing labels</string>
     <string name="accessibility_content_3">For adding some basic accessibility support to the project, follow a few simple steps. Begin with adding meaningful labels for custom designed elements (back arrows, check-marks) and provide content descriptions for the remaining drawables and images.
         Then set importantForAccessibility=no for design elements that will not be useful for the user in the screen reader user mode and shall therefore be excluded. To learn more visit:

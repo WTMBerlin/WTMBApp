@@ -19,9 +19,6 @@
             android:name="com.wtmberlin.ui.EventDetailsFragment"
             android:label="@string/events_header"
             tools:layout="@layout/event_details_screen">
-        <action
-                android:id="@+id/start_notes_screen"
-                app:destination="@+id/notes_screen"/>
         <argument
                 android:name="eventId"
                 app:argType="string"/>
@@ -37,7 +34,11 @@
             android:id="@+id/community_info_screen"
             android:name="com.wtmberlin.ui.CommunityLocalFragment"
             android:label="@string/nav_drawer_community_local_menu_item"
-            tools:layout="@layout/community_local_screen"/>
+            tools:layout="@layout/community_local_screen">
+        <action
+            android:id="@+id/start_reviews_screen"
+            app:destination="@+id/reviews_screen"/>
+    </fragment>
 
     <fragment
             android:id="@+id/reviews_screen"

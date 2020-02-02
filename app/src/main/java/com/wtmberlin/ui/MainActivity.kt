@@ -1,7 +1,6 @@
 package com.wtmberlin.ui
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -10,6 +9,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ShareCompat
 import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.wtmberlin.R
@@ -24,8 +25,7 @@ class MainActivity : AppCompatActivity() {
         val isDarkModeEnabled = AppPreferences.darkTheme
         if (isDarkModeEnabled) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }
-        else {
+        } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
         setContentView(R.layout.main_screen)
@@ -60,8 +60,9 @@ class MainActivity : AppCompatActivity() {
             .startChooser()
     }
 
-    fun openReviews(view: View) = Intent(this, ReviewsFragment::class.java).apply { startActivity(this) }
-
+    fun openReviews(view: View) {
+        view.findNavController().navigate(CommunityLocalFragmentDirections.startReviewsScreen())
+    }
 
     fun closeDrawer(view: View) = drawer_layout.closeDrawer(GravityCompat.START)
 

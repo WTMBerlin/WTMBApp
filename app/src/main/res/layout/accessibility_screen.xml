@@ -1,100 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <com.google.android.material.card.MaterialCardView
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <TextView
-                android:gravity="center"
-                android:id="@+id/contributions_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/wtm_mini"
-                style="@style/WtmBerlin.Events.Header"
-                android:text="Start contributing to open source by adding accessibility on Android"/>
+            android:id="@+id/contributions_header"
+            style="@style/WtmBerlin.Events.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/wtm_mini"
+            android:gravity="center"
+            android:text="Start contributing to open source by adding accessibility on Android" />
     </com.google.android.material.card.MaterialCardView>
 
 
     <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-            <com.google.android.material.card.MaterialCardView
-                    android:layout_margin="@dimen/material_space"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                android:layout_margin="@dimen/material_space">
 
                 <LinearLayout
-                        android:layout_margin="@dimen/material_space"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/material_space"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <TextView
-                            style="@style/WtmBerlin.Events.Description"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/accessibility_content_1"/>
+                        style="@style/WtmBerlin.Events.Description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/accessibility_content_1" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-
             <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_margin="@dimen/material_space"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
 
                     <TextView
-                            style="@style/WtmBerlin.Events.Description"
-                            android:id="@+id/kids_screen_toy_info"
-                            android:layout_width="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/material_space"
-                            android:importantForAccessibility="yes"
-                            android:text="@string/accessibility_content_2"/>
+                        android:id="@+id/kids_screen_toy_info"
+                        style="@style/WtmBerlin.Events.Description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/material_space"
+                        android:importantForAccessibility="yes"
+                        android:text="@string/accessibility_content_2" />
+
+                    <ImageView
+                        android:layout_width="@dimen/touchable_target"
+                        android:layout_height="@dimen/touchable_target"
+                        android:src="@drawable/acc_scanner" />
+                </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-
             <com.google.android.material.card.MaterialCardView
-                    android:layout_margin="@dimen/material_space"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
-
-                    <TextView
-                            style="@style/WtmBerlin.Events.Description"
-                            android:layout_width="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/material_space"
-                            android:importantForAccessibility="yes"
-                            android:text="@string/accessibility_content_3"/>
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <com.google.android.material.card.MaterialCardView
-                    android:layout_margin="@dimen/material_space"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space">
 
                 <TextView
-                        style="@style/WtmBerlin.Events.Description"
-                        android:id="@+id/accessibility_resources"
-                        android:layout_width="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/material_space"
-                        android:autoLink="web"
-                        android:text="@string/accessibility_github"
-                        android:importantForAccessibility="yes"/>
+                    style="@style/WtmBerlin.Events.Description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/material_space"
+                    android:importantForAccessibility="yes"
+                    android:text="@string/accessibility_content_3" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space">
+
+                <TextView
+                    android:id="@+id/accessibility_resources"
+                    style="@style/WtmBerlin.Events.Description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="@dimen/material_space"
+                    android:autoLink="web"
+                    android:importantForAccessibility="yes"
+                    android:text="@string/accessibility_github" />
 
             </com.google.android.material.card.MaterialCardView>
 
