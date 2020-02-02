@@ -13,6 +13,9 @@
             android:id="@+id/collaborations_screen"
             android:title="@string/nav_drawer_collaborations_menu_item" />
         <item
+            android:id="@+id/topic_proposals_screen"
+            android:title="@string/nav_drawer_speakers_menu_item" />
+        <item
             android:id="@+id/social_media_screen"
             android:title="@string/nav_drawer_social_media_menu_item" />
         <item

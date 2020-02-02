@@ -1,81 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <com.google.android.material.card.MaterialCardView
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <TextView
-                android:id="@+id/community_local_description_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/WtmBerlin.Events.Header"
-                android:drawableEnd="@drawable/wtm_mini"
-                android:text="@string/community_local_description_header"
-                android:textSize="16sp"/>
+            android:id="@+id/community_local_description_header"
+            style="@style/WtmBerlin.Events.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/wtm_mini"
+            android:text="@string/community_local_description_header"
+            android:textSize="16sp" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-            android:layout_margin="@dimen/material_space"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/material_space"
+        android:layout_marginTop="@dimen/material_space"
+        android:layout_marginEnd="@dimen/material_space">
+
         <TextView
-                android:id="@+id/link_wtmb"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/WtmBerlin.SocialMedia.Item"
-                android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
-                android:autoLink="web"
-                android:contentDescription="facebook link"
-                android:text="http://wtmberlin.com/"/>
+            android:id="@+id/link_wtmb"
+            style="@style/WtmBerlin.SocialMedia.Item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:contentDescription="wtm berlin link"
+            android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
+            android:text="http://wtmberlin.com/" />
     </com.google.android.material.card.MaterialCardView>
 
     <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <com.google.android.material.card.MaterialCardView
-                    android:layout_marginHorizontal="@dimen/material_space"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/material_space"
+                android:layout_marginTop="@dimen/material_space_half"
+                android:layout_marginEnd="@dimen/material_space">
 
                 <TextView
-                        android:id="@+id/description_community"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="@style/WtmBerlin.SocialMedia.Item"
-                        android:padding="16dp"
-                        android:text="@string/community_local_description"
-                        android:textSize="16sp"/>
+                    android:id="@+id/link_FAQ"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:contentDescription="Frequently asked questions"
+                    android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
+                    android:text="https://github.com/WTMBerlin/WTMBApp/blob/master/FAQ.md" />
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/material_space"
+                android:layout_marginTop="@dimen/material_space_half"
+                android:layout_marginEnd="@dimen/material_space">
+
+                <TextView
+                    android:id="@+id/description_community"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/community_local_description"
+                    android:textSize="16sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/material_space">
+
+                <TextView
                     android:id="@+id/community_reviews_click"
-                    android:layout_gravity="center_vertical"
-                    android:text="Click to see community reviews!"
+                    style="@style/WtmBerlin.Events.Name"
                     android:layout_width="match_parent"
-                    android:textColor="@color/primaryVariant"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:gravity="center"
-                    android:textSize="18sp"
+                    android:onClick="openReviews"
                     android:paddingTop="@dimen/material_space_half"
                     android:paddingBottom="@dimen/material_space_half"
-                    android:onClick="openReviews"
-                    style="@style/WtmBerlin.Events.Name"
-                    android:layout_height="wrap_content"/>
+                    android:text="Click to see community reviews!"
+                    android:textColor="@color/primaryVariant"
+                    android:textSize="18sp" />
+            </com.google.android.material.card.MaterialCardView>
 
-                <ImageView
-                        android:layout_marginTop="-70dp"
-                        android:id="@+id/logo"
-                        android:src="@color/divider"
-                        android:contentDescription="@null"
-                        android:importantForAccessibility="no"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-70dp"
+                android:contentDescription="@null"
+                android:importantForAccessibility="no"
+                android:src="@color/divider" />
         </LinearLayout>
     </ScrollView>
 

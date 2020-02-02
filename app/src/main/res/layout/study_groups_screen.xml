@@ -107,6 +107,12 @@
                             android:layout_marginBottom="@dimen/material_space"
                             android:contentDescription="wtm github"
                             android:text="https://github.com/WTMBerlin/jscc2018"/>
+                    <TextView
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:layout_marginBottom="@dimen/material_space"
+                            android:contentDescription="movie about the JavaScript Crash Course"
+                            android:text="https://drive.google.com/file/d/1IBje3Uw4SFlWeIpYgEzGhrr1L73qPOEY/view?usp=sharing"/>
 
                     <TextView
                             android:text="Maria, JS graduate and current tutor about the course"

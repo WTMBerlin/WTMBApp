@@ -14,13 +14,13 @@
     <!-- Collaborations -->
     <string name="collaborations_header">Collaboration partners</string>
     <string name="collaborations_header_description">To support us, ping one of the organizers on our slack</string>
-    <string name="collaborations_description">As community of volunteers we work with external speakers and
+    <string name="collaborations_description">As a community of volunteers we work with external speakers and
         tutors.\nOur meetups are possible not only thanks to us but also thanks to the wonderful support, that we
         receive from Google and companies that are listed below.
-        This is our contribution to making Berlin\'s tech scene diverse and inclusive!
+        We contribute to making Berlin\'s tech scene diverse and inclusive!
     </string>
-    <string name="collaborations_call_for_action">We are open to collaborations!\nContact Anna via Slack
-    </string>
+    <string name="collaborations_call_for_action1">We are open to collaborations! \nPlease reach out via form:</string>
+    <string name="collaborations_call_for_action2">https://forms.gle/cTCyXDFQPEcs85BGA</string>
 
     <!-- Contributions -->
 
@@ -83,7 +83,7 @@
     <string name="social_media_description_general">We are active across social media!</string>
     <string name="social_media_description_meetup">You will find all our events on Meetup, open to RVSP:</string>
     <string name="social_media_description_slack">
-        Slack is one of the most successful initiatives of our community - it has become a platform to connect with other members,
+        A private Slack group is one of the most successful initiatives of our community - it has become a platform to connect with other members,
         to spread the word about interesting open positions in #jobs channel and to offer your skills in the channel #CVs.
         The channels #general and #random make it possible to reach out to more diverse Tech audience, for example to announce free/discounted diversity tickets or
         scholarships.
@@ -99,6 +99,7 @@
     <string name="nav_drawer_community_global_menu_item">Global Women Techmakers program 👩 ‍💻</string>
     <string name="nav_drawer_events_menu_item">Events 👥 📅 💻</string>
     <string name="nav_drawer_collaborations_menu_item">Collaboration partners 🏢</string>
+    <string name="nav_drawer_speakers_menu_item">Speakers 👥 </string>
     <string name="facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
     <string name="organizers_info_screen_attendees">We are all unpaid volunteers supporting a tech community. Please
         respect our time!
