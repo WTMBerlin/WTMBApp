@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/contributions_header"
+            style="@style/WtmBerlin.Events.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/wtm_mini"
+            android:gravity="center"
+            android:text="Speakers" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/material_space"
+                android:layout_marginTop="@dimen/material_space"
+                android:layout_marginEnd="@dimen/material_space">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/WtmBerlin.SocialMedia.Content"
+                        android:layout_width="match_parent"
+                        android:textStyle="bold"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/material_space_half"
+                        android:text="Would you like to give a talk at one of our events or volunteer to support a panel on the area of your expertise? Submit a topic proposal via:" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/material_space"
+                android:layout_marginTop="@dimen/material_space_half"
+                android:layout_marginEnd="@dimen/material_space">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/material_space"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/kids_screen_toy_info"
+                        style="@style/WtmBerlin.Events.Description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:autoLink="web"
+                        android:importantForAccessibility="yes"
+                        android:drawableBottom="@drawable/wtm_mini"
+                        android:text="https://forms.gle/c1peNU52NuzsT5bT8" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
+

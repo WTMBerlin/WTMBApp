@@ -1,96 +1,113 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
-        <import type="com.wtmberlin.util.BindingKt"/>
+        <import type="com.wtmberlin.util.BindingKt" />
 
         <variable
-                name="viewModel"
-                type="com.wtmberlin.ui.CollaborationsViewModel"/>
+            name="viewModel"
+            type="com.wtmberlin.ui.CollaborationsViewModel" />
     </data>
 
-    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-            <com.google.android.material.card.MaterialCardView
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
-                        android:id="@+id/collaborations_content_header"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/wtm_mini"
-                        style="@style/WtmBerlin.Events.Header"
-                        android:gravity="center"
-                        android:text="@string/collaborations_header"/>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                    android:layout_margin="@dimen/material_space"
+                    android:id="@+id/collaborations_content_header"
+                    style="@style/WtmBerlin.Events.Header"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/wtm_mini"
+                    android:gravity="center"
+                    android:text="@string/collaborations_header" />
 
-                <TextView
-                        android:id="@+id/collaborations_content"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/WtmBerlin.SocialMedia.Item"
-                        android:padding="8dp"
-                        android:text="@string/collaborations_description"/>
             </com.google.android.material.card.MaterialCardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space_half">
-
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:layout_gravity="end"
-                    android:src="@drawable/wtm_anna"
-                    app:civ_border_color="#FF000000"
-                    app:civ_border_width="2dp" />
+                android:layout_marginStart="@dimen/material_space"
+                android:layout_marginTop="@dimen/material_space_half"
+                android:layout_marginEnd="@dimen/material_space">
 
                 <TextView
                     style="@style/WtmBerlin.SocialMedia.Item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:text="@string/collaborations_call_for_action" />
+                    android:text="@string/collaborations_call_for_action1" />
             </androidx.cardview.widget.CardView>
 
-            <FrameLayout
-                    android:layout_marginStart="@dimen/material_space"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/material_space"
+                android:layout_marginTop="@dimen/material_space_half"
+                android:layout_marginEnd="@dimen/material_space">
+
+                <TextView
+                    android:id="@+id/collaborations_cta"
+                    style="@style/WtmBerlin.SocialMedia.Item"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:autoLink="web"
+                    android:text="@string/collaborations_call_for_action2" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/material_space"
+                android:layout_marginTop="@dimen/material_space_half"
+                android:layout_marginEnd="@dimen/material_space">
+
+                <TextView
+                    android:id="@+id/collaborations_content"
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/collaborations_description" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/material_space">
+
                 <ImageView
-                        android:background="@drawable/events_no_upcoming_events"
-                        android:layout_width="wrap_content"
-                        android:layout_gravity="end"
-                        android:contentDescription="@null"
-                        android:importantForAccessibility="no"
-                        android:layout_height="wrap_content"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@drawable/events_no_upcoming_events"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/collaborations_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:clipToPadding="false"
-                        android:layout_gravity="end"
-                        android:background="@null"
-                        android:paddingTop="@dimen/material_space_half"
-                        android:paddingBottom="@dimen/material_space_half"
-                        app:data="@{viewModel.adapterItems}"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        tools:listitem="@layout/collaborations_event_item"/>
+                    android:id="@+id/collaborations_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:background="@null"
+                    android:clipToPadding="false"
+                    android:paddingTop="@dimen/material_space_half"
+                    android:paddingBottom="@dimen/material_space_half"
+                    app:data="@{viewModel.adapterItems}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/collaborations_event_item" />
             </FrameLayout>
         </LinearLayout>
     </ScrollView>

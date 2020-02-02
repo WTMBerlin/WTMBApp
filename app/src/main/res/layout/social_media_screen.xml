@@ -45,6 +45,7 @@
                         style="@style/WtmBerlin.SocialMedia.Item"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:padding="@dimen/material_space_quarter"
                         android:text="@string/social_media_description_meetup" />
 
                     <TextView
@@ -116,6 +117,7 @@
                         style="@style/WtmBerlin.SocialMedia.Content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/material_space_half"
                         android:contentDescription="twitter link"
                         android:text="@string/social_media_description_twitter" />
 
@@ -148,6 +150,7 @@
                         style="@style/WtmBerlin.SocialMedia.Item"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/material_space_half"
                         android:drawableEnd="@drawable/social_media_icon_facebook"
                         android:text="@string/social_media_description_facebook" />
 
