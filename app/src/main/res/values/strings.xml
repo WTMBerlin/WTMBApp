@@ -19,7 +19,7 @@
         receive from Google and companies that are listed below.
         This is our contribution to making Berlin\'s tech scene diverse and inclusive!
     </string>
-    <string name="collaboratiosn_call_for_action">We are open to collaborations! Contact Anna Morgiel via Slack
+    <string name="collaborations_call_for_action">We are open to collaborations!\nContact Anna via Slack
     </string>
 
     <!-- Contributions -->
@@ -76,6 +76,7 @@
     </string>
     <string name="social_media_link_facebook" translatable="false">https://b-m.facebook.com/WomenTechmakersBerlinPage/
     </string>
+    <string name="social_media_link_github_contributions" translatable="false">https://github.com/WTMBerlin/wtmberlin.github.io/tree/master/_posts</string>
     <string name="social_media_link_twitter" translatable="false">https://twitter.com/wtm_berlin</string>
     <string name="social_media_link_slack" translatable="false">https://slack.wtmberlin.com/</string>
     <string name="social_media_header">Social media</string>
