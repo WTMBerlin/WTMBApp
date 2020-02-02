@@ -1,260 +1,275 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <com.google.android.material.card.MaterialCardView
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <TextView
-                android:gravity="center"
-                android:id="@+id/social_media_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/wtm_mini"
-                style="@style/WtmBerlin.Events.Header"
-                android:text="@string/social_media_description_general"/>
+            android:id="@+id/social_media_content"
+            style="@style/WtmBerlin.Events.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/wtm_mini"
+            android:gravity="center"
+            android:text="@string/social_media_description_general" />
     </com.google.android.material.card.MaterialCardView>
 
-    <ScrollView
-            android:layout_marginBottom="@dimen/material_space"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/material_space">
 
         <LinearLayout
-                android:layout_marginTop="@dimen/material_space"
-                android:layout_marginBottom="@dimen/material_space"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/material_space"
+            android:layout_marginBottom="@dimen/material_space"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_margin="@dimen/material_space_half">
 
-            <androidx.cardview.widget.CardView
-                    android:layout_margin="@dimen/material_space_half"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
                 <LinearLayout
-                        android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/social_media_content_meetup"
+                        style="@style/WtmBerlin.SocialMedia.Item"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:text="@string/social_media_description_meetup" />
 
                     <TextView
-                            android:id="@+id/social_media_content_meetup"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/WtmBerlin.SocialMedia.Item"
-                            android:text="@string/social_media_description_meetup"/>
-
-                    <TextView
-                            android:id="@+id/link_meetup"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/material_space_half"
-                            style="@style/WtmBerlin.SocialMedia.Content"
-                            android:drawableEnd="@drawable/social_media_icon_meetup"
-                            android:textIsSelectable="true"
-                            android:autoLink="web"
-                            android:contentDescription="meetup link"
-                            android:text="@string/social_media_link_meetup"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                    android:layout_margin="@dimen/material_space_half"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                <LinearLayout
-                        android:orientation="vertical"
-                        android:gravity="top"
+                        android:id="@+id/link_meetup"
+                        style="@style/WtmBerlin.SocialMedia.Content"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    <TextView
-                            android:id="@+id/social_media_content_slack"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/material_space"
-                            style="@style/WtmBerlin.SocialMedia.Item"
-                            android:text="@string/social_media_description_slack"/>
-
-                    <TextView
-                            android:id="@+id/link_slack"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/WtmBerlin.SocialMedia.Link"
-                            android:drawableEnd="@drawable/social_media_icon_slack"
-                            android:autoLink="web"
-                            android:contentDescription="slack link"
-                            android:textIsSelectable="true"
-                            android:text="@string/social_media_link_slack"/>
-
-                    <ImageView
-                            android:layout_gravity="center"
-                            android:src="@drawable/qr_wtm_slack"
-                            android:contentDescription="QR code to slack"
-                            android:layout_width="160dp"
-                            android:layout_height="160dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                    android:layout_margin="@dimen/material_space_half"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    <TextView
-                            android:id="@+id/social_media_content_twitter"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:contentDescription="twitter link"
-                            style="@style/WtmBerlin.SocialMedia.Content"
-                            android:text="@string/social_media_description_twitter"/>
-
-                    <TextView
-                            android:id="@+id/link_twitter"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/WtmBerlin.SocialMedia.Content"
-                            android:drawableEnd="@drawable/social_media_icon_twitter"
-                            android:autoLink="web"
-                            android:contentDescription="twitter link"
-                            android:textIsSelectable="true"
-                            android:text="@string/social_media_link_twitter"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                    android:layout_margin="@dimen/material_space_half"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                <LinearLayout
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/material_space_half"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    <TextView
-                            android:id="@+id/social_media_content_facebook"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/WtmBerlin.SocialMedia.Item"
-                            android:drawableEnd="@drawable/social_media_icon_facebook"
-                            android:text="@string/social_media_description_facebook"/>
-
-                    <TextView
-                            android:id="@+id/link_facebook"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/WtmBerlin.SocialMedia.Content"
-                            android:autoLink="web"
-                            android:textIsSelectable="true"
-                            android:contentDescription="facebook link"
-                            android:text="@string/social_media_link_facebook"/>
-
-                    <TextView
-                            android:id="@+id/link_facebook2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/WtmBerlin.SocialMedia.Content"
-                            android:autoLink="web"
-                            android:textIsSelectable="true"
-                            android:contentDescription="facebook group"
-                            android:text="@string/facebook_group"/>
-
+                        android:autoLink="web"
+                        android:contentDescription="meetup link"
+                        android:drawableEnd="@drawable/social_media_icon_meetup"
+                        android:text="@string/social_media_link_meetup"
+                        android:textIsSelectable="true" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
-                    android:layout_margin="@dimen/material_space_half"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space_half">
+
                 <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:orientation="vertical">
 
                     <TextView
-                            android:id="@+id/link_wtmb"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/WtmBerlin.SocialMedia.Content"
-                            android:drawableEnd="@drawable/wtm_mini"
-                            android:autoLink="web"
-                            android:textIsSelectable="true"
-                            android:layout_marginEnd="@dimen/material_space_half"
-                            android:contentDescription="facebook link"
-                            android:text="http://wtmberlin.com/"/>
+                        android:id="@+id/social_media_content_slack"
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/material_space"
+                        android:text="@string/social_media_description_slack" />
+
+                    <TextView
+                        android:id="@+id/link_slack"
+                        style="@style/WtmBerlin.SocialMedia.Link"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:contentDescription="slack link"
+                        android:drawableEnd="@drawable/social_media_icon_slack"
+                        android:text="@string/social_media_link_slack"
+                        android:textIsSelectable="true" />
 
                     <ImageView
-                            android:layout_gravity="center"
-                            android:src="@drawable/qr_wtm_website"
-                            android:contentDescription="QR code to slack"
-                            android:layout_width="160dp"
-                            android:layout_height="160dp"/>
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="QR code to slack"
+                        android:paddingBottom="@dimen/material_space"
+                        android:src="@drawable/qr_wtm_slack" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space_half">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/social_media_content_twitter"
+                        style="@style/WtmBerlin.SocialMedia.Content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="twitter link"
+                        android:text="@string/social_media_description_twitter" />
+
+                    <TextView
+                        android:id="@+id/link_twitter"
+                        style="@style/WtmBerlin.SocialMedia.Content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:contentDescription="twitter link"
+                        android:drawableEnd="@drawable/social_media_icon_twitter"
+                        android:text="@string/social_media_link_twitter"
+                        android:textIsSelectable="true" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space_half">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/material_space_half"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/social_media_content_facebook"
+                        style="@style/WtmBerlin.SocialMedia.Item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/social_media_icon_facebook"
+                        android:text="@string/social_media_description_facebook" />
+
+                    <TextView
+                        android:id="@+id/link_facebook"
+                        style="@style/WtmBerlin.SocialMedia.Content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:contentDescription="facebook link"
+                        android:text="@string/social_media_link_facebook"
+                        android:textIsSelectable="true" />
+
+                    <TextView
+                        android:id="@+id/link_facebook2"
+                        style="@style/WtmBerlin.SocialMedia.Content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:contentDescription="facebook group"
+                        android:text="@string/facebook_group"
+                        android:textIsSelectable="true" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                    android:layout_margin="@dimen/material_space_half"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space_half">
+
                 <LinearLayout
-                        android:layout_marginBottom="@dimen/material_space"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
-                            android:id="@+id/link_github"
-                            style="@style/WtmBerlin.SocialMedia.Content"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:autoLink="web"
-                            android:textIsSelectable="true"
-                            android:contentDescription="wtm berlin github link"
-                            android:text="https://github.com/WTMBerlin"/>
-                    <TextView
-                            android:id="@+id/community_reviews_click"
-                            android:text="Click to see how to contribute to this app!"
-                            android:layout_width="match_parent"
-                            android:textColor="@color/primaryVariant"
-                            android:paddingBottom="@dimen/material_space_half"
-                            android:paddingTop="@dimen/material_space_half"
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:textSize="18sp"
-                            android:onClick="openContributions"
-                            style="@style/WtmBerlin.Events.Name"
-                            android:layout_height="wrap_content"/>
+                        android:id="@+id/link_wtmb"
+                        style="@style/WtmBerlin.SocialMedia.Content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/material_space_half"
+                        android:autoLink="web"
+                        android:contentDescription="facebook link"
+                        android:drawableEnd="@drawable/wtm_mini"
+                        android:text="http://wtmberlin.com/"
+                        android:textIsSelectable="true" />
+
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="QR code to slack"
+                        android:paddingBottom="@dimen/material_space"
+                        android:src="@drawable/qr_wtm_website" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-            <LinearLayout
-                    android:visibility="gone"
-                    android:id="@+id/share"
-                    android:layout_marginBottom="@dimen/material_space"
-                    android:gravity="center"
-                    android:orientation="vertical"
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space_half">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="180dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/material_space"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/link_github"
+                        style="@style/WtmBerlin.SocialMedia.Content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:contentDescription="wtm berlin github link"
+                        android:text="https://github.com/WTMBerlin"
+                        android:textIsSelectable="true" />
+
+                    <TextView
+                        android:id="@+id/community_reviews_click"
+                        style="@style/WtmBerlin.Events.Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:onClick="openContributions"
+                        android:paddingTop="@dimen/material_space_half"
+                        android:paddingBottom="@dimen/material_space_half"
+                        android:text="Click to see how to contribute to this app!"
+                        android:textColor="@color/primaryVariant"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/share"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginBottom="@dimen/material_space"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <androidx.cardview.widget.CardView
-                        android:layout_margin="@dimen/material_space"
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/material_space">
 
 
                     <TextView
-                            android:layout_margin="@dimen/material_space"
-                            android:background="@drawable/ic_share_black_24dp"
-                            android:backgroundTint="@color/onBackground"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"/>
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="@dimen/material_space"
+                        android:background="@drawable/ic_share_black_24dp"
+                        android:backgroundTint="@color/onBackground" />
 
 
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

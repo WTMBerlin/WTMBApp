@@ -46,7 +46,8 @@
 
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_marginTop="@dimen/material_space_half"
+                android:layout_margin="@dimen/material_space_half"
+                style="@style/WtmBerlin.SocialMedia.Item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
