@@ -124,9 +124,7 @@
     <string name="contributions_cta">If you had any questions, accessibility remarks, or other feedback, submit an issue
         or reach out via Slack to one of our organizer with WTM icon symbol next to the name
     </string>
-    <string name="contributions_thanks_you_note">Thanks to the organizers team, all supporters and community members,
-        especially to https://twitter.com/m_jedyny who wrote base of this app, and contributors @victorvari, @mariobodemann, @alisene, @https://twitter.com/louis993546
-    </string>
+    <string name="contributions_thanks_you_note">https://github.com/WTMBerlin/WTMBApp/blob/master/CONTRIBUTORS_THANK_YOU.MD</string>
     <string name="study_groups_header">Past courses and workshops:</string>
     <string name="sharing_meetup_description">Women Techmakers Events on Meetup</string>
     <string name="faq">FAQ ℹ️💡👥‍ ‍‍</string>
