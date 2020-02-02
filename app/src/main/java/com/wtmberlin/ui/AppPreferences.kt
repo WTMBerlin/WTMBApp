@@ -29,7 +29,7 @@ object AppPreferences {
     private inline fun SharedPreferences.edit(operation: (SharedPreferences.Editor) -> Unit) {
         val editor = edit()
         operation(editor)
-        editor.apply()
+        editor.commit()
     }
 
     var note: String
