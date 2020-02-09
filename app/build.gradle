@@ -99,4 +99,5 @@ dependencies {
 
     //Other
     implementation("de.hdodenhof:circleimageview:3.0.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 }
