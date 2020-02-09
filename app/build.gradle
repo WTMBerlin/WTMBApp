@@ -60,6 +60,7 @@ dependencies {
 
     // Moshi
     implementation("com.squareup.moshi:moshi:${rootProject.moshiVersion}")
+    implementation("com.squareup.moshi:moshi-kotlin:${rootProject.moshiVersion}")
 
     // Navigation
     implementation("android.arch.navigation:navigation-fragment-ktx:${rootProject.navigationVersion}")
