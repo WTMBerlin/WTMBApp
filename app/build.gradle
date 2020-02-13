@@ -13,6 +13,12 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -24,6 +30,13 @@ android {
     dataBinding {
         enabled = true
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
@@ -31,7 +44,7 @@ dependencies {
 
     // Architecture Components
     implementation("androidx.lifecycle:lifecycle-extensions:${rootProject.lifecycleVersion}")
-    testImplementation("androidx.arch.core:core-testing:${rootProject.lifecycleVersion}")
+    testImplementation("androidx.arch.core:core-testing:${rootProject.archVersion}")
     implementation("androidx.core:core-ktx:${rootProject.coreVersion}")
     implementation("androidx.fragment:fragment-ktx:${rootProject.fragmentVersion}")
     implementation("androidx.constraintlayout:constraintlayout:${rootProject.constraintLayoutVersion}")
@@ -53,6 +66,7 @@ dependencies {
 
     // Moshi
     implementation("com.squareup.moshi:moshi:${rootProject.moshiVersion}")
+    implementation("com.squareup.moshi:moshi-kotlin:${rootProject.moshiVersion}")
 
     // Navigation
     implementation("android.arch.navigation:navigation-fragment-ktx:${rootProject.navigationVersion}")
@@ -92,4 +106,5 @@ dependencies {
 
     //Other
     implementation("de.hdodenhof:circleimageview:3.0.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 }
