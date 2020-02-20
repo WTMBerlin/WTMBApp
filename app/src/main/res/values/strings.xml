@@ -14,12 +14,12 @@
     <!-- Collaborations -->
     <string name="collaborations_header">Collaboration partners</string>
     <string name="collaborations_header_description">To support us, ping one of the organizers on our slack</string>
-    <string name="collaborations_description">As a community of volunteers we work with external speakers and
+    <string name="collaborations_description">WTMB Ambassadors is a community of volunteers working with external speakers and
         tutors.\nOur meetups are possible not only thanks to us but also thanks to the wonderful support, that we
         receive from Google and companies that are listed below.
-        We contribute to making Berlin\'s tech scene diverse and inclusive!
+        This is our contribution to making Berlin\'s tech scene diverse and inclusive!
     </string>
-    <string name="collaborations_call_for_action1">We are open to collaborations! \nPlease reach out via form:</string>
+    <string name="collaborations_call_for_action1">We are open to collaborations! \nPlease reach out via form linked below.</string>
     <string name="collaborations_call_for_action2">https://forms.gle/cTCyXDFQPEcs85BGA</string>
 
     <!-- Contributions -->
@@ -130,7 +130,7 @@
     <string name="sharing_meetup_description">Women Techmakers Events on Meetup</string>
     <string name="faq">FAQ ℹ️💡👥‍ ‍‍</string>
     <string name="loading_toast">Loading..</string>
-    <string name="reviews_cta">You can write a blogpost that will be displayed on our website. Submit it in the MARKDOWN format via a Pull Request to our GitHub repository!</string>
+    <string name="reviews_cta">You can write a blogpost that will be displayed on our website. Submit it in the MARKDOWN format via a Pull Request to our GitHub repository that is linked below. Simply copy the contents from one of the previous posts, edit it to your story and submit as a Pull Request.</string>
     <string name="reviews_anna">Anna is a Jr Android Developer and WTM organizer, co-wrote this app.</string>
     <string name="reviews_miquel">Miquel supported our community as an organizer and a tutor during the Android, Kotlin and Flutter study Jams, always sharing his enthusiasm on community work.</string>
     <string name="reviews_miquel_weblink">https://youtu.be/1RmKXYcL20I?t=95</string>
