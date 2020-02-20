@@ -100,6 +100,7 @@
     <string name="nav_drawer_events_menu_item">Events 👥 📅 💻</string>
     <string name="nav_drawer_collaborations_menu_item">Collaboration partners 🏢</string>
     <string name="nav_drawer_speakers_menu_item">Speakers 👥 </string>
+    <string name="nav_drawer_hosting_menu_item">Offer event venue 🏢</string>
     <string name="facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
     <string name="organizers_info_screen_attendees">We are all unpaid volunteers supporting a tech community. Please
         respect our time!
