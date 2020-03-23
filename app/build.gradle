@@ -34,6 +34,7 @@ dependencies {
     // Architecture Components
     implementation("androidx.lifecycle:lifecycle-extensions:${rootProject.lifecycleVersion}")
     implementation 'com.google.firebase:firebase-perf:19.0.5'
+    implementation 'com.google.firebase:firebase-analytics:17.2.3'
     testImplementation("androidx.arch.core:core-testing:${rootProject.lifecycleVersion}")
     implementation("androidx.core:core-ktx:${rootProject.coreVersion}")
     implementation("androidx.fragment:fragment-ktx:${rootProject.fragmentVersion}")
