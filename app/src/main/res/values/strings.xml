@@ -88,7 +88,7 @@
 
     <!-- Menu: Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>
-    <string name="nav_drawer_social_media_menu_item">Social media 📱</string>
+    <string name="nav_drawer_social_media_menu_item">Social media 📱💙</string>
     <string name="nav_drawer_community_local_menu_item">About Women Techmakers Berlin ℹ️💡</string>
     <string name="nav_drawer_community_global_menu_item">Global Women Techmakers program 👩 ‍💻</string>
     <string name="nav_drawer_events_menu_item">Events 👥 📅 💻</string>
@@ -109,7 +109,7 @@
         RVSP responsibly and if you can\'t make it to the event - just update your choice on Meetup.
         \nThis helps us estimate size of the events for the company, catering service and the attendees.
     </string>
-    <string name="organizers_info_screen_tutors">If you have a skill to offer, like supporting one of our Study Groups on Android, Go, JavaScript or to give a one-time workshop on the topic of your expertise, reach out via slack</string>
+    <string name="organizers_info_screen_tutors">If you have a skill to offer, like supporting one of our Study Groups on Android, Go, JavaScript or to give a one-time workshop on the topic of your expertise, reach out via slack or submit a topic proposal via form from menu.</string>
 
     <!-- Women Techmakers Berlin in numbers -->
     <string name="stats_screen_header">WTM Berlin in numbers 🔢 📈 🤝</string>
