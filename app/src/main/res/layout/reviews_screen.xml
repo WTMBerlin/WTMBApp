@@ -16,7 +16,7 @@
             android:drawableEnd="@drawable/wtm_mini"
             android:gravity="center"
             android:padding="@dimen/material_space_quarter"
-            android:text="@string/reviews_title" />
+            android:text="@string/nav_drawer_community_reviews_menu_item" />
     </com.google.android.material.card.MaterialCardView>
 
     <ScrollView

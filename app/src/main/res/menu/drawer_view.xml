@@ -4,47 +4,44 @@
             android:id="@+id/community_info_screen"
             android:title="@string/nav_drawer_community_local_menu_item" />
         <item
-            android:id="@+id/events_screen"
-            android:title="@string/nav_drawer_events_menu_item" />
-        <item
-            android:id="@+id/reviews_screen"
-            android:title="@string/nav_drawer_community_reviews_menu_item" />
-        <item
-            android:id="@+id/collaborations_screen"
-            android:title="@string/nav_drawer_collaborations_menu_item" />
+            android:id="@+id/stats_screen"
+            android:title="@string/stats_screen_header" />
         <item
             android:id="@+id/social_media_screen"
             android:title="@string/nav_drawer_social_media_menu_item" />
         <item
-            android:id="@+id/topic_proposals_screen"
-            android:title="@string/nav_drawer_speakers_menu_item" />
-        <item
-            android:id="@+id/hosting_proposals_screen"
-            android:title="@string/nav_drawer_hosting_menu_item" />
+            android:id="@+id/collaborations_screen"
+            android:title="@string/nav_drawer_collaborations_menu_item" />
         <item
             android:id="@+id/wtm_website"
             android:title="@string/nav_drawer_community_global_menu_item" />
         <item
-            android:id="@+id/wtm_faq"
-            android:title="@string/faq" />
+            android:id="@+id/events_screen"
+            android:title="@string/nav_drawer_events_menu_item" />
         <item
             android:id="@+id/study_groups_screen"
             android:title="@string/nav_drawer_study_groups_menu_item" />
         <item
-            android:id="@+id/stats_screen"
-            android:title="@string/stats_screen_header" />
-        <item
-            android:id="@+id/contributions_screen"
-            android:title="@string/nav_drawer_contributions_and_feedback_menu_item" />
-        <item
-            android:id="@+id/notes_screen"
-            android:title="@string/nav_drawer_personal_notes_menu_item" />
+            android:id="@+id/reviews_screen"
+            android:title="@string/nav_drawer_community_reviews_menu_item" />
         <item
             android:id="@+id/organizers_screen"
             android:title="@string/nav_drawer_wtm_berlin_organizers_menu_item" />
         <item
+            android:id="@+id/hosting_proposals_screen"
+            android:title="@string/nav_drawer_hosting_menu_item" />
+        <item
+            android:id="@+id/topic_proposals_screen"
+            android:title="@string/nav_drawer_speakers_menu_item" />
+        <item
+            android:id="@+id/wtm_faq"
+            android:title="@string/nav_drawer_faq_menu_item" />
+        <item
             android:id="@+id/kids_friendly_screen"
             android:title="@string/nav_drawer_special_kids_friendly_events_menu_item" />
+        <item
+            android:id="@+id/contributions_screen"
+            android:title="@string/nav_drawer_contributions_and_feedback_menu_item" />
         <item
             android:id="@+id/accessibility_screen"
             android:title="@string/nav_drawer_accessibility_menu_tem" />
