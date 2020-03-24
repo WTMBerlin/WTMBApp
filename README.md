@@ -12,10 +12,11 @@ As a bonus feature, user can save notes. [WIP]
 Learning project crafted with love and Jetpack components :rocket:
 We want to maintain a Kotlin codebase. Feel free to make pull requests, add issues or comments! 👨‍💻 👩‍💻
 
+Please take into consideration this is a side project and I might not be able to review PRs on regular basis.
 Aim to write nice code
 Aim to write nice commits :tulip:
 Aim to add tests
-
+-
 [WIP] work in progress 
 
 Protip: this app could be easily forked and adjusted for your community if you are present on Meetup :octopus:
