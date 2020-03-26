@@ -3,7 +3,7 @@ package com.wtmberlin.work
 import androidx.work.Configuration
 import androidx.work.WorkManager
 import org.koin.android.ext.koin.androidContext
-import org.koin.dsl.module.module
+import org.koin.dsl.module
 
 val workModule = module {
     single {

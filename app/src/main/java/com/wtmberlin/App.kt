@@ -11,20 +11,24 @@ import com.wtmberlin.ui.uiModule
 import com.wtmberlin.work.Works
 import com.wtmberlin.work.workModule
 import org.koin.android.ext.android.inject
-import org.koin.android.ext.android.startKoin
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 import timber.log.Timber
 
 @Suppress("unused") // Used in AndroidManifest
 class App : Application() {
-    private val notifications : Notifications by inject()
-    private val works : Works by inject()
+    private val notifications: Notifications by inject()
+    private val works: Works by inject()
 
     override fun onCreate() {
         super.onCreate()
 
         AndroidThreeTen.init(this)
 
-        startKoin(this, listOf(meetupModule, notificationsModule, repositoryModule, uiModule, workModule))
+        startKoin {
+            androidContext(this@App)
+            modules(meetupModule, notificationsModule, repositoryModule, uiModule, workModule)
+        }
 
         Timber.plant(Timber.DebugTree())
 
