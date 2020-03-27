@@ -8,11 +8,13 @@ buildscript {
     ext.appcompatVersion = "1.1.0"
     ext.constraintLayoutVersion = "1.1.3"
     ext.coreVersion = "1.0.1"
+    ext.crashlytics = "2.0.0-beta03"
     ext.fragmentVersion = "1.0.0"
-    ext.gradleVersion = '3.5.3'
+    ext.googleServices = "4.3.3"
+    ext.gradleVersion = '3.6.1'
     ext.junitVersion = "4.13"
     ext.koinVersion = "1.0.2"
-    ext.kotlinVersion = "1.3.61"
+    ext.kotlinVersion = "1.3.71"
     ext.lifecycleVersion = "2.2.0"
     ext.loggingInterceptorVersion = "3.12.0"
     ext.materialVersion = "1.1.0"
@@ -41,7 +43,8 @@ buildscript {
         classpath("com.android.tools.build:gradle:$project.gradleVersion")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$project.kotlinVersion")
         classpath("android.arch.navigation:navigation-safe-args-gradle-plugin:$project.navigationVersion")
-        classpath("com.google.gms:google-services:4.3.3")
+        classpath("com.google.gms:google-services:$project.googleServices")
+        classpath("com.google.firebase:firebase-crashlytics-gradle:$project.crashlytics")
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
