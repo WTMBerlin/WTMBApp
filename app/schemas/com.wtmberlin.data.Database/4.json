@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 4,
-    "identityHash": "9c459d93313ad1d2bf9f1191f248f544",
+    "identityHash": "0c6170ee1007cd303b2c3aaf62b8917b",
     "entities": [
       {
         "tableName": "WtmEvent",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `time` TEXT NOT NULL, `duration` INTEGER NOT NULL, `description` TEXT NOT NULL, `photo_url` TEXT, `meetup_url` TEXT NOT NULL, `venue_name` TEXT, `venue_address` TEXT, `venue_coordinates_latitude` REAL, `venue_coordinates_longitude` REAL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `time` TEXT NOT NULL, `duration` INTEGER, `description` TEXT NOT NULL, `photo_url` TEXT, `meetup_url` TEXT NOT NULL, `venue_name` TEXT, `venue_address` TEXT, `venue_coordinates_latitude` REAL, `venue_coordinates_longitude` REAL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -30,7 +30,7 @@
             "fieldPath": "duration",
             "columnName": "duration",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "description",
@@ -88,7 +88,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9c459d93313ad1d2bf9f1191f248f544')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0c6170ee1007cd303b2c3aaf62b8917b')"
     ]
   }
 }

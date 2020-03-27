@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'com.google.firebase.firebase-perf'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 
@@ -48,7 +49,9 @@ dependencies {
 
     // Architecture Components
     implementation("androidx.lifecycle:lifecycle-extensions:${rootProject.lifecycleVersion}")
-    testImplementation("androidx.arch.core:core-testing:${rootProject.archVersion}")
+    implementation 'com.google.firebase:firebase-perf:19.0.5'
+    implementation 'com.google.firebase:firebase-analytics:17.2.3'
+    testImplementation("androidx.arch.core:core-testing:${rootProject.lifecycleTestVersion}")
     implementation("androidx.core:core-ktx:${rootProject.coreVersion}")
     implementation("androidx.fragment:fragment-ktx:${rootProject.fragmentVersion}")
     implementation("androidx.constraintlayout:constraintlayout:${rootProject.constraintLayoutVersion}")
@@ -109,6 +112,6 @@ dependencies {
     implementation("androidx.work:work-rxjava2:${rootProject.workManagerVersion}")
 
     //Other
-    implementation("de.hdodenhof:circleimageview:3.0.0")
+    implementation("de.hdodenhof:circleimageview:3.0.1")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 }

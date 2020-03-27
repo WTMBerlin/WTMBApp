@@ -3,7 +3,10 @@
 #### FAQ
 https://support.google.com/accessibility/android/?hl=en#topic=6007234
 
-#### General: Guide
+#### Start here!
+https://medium.com/@sigute/android-accessibility-where-to-start-b7875045d9
+
+#### Official guide
 https://developer.android.com/guide/topics/ui/accessibility/index.html
 
 ## Make apps more accessible
@@ -12,7 +15,7 @@ https://developer.android.com/guide/topics/ui/accessibility/apps
 #### GitHub Sample: Basic Accessibility
 https://github.com/googlesamples/android-BasicAccessibility
 
-#### Write meaningful labels
+#### Writing meaningful labels
 https://support.google.com/accessibility/android/?hl=en#topic=6007234
 
 #### Material Design on accessibility

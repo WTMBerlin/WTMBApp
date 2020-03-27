@@ -9,6 +9,7 @@ import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
 import com.wtmberlin.util.Event
 import io.reactivex.disposables.CompositeDisposable
+import org.threeten.bp.Duration
 import timber.log.Timber
 
 class EventDetailsViewModel(
@@ -85,9 +86,13 @@ data class AddToCalendarEvent(
 
 data class OpenMeetupPageEvent(val url: String) : Event()
 
-private fun WtmEvent.toCalendarEvent() = AddToCalendarEvent(
-    beginTime = dateTimeStart.toInstant().toEpochMilli(),
-    endTime = dateTimeStart.toInstant().toEpochMilli() + duration.toMillis(),
-    title = name,
-    location = venue?.name
-)
+private fun WtmEvent.toCalendarEvent() =
+    AddToCalendarEvent(
+        beginTime = dateTimeStart.toInstant().toEpochMilli(),
+        endTime = dateTimeStart.toInstant()
+            .toEpochMilli() + ensureDurationNonNull(duration).toMillis(),
+        title = name,
+        location = venue?.name
+    )
+
+fun ensureDurationNonNull(duration: Duration?): Duration = duration ?: Duration.ofMillis(0)

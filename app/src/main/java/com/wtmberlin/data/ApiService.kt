@@ -1,6 +1,9 @@
 package com.wtmberlin.data
 
-import com.wtmberlin.meetup.*
+import com.wtmberlin.meetup.MeetupEvent
+import com.wtmberlin.meetup.MeetupMembers
+import com.wtmberlin.meetup.MeetupService
+import com.wtmberlin.meetup.MeetupVenue
 import io.reactivex.Single
 import org.threeten.bp.Duration
 import org.threeten.bp.Instant
@@ -39,29 +42,33 @@ open class ApiService(private val meetupService: MeetupService) {
 
 }
 
-private fun MeetupEvent.toWtmEvent() = WtmEvent(
-    id = id,
-    name = name,
-    dateTimeStart = ZonedDateTime.ofInstant(
-        Instant.ofEpochMilli(time),
-        ZoneOffset.ofTotalSeconds((utc_offset / 1000).toInt())
-    ),
-    duration = Duration.ofMillis(duration),
-    description = description,
-    photoUrl = featured_photo?.photo_link,
-    meetupUrl = link,
-    venue = venue?.let { venue ->
-        Venue(
-            name = venue.name,
-            address = venue.addressText(),
-            coordinates = venue.lat?.let {
-                Coordinates(
-                    latitude = venue.lat,
-                    longitude = venue.lon!!
-                )
-            })
-    }
-)
+private fun MeetupEvent.toWtmEvent() =
+    WtmEvent(
+        id = id,
+        name = name,
+        dateTimeStart = ZonedDateTime.ofInstant(
+            Instant.ofEpochMilli(time),
+            ZoneOffset.ofTotalSeconds((utc_offset / 1000).toInt())
+        ),
+        duration = Duration.ofMillis(ensureDurationNonNull(duration)),
+        description = description,
+        photoUrl = featured_photo?.photo_link,
+        meetupUrl = link,
+        venue = venue?.let { venue ->
+            Venue(
+                name = venue.name,
+                address = venue.addressText(),
+                coordinates = venue.lat?.let {
+                    Coordinates(
+                        latitude = venue.lat,
+                        longitude = venue.lon!!
+                    )
+                })
+        }
+    )
+
+fun ensureDurationNonNull(duration: Long?): Long = duration ?: 0L
+
 
 private fun MeetupVenue.addressText() =
     StringBuilder().apply {

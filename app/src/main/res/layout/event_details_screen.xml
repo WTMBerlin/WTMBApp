@@ -140,6 +140,7 @@
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
+                                android:text="@{viewModel.event.venue.name}"
                                     android:textAppearance="@style/WtmBerlin.TextAppearance.ListPrimary"
                                     tools:text="Dalia Research GmbH"/>
 

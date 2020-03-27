@@ -1,56 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- TODO: add strings to the correct sections -->
-    <string name="notes_header">Store personal notes, contact info or questions for the speakers</string>
-    <string name="notes_description_hint">Your notes will be displayed here, after you save them with a click on save.
-        Keep in mind, this storage is not very persistent!
-    </string>
 
+    <!-- Women Techmakers Berlin -->
     <string name="app_name">Women Techmakers Berlin</string>
     <string name="app_name_short">WTM Berlin</string>
     <string name="wtm_website_url">https://www.womentechmakers.com</string>
     <string name="wtm_faq">https://github.com/WTMBerlin/WTMBApp/blob/master/FAQ.md</string>
 
-    <!-- Collaborations -->
-    <string name="collaborations_header">Collaboration partners</string>
-    <string name="collaborations_header_description">To support us, ping one of the organizers on our slack</string>
-    <string name="collaborations_description">As a community of volunteers we work with external speakers and
-        tutors.\nOur meetups are possible not only thanks to us but also thanks to the wonderful support, that we
-        receive from Google and companies that are listed below.
-        We contribute to making Berlin\'s tech scene diverse and inclusive!
-    </string>
-    <string name="collaborations_call_for_action1">We are open to collaborations! \nPlease reach out via form:</string>
-    <string name="collaborations_call_for_action2">https://forms.gle/cTCyXDFQPEcs85BGA</string>
-
-    <!-- Contributions -->
-
-    <string name="community_contributions_info">
-        This App was created as learning project that would benefit the community Women Techmakers Berlin 💻.
-        \nIt is a great place to start an adventure of becoming an open source contributor! Check the issues list in our
-        GitHub Repository, some are labeled with `good first issue`.
-        Support us by adding a pull request 🚀
-        \n
-        \n👨‍💻 👩‍💻
-        \n
-        \nFeel free to submit issues, pull requests or to create forks:
-    </string>
-
-    <string name="community_contributions_link">
-        https://github.com/WTMBerlin/WTMBApp
-    </string>
-    <string name="community_contributions_header">
-        Contributors Guide:
-    </string>
-
-    <!-- Reviews -->
-    <string name="community_reviews_header">Organizers and community members about WTMB</string>
-
     <!-- Community Local -->
     <string name="community_local_header">About WTM Berlin️</string>
-    <string name="community_local_description_header">WTM Berlin is part of the global \nWomen Techmakers program \nrun
-        by
-        Google
-    </string>
+    <string name="community_local_description_header">WTM Berlin is part of the global \nWomen Techmakers program \nrun by Google</string>
     <string name="community_local_description">
         At WTM Berlin we are encouraging diversity in tech in Berlin since 2015. We offer visibility,
         networking and resources to help you make the tech community of Berlin more diverse and inclusive!
@@ -67,69 +26,112 @@
     <string name="events_no_upcoming_events_message">No upcoming events at the moment. Stay tuned!</string>
     <string name="events_header">Events</string>
 
+    <!-- Notes screen -->
+    <string name="notes_header">Store personal notes, contact info or questions for the speakers</string>
+    <string name="notes_description_hint">Your notes will be displayed here, after you save them with a click on save.
+        Keep in mind, this storage is not very persistent!
+    </string>
+
+    <!-- Collaborations: hosting companies -->
+    <string name="collaborations_header">Collaboration partners</string>
+    <string name="collaborations_header_description">To support us, ping one of the organizers on our slack</string>
+    <string name="collaborations_description">WTMB Ambassadors is a community of volunteers working with external speakers and
+        tutors.\nOur meetups are possible not only thanks to us but also thanks to the wonderful support, that we
+        receive from Google and companies that are listed below.
+        This is our contribution to making Berlin\'s tech scene diverse and inclusive!
+    </string>
+    <string name="collaborations_call_for_action1">We are open to collaborations! \nPlease reach out via form linked below.</string>
+    <string name="collaborations_call_for_action2">https://forms.gle/cTCyXDFQPEcs85BGA</string>
+
+    <!-- Contributions -->
+    <string name="contributions_info">
+        This App was created as learning project that would benefit the community Women Techmakers Berlin 💻.
+        \nIt is a great place to start an adventure of becoming an open source contributor! Check the issues list in our
+        GitHub Repository, some are labeled with `good first issue`.
+        Support us by adding a pull request 🚀
+        \n
+        \n👨‍💻 👩‍💻
+        \n
+        \nFeel free to submit issues, pull requests or to create forks:
+    </string>
+
+    <string name="contributions_cta">If you had any questions, accessibility remarks, or other feedback, submit an issue
+        or reach out via Slack to one of our organizer with WTM icon symbol next to the name</string>
+    <string name="contributions_thanks_you_note">https://github.com/WTMBerlin/WTMBApp/blob/master/CONTRIBUTORS_THANK_YOU.MD</string>
+    <string name="contributions_link">https://github.com/WTMBerlin/WTMBApp</string>
+    <string name="contributions_header">Contributors Guide:</string>
+
+    <!-- Reviews -->
+    <string name="community_reviews_header">Organizers and community members about WTMB</string>
+
     <!-- Event details -->
     <string name="event_details_header_description">Description</string>
     <string name="event_details_open_meetup_page">View on Meetup</string>
 
     <!-- Social Media -->
-    <string name="social_media_link_meetup" translatable="false">https://www.meetup.com/de-DE/women-techmakers-berlin/
-    </string>
-    <string name="social_media_link_facebook" translatable="false">https://b-m.facebook.com/WomenTechmakersBerlinPage/
-    </string>
+    <string name="social_media_link_meetup" translatable="false">https://www.meetup.com/de-DE/women-techmakers-berlin/</string>
+    <string name="social_media_link_facebook" translatable="false">https://b-m.facebook.com/WomenTechmakersBerlinPage/</string>
+    <string name="social_media_link_facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
+    <string name="nav_drawer_personal_notes_menu_item">Personal notes 📝 💡</string>
     <string name="social_media_link_github_contributions" translatable="false">https://github.com/WTMBerlin/wtmberlin.github.io/tree/master/_posts</string>
     <string name="social_media_link_twitter" translatable="false">https://twitter.com/wtm_berlin</string>
     <string name="social_media_link_slack" translatable="false">https://slack.wtmberlin.com/</string>
     <string name="social_media_header">Social media</string>
     <string name="social_media_description_general">We are active across social media!</string>
     <string name="social_media_description_meetup">You will find all our events on Meetup, open to RVSP:</string>
-    <string name="social_media_description_slack">
-        A private Slack group is one of the most successful initiatives of our community - it has become a platform to connect with other members,
+    <string name="social_media_description_slack">A private Slack group is one of the most successful initiatives of our community - it has become a platform to connect with other members,
         to spread the word about interesting open positions in #jobs channel and to offer your skills in the channel #CVs.
         The channels #general and #random make it possible to reach out to more diverse Tech audience, for example to announce free/discounted diversity tickets or
-        scholarships.
-
-    </string>
+        scholarships.</string>
     <string name="social_media_description_twitter">Tweet with #womentechmakers or tag us: @wtm_berlin</string>
     <string name="social_media_description_facebook">There is a Facebook page and group but we primarily encourage to sing in to our Slack.</string>
 
-    <!-- Nav Drawer -->
+    <!-- Menu: Nav Drawer -->
     <string name="nav_drawer_header">More info:</string>
-    <string name="nav_drawer_social_media_menu_item">Social media 📱</string>
+    <string name="nav_drawer_social_media_menu_item">Social media 📱💙</string>
     <string name="nav_drawer_community_local_menu_item">About Women Techmakers Berlin ℹ️💡</string>
     <string name="nav_drawer_community_global_menu_item">Global Women Techmakers program 👩 ‍💻</string>
     <string name="nav_drawer_events_menu_item">Events 👥 📅 💻</string>
     <string name="nav_drawer_collaborations_menu_item">Collaboration partners 🏢</string>
     <string name="nav_drawer_speakers_menu_item">Speakers 👥 </string>
-    <string name="facebook_group">https://www.facebook.com/groups/1106085959408694/</string>
+    <string name="nav_drawer_hosting_menu_item">Offer event venue 🏢</string>
+    <string name="nav_drawer_study_groups_menu_item">Study groups 📅 🤖</string>
+    <string name="nav_drawer_special_kids_friendly_events_menu_item">Special kids friendly events 🐻</string>
+    <string name="nav_drawer_accessibility_menu_tem">Accessibility on Android🕶 💻️</string>
+    <string name="nav_drawer_community_reviews_menu_item">Community reviews 📰</string>
+    <string name="nav_drawer_wtm_berlin_organizers_menu_item">WTM Berlin organizers 👥</string>
+    <string name="nav_drawer_contributions_and_feedback_menu_item">Contributions and feedback 📩 💡</string>
+    <string name="nav_drawer_faq_menu_item">FAQ ℹ️💡👥‍ ‍‍</string>
+
+    <!-- Organizers screen -->
     <string name="organizers_info_screen_attendees">We are all unpaid volunteers supporting a tech community. Please
         respect our time!
         RVSP responsibly and if you can\'t make it to the event - just update your choice on Meetup.
         \nThis helps us estimate size of the events for the company, catering service and the attendees.
     </string>
-    <string name="organizers_info_screen_tutors">If you have a skill to offer, like supporting one of our Study Groups on Android, Go, JavaScript or to give a one-time workshop on the topic of your expertise, reach out via slack</string>
-    <string name="nav_drawer_personal_notes_menu_item">Personal notes 📝 💡</string>
-    <string name="nav_drawer_study_groups_menu_item">Study groups 📅 🤖</string>
-    <string name="nav_drawer_special_kids_friendly_events_menu_item">Special kids friendly events 🐻</string>
-    <string name="nav_drawer_accessibility_menu_tem">Accessibility 🕶 💻️</string>
-    <string name="nav_drawer_community_reviews_menu_item">Community reviews 📰</string>
-    <string name="nav_drawer_wtm_berlin_organizers_menu_item">WTM Berlin organizers 👥</string>
-    <string name="nav_drawer_contributions_and_feedback_menu_item">Contributions and feedback 📩 💡</string>
+    <string name="organizers_info_screen_tutors">If you have a skill to offer, like supporting one of our Study Groups on Android, Go, JavaScript or to give a one-time workshop on the topic of your expertise, reach out via slack or submit a topic proposal via form from menu.</string>
 
+    <!-- Women Techmakers Berlin in numbers -->
+    <string name="stats_screen_header">WTM Berlin in numbers 🔢 📈 🤝</string>
+
+    <!-- Study groups -->
+    <string name="study_groups_header">Past courses and workshops:</string>
+
+    <!-- Shared resources -->
+    <string name="loading_toast">Loading..</string>
+    <string name="sharing_meetup_description">Women Techmakers Events on Meetup</string>
+
+    <!-- Potential speakers info -->
+
+    <!-- Accessibility on Android screen -->
     <string name="accessibility_content_1">Smartphones with Android Operating System support many accessibility features by default. It is up to developers to add the rest - there are some build-it tools that are ease to use and communicate with other teams:</string>
     <string name="accessibility_content_2">Accessibility Scanner can be used for captioning the screen ratio contrast and detection of missing labels</string>
     <string name="accessibility_content_3">For adding some basic accessibility support to the project, follow a few simple steps. Begin with adding meaningful labels for custom designed elements (back arrows, check-marks) and provide content descriptions for the remaining drawables and images.
         Then set importantForAccessibility=no for design elements that will not be useful for the user in the screen reader user mode and shall therefore be excluded. To learn more visit:
     </string>
     <string name="accessibility_github">https://github.com/WTMBerlin/WTMBApp/blob/master/ACCESSIBILITY.md</string>
-    <string name="stats_screen_header">WTM Berlin in numbers 🔢 📈 🤝</string>
-    <string name="contributions_cta">If you had any questions, accessibility remarks, or other feedback, submit an issue
-        or reach out via Slack to one of our organizer with WTM icon symbol next to the name
-    </string>
-    <string name="contributions_thanks_you_note">https://github.com/WTMBerlin/WTMBApp/blob/master/CONTRIBUTORS_THANK_YOU.MD</string>
-    <string name="study_groups_header">Past courses and workshops:</string>
-    <string name="sharing_meetup_description">Women Techmakers Events on Meetup</string>
-    <string name="faq">FAQ ℹ️💡👥‍ ‍‍</string>
-    <string name="loading_toast">Loading..</string>
+
+    <!-- Reviews screen -->
     <string name="reviews_cta">You can write a blogpost that will be displayed on our website. Submit it in the MARKDOWN format via a Pull Request to our GitHub repository!</string>
     <string name="reviews_anna">Anna is a Jr Android Developer and WTM organizer, co-wrote this app.</string>
     <string name="reviews_miquel">Miquel supported our community as an organizer and a tutor during the Android, Kotlin and Flutter study Jams, always sharing his enthusiasm on community work.</string>
