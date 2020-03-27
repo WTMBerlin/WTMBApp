@@ -100,6 +100,8 @@
         <item name="android:textSize">@dimen/readable_text_size</item>
         <item name="android:paddingStart">@dimen/material_space</item>
         <item name="android:paddingEnd">@dimen/material_space</item>
+        <item name="android:paddingTop">@dimen/material_space_half</item>
+        <item name="android:paddingBottom">@dimen/material_space_half</item>
         <item name="android:textColor">@color/divider</item>
         <item name="android:minHeight">@dimen/material_single_line_with_icon_list_height</item>
         <item name="android:gravity">center_vertical</item>

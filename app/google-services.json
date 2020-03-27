@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "894491551354",
-    "firebase_url": "https://wtmbapp.firebaseio.com",
-    "project_id": "wtmbapp",
-    "storage_bucket": "wtmbapp.appspot.com"
+    "project_number": "359000041584",
+    "firebase_url": "https://wtmb-app.firebaseio.com",
+    "project_id": "wtmb-app",
+    "storage_bucket": "wtmb-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:894491551354:android:a1e4e362e6acf958503dc3",
+        "mobilesdk_app_id": "1:359000041584:android:868f8b6a3c325a22",
         "android_client_info": {
           "package_name": "com.wtmberlin"
         }
       },
       "oauth_client": [
         {
-          "client_id": "894491551354-4oc6b5c819endj5u7lmo16j2sc56hgpp.apps.googleusercontent.com",
+          "client_id": "359000041584-htupann69gaf4as8rp63sfgtpcqfoghi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.wtmberlin",
-            "certificate_hash": "6168f6406c2b899841aff83763398d8c4dc9a05a"
+            "certificate_hash": "b74d251e4ae58af65e66bf47fadd5a3138c88f81"
           }
         },
         {
-          "client_id": "894491551354-5lu30e2teu3mk44jbdtmvplvuff47250.apps.googleusercontent.com",
+          "client_id": "359000041584-tdv4s7rqdlvqhmeme1ji9i6ej0ig7e69.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAQVOxTomub-3mTdSphWp-LxyQVFbC-4ec"
+          "current_key": "AIzaSyBTKqTIVt_q2HO7CYKOzXIxcOeiaUyxh5g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "894491551354-5lu30e2teu3mk44jbdtmvplvuff47250.apps.googleusercontent.com",
+              "client_id": "359000041584-tdv4s7rqdlvqhmeme1ji9i6ej0ig7e69.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
@@ -16,7 +16,7 @@
             android:drawableEnd="@drawable/wtm_mini"
             android:gravity="center"
             android:padding="@dimen/material_space_quarter"
-            android:text="@string/reviews_title" />
+            android:text="@string/nav_drawer_community_reviews_menu_item" />
     </com.google.android.material.card.MaterialCardView>
 
     <ScrollView
@@ -192,10 +192,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/material_space_half"
                     android:layout_marginBottom="@dimen/material_space_half"
-                    android:drawableBottom="@drawable/wtm_mini"
                     android:text="@string/reviews_anna" />
             </androidx.cardview.widget.CardView>
-
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -211,6 +209,22 @@
                     android:drawableBottom="@drawable/wtm_mini"
                     android:onClick="openBlogContributions"
                     android:text="@string/reviews_cta" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space_half">
+
+                <TextView
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/material_space_half"
+                    android:layout_marginBottom="@dimen/material_space_half"
+                    android:autoLink="web"
+                    android:text="https://github.com/WTMBerlin/wtmberlin.github.io/tree/master/_posts" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
