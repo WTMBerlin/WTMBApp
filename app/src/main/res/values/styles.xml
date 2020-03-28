@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="AppTheme" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryVariant</item>
@@ -27,7 +27,7 @@
     </style>
 
     <style name="WtmBerlin.Events.ThreeLineListItem">
-        <item name="android:background">@color/white</item>
+        <item name="android:background">?selectableItemBackground</item>
         <item name="android:foreground">?selectableItemBackground</item>
         <item name="android:gravity">center</item>
         <item name="android:padding">@dimen/material_space</item>
