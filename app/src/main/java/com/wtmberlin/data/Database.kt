@@ -9,7 +9,7 @@ import org.threeten.bp.ZonedDateTime
 import org.threeten.bp.format.DateTimeFormatter
 
 @TypeConverters(ZonedDateTimeConverter::class, DurationConverter::class)
-@Database(entities = [WtmEvent::class], version = 4)
+@Database(entities = [WtmEvent::class], version = 5)
 abstract class Database : RoomDatabase() {
     abstract fun wtmEventDAO(): WtmEventDao
 }
@@ -24,8 +24,10 @@ class ZonedDateTimeConverter {
 
 class DurationConverter {
     @TypeConverter
-    fun save(duration: Duration): Long = duration.toMillis()
+    fun save(duration: Duration?): Long = duration?.toMillis() ?: 0L
 
     @TypeConverter
-    fun load(duration: Long): Duration = Duration.ofMillis(duration)
+    fun load(duration: Long?): Duration =
+        if (duration != null) Duration.ofMillis(duration) else Duration.ofMillis(0)
 }
+

@@ -35,7 +35,7 @@ data class MeetupEvent(
     val link: String,
     val time: Long,
     val utc_offset: Long,
-    val duration: Long,
+    val duration: Long?,
     val venue: MeetupVenue?
 )
 

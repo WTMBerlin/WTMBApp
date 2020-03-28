@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                     android:id="@+id/stats_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -39,9 +39,9 @@
                         android:drawableEnd="@drawable/wtm_mini"
                         android:gravity="center"
                         android:text="@string/stats_screen_header" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                     android:id="@+id/events_2017"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -75,9 +75,9 @@
                             tools:text=" events total count" />
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                     android:id="@+id/events_2018"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -111,9 +111,9 @@
                             tools:text=" events total count" />
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                     android:id="@+id/events_2019"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -148,9 +148,9 @@
                             android:text="@{viewModel.events2019}" />
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                     android:id="@+id/events_2020"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -185,9 +185,9 @@
                             android:text="@{viewModel.events2020}" />
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                     android:id="@+id/events_total"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -220,10 +220,10 @@
                             android:text="@{viewModel.eventsTotal}" />
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                     android:id="@+id/members"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -256,10 +256,10 @@
                             android:text="@{viewModel.members}" />
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                     android:id="@+id/website_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -277,9 +277,9 @@
                         android:contentDescription="facebook link"
                         android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
                         android:text="http://wtmberlin.com/" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -293,9 +293,9 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@drawable/wtm_mini" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                     android:id="@+id/meetup_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -313,7 +313,7 @@
                         android:contentDescription="facebook link"
                         android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
                         android:text="@string/social_media_link_meetup" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

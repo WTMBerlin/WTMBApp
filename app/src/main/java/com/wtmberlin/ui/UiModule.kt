@@ -2,8 +2,8 @@ package com.wtmberlin.ui
 
 import com.wtmberlin.SchedulerProvider
 import com.wtmberlin.StandardSchedulerProvider
-import org.koin.android.viewmodel.ext.koin.viewModel
-import org.koin.dsl.module.module
+import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
 val uiModule = module {
     single<SchedulerProvider> { StandardSchedulerProvider() }

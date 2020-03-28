@@ -13,7 +13,7 @@ data class WtmEvent(
     @PrimaryKey val id: String,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "time") val dateTimeStart: ZonedDateTime,
-    @ColumnInfo(name = "duration") val duration: Duration,
+    @ColumnInfo(name = "duration") val duration: Duration?,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "photo_url") val photoUrl: String?,
     @ColumnInfo(name = "meetup_url") val meetupUrl: String,
@@ -21,7 +21,9 @@ data class WtmEvent(
 ) {
     fun localDateTimeStart(): LocalDateTime = dateTimeStart.toLocalDateTime()
 
-    fun localDateTimeEnd(): LocalDateTime = dateTimeStart.plus(duration).toLocalDateTime()
+    fun localDateTimeEnd(): LocalDateTime = if (duration != null) {
+        dateTimeStart.plus(duration).toLocalDateTime()
+    } else dateTimeStart.toLocalDateTime()
 }
 
 data class Venue(
