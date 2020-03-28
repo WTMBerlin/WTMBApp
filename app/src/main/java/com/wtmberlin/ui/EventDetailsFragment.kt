@@ -88,11 +88,13 @@ class EventDetailsFragment : Fragment() {
     }
 
     private fun shareEvent(event: String) {
-        ShareCompat.IntentBuilder
-            .from(activity)
-            .setType("text/plain")
-            .setChooserTitle("WTM Berlin Meetup")
-            .setText(baseUrl + eventsEndpoint + event)
-            .startChooser()
+        activity?.let {
+            ShareCompat.IntentBuilder
+                .from(it)
+                .setType("text/plain")
+                .setChooserTitle("WTM Berlin Meetup")
+                .setText(baseUrl + eventsEndpoint + event)
+                .startChooser()
+        }
     }
 }

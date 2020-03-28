@@ -2,7 +2,7 @@ package com.wtmberlin.data
 
 import androidx.room.Room
 import org.koin.android.ext.koin.androidContext
-import org.koin.dsl.module.module
+import org.koin.dsl.module
 
 val repositoryModule = module {
     single {

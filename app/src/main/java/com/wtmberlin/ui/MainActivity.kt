@@ -9,19 +9,21 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ShareCompat
 import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.FragmentNavigator
-import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.wtmberlin.R
 import kotlinx.android.synthetic.main.main_screen.*
 import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
     override fun onCreate(savedInstanceState: Bundle?) {
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
+        val bundle = Bundle()
         val isDarkModeEnabled = AppPreferences.darkTheme
         if (isDarkModeEnabled) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
@@ -36,7 +38,10 @@ class MainActivity : AppCompatActivity() {
 
         toolbar.setupWithNavController(navController, appBarConfiguration)
         nav_view.setupWithNavController(findNavController(R.id.nav_host_fragment))
-
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1")
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Hello world crashlytics")
+        bundle.putString(FirebaseAnalytics.Param.ITEM_BRAND, "WTM BERLIN")
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
     }
 
     fun openMeetup(view: View) {
@@ -87,7 +92,8 @@ class MainActivity : AppCompatActivity() {
 
     fun openBlogContributions(view: View) {
         val openURL = Intent(Intent.ACTION_VIEW)
-        openURL.data = Uri.parse(resources.getString(R.string.social_media_link_github_contributions))
+        openURL.data =
+            Uri.parse(resources.getString(R.string.social_media_link_github_contributions))
         startActivity(openURL)
     }
 

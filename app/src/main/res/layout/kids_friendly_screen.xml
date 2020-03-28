@@ -68,7 +68,45 @@
                             android:layout_gravity="bottom"
                             android:background="@drawable/ic_rotate"
                             android:backgroundTint="@color/secondaryVariant"
-                            android:contentDescription="zz zz zz ziuuum zz zz ziuum zzzzzzz meow ziuuuuuuuum zz zz zz zz ziuuum meow meow zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz ziuuumzz zzziuum zzzzzzz ziuuuuuuuum zz meow meow meow"
+                            android:importantForAccessibility="no"
+                            android:onClick="rotate" />
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/material_space"
+                        android:layout_marginStart="@dimen/material_space"
+                        android:layout_gravity="start">
+
+                        <TextView
+                            android:id="@+id/kids_screen_toy3"
+                            android:layout_width="@dimen/material_three_line_list_height"
+                            android:layout_height="@dimen/material_three_line_list_height"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/ic_rotate"
+                            android:backgroundTint="@color/secondaryVariant"
+                            android:importantForAccessibility="no"
+                            android:onClick="rotate" />
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/material_space"
+                        android:layout_marginEnd="@dimen/material_space"
+                        android:layout_gravity="end">
+
+                        <TextView
+                            android:id="@+id/kids_screen_toy2"
+                            android:layout_width="@dimen/material_three_line_list_height"
+                            android:layout_height="@dimen/material_three_line_list_height"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/ic_rotate"
+                            android:backgroundTint="@color/secondaryVariant"
+                            android:importantForAccessibility="no"
                             android:onClick="rotate" />
                     </com.google.android.material.card.MaterialCardView>
 
@@ -105,23 +143,6 @@
 
 
                         </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center">
-
-                        <TextView
-                            android:id="@+id/kids_screen_toy2"
-                            android:layout_width="@dimen/material_three_line_list_height"
-                            android:layout_height="@dimen/material_three_line_list_height"
-                            android:layout_gravity="bottom"
-                            android:layout_marginBottom="@dimen/material_space"
-                            android:background="@drawable/ic_rotate"
-                            android:backgroundTint="@color/secondaryVariant"
-                            android:contentDescription="zz zz zz ziuuum zz zz ziuum zzzzzzz meow ziuuuuuuuum zz zz zz zz ziuuum meow meow zz zz ziuum zzzzzzz ziuuuuuuuum zz zz zz zz ziuuumzz zzziuum zzzzzzz ziuuuuuuuum zz meow meow meow"
-                            android:onClick="rotate" />
                     </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>

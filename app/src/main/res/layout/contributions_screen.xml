@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/wtm_mini"
             android:gravity="center"
-            android:text="@string/community_contributions_header" />
+            android:text="@string/contributions_header" />
     </com.google.android.material.card.MaterialCardView>
 
     <ScrollView
@@ -47,7 +47,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/material_space"
-                        android:text="@string/community_contributions_info"
+                        android:text="@string/contributions_info"
                         android:textSize="18sp" />
 
                     <TextView
@@ -57,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:autoLink="web"
                         android:contentDescription="Link to website Women Techmakers Berlin"
-                        android:text="@string/community_contributions_link" />
+                        android:text="@string/contributions_link" />
 
                     <TextView
                         android:id="@+id/octocat"

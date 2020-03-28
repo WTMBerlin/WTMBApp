@@ -35,6 +35,33 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/material_space">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@drawable/events_no_upcoming_events"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/collaborations_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:background="@null"
+                    android:clipToPadding="false"
+                    android:paddingTop="@dimen/material_space_half"
+                    android:paddingBottom="@dimen/material_space_half"
+                    app:data="@{viewModel.adapterItems}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/collaborations_event_item" />
+            </FrameLayout>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/material_space"
                 android:layout_marginTop="@dimen/material_space_half"
+                android:layout_marginBottom="@dimen/material_space"
                 android:layout_marginEnd="@dimen/material_space">
 
                 <TextView
@@ -82,33 +110,6 @@
                     android:padding="8dp"
                     android:text="@string/collaborations_description" />
             </com.google.android.material.card.MaterialCardView>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/material_space">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:background="@drawable/events_no_upcoming_events"
-                    android:contentDescription="@null"
-                    android:importantForAccessibility="no" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/collaborations_recycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="end"
-                    android:background="@null"
-                    android:clipToPadding="false"
-                    android:paddingTop="@dimen/material_space_half"
-                    android:paddingBottom="@dimen/material_space_half"
-                    app:data="@{viewModel.adapterItems}"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/collaborations_event_item" />
-            </FrameLayout>
         </LinearLayout>
     </ScrollView>
 </layout>

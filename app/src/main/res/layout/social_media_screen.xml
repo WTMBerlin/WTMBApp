@@ -171,7 +171,7 @@
                         android:layout_height="wrap_content"
                         android:autoLink="web"
                         android:contentDescription="facebook group"
-                        android:text="@string/facebook_group"
+                        android:text="@string/social_media_link_facebook_group"
                         android:textIsSelectable="true" />
 
                 </LinearLayout>

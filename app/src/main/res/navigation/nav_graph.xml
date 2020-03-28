@@ -99,6 +99,11 @@
         android:name="com.wtmberlin.ui.SpeakersFragment"
         android:label="stats"
         tools:layout="@layout/topic_proposals_screen"/>
+    <fragment
+        android:id="@+id/hosting_proposals_screen"
+        android:name="com.wtmberlin.ui.HostingFragment"
+        android:label="stats"
+        tools:layout="@layout/hosting_proposals_screen" />
     <activity
             android:id="@+id/wtm_website"
             app:action="android.intent.action.VIEW"
