@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -16,7 +16,7 @@
             android:drawableEnd="@drawable/wtm_mini"
             android:gravity="center"
             android:text="WTM organizers" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                     android:text="@string/organizers_info_screen_tutors" />
             </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/material_space_half">
@@ -73,7 +73,7 @@
                     android:paddingBottom="@dimen/material_space_half"
                     android:text="slack.wtmberlin.com"
                     android:textSize="18sp" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView

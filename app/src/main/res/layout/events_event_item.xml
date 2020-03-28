@@ -17,7 +17,7 @@
             type="com.wtmberlin.ui.EventItem" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="@{v -> callbacks.onEventItemClicked(item)}">
@@ -57,6 +57,6 @@
 
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
 </layout>

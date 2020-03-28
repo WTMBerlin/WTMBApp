@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -16,7 +16,7 @@
             android:drawableEnd="@drawable/wtm_mini"
             android:gravity="center"
             android:text="Occasional kids friendly events" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                     android:layout_margin="@dimen/material_space_quarter"
                     android:orientation="vertical">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -53,9 +53,9 @@
                             android:text="We hosted kids friendly events in the past and hope to do so in the future. If you could host a child friendly event, please reach out via one of our social media channels"
                             android:textColor="@color/divider"
                             android:textSize="18dp" />
-                    </com.google.android.material.card.MaterialCardView>
+                    </androidx.cardview.widget.CardView>
 
-                    <com.google.android.material.card.MaterialCardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -70,10 +70,10 @@
                             android:backgroundTint="@color/secondaryVariant"
                             android:importantForAccessibility="no"
                             android:onClick="rotate" />
-                    </com.google.android.material.card.MaterialCardView>
+                    </androidx.cardview.widget.CardView>
 
 
-                    <com.google.android.material.card.MaterialCardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/material_space"
@@ -89,10 +89,10 @@
                             android:backgroundTint="@color/secondaryVariant"
                             android:importantForAccessibility="no"
                             android:onClick="rotate" />
-                    </com.google.android.material.card.MaterialCardView>
+                    </androidx.cardview.widget.CardView>
 
 
-                    <com.google.android.material.card.MaterialCardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/material_space"
@@ -108,9 +108,9 @@
                             android:backgroundTint="@color/secondaryVariant"
                             android:importantForAccessibility="no"
                             android:onClick="rotate" />
-                    </com.google.android.material.card.MaterialCardView>
+                    </androidx.cardview.widget.CardView>
 
-                    <com.google.android.material.card.MaterialCardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/material_space_half">
@@ -143,12 +143,12 @@
 
 
                         </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
             </ScrollView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/material_space"
@@ -167,7 +167,7 @@
                         android:layout_height="wrap_content"
                         android:text="The icon above is a simple toy for children with or without visual impairments. To learn more open Accessibility screen from the menu." />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

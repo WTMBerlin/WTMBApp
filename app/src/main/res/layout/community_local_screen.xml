@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -16,9 +16,9 @@
             android:drawableEnd="@drawable/wtm_mini"
             android:text="@string/community_local_description_header"
             android:textSize="16sp" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/material_space"
@@ -34,7 +34,7 @@
             android:contentDescription="wtm berlin link"
             android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
             android:text="http://wtmberlin.com/" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/material_space"
@@ -61,9 +61,9 @@
                     android:contentDescription="Frequently asked questions"
                     android:drawableEnd="@drawable/ic_desktop_mac_black_24dp"
                     android:text="https://github.com/WTMBerlin/WTMBApp/blob/master/FAQ.md" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/material_space"
@@ -78,9 +78,9 @@
                     android:padding="16dp"
                     android:text="@string/community_local_description"
                     android:textSize="16sp" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/material_space">
@@ -98,7 +98,7 @@
                     android:text="Click to see community reviews!"
                     android:textColor="@color/primaryVariant"
                     android:textSize="18sp" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
             <ImageView
                 android:id="@+id/logo"
