@@ -7,6 +7,9 @@
 /.idea/modules.xml
 /.idea/navEditor.xml
 /.idea/workspace.xml
+/.idea/codeStyles/Project.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/gradle.xml
 .DS_Store
 /build
 /captures
