@@ -1,12 +1,15 @@
 package com.wtmberlin.data
 
 import androidx.room.Room
+import com.wtmberlin.util.CoroutinesDispatcherProvider
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module.module
 
 val repositoryModule = module {
+    single { CoroutinesDispatcherProvider() }
+
     single {
-        ApiService(get())
+        ApiService(get(), get())
     }
 
     single {
@@ -18,7 +21,7 @@ val repositoryModule = module {
     single { createWtmEventDao(get()) }
 
     single {
-        Repository(get(), get())
+        Repository(get(), get(), get())
     }
 }
 

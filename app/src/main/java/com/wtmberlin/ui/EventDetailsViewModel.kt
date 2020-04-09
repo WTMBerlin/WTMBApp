@@ -1,44 +1,37 @@
 package com.wtmberlin.ui
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.wtmberlin.SchedulerProvider
 import com.wtmberlin.data.Coordinates
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
+import com.wtmberlin.util.CoroutineViewModel
 import com.wtmberlin.util.Event
-import io.reactivex.disposables.CompositeDisposable
-import timber.log.Timber
+import com.wtmberlin.util.LogException
+import kotlinx.coroutines.launch
 
 class EventDetailsViewModel(
     eventId: String,
     repository: Repository,
-    schedulerProvider: SchedulerProvider
-) : ViewModel() {
+    private val logException: LogException
+) : CoroutineViewModel() {
     val event = MutableLiveData<WtmEvent>()
 
     val addToCalendar = MutableLiveData<AddToCalendarEvent>()
     val openMaps = MutableLiveData<OpenMapsEvent>()
     val openMeetupPage = MutableLiveData<OpenMeetupPageEvent>()
-    val shareEvent = MutableLiveData<String>()
-
-    private val subscriptions = CompositeDisposable()
+    private val shareEvent = MutableLiveData<String>()
 
     init {
-        subscriptions.add(
-            repository.event(eventId)
-                .subscribeOn(schedulerProvider.io)
-                .observeOn(schedulerProvider.ui)
-                .subscribe(this::onDataLoaded)
-        )
+        launch {
+            val eventsById = repository.event(eventId)
+            onDataLoaded(eventsById)
+        }
     }
 
     private fun onDataLoaded(result: Result<WtmEvent>) {
-        result.data?.let {
-            event.value = it
-        }
-        result.error?.let { Timber.i(it) }
+        result.data?.let { event.value = it }
+        result.error?.let { logException.getException(it) }
     }
 
     fun onDateTimeClicked() {
@@ -67,11 +60,6 @@ class EventDetailsViewModel(
         }
     }
 
-    override fun onCleared() {
-        super.onCleared()
-
-        subscriptions.clear()
-    }
 }
 
 data class OpenMapsEvent(val venueName: String, val coordinates: Coordinates) : Event()
