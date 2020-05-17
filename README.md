@@ -1,3 +1,6 @@
+
+[![WTM Berlin](https://circleci.com/gh/WTMBerlin/WTMBApp.svg?style=shield)](https://app.circleci.com/pipelines/github/WTMBerlin/WTMBApp)
+
 ! If you want to contribute, you need to generate a Firebase project and copy google-services.json 
 
 # Women Techmakers Berlin
