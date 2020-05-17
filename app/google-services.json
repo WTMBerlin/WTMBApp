@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1080812184591",
+    "firebase_url": "https://wtmberlinpublic.firebaseio.com",
+    "project_id": "wtmberlinpublic",
+    "storage_bucket": "wtmberlinpublic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080812184591:android:2a47ac4d5a8b82560fef7a",
+        "android_client_info": {
+          "package_name": "com.wtmberlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080812184591-2m8gsnkk94du19eao897htgf7nfca8en.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2ik89pZlWtW9rwfO5jFKsVoKNdQ4BsmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1080812184591-2m8gsnkk94du19eao897htgf7nfca8en.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
