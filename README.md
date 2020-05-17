@@ -1,3 +1,5 @@
+! If you want to contribute, you need to generate a Firebase project and copy google-services.json 
+
 # Women Techmakers Berlin
 
 Meetup Assistant for Women Techmakers Berlin events :robot: 
