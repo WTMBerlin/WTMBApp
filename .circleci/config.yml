@@ -9,7 +9,5 @@ jobs:
 
     steps:
       - checkout
-      - test:
-          command: ./gradlew test
-      - build:
-          command: ./gradlew assemble
+      - run:
+          command: ./gradlew test assemble
