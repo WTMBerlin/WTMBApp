@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
 apply plugin: 'com.google.firebase.firebase-perf'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion(rootProject.compileSdkVersion)
@@ -46,8 +47,9 @@ dependencies {
 
     // Architecture Components
     implementation("androidx.lifecycle:lifecycle-extensions:${rootProject.lifecycleVersion}")
-    implementation 'com.google.firebase:firebase-perf:19.0.5'
-    implementation 'com.google.firebase:firebase-analytics:17.2.3'
+    implementation 'com.google.firebase:firebase-perf:19.0.7'
+    implementation 'com.google.firebase:firebase-analytics-ktx:17.4.1'
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0'
     testImplementation("androidx.arch.core:core-testing:${rootProject.lifecycleTestVersion}")
     implementation("androidx.core:core-ktx:${rootProject.coreVersion}")
     implementation("androidx.fragment:fragment-ktx:${rootProject.fragmentVersion}")
