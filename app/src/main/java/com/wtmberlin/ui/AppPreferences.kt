@@ -34,7 +34,7 @@ object AppPreferences {
 
     var note: String
         // custom getter to get a preference of a desired type, with a predefined default value
-        get() = preferences?.getString(NOTE, "")
+        get() = preferences.getString(NOTE, "")?: ""
         // custom setter to save a preference back to preferences file
         set(value) = preferences.edit {
             it.putString(NOTE, value)

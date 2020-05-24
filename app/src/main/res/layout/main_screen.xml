@@ -1,127 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".ui.MainActivity">
-
-    <LinearLayout
-        android:id="@+id/container"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:fitsSystemWindows="true"
+        tools:context=".ui.MainActivity">
+
+    <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            style="@style/DrawerIcon"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:titleTextColor="@color/white">
+                android:id="@+id/toolbar"
+                style="@style/DrawerIcon"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:titleTextColor="@color/white">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_icons"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.55"/>
+                        android:id="@+id/guideline_icons"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.55" />
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_icons_start"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.15"/>
+                        android:id="@+id/guideline_icons_start"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.15" />
 
                 <ImageView
-                    android:id="@+id/darkImageView"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_dark_mode"
-                    android:tint="@color/onBackground"
-                    android:visibility="visible"
-                    android:onClick="enableDarkMode"
-                    app:layout_constraintEnd_toStartOf="@+id/lightImageView"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/guideline_icons_start"
-                    tools:visibility="visible" />
+                        android:id="@+id/darkImageView"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="enableDarkMode"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_dark_mode"
+                        android:tint="@color/onBackground"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/lightImageView"
+                        app:layout_constraintStart_toEndOf="@+id/guideline_icons_start"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="OnClick"
+                        tools:visibility="visible" />
 
                 <ImageView
-                    android:id="@+id/lightImageView"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_light_mode"
-                    android:tint="@color/onBackground"
-                    android:visibility="visible"
-                    android:onClick="disableDarkMode"
-                    app:layout_constraintStart_toEndOf="@+id/darkImageView"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline_icons"
-                    tools:visibility="visible" />
+                        android:id="@+id/lightImageView"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="disableDarkMode"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_light_mode"
+                        android:tint="@color/onBackground"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline_icons"
+                        app:layout_constraintStart_toEndOf="@+id/darkImageView"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="OnClick"
+                        tools:visibility="visible" />
 
                 <ImageView
-                    android:id="@+id/share_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:contentDescription="share meetup link to WTM group"
-                    android:importantForAccessibility="yes"
-                    android:onClick="shareMeetup"
-                    android:src="@drawable/ic_share_black_24dp"
-                    android:tint="@color/onBackground"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/twitter_icon"
-                    app:layout_constraintHorizontal_chainStyle="spread"
-                    app:layout_constraintStart_toEndOf="@+id/guideline_icons" />
+                        android:id="@+id/share_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="share meetup link to WTM group"
+                        android:importantForAccessibility="yes"
+                        android:onClick="shareMeetup"
+                        tools:ignore="OnClick"
+                        android:src="@drawable/ic_share_black_24dp"
+                        android:tint="@color/onBackground"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/twitter_icon"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintStart_toEndOf="@+id/guideline_icons"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/twitter_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="open Twitter"
-                    android:importantForAccessibility="yes"
-                    android:onClick="openTwitter"
-                    android:src="@drawable/social_media_icon_twitter"
-                    android:tint="@color/onBackground"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/share_icon" />
+                        android:id="@+id/twitter_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="open Twitter"
+                        android:importantForAccessibility="yes"
+                        android:onClick="openTwitter"
+                        tools:ignore="OnClick"
+                        android:src="@drawable/social_media_icon_twitter"
+                        android:tint="@color/onBackground"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/share_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
 
         <fragment
-            android:id="@+id/nav_host_fragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:itemTextColor="@color/nav_item_color"
-            app:navGraph="@navigation/nav_graph" />
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:itemTextColor="@color/nav_item_color"
+                app:navGraph="@navigation/nav_graph" />
 
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header"
-        app:itemTextColor="@color/divider"
-        app:menu="@menu/drawer_view" />
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header"
+            app:itemTextColor="@color/divider"
+            app:menu="@menu/drawer_view" />
 </androidx.drawerlayout.widget.DrawerLayout>
