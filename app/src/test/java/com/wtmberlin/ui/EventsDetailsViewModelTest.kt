@@ -1,16 +1,21 @@
 package com.wtmberlin.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.google.common.truth.Truth.assertThat
-import com.wtmberlin.*
-import com.wtmberlin.data.Coordinates
-import com.wtmberlin.data.Repository
-import com.wtmberlin.data.Result
-import com.wtmberlin.data.WtmEvent
-import io.reactivex.processors.PublishProcessor
+import com.wtmberlin.data.*
+import com.wtmberlin.util.LogException
+import io.mockk.MockKAnnotations
+import io.mockk.coEvery
+import io.mockk.every
+import io.mockk.impl.annotations.MockK
+import io.mockk.mockk
+import junit.framework.Assert.assertEquals
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.setMain
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.Mockito.`when`
 import org.threeten.bp.Duration
 import org.threeten.bp.ZonedDateTime
 
@@ -18,90 +23,145 @@ class EventsDetailsViewModelTest {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    val mockEvent = PublishProcessor.create<Result<WtmEvent>>()
-    val mockRepository = mock<Repository>().also {
-        `when`(it.event("1")).thenReturn(mockEvent)
-    }
+    @MockK
+    internal lateinit var repository: Repository
+    @MockK
+    internal lateinit var logException: LogException
+    private val viewModel by lazy { EventDetailsViewModel("1", repository, logException) }
+    private val testDispatcher = TestCoroutineDispatcher()
 
-    val viewModel = EventDetailsViewModel("1", mockRepository, TestSchedulerProvider())
-
-    @Test
-    fun `emits event with given id`() {
-        val observer = viewModel.event.testObserver()
-
-        val event = defaultWtmEvent(id = "1")
-
-        mockEvent.onNext(Result(loading = false, data = event, error = null))
-
-        assertThat(observer.observedValues).containsExactly(event)
+    @ExperimentalCoroutinesApi
+    @Before
+    fun before() {
+        MockKAnnotations.init(this)
+        Dispatchers.setMain(testDispatcher)
     }
 
     @Test
-    fun `when datetime clicked emits add to calendar event`() {
-        val observer = viewModel.addToCalendar.testObserver()
+    fun `fetch event with given id`() {
+        val event = startEvent()
 
-        val dateTimeStart = ZonedDateTime.now()
-        val duration = Duration.ofHours(3)
-        val dateTimeEnd = dateTimeStart.plus(duration)
+        viewModel.event.observeForever { }
 
-        val event = defaultWtmEvent(
-            id = "1",
-            name = "Fun with Kotlin",
-            dateTimeStart = dateTimeStart,
-            duration = duration,
-            venue = defaultVenue(name = "Google Berlin")
-        )
-
-        mockEvent.onNext(Result(loading = false, data = event, error = null))
-
-        viewModel.onDateTimeClicked()
-
-        assertThat(observer.observedValues).containsExactly(
-            AddToCalendarEvent(
-                title = "Fun with Kotlin",
-                location = "Google Berlin",
-                beginTime = dateTimeStart.toInstant().toEpochMilli(),
-                endTime = dateTimeEnd.toInstant().toEpochMilli()
-            )
-        )
+        assertEquals(event, viewModel.event.value)
     }
 
     @Test
-    fun `when location clicked emits open map event`() {
-        val observer = viewModel.openMaps.testObserver()
-
-        val event = defaultWtmEvent(
-            id = "1",
-            venue = defaultVenue(name = "Google Berlin", coordinates = Coordinates(12.34, 56.78))
-        )
-
-        mockEvent.onNext(Result(loading = false, data = event, error = null))
+    fun `fetch event with no venue`() {
+        val event = mockk<WtmEvent>()
+        val venue = null
+        every { event.venue } returns venue
+        startEvent(event)
 
         viewModel.onLocationClicked()
+        viewModel.event.observeForever { }
 
-        assertThat(observer.observedValues).containsExactly(
-            OpenMapsEvent(
-                venueName = "Google Berlin",
-                coordinates = Coordinates(12.34, 56.78)
-            )
-        )
+        val result = viewModel.event.value
+        assertEquals(venue, result?.venue)
     }
 
     @Test
-    fun `when open meetup page clicked emits open meetup page event`() {
-        val observer = viewModel.openMeetupPage.testObserver()
+    fun `on time clicked`() {
+        val event = mockk<WtmEvent>()
+        val venue = mockk<Venue>()
+        val startTime = ZonedDateTime.now()
+        val eventName = "eventName"
+        val venueName = "venueName"
+        every { event.venue } returns venue
+        every { event.dateTimeStart } returns startTime
+        every { event.duration } returns Duration.ofMillis(1000)
+        every { event.name } returns eventName
+        every { venue.name } returns venueName
+        startEvent(event)
 
-        val event = defaultWtmEvent(
-            id = "1",
-            meetupUrl = "https://meetup.com/events/1"
-        )
+        viewModel.onDateTimeClicked()
+        viewModel.addToCalendar.observeForever { }
 
-        mockEvent.onNext(Result(loading = false, data = event, error = null))
+        val result = viewModel.addToCalendar.value
+        assertEquals(eventName, result?.title)
+        assertEquals(venueName, result?.location)
+        assertEquals(startTime.toInstant().toEpochMilli(), result?.beginTime)
+        assertEquals(startTime.toInstant().toEpochMilli() + 1000, result?.endTime)
+    }
+
+    @Test
+    fun `on time clicked with no event`() {
+        startEvent(null)
+
+        viewModel.onDateTimeClicked()
+        viewModel.addToCalendar.observeForever { }
+
+    }
+
+    @Test
+    fun `on location clicked`() {
+        val event = mockk<WtmEvent>()
+        val venue = mockk<Venue>()
+        val coordLat = 0.0
+        val coordLong = 1.1
+        val venueName = "venueName"
+        every { event.venue } returns venue
+        every { venue.name } returns venueName
+        every { venue.coordinates } returns Coordinates(coordLat, coordLong)
+        startEvent(event)
+
+        viewModel.onLocationClicked()
+        viewModel.openMaps.observeForever { }
+
+        val result = viewModel.openMaps.value
+        assertEquals(venueName, result?.venueName)
+        assertEquals(Coordinates(coordLat, coordLong), result?.coordinates)
+    }
+
+    @Test
+    fun `on location clicked with no coordinates`() {
+        val event = mockk<WtmEvent>()
+        val venue = mockk<Venue>()
+        val coordinates = null
+        every { event.venue } returns venue
+        every { venue.coordinates } returns coordinates
+        startEvent(event)
+
+        viewModel.onLocationClicked()
+        viewModel.openMaps.observeForever { }
+
+        val result = viewModel.openMaps.value
+        assertEquals(coordinates, result?.coordinates)
+    }
+
+    @Test
+    fun `on location clicked with no event`() {
+        startEvent(null)
+
+        viewModel.onLocationClicked()
+        viewModel.openMaps.observeForever { }
+    }
+
+    @Test
+    fun `on meetUp page clicked`() {
+        val event = mockk<WtmEvent>()
+        val url = "www.google.com"
+        every { event.meetupUrl } returns url
+        startEvent(event)
 
         viewModel.onOpenMeetupPageClicked()
+        viewModel.openMeetupPage.observeForever { }
 
-        assertThat(observer.observedValues).containsExactly(
-            OpenMeetupPageEvent(url = "https://meetup.com/events/1")
-        )
+        val resultMeetup = viewModel.openMeetupPage.value
+        assertEquals(url, resultMeetup?.url)
+    }
+
+    @Test
+    fun `on meetUp page clicked with no event`() {
+        startEvent(null)
+
+        viewModel.onOpenMeetupPageClicked()
+        viewModel.openMeetupPage.observeForever { }
+    }
+
+    private fun startEvent(event: WtmEvent? = mockk()): WtmEvent? {
+        coEvery { repository.event("1") } returns Result(false, event, null)
+        viewModel.event.observeForever {}
+        return event
     }
 }

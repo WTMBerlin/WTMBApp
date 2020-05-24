@@ -13,10 +13,10 @@
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:refreshing="@{viewModel.refreshing}">
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:refreshing="@{viewModel.refreshing}">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/events_recycler"
