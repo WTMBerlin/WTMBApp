@@ -1,35 +1,35 @@
 package com.wtmberlin.ui
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.wtmberlin.SchedulerProvider
 import com.wtmberlin.data.Repository
 import com.wtmberlin.data.Result
 import com.wtmberlin.data.WtmEvent
+import com.wtmberlin.util.CoroutineViewModel
 import com.wtmberlin.util.Event
-import io.reactivex.disposables.CompositeDisposable
+import com.wtmberlin.util.LogException
+import kotlinx.coroutines.launch
 import org.threeten.bp.ZonedDateTime
-import timber.log.Timber
 
-class EventsViewModel(private val repository: Repository, schedulerProvider: SchedulerProvider) :
-    ViewModel() {
+class EventsViewModel(
+    private val repository: Repository,
+    private val logException: LogException
+) : CoroutineViewModel() {
     val adapterItems = MutableLiveData<List<EventsAdapterItem>>()
     val refreshing = MutableLiveData<Boolean>()
     val displayEventDetails = MutableLiveData<DisplayEventDetailsEvent>()
 
-    private val subscriptions = CompositeDisposable()
-
     init {
-        subscriptions.add(
-            repository.events()
-                .subscribeOn(schedulerProvider.io)
-                .observeOn(schedulerProvider.ui)
-                .subscribe(this::onDataLoaded)
-        )
+        launch {
+            refreshing.value = true
+            onDataLoaded(repository.events())
+        }
     }
 
     fun refreshEvents() {
-        repository.refreshEvents()
+        launch {
+            repository.refreshEvents()
+            onDataLoaded(repository.events())
+        }
     }
 
     fun onEventItemClicked(item: EventItem) {
@@ -39,7 +39,7 @@ class EventsViewModel(private val repository: Repository, schedulerProvider: Sch
     private fun onDataLoaded(result: Result<List<WtmEvent>>) {
         refreshing.value = result.loading
         result.data?.let { processEvents(it) }
-        result.error?.let { Timber.i(it) }
+        result.error?.let { logException.getException(it) }
     }
 
     private fun processEvents(events: List<WtmEvent>) {
@@ -48,10 +48,10 @@ class EventsViewModel(private val repository: Repository, schedulerProvider: Sch
         val now = ZonedDateTime.now()
 
         for (event in events) {
-            when {
-                event.duration != null && event.dateTimeStart.isAfter(now) -> upcomingEvents += event
-                event.duration != null && !event.dateTimeStart.isAfter(now) -> pastEvents += event
-            }
+            if (event.dateTimeStart.isAfter(now))
+                upcomingEvents += event
+            else
+                pastEvents += event
         }
 
         val adapterItems = mutableListOf<EventsAdapterItem>()
@@ -78,11 +78,6 @@ class EventsViewModel(private val repository: Repository, schedulerProvider: Sch
         venueName = venue?.name
     )
 
-    override fun onCleared() {
-        super.onCleared()
-
-        subscriptions.clear()
-    }
 }
 
 data class DisplayEventDetailsEvent(val eventId: String) : Event()

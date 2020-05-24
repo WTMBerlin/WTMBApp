@@ -1,5 +1,4 @@
-
-[![WTM Berlin](https://circleci.com/gh/WTMBerlin/WTMBApp.svg?style=shield)](https://app.circleci.com/pipelines/github/WTMBerlin/WTMBApp)
+![Pull Request](https://github.com/WTMBerlin/WTMBApp/workflows/Pull%20Request/badge.svg)
 
 ! If you want to contribute, you need to generate a Firebase project and copy google-services.json 
 
