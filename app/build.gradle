@@ -23,9 +23,34 @@ android {
             }
         }
     }
+
+    signingConfigs {
+        qa {
+            storeFile file('signing/QAkeystore')
+            storePassword 'qaqaqa'
+            keyAlias = 'key'
+            keyPassword 'qaqaqa'
+        }
+    }
+
     buildTypes {
+        debug{
+            debuggable true
+            applicationIdSuffix ".dev"
+            buildConfigField 'String', "BASE_URL_MEETUP", '"https://api.meetup.com"'
+        }
         release {
+            debuggable false
+            buildConfigField 'String', "BASE_URL_MEETUP", '"https://api.meetup.com"'
             minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        qa {
+            debuggable true
+            minifyEnabled = false
+            applicationIdSuffix ".qa"
+            signingConfig signingConfigs.qa
+            buildConfigField 'String', "BASE_URL_MEETUP", '"https://api.meetup.com"'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

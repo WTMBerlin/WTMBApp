@@ -44,19 +44,19 @@ class MainActivity : AppCompatActivity() {
         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
     }
 
-    fun openMeetup(view: View) {
+    fun openMeetup(@Suppress("UNUSED_PARAMETER") view: View) {
         val openURL = Intent(Intent.ACTION_VIEW)
         openURL.data = Uri.parse(resources.getString(R.string.social_media_link_meetup))
         startActivity(openURL)
     }
 
-    fun openTwitter(view: View) {
+    fun openTwitter(@Suppress("UNUSED_PARAMETER") view: View) {
         val openURL = Intent(Intent.ACTION_VIEW)
         openURL.data = Uri.parse(resources.getString(R.string.social_media_link_twitter))
         startActivity(openURL)
     }
 
-    fun shareMeetup(view: View) {
+    fun shareMeetup(@Suppress("UNUSED_PARAMETER") view: View) {
         ShareCompat.IntentBuilder
             .from(this)
             .setType("text/plain")
@@ -69,10 +69,10 @@ class MainActivity : AppCompatActivity() {
         view.findNavController().navigate(CommunityLocalFragmentDirections.startReviewsScreen())
     }
 
-    fun closeDrawer(view: View) = drawer_layout.closeDrawer(GravityCompat.START)
+    fun closeDrawer(@Suppress("UNUSED_PARAMETER") view: View) = drawer_layout.closeDrawer(GravityCompat.START)
 
 
-    fun enableDarkMode(view: View) {
+    fun enableDarkMode(@Suppress("UNUSED_PARAMETER") view: View) {
         AppPreferences.darkTheme = true
         restartApplication()
     }
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         exitProcess(0)
     }
 
-    fun openBlogContributions(view: View) {
+    fun openBlogContributions(@Suppress("UNUSED_PARAMETER") view: View) {
         val openURL = Intent(Intent.ACTION_VIEW)
         openURL.data =
             Uri.parse(resources.getString(R.string.social_media_link_github_contributions))

@@ -2,6 +2,7 @@ package com.wtmberlin.meetup
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.wtmberlin.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -19,7 +20,7 @@ val meetupModule = module {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.meetup.com")
+            .baseUrl(BuildConfig.BASE_URL_MEETUP)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(okHttpClient)
             .build()
