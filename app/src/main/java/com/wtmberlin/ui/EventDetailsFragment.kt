@@ -28,7 +28,7 @@ class EventDetailsFragment : Fragment() {
     private val eventsEndpoint = "/events/"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        eventId = EventDetailsFragmentArgs.fromBundle(arguments!!).eventId
+        eventId = EventDetailsFragmentArgs.fromBundle(requireArguments()).eventId
 
         val binding = DataBindingUtil.inflate<EventDetailsScreenBinding>(
             inflater,
@@ -61,7 +61,7 @@ class EventDetailsFragment : Fragment() {
         val uri = Uri.parse("geo:${coordinates.latitude},${coordinates.longitude}?q=${Uri.encode(venueName)}")
         val intent = Intent(Intent.ACTION_VIEW, uri)
 
-        intent.resolveActivity(context!!.packageManager)?.let {
+        intent.resolveActivity(requireContext().packageManager)?.let {
             startActivity(intent)
         }
     }
@@ -75,7 +75,7 @@ class EventDetailsFragment : Fragment() {
             putExtra(CalendarContract.EXTRA_EVENT_END_TIME, calendarEvent.endTime)
         }
 
-        intent.resolveActivity(context!!.packageManager)?.let {
+        intent.resolveActivity(requireContext().packageManager)?.let {
             startActivity(intent)
         }
     }

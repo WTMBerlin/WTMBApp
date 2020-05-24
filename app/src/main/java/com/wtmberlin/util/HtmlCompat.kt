@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.wtmberlin.util
 
 import android.os.Build

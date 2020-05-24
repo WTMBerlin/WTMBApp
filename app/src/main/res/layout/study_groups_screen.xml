@@ -1,373 +1,376 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/study_groups"
-            style="@style/WtmBerlin.Events.Header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/wtm_mini"
-            android:gravity="center"
-            android:text="@string/study_groups_header"
-            android:textSize="18sp" />
+                android:id="@+id/study_groups"
+                style="@style/WtmBerlin.Events.Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/wtm_mini"
+                android:gravity="center"
+                android:text="@string/study_groups_header"
+                android:textSize="18sp" />
 
     </androidx.cardview.widget.CardView>
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/material_space_half">
+                android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/material_space_half">
 
                 <TextView
-                    style="@style/WtmBerlin.SocialMedia.Content"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/material_space_half"
-                    android:drawableEnd="@drawable/social_media_icon_meetup"
-                    android:onClick="openMeetup"
-                    android:text="We hope to repeat some of those course formats soon, so keep an eye on our Meetup calendar!" />
+                        style="@style/WtmBerlin.SocialMedia.Content"
+                        tools:ignore="OnClick"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/material_space_half"
+                        android:drawableEnd="@drawable/social_media_icon_meetup"
+                        android:onClick="openMeetup"
+                        android:text="We hope to repeat some of those course formats soon, so keep an eye on our Meetup calendar!" />
             </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
-                style="@style/WtmBerlin.SocialMedia.Item"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space_half">
+                    style="@style/WtmBerlin.SocialMedia.Item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/material_space_half">
 
                 <TextView
-                    style="@style/WtmBerlin.SocialMedia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/material_space_half"
-                    android:layout_marginVertical="@dimen/material_space_half"
-                    android:onClick="openMeetup"
-                    android:text="Our events are free of charge and possible thanks to a collaboration of volunteers and companies." />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/material_space_half">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="@dimen/material_space"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Recordings of a JavaScript Crash Course co-organized Armagan Amcalar and by Maria, one of the students who graduated from the previous edition."
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Open to see lessons description and recordings, GitHub materials are linked below. If you had any questions, ask them in a dedicated slack channel: #js-crash course" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="@dimen/material_space"
-                        android:layout_marginBottom="@dimen/material_space"
-                        android:autoLink="web"
-                        android:contentDescription="Javascript Crash Course Recordings and more"
-                        android:drawableEnd="@drawable/ic_text"
-                        android:text="http://wtmberlin.com/javascript-crash-course/" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space"
-                        android:autoLink="web"
-                        android:contentDescription="wtm github"
-                        android:text="https://github.com/WTMBerlin/jscc-welcomeguide" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space"
-                        android:autoLink="web"
-                        android:contentDescription="wtm github"
-                        android:text="https://github.com/WTMBerlin/jscc2018" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space"
-                        android:autoLink="web"
-                        android:contentDescription="movie about the JavaScript Crash Course"
-                        android:text="https://drive.google.com/file/d/1IBje3Uw4SFlWeIpYgEzGhrr1L73qPOEY/view?usp=sharing" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space_half"
-                        android:text="Maria, JS graduate and current tutor about the course" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space_half"
-                        android:autoLink="web"
-                        android:contentDescription="Join our slack "
-                        android:text="wtmberlin.slack.com, #js-crash-course channel" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:autoLink="web"
-                        android:contentDescription="Maria's post on our blog"
-                        android:drawableEnd="@drawable/ic_text"
-                        android:drawableBottom="@drawable/wtm_icon_mini"
-                        android:text="http://wtmberlin.com/blog/Maria-story" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/material_space_half"
-                android:layout_marginHorizontal="@dimen/material_space_half">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="@dimen/material_space"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space_half"
-                        android:text="GO study group"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:autoLink="web"
-                        android:contentDescription="GO study group info"
-                        android:drawableEnd="@drawable/ic_text"
-                        android:drawableBottom="@drawable/wtm_icon_mini"
-                        android:text="https://github.com/gobridge/about-us/blob/master/README.md" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/material_space_half"
-                android:layout_marginVertical="@dimen/material_space_half">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/material_space"
-                    android:orientation="vertical">
-
-                    <TextView
                         style="@style/WtmBerlin.SocialMedia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space_half"
-                        android:gravity="center_vertical"
-                        android:text="Recordings of a Public Speaking Workshop: \nYou should give a talk this year!"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Part 1: Motivation and best practices"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space"
-                        android:autoLink="web"
-                        android:contentDescription="recording public speaking part 1"
-                        android:drawableEnd="@drawable/ic_video"
-                        android:maxLines="1"
-                        android:text="https://twitter.com/wtm_berlin/status/1034140735698661376" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Part 2: Write a great talk proposal"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space"
-                        android:autoLink="web"
-                        android:contentDescription="recording content description part 2"
-                        android:drawableEnd="@drawable/ic_video"
-                        android:maxLines="1"
-                        android:text="https://twitter.com/wtm_berlin/status/1037384246191640576" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Part 3: Practical tips for composing the talks"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:autoLink="web"
-                        android:contentDescription="recording public speaking part 3"
-
-                        android:drawableEnd="@drawable/ic_video"
-                        android:drawableBottom="@drawable/wtm_icon_mini"
-                        android:maxLines="1"
-                        android:text="https://twitter.com/wtm_berlin/status/1039197181989683200" />
-                </LinearLayout>
+                        android:layout_marginHorizontal="@dimen/material_space_half"
+                        android:layout_marginVertical="@dimen/material_space_half"
+                        android:onClick="openMeetup"
+                        tools:ignore="OnClick"
+                        android:text="Our events are free of charge and possible thanks to a collaboration of volunteers and companies." />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/material_space_half">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/material_space_half">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="@dimen/material_space"
-                    android:orientation="vertical">
-
-                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:text="Android Study Jam"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/material_space"
+                        android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lesson descriptions, GitHub materials are linked below. If you had any questions, ask them in a dedicated slack channel: #android-study-jam" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recordings of a JavaScript Crash Course co-organized Armagan Amcalar and by Maria, one of the students who graduated from the previous edition."
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space_half"
-                        android:autoLink="web"
-                        android:contentDescription="description android study jam"
-                        android:drawableEnd="@drawable/ic_text"
-                        android:text="http://wtmberlin.com/android-study-jam/" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Open to see lessons description and recordings, GitHub materials are linked below. If you had any questions, ask them in a dedicated slack channel: #js-crash course" />
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="24dp"
-                        android:autoLink="web"
-                        android:contentDescription="github kotlin materials from android study jam"
-                        android:drawableBottom="@drawable/wtm_icon_mini"
-                        android:text="https://github.com/WTMBerlin/codelab-android-kotlin" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/material_space"
+                            android:layout_marginBottom="@dimen/material_space"
+                            android:autoLink="web"
+                            android:contentDescription="Javascript Crash Course Recordings and more"
+                            android:drawableEnd="@drawable/ic_text"
+                            android:text="http://wtmberlin.com/javascript-crash-course/" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space"
+                            android:autoLink="web"
+                            android:contentDescription="wtm github"
+                            android:text="https://github.com/WTMBerlin/jscc-welcomeguide" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space"
+                            android:autoLink="web"
+                            android:contentDescription="wtm github"
+                            android:text="https://github.com/WTMBerlin/jscc2018" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space"
+                            android:autoLink="web"
+                            android:contentDescription="movie about the JavaScript Crash Course"
+                            android:text="https://drive.google.com/file/d/1IBje3Uw4SFlWeIpYgEzGhrr1L73qPOEY/view?usp=sharing" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space_half"
+                            android:text="Maria, JS graduate and current tutor about the course" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space_half"
+                            android:autoLink="web"
+                            android:contentDescription="Join our slack "
+                            android:text="wtmberlin.slack.com, #js-crash-course channel" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:contentDescription="Maria's post on our blog"
+                            android:drawableEnd="@drawable/ic_text"
+                            android:drawableBottom="@drawable/wtm_icon_mini"
+                            android:text="http://wtmberlin.com/blog/Maria-story" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/material_space_half"
-                android:layout_marginTop="@dimen/material_space_half">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/material_space_half"
+                    android:layout_marginTop="@dimen/material_space_half">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="@dimen/material_space"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/material_space_half"
-                        android:gravity="center_vertical"
-                        android:text="Google Assistant Workshop given by Anna, who graduated from the Android Study Jam"
-                        android:textStyle="bold" />
-
-                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:autoLink="web"
-                        android:contentDescription="linkt to meetup"
-                        android:drawableEnd="@drawable/social_media_icon_meetup_mini"
-                        android:drawableBottom="@drawable/wtm_icon_mini"
-                        android:maxLines="1"
-                        android:text="https://www.meetup.com/Women-Techmakers-Berlin/events/251198434/" />
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/material_space"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space_half"
+                            android:text="GO study group"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:contentDescription="GO study group info"
+                            android:drawableEnd="@drawable/ic_text"
+                            android:drawableBottom="@drawable/wtm_icon_mini"
+                            android:text="https://github.com/gobridge/about-us/blob/master/README.md" />
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/material_space_half"
-                android:layout_marginVertical="@dimen/material_space_half">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/material_space_half"
+                    android:layout_marginVertical="@dimen/material_space_half">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="@dimen/material_space"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Flutter Study Jam given by Lara, Android Study Jam graduate"
-                        android:textStyle="bold" />
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:autoLink="web"
-                        android:drawableEnd="@drawable/social_media_icon_meetup_mini"
-                        android:drawableBottom="@drawable/wtm_icon_mini"
-                        android:maxLines="1"
-                        android:text="https://www.meetup.com/Women-Techmakers-Berlin/events/lftrcqyxnbpb/" />
+                        android:layout_margin="@dimen/material_space"
+                        android:orientation="vertical">
+
+                    <TextView
+                            style="@style/WtmBerlin.SocialMedia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space_half"
+                            android:gravity="center_vertical"
+                            android:text="Recordings of a Public Speaking Workshop: \nYou should give a talk this year!"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Part 1: Motivation and best practices"
+                            android:textSize="16sp" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space"
+                            android:autoLink="web"
+                            android:contentDescription="recording public speaking part 1"
+                            android:drawableEnd="@drawable/ic_video"
+                            android:maxLines="1"
+                            android:text="https://twitter.com/wtm_berlin/status/1034140735698661376" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Part 2: Write a great talk proposal"
+                            android:textSize="16sp" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space"
+                            android:autoLink="web"
+                            android:contentDescription="recording content description part 2"
+                            android:drawableEnd="@drawable/ic_video"
+                            android:maxLines="1"
+                            android:text="https://twitter.com/wtm_berlin/status/1037384246191640576" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Part 3: Practical tips for composing the talks"
+                            android:textSize="16sp" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:contentDescription="recording public speaking part 3"
+
+                            android:drawableEnd="@drawable/ic_video"
+                            android:drawableBottom="@drawable/wtm_icon_mini"
+                            android:maxLines="1"
+                            android:text="https://twitter.com/wtm_berlin/status/1039197181989683200" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/material_space_half">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/material_space"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="Android Study Jam"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lesson descriptions, GitHub materials are linked below. If you had any questions, ask them in a dedicated slack channel: #android-study-jam" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space_half"
+                            android:autoLink="web"
+                            android:contentDescription="description android study jam"
+                            android:drawableEnd="@drawable/ic_text"
+                            android:text="http://wtmberlin.com/android-study-jam/" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="24dp"
+                            android:autoLink="web"
+                            android:contentDescription="github kotlin materials from android study jam"
+                            android:drawableBottom="@drawable/wtm_icon_mini"
+                            android:text="https://github.com/WTMBerlin/codelab-android-kotlin" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/material_space_half"
+                    android:layout_marginTop="@dimen/material_space_half">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/material_space"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/material_space_half"
+                            android:gravity="center_vertical"
+                            android:text="Google Assistant Workshop given by Anna, who graduated from the Android Study Jam"
+                            android:textStyle="bold" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:contentDescription="linkt to meetup"
+                            android:drawableEnd="@drawable/social_media_icon_meetup_mini"
+                            android:drawableBottom="@drawable/wtm_icon_mini"
+                            android:maxLines="1"
+                            android:text="https://www.meetup.com/Women-Techmakers-Berlin/events/251198434/" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/material_space_half"
+                    android:layout_marginVertical="@dimen/material_space_half">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/material_space"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Flutter Study Jam given by Lara, Android Study Jam graduate"
+                            android:textStyle="bold" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:drawableEnd="@drawable/social_media_icon_meetup_mini"
+                            android:drawableBottom="@drawable/wtm_icon_mini"
+                            android:maxLines="1"
+                            android:text="https://www.meetup.com/Women-Techmakers-Berlin/events/lftrcqyxnbpb/" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/material_space">
 
                 <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginVertical="@dimen/material_space"
-                    android:background="@drawable/ic_octocat"
-                    android:drawableStart="@drawable/wtm_mini"
-                    android:gravity="center_horizontal" />
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginVertical="@dimen/material_space"
+                        android:background="@drawable/ic_octocat"
+                        android:drawableStart="@drawable/wtm_mini"
+                        android:gravity="center_horizontal" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>

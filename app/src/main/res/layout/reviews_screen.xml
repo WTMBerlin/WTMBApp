@@ -1,238 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <TextView
-            style="@style/WtmBerlin.Events.Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/material_space_quarter"
-            android:drawableEnd="@drawable/wtm_mini"
-            android:gravity="center"
-            android:padding="@dimen/material_space_quarter"
-            android:text="@string/nav_drawer_community_reviews_menu_item" />
+                style="@style/WtmBerlin.Events.Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/material_space_quarter"
+                android:drawableEnd="@drawable/wtm_mini"
+                android:gravity="center"
+                android:padding="@dimen/material_space_quarter"
+                android:text="@string/nav_drawer_community_reviews_menu_item" />
     </androidx.cardview.widget.CardView>
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/material_space"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/material_space_half"
-                android:layout_marginTop="@dimen/material_space"
-                android:layout_marginEnd="@dimen/material_space_half">
+                android:layout_marginBottom="@dimen/material_space"
+                android:orientation="vertical">
 
-                <LinearLayout
+            <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/material_space_half"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
+                    android:layout_marginStart="@dimen/material_space_half"
+                    android:layout_marginTop="@dimen/material_space"
+                    android:layout_marginEnd="@dimen/material_space_half">
 
-                    <TextView
-                        style="@style/WtmBerlin.SocialMedia.Content"
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/reviews_maria" />
+                        android:layout_marginTop="@dimen/material_space_half"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
 
                     <TextView
-                        style="@style/WtmBerlin.SocialMedia.Link"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:autoLink="web"
-                        android:contentDescription="@string/reviews_maria_content_description"
-                        android:drawableEnd="@drawable/ic_text"
-                        android:text="@string/reviews_maria_weblink" />
+                            style="@style/WtmBerlin.SocialMedia.Content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reviews_maria" />
+
+                    <TextView
+                            style="@style/WtmBerlin.SocialMedia.Link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:contentDescription="@string/reviews_maria_content_description"
+                            android:drawableEnd="@drawable/ic_text"
+                            android:text="@string/reviews_maria_weblink" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space_half">
-
-                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/material_space_half"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
+                    android:layout_margin="@dimen/material_space_half">
 
-                    <TextView
-                        style="@style/WtmBerlin.SocialMedia.Content"
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/reviews_ely" />
+                        android:layout_marginTop="@dimen/material_space_half"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
 
                     <TextView
-                        style="@style/WtmBerlin.SocialMedia.Link"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:autoLink="web"
-                        android:contentDescription="@string/reviews_ely_content_description"
-                        android:drawableEnd="@drawable/ic_text"
-                        android:text="@string/reviews_ely_weblink" />
+                            style="@style/WtmBerlin.SocialMedia.Content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reviews_ely" />
+
+                    <TextView
+                            style="@style/WtmBerlin.SocialMedia.Link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:contentDescription="@string/reviews_ely_content_description"
+                            android:drawableEnd="@drawable/ic_text"
+                            android:text="@string/reviews_ely_weblink" />
 
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space_half">
-
-                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/material_space_half"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
+                    android:layout_margin="@dimen/material_space_half">
 
-                    <TextView
-                        style="@style/WtmBerlin.SocialMedia.Content"
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/reviews_lara" />
+                        android:layout_marginTop="@dimen/material_space_half"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
 
                     <TextView
-                        style="@style/WtmBerlin.SocialMedia.Content"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:autoLink="web"
-                        android:contentDescription="@string/reviews_lara_content_description"
-                        android:drawableEnd="@drawable/ic_video"
-                        android:maxLines="1"
-                        android:text="@string/reviews_lara_weblink" />
+                            style="@style/WtmBerlin.SocialMedia.Content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reviews_lara" />
+
+                    <TextView
+                            style="@style/WtmBerlin.SocialMedia.Content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:contentDescription="@string/reviews_lara_content_description"
+                            android:drawableEnd="@drawable/ic_video"
+                            android:maxLines="1"
+                            android:text="@string/reviews_lara_weblink" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space_half">
-
-                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/material_space_half"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
+                    android:layout_margin="@dimen/material_space_half">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/material_space_half"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
 
                     <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reviews_natalie" />
+
+                    <TextView
+                            style="@style/WtmBerlin.SocialMedia.Link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:contentDescription="@string/reviews_natalie_content_description"
+                            android:drawableEnd="@drawable/ic_video"
+                            android:ellipsize="end"
+                            android:text="@string/reviews_natalie_weblink" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/material_space_half">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/material_space_half"
+                        android:orientation="vertical">
+
+                    <TextView
+                            style="@style/WtmBerlin.SocialMedia.Item"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reviews_miquel" />
+
+                    <TextView
+                            style="@style/WtmBerlin.SocialMedia.Link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
+                            android:contentDescription="@string/reviews_miquel_content_description"
+                            android:drawableEnd="@drawable/ic_video"
+                            android:text="@string/reviews_miquel_weblink" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/material_space_half">
+
+                <TextView
                         style="@style/WtmBerlin.SocialMedia.Item"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/reviews_natalie" />
-
-                    <TextView
-                        style="@style/WtmBerlin.SocialMedia.Link"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:autoLink="web"
-                        android:contentDescription="@string/reviews_natalie_content_description"
-                        android:drawableEnd="@drawable/ic_video"
-                        android:ellipsize="end"
-                        android:text="@string/reviews_natalie_weblink" />
-
-                </LinearLayout>
+                        android:layout_marginTop="@dimen/material_space_half"
+                        android:layout_marginBottom="@dimen/material_space_half"
+                        android:text="@string/reviews_anna" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space_half">
-
-                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/material_space_half"
-                    android:orientation="vertical">
+                    android:layout_margin="@dimen/material_space_half">
 
-                    <TextView
+                <TextView
                         style="@style/WtmBerlin.SocialMedia.Item"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/reviews_miquel" />
+                        android:layout_marginTop="@dimen/material_space_half"
+                        android:layout_marginBottom="@dimen/material_space_half"
+                        android:drawableBottom="@drawable/wtm_mini"
+                        android:onClick="openBlogContributions"
+                        android:text="@string/reviews_cta"
+                        tools:ignore="OnClick" />
+            </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        style="@style/WtmBerlin.SocialMedia.Link"
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/material_space_half">
+
+                <TextView
+                        style="@style/WtmBerlin.SocialMedia.Item"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/material_space_half"
+                        android:layout_marginBottom="@dimen/material_space_half"
                         android:autoLink="web"
-                        android:contentDescription="@string/reviews_miquel_content_description"
-                        android:drawableEnd="@drawable/ic_video"
-                        android:text="@string/reviews_miquel_weblink" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space_half">
-
-                <TextView
-                    style="@style/WtmBerlin.SocialMedia.Item"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/material_space_half"
-                    android:layout_marginBottom="@dimen/material_space_half"
-                    android:text="@string/reviews_anna" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space_half">
-
-                <TextView
-                    style="@style/WtmBerlin.SocialMedia.Item"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/material_space_half"
-                    android:layout_marginBottom="@dimen/material_space_half"
-                    android:drawableBottom="@drawable/wtm_mini"
-                    android:onClick="openBlogContributions"
-                    android:text="@string/reviews_cta" />
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/material_space_half">
-
-                <TextView
-                    style="@style/WtmBerlin.SocialMedia.Item"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/material_space_half"
-                    android:layout_marginBottom="@dimen/material_space_half"
-                    android:autoLink="web"
-                    android:text="https://github.com/WTMBerlin/wtmberlin.github.io/tree/master/_posts" />
+                        android:text="https://github.com/WTMBerlin/wtmberlin.github.io/tree/master/_posts" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
 
     <ImageView
-        android:layout_width="190dp"
-        android:layout_height="0dp"
-        android:layout_weight=".3"
-        android:background="@drawable/events_no_upcoming_events" />
+            android:layout_width="190dp"
+            android:layout_height="0dp"
+            android:layout_weight=".3"
+            android:background="@drawable/events_no_upcoming_events" />
 
 </LinearLayout>

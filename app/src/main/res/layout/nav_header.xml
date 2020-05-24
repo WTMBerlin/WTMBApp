@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="192dp"
-             android:gravity="bottom"
-             android:orientation="vertical"
-             android:padding="16dp"
-             android:theme="@style/ThemeOverlay.AppCompat.Dark">
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView android:layout_width="160dp"
-               android:layout_height="wrap_content"
-               android:layout_gravity="center"
-               android:layout_marginTop="@dimen/material_space"
-               android:contentDescription="@null"
-               android:onClick="closeDrawer"
-               android:importantForAccessibility="no"
-               android:background="@drawable/events_no_upcoming_events"/>
+    <ImageView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/material_space"
+            android:background="@drawable/events_no_upcoming_events"
+            android:contentDescription="@null"
+            android:importantForAccessibility="no"
+            android:onClick="closeDrawer"
+            tools:ignore="OnClick" />
 </FrameLayout>
