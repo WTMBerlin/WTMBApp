@@ -44,14 +44,14 @@ Regardless of you want to switch a career or just learn something new and exciti
 There are always many new faces as well as reocurring ones. We keep growing our network, and make sure everyone contributes something, and gets something. Don't be shy - say hi to new people in events, and make sure to stay in touch.
 
 ### I am looking for a job.. 💻
-Great! You can post in our #jobs channel on [Slack (stick to the template!)](http://slack.wtmberlin.com/) as well as on our [Facebook group](https://www.facebook.com/groups/1106085959408694). Attending meetups and asking around is another great way to hear about the company's culture or finding out about open positions.
+Great! You can post in our #jobs channel on [Slack (stick to the template!)](http://slack.wtm.berlin.com/) as well as on our [Facebook group](https://www.facebook.com/groups/1106085959408694). Attending meetups and asking around is another great way to hear about the company's culture or finding out about open positions.
 
 ### When is the next coding course? 💻💻💻
 Ever since our very first year we've ran several different coding classes annually: Android, Go, iOS, JavaScript and more. All by tech leades from our community who volunteer to contirbute to our efforts, in partnership with local companies. So it's always free.
-Last spring we had a few courses on mobile development where participants learned to build their first apps in Android, Flutter and also iOS. There was also a JavaScript course, you can check the recordings on our [website](http://wtmberlin.com/javascript-crash-course/). We plan to repeat the formats soon, if you can offer any help (your expertise in one of those fields or venue), please reach out via Slack!
+Last spring we had a few courses on mobile development where participants learned to build their first apps in Android, Flutter and also iOS. There was also a JavaScript course, you can check the recordings on our [website](http://wtm.berlin.com/javascript-crash-course/). We plan to repeat the formats soon, if you can offer any help (your expertise in one of those fields or venue), please reach out via Slack!
 
 ### How can we be in touch? 💛
-- [Slack](http://slack.wtmberlin.com) is one of our main points of our community. Share info that might be relevant for the community, keep in touch with people you met on our meetups and add endless :party-parrot: emojis.
+- [Slack](http://slack.wtm.berlin.com) is one of our main points of our community. Share info that might be relevant for the community, keep in touch with people you met on our meetups and add endless :party-parrot: emojis.
 
 - [Facebook](https://www.facebook.com/groups/1106085959408694) is another place where we are very active
 
